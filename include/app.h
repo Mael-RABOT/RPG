@@ -10,7 +10,17 @@
 
     #include "include.h"
 
+    typedef enum state {
+        splash = 0,
+        main_menu,
+        settings,
+        pause_menu,
+        game,
+        cinematics
+    } state_t;
+
     typedef struct app {
+        state_t state;
         sfVideoMode videomode;
         sfRenderWindow *window;
         struct splash_screen *splash_screen;

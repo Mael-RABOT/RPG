@@ -20,9 +20,17 @@
         sfTexture *texture;
     } ruined_fore_t;
 
+    typedef struct title {
+        sfSprite *sprite;
+        sfTexture *texture;
+    } title_t;
+
     typedef struct splash_screen {
         ruined_back_t *ruined_back;
         ruined_fore_t *ruined_fore;
+        title_t *title;
+        int fade_index;
+        int index;
         sfClock *clock;
         sfTime time;
         float seconds;
