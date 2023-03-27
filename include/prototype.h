@@ -21,7 +21,7 @@
     app_t *create_app(sfVideoMode videomode);
 
     /* splash_screen */
-    splash_screen_t *create_splash_screen(void);
+    splash_screen_t *create_splash_screen(sfRenderWindow *window);
     int splash_screen(sfRenderWindow *window, splash_screen_t *splash_screen);
 
     /* event */

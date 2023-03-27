@@ -23,6 +23,9 @@
     typedef struct splash_screen {
         ruined_back_t *ruined_back;
         ruined_fore_t *ruined_fore;
+        sfClock *clock;
+        sfTime time;
+        float seconds;
     } splash_screen_t;
 
 #endif //SPLASH_SCREEN_H_
