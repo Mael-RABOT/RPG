@@ -8,17 +8,11 @@
 SRC	=	src/main.c	\
 		src/gloop.c \
 		src/my_rpg.c \
-		src/map/load_map.c \
-		src/map/create_tile.c \
-		src/map/display_map.c \
-		src/manifest/load_manifest.c \
-		src/manifest/create_manifest.c \
-		src/manifest/extract_from_manifest.c \
-		src/event/main_event.c \
+		src/button/main_event.c \
 		src/app/create_app.c \
 		src/window/create_window.c \
-		src/array_manipulation/split.c \
-		src/array_manipulation/array_manipulation.c
+		src/splash_screen/create_splash_screen.c	\
+		src/splash_screen/splash_screen.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

@@ -9,7 +9,7 @@
 
 int gloop(app_t *app)
 {
+    splash_screen(app->window, app->splash_screen);
     main_event(app);
-    display_map(app->window, app->map);
     return 0;
 }

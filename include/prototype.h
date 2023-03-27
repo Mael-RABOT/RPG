@@ -20,9 +20,14 @@
     /* app */
     app_t *create_app(sfVideoMode videomode);
 
+    /* splash_screen */
+    splash_screen_t *create_splash_screen(void);
+    int splash_screen(sfRenderWindow *window, splash_screen_t *splash_screen);
+
     /* event */
     int main_event(app_t *app);
 
+<<<<<<< Updated upstream
     /* map*/
     tile_t *create_tile(int id, manifest_t *manifest, sfVector2i position);
     map_t *load_map_from_file(const char *pathfile, manifest_t *manifest);
@@ -43,4 +48,6 @@
     int free_array(char **array);
     char **split(char *arg, char separator);
 
+=======
+>>>>>>> Stashed changes
 #endif //BASE_REPO_PROTOTYPE_H

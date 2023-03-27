@@ -18,6 +18,8 @@
     #include <SFML/Audio.h>
 
     #include "my_lib.h"
+    #include "my_macros.h"
     #include "app.h"
+    #include "splash_screen.h"
 
 #endif //BASE_REPO_INCLUDE_H
