@@ -25,7 +25,8 @@
     int main_event(app_t *app);
 
     /* map*/
-    tile_t *create_tile(int id, manifest_t *manifest, sfVector2i position, int size);
+    tile_t *create_tile(int id, manifest_t *manifest, sfVector2i position,
+        int size);
     int destroy_tile(tile_t *tile);
     map_t *load_map_from_file(const char *pathfile, manifest_t *manifest);
     int display_map(sfRenderWindow *window, map_t *map);
