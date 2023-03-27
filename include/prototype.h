@@ -19,6 +19,7 @@
 
     /* app */
     app_t *create_app(sfVideoMode videomode);
+    int destroy_app(app_t *app);
 
     /* event */
     int main_event(app_t *app);
@@ -29,6 +30,8 @@
     map_t *load_map_from_file(const char *pathfile, manifest_t *manifest);
     int display_map(sfRenderWindow *window, map_t *map);
 
+    int destroy_map(map_t *map);
+
     /* manifest */
     int get_collision(manifest_t *manifest, int id);
     sfTexture *get_texture(manifest_t *manifest, int id);
@@ -37,6 +40,7 @@
     manifest_t *create_manifest(int id, char *path, int collision);
     manifest_t *append_manifest(manifest_t *manifest, int id, char *path,
         int collision);
+    int destroy_manifest(manifest_t *manifest);
 
     /* array manipulation */
     int print_array(char **array);

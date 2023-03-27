@@ -35,6 +35,7 @@ manifest_t *load_manifest(const char *filepath)
         line[read_size - 1] = '\0';
         parse_line(&manifest, line);
     }
+    free(line);
     fclose(fp);
     return manifest;
 }

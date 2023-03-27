@@ -18,5 +18,6 @@ int my_rpg(const int ac, const char **av)
         gloop(app);
         sfRenderWindow_display(app->window);
     }
+    destroy_app(app);
     return 0;
 }

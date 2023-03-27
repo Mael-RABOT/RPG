@@ -16,6 +16,7 @@ static int get_map_size(const char *pathfile)
     while (getline(&line, &len, fp) != -1) {
         no += 1;
     }
+    free(line);
     fclose(fp);
     return no;
 }
@@ -47,6 +48,7 @@ map_t *load_map_from_file(const char *pathfile, manifest_t *manifest)
         map->map[index] = load_map_line(manifest, line, index);
         index += 1;
     }
+    free(line);
     map->map[index] = NULL;
     fclose(fp);
     return map;

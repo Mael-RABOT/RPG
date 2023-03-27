@@ -11,6 +11,7 @@ int destroy_tile(tile_t *tile)
 {
     sfSprite_destroy(tile->tile);
     free(tile);
+    return 0;
 }
 
 int destroy_map(map_t *map)
@@ -27,4 +28,5 @@ int destroy_map(map_t *map)
     }
     free(map->map);
     free(map);
+    return 0;
 }

@@ -11,11 +11,14 @@ SRC	=	src/main.c	\
 		src/map/load_map.c \
 		src/map/create_tile.c \
 		src/map/display_map.c \
+		src/map/destroy_map.c \
 		src/manifest/load_manifest.c \
 		src/manifest/create_manifest.c \
 		src/manifest/extract_from_manifest.c \
+		src/manifest/destroy_manifest.c \
 		src/event/main_event.c \
 		src/app/create_app.c \
+		src/app/destroy_app.c \
 		src/window/create_window.c \
 		src/array_manipulation/split.c \
 		src/array_manipulation/array_manipulation.c
