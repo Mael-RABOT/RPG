@@ -21,13 +21,13 @@ static int get_map_size(const char *pathfile)
     return no;
 }
 
-static tile_t **load_map_line(manifest_t *manifest, char *line, int line_nb)
+static tile_t **load_map_line(manifest_t *manifest, char *line, int line_nb, int size)
 {
     char **array = split(line, ',');
     int i = 0;
     tile_t **tile = malloc(sizeof(tile_t *) * (len_array(array) + 2));
     while (array[i] != NULL) {
-        tile[i] = create_tile(my_atoi(array[i]), manifest, (sfVector2i){i, line_nb});
+        tile[i] = create_tile(my_atoi(array[i]), manifest, (sfVector2i){i, line_nb}, size);
         i += 1;
     }
     tile[i] = NULL;
@@ -38,14 +38,15 @@ static tile_t **load_map_line(manifest_t *manifest, char *line, int line_nb)
 map_t *load_map_from_file(const char *pathfile, manifest_t *manifest)
 {
     map_t *map = malloc(sizeof(map_t));
-    map->map = malloc(sizeof(tile_t **) * (get_map_size(pathfile) + 2));
+    int size = get_map_size(pathfile);
+    map->map = malloc(sizeof(tile_t **) * (size + 2));
     FILE *fp = fopen(pathfile, "r");
     char *line = NULL;
     size_t len = 0;
     size_t read_size = 0;
     int index = 0;
     while ((read_size = getline(&line, &len, fp)) != -1) {
-        map->map[index] = load_map_line(manifest, line, index);
+        map->map[index] = load_map_line(manifest, line, index, size);
         index += 1;
     }
     free(line);
