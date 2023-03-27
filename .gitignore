@@ -1,4 +1,4 @@
-a*.o
+*.o
 *.a
 *.log
 vgcore.*
