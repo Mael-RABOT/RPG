@@ -7,12 +7,6 @@
 
 #include "../../include/prototype.h"
 
-int destroy_tile(tile_t *tile)
-{
-    sfSprite_destroy(tile->tile);
-    free(tile);
-}
-
 tile_t *create_tile(int id, manifest_t *manifest, sfVector2i position)
 {
     tile_t *tile = malloc(sizeof(tile_t));
