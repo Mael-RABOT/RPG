@@ -46,6 +46,7 @@ map_t *load_map_from_file(const char *pathfile, manifest_t *manifest)
     size_t read_size = 0;
     int index = 0;
     while ((read_size = getline(&line, &len, fp)) != -1) {
+        line[read_size - 1] = '\0';
         map->map[index] = load_map_line(manifest, line, index, size);
         index += 1;
     }
