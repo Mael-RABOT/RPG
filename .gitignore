@@ -1,0 +1,8 @@
+a*.o
+*.a
+*.log
+vgcore.*
+.idea
+*.gcda
+*.gcno
+my_rpg
