@@ -14,6 +14,7 @@ app_t *create_app(sfVideoMode videomode)
     app->window = create_window(app->videomode, "my_rpg");
     app->state = splash;
     app->splash_screen = create_splash_screen(app->window);
+    app->main_menu = create_main_menu(app->window);
     sfRenderWindow_setFramerateLimit(app->window, 60);
     return app;
 }

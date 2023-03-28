@@ -46,6 +46,7 @@ typedef enum state {
         map_t *map;
         state_t state;
         struct splash_screen *splash_screen;
+        struct main_menu *main_menu;
     } app_t;
 
 #endif //APP_H_

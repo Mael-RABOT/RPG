@@ -10,9 +10,16 @@
 int gloop(app_t *app)
 {
     main_event(app);
-    if (app->state == splash)
+    switch (app->state) {
+        case splash:
             splash_screen(app, app->window, app->splash_screen);
-    else
-        display_map(app->window, app->map);
+            break;
+        case main_menu:
+            display_main_menu(app);
+            break;
+        case game:
+            display_map(app->window, app->map);
+            break;
+    }
     return 0;
 }

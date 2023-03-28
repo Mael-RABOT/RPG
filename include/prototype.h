@@ -64,4 +64,13 @@
     int free_array(char **array);
     char **split(char *arg, char separator);
 
+    /* main_menu */
+    main_menu_t *create_main_menu(sfRenderWindow *window);
+    int display_main_menu(app_t *app);
+    button_t *create_button(sfVector2f position, sfVector2f size,
+    char *pathfile, void (*action)(app_t *app, int));
+    int is_button_hover(button_t *button, sfMouseMoveEvent *mouse);
+    int is_button_released(button_t *button, sfMouseButtonEvent *mouse);
+    int is_button_clicked(button_t *button, sfMouseButtonEvent *mouse);
+
 #endif //BASE_REPO_PROTOTYPE_H
