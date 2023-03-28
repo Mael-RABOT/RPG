@@ -15,10 +15,7 @@ int my_rpg(const int ac, const char **av)
     app->map = load_map_from_file("./maps/Tutorial_Ground.csv", app->manifest);
     while (sfRenderWindow_isOpen(app->window)) {
         sfRenderWindow_clear(app->window, sfBlack);
-        if (app->state == splash)
-            splash_screen(app, app->window, app->splash_screen);
-        else
-            gloop(app);
+        gloop(app);
         sfRenderWindow_display(app->window);
     }
     destroy_app(app);
