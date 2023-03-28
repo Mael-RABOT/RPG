@@ -19,5 +19,7 @@
 
     #include "my_lib.h"
     #include "app.h"
+    #include "splash_screen.h"
+    #include "my_macros.h"
 
 #endif //BASE_REPO_INCLUDE_H

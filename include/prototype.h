@@ -24,6 +24,17 @@
     /* event */
     int main_event(app_t *app);
 
+    /* update_splash_screen */
+    int update_ruined_back(sfRenderWindow *window,
+        splash_screen_t *splash_screen);
+    int update_ruined_fore(sfRenderWindow *window,
+        splash_screen_t *splash_screen);
+    int update_title(sfRenderWindow *window, splash_screen_t *splash_screen);
+    int update_skip(sfRenderWindow *window, splash_screen_t *splash_screen);
+
+    /* clean_splash_screen */
+    int clean_splash_screen(app_t *app);
+
     /* map*/
     tile_t *create_tile(int id, manifest_t *manifest, sfVector2i position,
         sfVector2i size);

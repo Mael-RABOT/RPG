@@ -21,12 +21,16 @@ SRC	=	src/main.c	\
 		src/app/destroy_app.c \
 		src/window/create_window.c \
 		src/array_manipulation/split.c \
-		src/array_manipulation/array_manipulation.c
+		src/array_manipulation/array_manipulation.c \
+		src/splash_screen/create_splash_screen.c    \
+        src/splash_screen/splash_screen.c    \
+        src/splash_screen/update_splash_screen.c    \
+        src/splash_screen/clean_splash_screen.c
 
 OBJ	=	$(SRC:.c=.o)
 
 CC	=	gcc
-CFLAGS	= -Wall -Werror
+CFLAGS	=
 FLAGS	= -lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio
 LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib
 EXE	=	my_rpg

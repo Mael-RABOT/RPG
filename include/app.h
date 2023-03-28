@@ -30,11 +30,22 @@
         struct manifest *next_object;
     } manifest_t;
 
+typedef enum state {
+        splash = 0,
+        main_menu,
+        settings,
+        pause_menu,
+        game,
+        cinematics
+    } state_t;
+
     typedef struct app {
         sfVideoMode videomode;
         sfRenderWindow *window;
         manifest_t *manifest;
         map_t *map;
+        state_t state;
+        struct splash_screen *splash_screen;
     } app_t;
 
 #endif //APP_H_
