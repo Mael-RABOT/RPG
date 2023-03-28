@@ -7,6 +7,7 @@
 
 #include "../../include/prototype.h"
 
+//layer:path
 //id:texture_path:collision
 
 static int parse_line(manifest_t **manifest, char *line)
@@ -23,9 +24,20 @@ static int parse_line(manifest_t **manifest, char *line)
     return 0;
 }
 
-manifest_t *load_manifest(const char *filepath)
+map_t *alloc_map(const char *filepath)
 {
-    manifest_t *manifest = NULL;
+    map_t *map = malloc(sizeof(map_t));
+    int no_layer = count_manifest_layer(filepath);
+    int no_object = count_manifest_object(filepath);
+    map->layer = malloc(sizeof(layer_t *) * no_layer);
+    map->map_object = malloc(sizeof(map_object_t *) * no_object);
+    map->layer[0] = NULL;
+    map->map_object[0] = NULL;
+    return map;
+}
+
+map_t *load_manifest(const char *filepath)
+{
     FILE *fp = fopen(filepath, "r");
     char *line = NULL;
     size_t len = 0;

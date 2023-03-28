@@ -17,6 +17,7 @@
     #include <SFML/System.h>
     #include <SFML/Audio.h>
 
+    #include "enum.h"
     #include "my_lib.h"
     #include "app.h"
     #include "splash_screen.h"
