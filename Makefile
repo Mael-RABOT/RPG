@@ -15,6 +15,8 @@ SRC	=	src/main.c	\
 		src/splash_screen/splash_screen.c	\
 		src/splash_screen/update_splash_screen.c	\
 		src/splash_screen/clean_splash_screen.c	\
+		src/fps/fps.c	\
+		src/fps/my_int_to_str.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

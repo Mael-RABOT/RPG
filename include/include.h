@@ -21,5 +21,6 @@
     #include "my_macros.h"
     #include "app.h"
     #include "splash_screen.h"
+    #include "fps.h"
 
 #endif //BASE_REPO_INCLUDE_H

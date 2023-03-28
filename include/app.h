@@ -24,6 +24,7 @@
         sfVideoMode videomode;
         sfRenderWindow *window;
         struct splash_screen *splash_screen;
+        struct fps *fps;
     } app_t;
 
 #endif //APP_H_

@@ -40,4 +40,9 @@
     /* event */
     int main_event(app_t *app);
 
+    /* fps */
+    void show_fps(app_t *app);
+    void get_fps(app_t *app);
+    char *my_int_to_str(int nb);
+
 #endif //BASE_REPO_PROTOTYPE_H

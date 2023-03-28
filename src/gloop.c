@@ -9,6 +9,9 @@
 
 int gloop(app_t *app)
 {
+    get_fps(app);
+    if (app->fps->key_f == 1)
+        show_fps(app);
     main_event(app);
     return 0;
 }
