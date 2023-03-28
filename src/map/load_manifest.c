@@ -33,8 +33,8 @@ int get_layer(map_t *map, const char *filepath)
 map_t *alloc_map(const char *filepath)
 {
     map_t *map = malloc(sizeof(map_t));
-    int no_layer = count_manifest_layer(filepath) + 1;
-    int no_object = count_manifest_object(filepath) + 1;
+    int no_layer = count_manifest_layer(filepath) + 2;
+    int no_object = count_manifest_object(filepath) + 2;
     map->layer = malloc(sizeof(layer_t *) * no_layer);
     map->map_object = malloc(sizeof(map_object_t *) * no_object);
     map->layer[0] = NULL;

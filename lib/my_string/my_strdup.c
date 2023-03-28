@@ -9,7 +9,7 @@
 
 char *my_strdup(const char *src)
 {
-    int len = my_strlen(src);
+    int len = my_strlen(src) + 1;
     char *buffer = malloc(sizeof(char) * len);
     buffer[0] = '\0';
     int i = 0;
