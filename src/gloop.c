@@ -14,13 +14,13 @@ int choose_state(app_t *app)
         case splash:
             splash_screen(app, app->window, app->splash_screen); break;
         case game:
-           gloop(app);
+           gloop(app); break;
     }
     return 0;
 }
 
 int gloop(app_t *app)
 {
-    display_map(app->window, app->map);
+    display_map(app->window, app->tutorial);
     return 0;
 }

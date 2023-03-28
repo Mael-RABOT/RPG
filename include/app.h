@@ -19,6 +19,8 @@
     } tile_t;
 
     typedef struct layer {
+        int id;
+        char *filepath;
         tile_t ***layer;
     } layer_t;
 

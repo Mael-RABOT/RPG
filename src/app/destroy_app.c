@@ -10,8 +10,6 @@
 int destroy_app(app_t *app)
 {
     sfRenderWindow_destroy(app->window);
-    destroy_map(app->map);
-    destroy_manifest(app->manifest);
     free(app);
     return 0;
 }

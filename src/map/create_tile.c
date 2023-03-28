@@ -7,14 +7,14 @@
 
 #include "../../include/prototype.h"
 
-tile_t *create_tile(int id, manifest_t *manifest, sfVector2i position,
+tile_t *create_tile(int id, map_object_t **map_object, sfVector2i position,
     sfVector2i size)
 {
     tile_t *tile = malloc(sizeof(tile_t));
     tile->id = id;
     tile->position = position;
-    tile->collision = get_collision(manifest, id);
-    tile->texture = get_texture(manifest, id);
+    tile->collision = get_collision(map_object, id);
+    tile->texture = get_texture(map_object, id);
     tile->tile = sfSprite_create();
     sfSprite_setTexture(tile->tile, tile->texture, sfFalse);
     sfVector2f real_position = {((position.x - position.y) * 32 / 2) +

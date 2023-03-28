@@ -15,7 +15,7 @@ int count_manifest_layer(const char *filepath)
     size_t len = 0;
     size_t read_size = 0;
     while ((read_size = getline(&line, &len, fp)) != -1) {
-        if (my_strncmp(line, "layer", 5))
+        if (my_strncmp(line, "layer", 5) == 0)
             count += 1;
     }
     free(line);
@@ -30,8 +30,9 @@ int count_manifest_object(const char *filepath)
     size_t len = 0;
     size_t read_size = 0;
     while ((read_size = getline(&line, &len, fp)) != -1) {
-        if (my_strncmp(line, "layer", 5))
+        if (my_strncmp(line, "layer", 5) == 0)
             continue;
+        count += 1;
     }
     free(line);
     return count;
