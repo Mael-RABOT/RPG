@@ -35,7 +35,7 @@ all:	$(EXE)
 
 $(EXE):
 		@make -C ./lib
-		$(CC) -o $(EXE) $(SRC) $(CFLAGS) $(FLAGS) $(LIB)
+		$(CC) -o $(EXE) $(SRC) $(CFLAGS) $(FLAGS) $(LIB) -g3
 
 clean:
 		@make -C ./lib clean

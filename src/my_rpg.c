@@ -12,7 +12,7 @@ int my_rpg(const int ac, const char **av)
     sfVideoMode videomode = {1920, 1080, 32};
     app_t *app = create_app(videomode);
     app->manifest = load_manifest("./manifest");
-    app->map = load_map_from_file("map.csv", app->manifest);
+    app->map = load_map_from_file("./maps/Tutorial_Ground.csv", app->manifest);
     while (sfRenderWindow_isOpen(app->window)) {
         sfRenderWindow_clear(app->window, sfBlack);
         gloop(app);
