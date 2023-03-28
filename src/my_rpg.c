@@ -16,7 +16,7 @@ int my_rpg(const int ac, const char **av)
     launch_startup_sound(app);
     while (sfRenderWindow_isOpen(app->window)) {
         sfRenderWindow_clear(app->window, sfBlack);
-        gloop(app);
+        choose_state(app);
         sfRenderWindow_display(app->window);
     }
     destroy_app(app);
