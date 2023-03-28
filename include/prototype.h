@@ -55,7 +55,7 @@
     int get_collision(map_object_t **map_object, int id);
     sfTexture *get_texture(map_object_t **map_object, int id);
 
-    manifest_t *load_manifest(const char *filepath);
+    map_t *load_manifest(const char *filepath);
 
     map_object_t *create_map_object(int id, char *path, int collision);
     int append_manifest(map_object_t **map_object, int id, char *path,
