@@ -13,10 +13,12 @@ SRC	=	src/main.c	\
 		src/window/create_window.c \
 		src/splash_screen/create_splash_screen.c	\
 		src/splash_screen/splash_screen.c	\
+		src/splash_screen/update_splash_screen.c	\
+		src/splash_screen/clean_splash_screen.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
-CC	=	gcc
+CC	=	gcc -g3
 CFLAGS	= -Wall -Werror
 FLAGS	= -lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio
 LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib

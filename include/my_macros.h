@@ -13,9 +13,11 @@
     #define RUINED_BACK         IMAGES "ruined_back.png"
     #define RUINED_FORE         IMAGES "ruined_fore.png"
     #define TITLE               IMAGES "title.png"
+    #define SKIP                IMAGES "skip.png"
 
     #define RUINED_FORE_WIDTH   2880
     #define RUINED_BACK_WIDTH   2880
+    #define SKIP_WIDTH          200
 
     #define FADE_ITERATION      50
 

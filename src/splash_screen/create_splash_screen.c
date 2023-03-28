@@ -45,6 +45,19 @@ ruined_back_t *create_ruined_back(sfRenderWindow *window)
     return ruined_back;
 }
 
+skip_t *create_skip(sfRenderWindow *window)
+{
+    skip_t *skip = malloc(sizeof(skip_t));
+    sfVector2u window_size = sfRenderWindow_getSize(window);
+
+    skip->sprite = sfSprite_create();
+    skip->texture = sfTexture_createFromFile(SKIP, NULL);
+    sfSprite_setTexture(skip->sprite, skip->texture, sfTrue);
+    sfSprite_setPosition(skip->sprite,
+    (sfVector2f){window_size.x / 2 - SKIP_WIDTH / 2, window_size.y - 200});
+    return skip;
+}
+
 splash_screen_t *create_splash_screen(sfRenderWindow *window)
 {
     splash_screen_t *splash_screen = malloc(sizeof(splash_screen_t));
@@ -52,9 +65,11 @@ splash_screen_t *create_splash_screen(sfRenderWindow *window)
     splash_screen->ruined_back = create_ruined_back(window);
     splash_screen->ruined_fore = create_ruined_fore();
     splash_screen->title = create_title(window);
+    splash_screen->skip = create_skip(window);
     splash_screen->clock = sfClock_create();
     splash_screen->seconds = 1.0;
     splash_screen->fade_index = 0;
-    splash_screen->index = 0;
+    splash_screen->fade_index_skip = 0;
+    splash_screen->increment = 1;
     return splash_screen;
 }

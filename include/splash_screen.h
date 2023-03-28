@@ -25,12 +25,19 @@
         sfTexture *texture;
     } title_t;
 
+    typedef struct skip {
+        sfSprite *sprite;
+        sfTexture *texture;
+    } skip_t;
+
     typedef struct splash_screen {
         ruined_back_t *ruined_back;
         ruined_fore_t *ruined_fore;
         title_t *title;
+        skip_t *skip;
         int fade_index;
-        int index;
+        int fade_index_skip;
+        int increment;
         sfClock *clock;
         sfTime time;
         float seconds;

@@ -9,9 +9,6 @@
 
 int gloop(app_t *app)
 {
-    app->state = splash;
-    if (app->state == splash)
-        splash_screen(app->window, app->splash_screen);
     main_event(app);
     return 0;
 }
