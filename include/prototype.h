@@ -47,8 +47,8 @@
         sfVector2i size);
     int destroy_tile(tile_t *tile);
     layer_t *load_map_from_file(const char *pathfile, int id,
-        map_object_t **map_object);
-    int display_map(sfRenderWindow *window, map_t *map);
+        map_object_t **map_object, entity_t *player);
+    int display_map(sfRenderWindow *window, map_t *map, entity_t *player);
 
     int destroy_map(map_t *map);
 
@@ -58,7 +58,7 @@
     int get_collision(map_object_t **map_object, int id);
     sfTexture *get_texture(map_object_t **map_object, int id);
 
-    map_t *load_manifest(const char *filepath);
+    map_t *load_manifest(const char *filepath, entity_t *player);
 
     map_object_t *create_map_object(int id, char *path, int collision);
     int append_manifest(map_object_t **map_object, int id, char *path,
@@ -81,5 +81,10 @@
     /* object */
     sprite_t *create_sprite(const char *pathfile);
     int free_sprite(sprite_t *sprite);
+
+    /* player */
+    entity_t *create_player(const char *pathfile);
+    int set_isometric_pos(entity_t *entity, sfVector2f position,
+        sfVector2f size);
 
 #endif //BASE_REPO_PROTOTYPE_H

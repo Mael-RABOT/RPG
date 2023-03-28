@@ -22,15 +22,20 @@ static int get_map_size(const char *pathfile)
 }
 
 static tile_t **load_map_line(map_object_t **map_object, char *line,
-    int line_nb, int size)
+    sfVector2i array_info, entity_t *player)
 {
     char **array = split(line, ',');
     int size_2 = len_array(array);
     int i = 0;
     tile_t **tile = malloc(sizeof(tile_t *) * (len_array(array) + 2));
     while (array[i] != NULL) {
+        if (my_strcmp(array[i], "P") == 0) {
+            set_isometric_pos(player, (sfVector2f){i, array_info.x},
+                (sfVector2f){size_2, array_info.y});
+            my_strcpy(array[i], "-1");
+        }
         tile[i] = create_tile(my_atoi(array[i]), map_object, (sfVector2i){i,
-            line_nb}, (sfVector2i){size_2, size});
+            array_info.x}, (sfVector2i){size_2, array_info.y});
         i += 1;
     }
     tile[i] = NULL;
@@ -39,7 +44,7 @@ static tile_t **load_map_line(map_object_t **map_object, char *line,
 }
 
 layer_t *load_map_from_file(const char *pathfile, int id,
-    map_object_t **map_object)
+    map_object_t **map_object, entity_t *player)
 {
     int size = get_map_size(pathfile);
     layer_t *layer = malloc(sizeof(layer_t));
@@ -53,7 +58,8 @@ layer_t *load_map_from_file(const char *pathfile, int id,
     int index = 0;
     while ((read_size = getline(&line, &len, fp)) != -1) {
         line[read_size - 1] = '\0';
-        layer->layer[index] = load_map_line(map_object, line, index, size);
+        layer->layer[index] = load_map_line(map_object, line,
+            (sfVector2i){index, size}, player);
         index += 1;
     }
     free(line);

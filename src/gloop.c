@@ -24,6 +24,6 @@ int choose_state(app_t *app)
 
 int gloop(app_t *app)
 {
-    display_map(app->window, app->tutorial);
+    display_map(app->window, app->tutorial, app->player);
     return 0;
 }

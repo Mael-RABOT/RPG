@@ -10,7 +10,7 @@
 //layer:path
 //id:texture_path:collision
 
-int get_layer(map_t *map, const char *filepath)
+int get_layer(map_t *map, const char *filepath, entity_t *player)
 {
     FILE *fp = fopen(filepath, "r");
     char *line = NULL;
@@ -22,7 +22,7 @@ int get_layer(map_t *map, const char *filepath)
         line[read_size - 1] = '\0';
         if (my_strncmp(line, "layer", 5) == 0) {
             map->layer[index] = load_map_from_file(&line[6], index,
-                map->map_object);
+                map->map_object, player);
             map->layer[index + 1] = NULL;
             index += 1;
         }
@@ -50,7 +50,7 @@ static int parse_line(map_object_t **map_object, char *line)
     return 0;
 }
 
-map_t *load_manifest(const char *filepath)
+map_t *load_manifest(const char *filepath, entity_t *player)
 {
     map_t *map = alloc_map(filepath);
     FILE *fp = fopen(filepath, "r");
@@ -65,6 +65,6 @@ map_t *load_manifest(const char *filepath)
     }
     free(line);
     fclose(fp);
-    get_layer(map, filepath);
+    get_layer(map, filepath, player);
     return map;
 }

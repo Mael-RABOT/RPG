@@ -38,6 +38,7 @@
 
     typedef struct entity {
         sprite_t *sprite;
+        int layer;
     } entity_t;
 
     typedef struct app {
