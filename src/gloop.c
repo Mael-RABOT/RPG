@@ -14,7 +14,7 @@ int choose_state(app_t *app)
         case splash:
             splash_screen(app, app->window, app->splash_screen); break;
         case game:
-           gloop(app);
+           gloop(app); break;
     }
     return 0;
 }
