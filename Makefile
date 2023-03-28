@@ -8,14 +8,15 @@
 SRC	=	src/main.c	\
 		src/gloop.c \
 		src/my_rpg.c \
-		src/map/load_map.c \
+		\
+		src/map/create_map_object.c \
 		src/map/create_tile.c \
 		src/map/display_map.c \
-		src/map/destroy_map.c \
-		src/manifest/load_manifest.c \
-		src/manifest/create_manifest.c \
-		src/manifest/extract_from_manifest.c \
-		src/manifest/destroy_manifest.c \
+		src/map/extract_map_object.c \
+		src/map/get_manifest_info.c \
+		src/map/load_manifest.c \
+		src/map/load_map.c \
+		\
 		src/event/main_event.c \
 		src/app/create_app.c \
 		src/app/destroy_app.c \

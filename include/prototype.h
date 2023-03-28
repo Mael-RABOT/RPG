@@ -41,23 +41,26 @@
     int clean_splash_screen(app_t *app);
 
     /* map*/
-    tile_t *create_tile(int id, manifest_t *manifest, sfVector2i position,
+    tile_t *create_tile(int id, map_object_t **map_object, sfVector2i position,
         sfVector2i size);
     int destroy_tile(tile_t *tile);
-    map_t *load_map_from_file(const char *pathfile, manifest_t *manifest);
+    layer_t *load_map_from_file(const char *pathfile, int id,
+        map_object_t **map_object);
     int display_map(sfRenderWindow *window, map_t *map);
 
     int destroy_map(map_t *map);
 
-    /* manifest */
-    int get_collision(manifest_t *manifest, int id);
-    sfTexture *get_texture(manifest_t *manifest, int id);
+    int count_manifest_object(const char *filepath);
+    int count_manifest_layer(const char *filepath);
 
-    manifest_t *load_manifest(const char *filepath);
-    manifest_t *create_manifest(int id, char *path, int collision);
-    manifest_t *append_manifest(manifest_t *manifest, int id, char *path,
+    int get_collision(map_object_t **map_object, int id);
+    sfTexture *get_texture(map_object_t **map_object, int id);
+
+    map_t *load_manifest(const char *filepath);
+
+    map_object_t *create_map_object(int id, char *path, int collision);
+    int append_manifest(map_object_t **map_object, int id, char *path,
         int collision);
-    int destroy_manifest(manifest_t *manifest);
 
     /* array manipulation */
     int print_array(char **array);
