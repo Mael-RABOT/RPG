@@ -7,7 +7,8 @@
 
 #include "../../include/prototype.h"
 
-tile_t *create_tile(int id, manifest_t *manifest, sfVector2i position, int size)
+tile_t *create_tile(int id, manifest_t *manifest, sfVector2i position,
+    sfVector2i size)
 {
     tile_t *tile = malloc(sizeof(tile_t));
     tile->id = id;
@@ -16,14 +17,8 @@ tile_t *create_tile(int id, manifest_t *manifest, sfVector2i position, int size)
     tile->texture = get_texture(manifest, id);
     tile->tile = sfSprite_create();
     sfSprite_setTexture(tile->tile, tile->texture, sfFalse);
-    sfVector2f real_position;
-    if (position.y % 2 == 0) {
-        real_position = (sfVector2f){position.x * 32, (position.y * 32 -
-            position.y * 24)};
-    } else {
-        real_position = (sfVector2f){position.x * 32 + 16, (position.y * 32 -
-            position.y * 24)};
-    }
+    sfVector2f real_position = {((position.x - position.y) * 32 / 2) +
+        size.x * 32, ((position.x + position.y) * 32 / 4)};
     sfSprite_setPosition(tile->tile, real_position);
     return tile;
 }

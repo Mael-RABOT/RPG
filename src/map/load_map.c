@@ -25,11 +25,12 @@ static tile_t **load_map_line(manifest_t *manifest, char *line, int line_nb,
     int size)
 {
     char **array = split(line, ',');
+    int size_2 = len_array(array);
     int i = 0;
     tile_t **tile = malloc(sizeof(tile_t *) * (len_array(array) + 2));
     while (array[i] != NULL) {
         tile[i] = create_tile(my_atoi(array[i]), manifest, (sfVector2i){i,
-            line_nb}, size);
+            line_nb}, (sfVector2i){size_2, size});
         i += 1;
     }
     tile[i] = NULL;
