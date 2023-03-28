@@ -15,5 +15,7 @@ app_t *create_app(sfVideoMode videomode)
     app->state = splash;
     app->splash_screen = create_splash_screen(app->window);
     sfRenderWindow_setFramerateLimit(app->window, 60);
+    app->fps = malloc(sizeof(app_t));
+    app->fps->key_f = 0;
     return app;
 }

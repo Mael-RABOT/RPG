@@ -8,7 +8,7 @@
 #ifndef APP_H_
     #define APP_H_
 
-    #include "prototype.h"
+    #include "include.h"
 
     typedef struct tile {
         int id;
@@ -37,12 +37,13 @@
     } map_t;
 
     typedef struct app {
+        int state;
         sfVideoMode videomode;
         sfRenderWindow *window;
         map_t *tutorial;
-        state_t state;
         struct splash_screen *splash_screen;
         sfMusic *music;
+        struct fps *fps;
     } app_t;
 
 #endif //APP_H_

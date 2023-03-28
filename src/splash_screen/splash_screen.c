@@ -10,7 +10,7 @@
 int skip_splash_screen(app_t *app)
 {
     if (app->splash_screen->fade_index >= 255) {
-        app->state = main_menu;
+        app->state = game;
         clean_splash_screen(app);
     }
     return 0;

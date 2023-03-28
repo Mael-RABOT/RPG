@@ -18,6 +18,7 @@ static int display_layer(sfRenderWindow *window, layer_t *layer)
         }
         i += 1;
     }
+    return 0;
 }
 
 int display_map(sfRenderWindow *window, map_t *map)

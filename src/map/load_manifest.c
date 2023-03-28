@@ -27,6 +27,7 @@ int get_layer(map_t *map, const char *filepath)
             index += 1;
         }
     }
+    return 0;
 }
 
 map_t *alloc_map(const char *filepath)

@@ -22,10 +22,27 @@
     app_t *create_app(sfVideoMode videomode);
     int destroy_app(app_t *app);
 
+    /* splash_screen */
+    splash_screen_t *create_splash_screen(sfRenderWindow *window);
+    int splash_screen(app_t *app, sfRenderWindow *window,
+    splash_screen_t *splash_screen);
+    int skip_splash_screen(app_t *app);
+
+    /* update_splash_screen */
+    int update_ruined_back(sfRenderWindow *window,
+    splash_screen_t *splash_screen);
+    int update_ruined_fore(sfRenderWindow *window,
+    splash_screen_t *splash_screen);
+    int update_title(sfRenderWindow *window, splash_screen_t *splash_screen);
+    int update_skip(sfRenderWindow *window, splash_screen_t *splash_screen);
+
+    /* clean_splash_screen */
+    int clean_splash_screen(app_t *app);
+
     /* event */
     int main_event(app_t *app);
 
-    /* update_splash_screen */
+    /* update_splash_screen 
     splash_screen_t *create_splash_screen(sfRenderWindow *window);
     int splash_screen(app_t *app, sfRenderWindow *window,
     splash_screen_t *splash_screen);
@@ -35,10 +52,10 @@
     int update_ruined_fore(sfRenderWindow *window,
         splash_screen_t *splash_screen);
     int update_title(sfRenderWindow *window, splash_screen_t *splash_screen);
-    int update_skip(sfRenderWindow *window, splash_screen_t *splash_screen);
+    int update_skip(sfRenderWindow *window, splash_screen_t *splash_screen);*/
 
     /* clean_splash_screen */
-    int clean_splash_screen(app_t *app);
+    //int clean_splash_screen(app_t *app);
 
     /* map*/
     tile_t *create_tile(int id, map_object_t **map_object, sfVector2i position,
@@ -67,6 +84,11 @@
     int len_array(char **array);
     int free_array(char **array);
     char **split(char *arg, char separator);
+
+    /* fps */
+    void show_fps(app_t *app);
+    void get_fps(app_t *app);
+    char *my_int_to_str(int nb);
 
     /* Musics */
     int launch_startup_sound(app_t *app);
