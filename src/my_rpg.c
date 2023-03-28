@@ -19,7 +19,6 @@ int my_rpg(const int ac, const char **av)
         gloop(app);
         sfRenderWindow_display(app->window);
     }
-    destroy_sounds(app);
     destroy_app(app);
     return 0;
 }

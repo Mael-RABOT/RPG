@@ -66,6 +66,5 @@
 
     /* Musics */
     int launch_startup_sound(app_t *app);
-    void destroy_sounds(app_t *app);
 
 #endif //BASE_REPO_PROTOTYPE_H
