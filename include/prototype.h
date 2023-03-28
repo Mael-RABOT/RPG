@@ -25,6 +25,10 @@
     int main_event(app_t *app);
 
     /* update_splash_screen */
+    splash_screen_t *create_splash_screen(sfRenderWindow *window);
+    int splash_screen(app_t *app, sfRenderWindow *window,
+    splash_screen_t *splash_screen);
+    int skip_splash_screen(app_t *app);
     int update_ruined_back(sfRenderWindow *window,
         splash_screen_t *splash_screen);
     int update_ruined_fore(sfRenderWindow *window,
