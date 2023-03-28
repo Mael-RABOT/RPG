@@ -30,6 +30,7 @@ SRC	=	src/main.c	\
         src/sounds/musics/startup_sound.c \
 		src/fps/fps.c	\
 		src/fps/my_int_to_str.c	\
+		src/object/sprite.c
 
 OBJ	=	$(SRC:.c=.o)
 

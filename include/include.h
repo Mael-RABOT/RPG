@@ -17,6 +17,7 @@
     #include <SFML/System.h>
     #include <SFML/Audio.h>
 
+    #include "object.h"
     #include "fps.h"
     #include "enum.h"
     #include "my_lib.h"

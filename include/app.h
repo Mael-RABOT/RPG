@@ -36,11 +36,16 @@
         layer_t **layer;
     } map_t;
 
+    typedef struct entity {
+        sprite_t *sprite;
+    } entity_t;
+
     typedef struct app {
         int state;
         sfVideoMode videomode;
         sfRenderWindow *window;
         map_t *tutorial;
+        entity_t *player;
         struct splash_screen *splash_screen;
         sfMusic *music;
         struct fps *fps;
