@@ -64,4 +64,7 @@
     int free_array(char **array);
     char **split(char *arg, char separator);
 
+    /* Musics */
+    int launch_startup_sound(app_t *app);
+
 #endif //BASE_REPO_PROTOTYPE_H

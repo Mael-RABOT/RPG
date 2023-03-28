@@ -18,6 +18,7 @@
     #include <SFML/Audio.h>
 
     #include "my_lib.h"
+    #include "prototype.h"
     #include "app.h"
     #include "splash_screen.h"
     #include "my_macros.h"

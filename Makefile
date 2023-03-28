@@ -25,7 +25,8 @@ SRC	=	src/main.c	\
 		src/splash_screen/create_splash_screen.c    \
         src/splash_screen/splash_screen.c    \
         src/splash_screen/update_splash_screen.c    \
-        src/splash_screen/clean_splash_screen.c
+        src/splash_screen/clean_splash_screen.c \
+        src/sounds/musics/startup_sound.c \
 
 OBJ	=	$(SRC:.c=.o)
 

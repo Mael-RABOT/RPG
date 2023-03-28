@@ -13,6 +13,7 @@ int my_rpg(const int ac, const char **av)
     app_t *app = create_app(videomode);
     app->manifest = load_manifest("./maps/manifest");
     app->map = load_map_from_file("./maps/Tutorial_Ground.csv", app->manifest);
+    launch_startup_sound(app);
     while (sfRenderWindow_isOpen(app->window)) {
         sfRenderWindow_clear(app->window, sfBlack);
         gloop(app);

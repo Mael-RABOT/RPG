@@ -9,6 +9,7 @@
     #define MY_MACROS_H_
 
     #define IMAGES              "assets/images/"
+    #define MUSICS              "assets/sounds/musics/"
 
     #define RUINED_BACK         IMAGES "ruined_back.png"
     #define RUINED_FORE         IMAGES "ruined_fore.png"
@@ -20,5 +21,7 @@
     #define SKIP_WIDTH          200
 
     #define FADE_ITERATION      50
+
+    #define INTRO_MUSIC         MUSICS "intro.ogg"
 
 #endif /* !MY_MACROS_H_ */
