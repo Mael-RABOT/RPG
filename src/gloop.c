@@ -7,12 +7,20 @@
 
 #include "../include/prototype.h"
 
-int gloop(app_t *app)
+int choose_state(app_t *app)
 {
     main_event(app);
-    if (app->state == splash)
-            splash_screen(app, app->window, app->splash_screen);
-    else
-        display_map(app->window, app->map);
+    switch (app->state) {
+        case splash:
+            splash_screen(app, app->window, app->splash_screen); break;
+        case game:
+           gloop(app);
+    }
+    return 0;
+}
+
+int gloop(app_t *app)
+{
+    display_map(app->window, app->map);
     return 0;
 }

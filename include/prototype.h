@@ -12,6 +12,7 @@
 
     /* main */
     int my_rpg(const int ac, const char **av);
+    int choose_state(app_t *app);
     int gloop(app_t *app);
 
     /* window */
