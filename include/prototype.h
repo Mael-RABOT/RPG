@@ -68,4 +68,7 @@
     /* Musics */
     int launch_startup_sound(app_t *app);
 
+    /* Pathfinding */
+    int pathfinder(app_t *app);
+
 #endif //BASE_REPO_PROTOTYPE_H
