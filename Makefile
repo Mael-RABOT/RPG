@@ -28,7 +28,6 @@ SRC	=	src/main.c	\
         src/splash_screen/update_splash_screen.c  \
         src/splash_screen/clean_splash_screen.c \
         src/sounds/musics/startup_sound.c \
-        src/pathfinding/pathfinder.c \
 		src/fps/fps.c \
 		src/fps/my_int_to_str.c	\
 		src/player/create_player.c \

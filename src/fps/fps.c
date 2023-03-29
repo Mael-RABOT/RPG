@@ -9,17 +9,17 @@
 
 void show_fps(app_t *app)
 {
-    sfFont *font = sfFont_createFromFile(QUICKSAND_REGULAR);
+    sfFont *font = sfFont_createFromFile(FFFFORWA);
     sfText *text = sfText_create();
 
     sfText_setFont(text, font);
-    sfText_setCharacterSize(text, 30);
+    sfText_setCharacterSize(text, 10);
     sfText_setFillColor(text, sfGreen);
     sfText_setString(text, my_int_to_str(app->fps->fps));
     sfText_setPosition(text, (sfVector2f) {10, 10});
     sfRenderWindow_drawText(app->window, text, NULL);
     sfText_setString(text, "FPS");
-    sfText_setPosition(text, (sfVector2f) {60, 10});
+    sfText_setPosition(text, (sfVector2f) {30, 10});
     sfRenderWindow_drawText(app->window, text, NULL);
     sfText_destroy(text);
     sfFont_destroy(font);

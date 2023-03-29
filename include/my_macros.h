@@ -25,12 +25,16 @@
 
     #define QUICKSAND_BOLD      FONTS  "quicksand/Quicksand-Bold.otf"
     #define QUICKSAND_REGULAR   FONTS  "quicksand/Quicksand-Regular.otf"
+    #define FFFFORWA            FONTS "FFFFORWA.TTF"
 
     #define RUINED_FORE_WIDTH   2880
     #define RUINED_BACK_WIDTH   2880
     #define SKIP_WIDTH          200
 
     #define FADE_ITERATION      50
+
+
+    #define SHOW_FPS_DEFAULT    1
 
     #define INTRO_MUSIC         MUSICS "intro.ogg"
 
