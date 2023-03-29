@@ -13,7 +13,7 @@
     typedef struct tile {
         int id;
         int collision;
-        sfVector2i position;
+        sfVector2f position;
         sfTexture *texture;
         sfSprite *tile;
     } tile_t;
@@ -39,6 +39,7 @@
 
     typedef struct entity {
         sprite_t *sprite;
+        sfVector2f position;
         int layer;
     } entity_t;
 

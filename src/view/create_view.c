@@ -10,7 +10,6 @@
 sfView *create_view(sfVector2f position, sfVector2f size)
 {
     sfView *view = sfView_create();
-    sfVector2f new_pos = get_isometric_pos(position, size);
     sfView_setCenter(view, position);
     sfView_setSize(view, (sfVector2f){426, 240});
     return view;

@@ -35,6 +35,7 @@ SRC	=	src/main.c	\
 		src/fps/my_int_to_str.c	\
 		src/entity/create_entity.c \
 		src/entity/player_event.c \
+		src/entity/detect_collision.c \
 		src/object/sprite.c \
 		src/view/create_view.c
 
