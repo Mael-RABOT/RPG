@@ -90,4 +90,10 @@
     int set_isometric_pos(entity_t *entity, sfVector2f position,
         sfVector2f size);
 
+    /* Background */
+    void change_background(background_t *background, char *filepath);
+    background_t *init_background(void);
+    void display_background(app_t *app);
+    void destroy_background(app_t *app);
+
 #endif //BASE_REPO_PROTOTYPE_H

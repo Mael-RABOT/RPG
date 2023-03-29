@@ -9,6 +9,7 @@
 
 int destroy_app(app_t *app)
 {
+    destroy_background(app);
     sfMusic_destroy(app->music);
     sfRenderWindow_destroy(app->window);
     free(app);

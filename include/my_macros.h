@@ -1,22 +1,19 @@
 /*
 ** EPITECH PROJECT, 2023
-<<<<<<< HEAD
 ** B-MUL-200-LYN-2-1-myrpg-mathieu.borel
 ** File description:
 ** my_macros.h
-=======
-** B-MUL-200-LYN-2-1-myrpg-mael.rabot
-** File description:
-** my_macros
->>>>>>> origin/fps
 */
 
 #ifndef MY_MACROS_H_
     #define MY_MACROS_H_
 
-    #define IMAGES              "assets/images/"
-    #define MUSICS              "assets/sounds/musics/"
-    #define FONTS               "assets/fonts/"
+    #define DEFAULT_GAME_STATE  4
+
+    #define IMAGES              "./assets/images/"
+    #define MUSICS              "./assets/sounds/musics/"
+    #define FONTS               "./assets/fonts/"
+    #define BACKGROUND          "./assets/backgrounds/"
 
     #define RUINED_BACK         IMAGES "ruined_back.png"
     #define RUINED_FORE         IMAGES "ruined_fore.png"
@@ -37,5 +34,7 @@
     #define SHOW_FPS_DEFAULT    1
 
     #define INTRO_MUSIC         MUSICS "intro.ogg"
+
+    #define NIGHT_SKY           BACKGROUND "night_sky.png"
 
 #endif /* !MY_MACROS_H_ */

@@ -32,6 +32,8 @@ SRC	=	src/main.c	\
 		src/fps/my_int_to_str.c	\
 		src/player/create_player.c \
 		src/object/sprite.c \
+		src/background/background.c \
+		src/background/destroy_background.c \
 
 OBJ	=	$(SRC:.c=.o)
 

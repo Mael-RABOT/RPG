@@ -41,6 +41,11 @@
         int layer;
     } entity_t;
 
+    typedef struct background {
+        sfTexture *texture;
+        sfSprite *sprite;
+    } background_t;
+
     typedef struct app {
         int state;
         sfVideoMode videomode;
@@ -50,6 +55,7 @@
         struct splash_screen *splash_screen;
         sfMusic *music;
         struct fps *fps;
+        background_t *background;
     } app_t;
 
 #endif //APP_H_
