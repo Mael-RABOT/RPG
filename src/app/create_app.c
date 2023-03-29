@@ -10,7 +10,7 @@
 fps_t *create_fps_counter(void)
 {
     fps_t *fps = malloc(sizeof(fps_t));
-    fps->key_f = 0;
+    fps->key_f = SHOW_FPS_DEFAULT;
     return fps;
 }
 

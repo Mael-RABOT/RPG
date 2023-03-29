@@ -6,11 +6,14 @@
 */
 
 #include "../../include/prototype.h"
+#include <errno.h>
 
 static int get_map_size(const char *pathfile)
 {
     int no = 0;
+    errno = 0;
     FILE *fp = fopen(pathfile, "r");
+    printf(">%s<\n", pathfile);
     char *line = NULL;
     size_t len = 0;
     while (getline(&line, &len, fp) != -1) {

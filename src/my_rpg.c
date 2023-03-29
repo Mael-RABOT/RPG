@@ -27,7 +27,7 @@ int my_rpg(const int ac, const char **av)
     app_t *app = create_app(videomode);
     launch_startup_sound(app);
     create_player(app);
-    app->tutorial = load_manifest("./maps/manifest", app->player);
+    app->tutorial = load_manifest("./maps/Hub/manifest", app->player);
     create_player_view(app);
     app->state = game;
     while (sfRenderWindow_isOpen(app->window)) {

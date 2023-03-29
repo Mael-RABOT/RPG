@@ -82,6 +82,9 @@
     /* Musics */
     int launch_startup_sound(app_t *app);
 
+    /* Pathfinding */
+    int pathfinder(app_t *app);
+
     /* object */
     sprite_t *create_sprite(const char *pathfile);
     int destroy_sprite(sprite_t *sprite);
