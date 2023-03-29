@@ -81,11 +81,11 @@
     /* Pathfinding */
     int pathfinder(app_t *app);
 
-    /* object */
+    /* Object */
     sprite_t *create_sprite(const char *pathfile);
     int free_sprite(sprite_t *sprite);
 
-    /* player */
+    /* Player */
     entity_t *create_player(const char *pathfile);
     int set_isometric_pos(entity_t *entity, sfVector2f position,
         sfVector2f size);
@@ -95,5 +95,8 @@
     background_t *init_background(void);
     void display_background(app_t *app);
     void destroy_background(app_t *app);
+
+    /* Particle */
+    particle_t *add_particle(app_t *app, sfVector2f position);
 
 #endif //BASE_REPO_PROTOTYPE_H

@@ -25,5 +25,6 @@
     #include "app.h"
     #include "splash_screen.h"
     #include "my_macros.h"
+    #include "particle.h"
 
 #endif //BASE_REPO_INCLUDE_H
