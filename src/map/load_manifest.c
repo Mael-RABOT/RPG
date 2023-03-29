@@ -10,6 +10,26 @@
 //layer:path
 //id:texture_path:collision
 
+static sfVector2f get_map_dimension(const char *pathfile)
+{
+    sfVector2f dimension;
+    FILE *fp = fopen(pathfile, "r");
+    char *line = NULL;
+    size_t len = 0;
+    size_t read_size = 0;
+    int index = 0;
+    while ((read_size = getline(&line, &len, fp)) != -1) {
+        line[read_size - 1] = '\0';
+        char **array = split(line, ',');
+        dimension.x = len_array(array);
+        free_array(array);
+        index += 1;
+    }
+    free(line);
+    dimension.y = index;
+    return dimension;
+}
+
 int get_layer(map_t *map, const char *filepath, entity_t *player)
 {
     FILE *fp = fopen(filepath, "r");
@@ -24,6 +44,7 @@ int get_layer(map_t *map, const char *filepath, entity_t *player)
             map->layer[index] = load_map_from_file(&line[6], index,
                 map->map_object, player);
             map->layer[index + 1] = NULL;
+            map->size = get_map_dimension(&line[6]);
             index += 1;
         }
     }

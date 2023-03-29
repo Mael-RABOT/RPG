@@ -7,13 +7,28 @@
 
 #include "../include/prototype.h"
 
+static int create_player(app_t *app)
+{
+    app->player = create_entity("./assets/player_debug.png");
+        return 0;
+}
+
+static int create_player_view(app_t *app)
+{
+    sfVector2f position = sfSprite_getPosition(app->player->sprite->sprite);
+    app->view = create_view(position, app->tutorial->size);
+    sfRenderWindow_setView(app->window, app->view);
+    return 0;
+}
+
 int my_rpg(const int ac, const char **av)
 {
     sfVideoMode videomode = {1920, 1080, 32};
     app_t *app = create_app(videomode);
     launch_startup_sound(app);
-    app->player = create_entity("./assets/player_debug.png");
+    create_player(app);
     app->tutorial = load_manifest("./maps/manifest", app->player);
+    create_player_view(app);
     app->state = game;
     while (sfRenderWindow_isOpen(app->window)) {
         sfRenderWindow_clear(app->window, sfBlack);

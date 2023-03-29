@@ -77,6 +77,7 @@
     void show_fps(app_t *app);
     void get_fps(app_t *app);
     char *my_int_to_str(int nb);
+    void destroy_fps(fps_t *fps);
 
     /* Musics */
     int launch_startup_sound(app_t *app);
@@ -88,8 +89,14 @@
     /* entity */
     entity_t *create_entity(const char *pathfile);
     int destroy_entity(entity_t *entity);
+    int move_player(sfView *view, map_t *map, entity_t *player, sfEvent event);
+
+    /* view */
+    sfView *create_view(sfVector2f position, sfVector2f size);
+
+    /* conversion */
     int set_isometric_pos(entity_t *entity, sfVector2f position,
         sfVector2f size);
-    int move_player(map_t *map, entity_t *player, sfEvent event);
+    sfVector2f get_isometric_pos(sfVector2f position, sfVector2f size);
 
 #endif //BASE_REPO_PROTOTYPE_H

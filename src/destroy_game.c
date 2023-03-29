@@ -9,10 +9,9 @@
 
 int destroy_game(app_t *app)
 {
-    destroy_app(app);
     destroy_entity(app->player);
     destroy_map(app->tutorial);
-    //sfMusic_destroy(app->music);
-    free(app);
+    destroy_fps(app->fps);
+    destroy_app(app);
     return 0;
 }

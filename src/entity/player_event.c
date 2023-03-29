@@ -7,14 +7,7 @@
 
 #include "../../include/prototype.h"
 
-/*
- * 25 up
- * 18 down
- * 16 left
- * 3 right
-*/
-
-int move_player(map_t *map, entity_t *player, sfEvent event)
+int move_player(sfView *view, map_t *map, entity_t *player, sfEvent event)
 {
     if (event.type == sfEvtKeyPressed) {
         sfVector2f position = sfSprite_getPosition(player->sprite->sprite);
@@ -40,6 +33,8 @@ int move_player(map_t *map, entity_t *player, sfEvent event)
                 break;
         }
         sfSprite_setPosition(player->sprite->sprite, position);
+        sfVector2f new_pos = get_isometric_pos(position, map->size);
+        sfView_setCenter(view, position);
     }
     return 0;
 }

@@ -60,6 +60,7 @@ layer_t *load_map_from_file(const char *pathfile, int id,
         line[read_size - 1] = '\0';
         layer->layer[index] = load_map_line(map_object, line,
             (sfVector2i){index, size}, player);
+        layer->layer[index + 1] = NULL;
         index += 1;
     }
     free(line);

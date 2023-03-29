@@ -34,7 +34,7 @@
     typedef struct map {
         map_object_t **map_object;
         layer_t **layer;
-        sfVector2i size;
+        sfVector2f size;
     } map_t;
 
     typedef struct entity {
@@ -50,7 +50,8 @@
         entity_t *player;
         struct splash_screen *splash_screen;
         sfMusic *music;
-        struct fps *fps;
+        fps_t *fps;
+        sfView *view;
     } app_t;
 
 #endif //APP_H_

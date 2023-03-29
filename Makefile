@@ -8,6 +8,7 @@
 SRC	=	src/main.c	\
 		src/gloop.c \
 		src/my_rpg.c \
+		src/conversion.c \
 		src/destroy_game.c \
 		\
 		src/map/create_map_object.c \
@@ -34,7 +35,8 @@ SRC	=	src/main.c	\
 		src/fps/my_int_to_str.c	\
 		src/entity/create_entity.c \
 		src/entity/player_event.c \
-		src/object/sprite.c
+		src/object/sprite.c \
+		src/view/create_view.c
 
 OBJ	=	$(SRC:.c=.o)
 
