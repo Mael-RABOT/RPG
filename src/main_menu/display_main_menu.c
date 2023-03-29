@@ -7,6 +7,21 @@
 
 #include "../../include/prototype.h"
 
+int display_main_menu_buttons(app_t *app)
+{
+    if (app->main_menu->fade_index == 255) {
+        sfRenderWindow_drawRectangleShape(app->window,
+        app->main_menu->play->rect, NULL);
+        sfRenderWindow_drawRectangleShape(app->window,
+        app->main_menu->resume->rect, NULL);
+        sfRenderWindow_drawRectangleShape(app->window,
+        app->main_menu->settings->rect, NULL);
+        sfRenderWindow_drawRectangleShape(app->window,
+        app->main_menu->quit->rect, NULL);
+    }
+    return 0;
+}
+
 int display_main_menu(app_t *app)
 {
     if (app->main_menu->fade_index < 255) {
@@ -20,5 +35,6 @@ int display_main_menu(app_t *app)
     NULL);
     sfRenderWindow_drawSprite(app->window, app->main_menu->title->sprite,
     NULL);
+    display_main_menu_buttons(app);
     return 0;
 }

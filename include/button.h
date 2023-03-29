@@ -19,8 +19,15 @@
         NONE = 0,
         HOVER,
         PRESSED,
-        RELEASED
+        RELEASED,
+        GRAYED,
+        CHECKED
     } button_state_t;
+
+    typedef struct button_info {
+        sfVector2f position;
+        sfVector2f size;
+    } button_info_t;
 
     typedef struct button {
         sfRectangleShape *rect;

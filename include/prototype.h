@@ -67,10 +67,14 @@
     /* main_menu */
     main_menu_t *create_main_menu(sfRenderWindow *window);
     int display_main_menu(app_t *app);
-    button_t *create_button(sfVector2f position, sfVector2f size,
+    button_t *create_button(button_info_t *info, int nb_element,
     char *pathfile, void (*action)(app_t *app, int));
     int is_button_hover(button_t *button, sfMouseMoveEvent *mouse);
     int is_button_released(button_t *button, sfMouseButtonEvent *mouse);
     int is_button_clicked(button_t *button, sfMouseButtonEvent *mouse);
+    void play(app_t *app, int i);
+    void resume(app_t *app, int i);
+    void settings_b(app_t *app, int i);
+    void quit(app_t *app, int i);
 
 #endif //BASE_REPO_PROTOTYPE_H
