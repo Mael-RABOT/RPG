@@ -1,6 +1,7 @@
 id:texture_path:collision
-layer:./maps/Tutorial_Ground.csv
-layer:./maps/Tutorial_Wall.csv
+layer:./maps/hub_Tile Layer 1.csv
+layer:./maps/hub_Tile Layer 2.csv
+layer:./maps/hub_Tile Layer 3.csv
 0:./assets/nature/water.png:0
 1:./assets/nature/grass.png:1
 2:./assets/nature/dirt.png:1
