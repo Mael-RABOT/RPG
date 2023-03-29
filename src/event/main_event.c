@@ -38,7 +38,9 @@ int main_event(app_t *app)
             sfRenderWindow_close(app->window);
         if (app->state == splash && event.type == sfEvtKeyPressed)
             skip_splash_screen(app);
-        if (app->state == main_menu && (event.type == sfEvtMouseButtonPressed || event.type == sfEvtMouseButtonReleased || event.type == sfEvtMouseMoved))
+        if (app->state == main_menu && (event.type == sfEvtMouseButtonPressed ||
+        event.type == sfEvtMouseButtonReleased ||
+        event.type == sfEvtMouseMoved))
             main_menu_event(app->main_menu, event.mouseButton, event.mouseMove);
     }
     return 0;
