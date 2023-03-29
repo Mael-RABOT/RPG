@@ -34,6 +34,7 @@
     typedef struct map {
         map_object_t **map_object;
         layer_t **layer;
+        sfVector2i size;
     } map_t;
 
     typedef struct entity {

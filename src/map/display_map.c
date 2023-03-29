@@ -26,9 +26,8 @@ int display_map(sfRenderWindow *window, map_t *map, entity_t *player)
     int i = 0;
     while (map->layer[i] != NULL) {
         display_layer(window, map->layer[i]);
-        if (i == player->layer)
-            sfRenderWindow_drawSprite(window, player->sprite->sprite, NULL);
         i += 1;
     }
+    sfRenderWindow_drawSprite(window, player->sprite->sprite, NULL);
     return 0;
 }

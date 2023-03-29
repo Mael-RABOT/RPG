@@ -15,7 +15,14 @@ int set_isometric_pos(entity_t *entity, sfVector2f position, sfVector2f size)
     return 0;
 }
 
-entity_t *create_player(const char *pathfile)
+int destroy_entity(entity_t *entity)
+{
+    destroy_sprite(entity->sprite);
+    free(entity);
+    return 0;
+}
+
+entity_t *create_entity(const char *pathfile)
 {
     entity_t *player = malloc(sizeof(entity_t));
     player->sprite = create_sprite(pathfile);

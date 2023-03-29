@@ -13,6 +13,7 @@
         main_menu,
         settings,
         pause_menu,
+        tutorial,
         game,
         cinematics
     } state_t;

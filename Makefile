@@ -8,6 +8,7 @@
 SRC	=	src/main.c	\
 		src/gloop.c \
 		src/my_rpg.c \
+		src/destroy_game.c \
 		\
 		src/map/create_map_object.c \
 		src/map/create_tile.c \
@@ -16,6 +17,7 @@ SRC	=	src/main.c	\
 		src/map/get_manifest_info.c \
 		src/map/load_manifest.c \
 		src/map/load_map.c \
+		src/map/destroy_map.c \
 		\
 		src/event/main_event.c \
 		src/app/create_app.c \
@@ -30,7 +32,8 @@ SRC	=	src/main.c	\
         src/sounds/musics/startup_sound.c \
 		src/fps/fps.c \
 		src/fps/my_int_to_str.c	\
-		src/player/create_player.c \
+		src/entity/create_entity.c \
+		src/entity/player_event.c \
 		src/object/sprite.c
 
 OBJ	=	$(SRC:.c=.o)

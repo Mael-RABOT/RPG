@@ -21,6 +21,7 @@
     /* app */
     app_t *create_app(sfVideoMode videomode);
     int destroy_app(app_t *app);
+    int destroy_game(app_t *app);
 
     /* splash_screen */
     splash_screen_t *create_splash_screen(sfRenderWindow *window);
@@ -64,6 +65,8 @@
     int append_manifest(map_object_t **map_object, int id, char *path,
         int collision);
 
+    int destroy_map(map_t *map);
+
     /* array manipulation */
     int print_array(char **array);
     int len_array(char **array);
@@ -80,11 +83,13 @@
 
     /* object */
     sprite_t *create_sprite(const char *pathfile);
-    int free_sprite(sprite_t *sprite);
+    int destroy_sprite(sprite_t *sprite);
 
-    /* player */
-    entity_t *create_player(const char *pathfile);
+    /* entity */
+    entity_t *create_entity(const char *pathfile);
+    int destroy_entity(entity_t *entity);
     int set_isometric_pos(entity_t *entity, sfVector2f position,
         sfVector2f size);
+    int move_player(map_t *map, entity_t *player, sfEvent event);
 
 #endif //BASE_REPO_PROTOTYPE_H
