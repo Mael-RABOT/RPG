@@ -21,16 +21,21 @@ static int get_map_size(const char *pathfile)
     return no;
 }
 
-static tile_t **load_map_line(manifest_t *manifest, char *line, int line_nb,
-    int size)
+static tile_t **load_map_line(map_object_t **map_object, char *line,
+    sfVector2i array_info, entity_t *player)
 {
     char **array = split(line, ',');
     int size_2 = len_array(array);
     int i = 0;
     tile_t **tile = malloc(sizeof(tile_t *) * (len_array(array) + 2));
     while (array[i] != NULL) {
-        tile[i] = create_tile(my_atoi(array[i]), manifest, (sfVector2i){i,
-            line_nb}, (sfVector2i){size_2, size});
+        if (my_strcmp(array[i], "P") == 0) {
+            set_isometric_pos(player, (sfVector2f){i, array_info.x},
+                (sfVector2f){size_2, array_info.y});
+            my_strcpy(array[i], "-1");
+        }
+        tile[i] = create_tile(my_atoi(array[i]), map_object, (sfVector2i){i,
+            array_info.x}, (sfVector2i){size_2, array_info.y});
         i += 1;
     }
     tile[i] = NULL;
@@ -38,11 +43,14 @@ static tile_t **load_map_line(manifest_t *manifest, char *line, int line_nb,
     return tile;
 }
 
-map_t *load_map_from_file(const char *pathfile, manifest_t *manifest)
+layer_t *load_map_from_file(const char *pathfile, int id,
+    map_object_t **map_object, entity_t *player)
 {
-    map_t *map = malloc(sizeof(map_t));
     int size = get_map_size(pathfile);
-    map->map = malloc(sizeof(tile_t **) * (size + 2));
+    layer_t *layer = malloc(sizeof(layer_t));
+    layer->layer = malloc(sizeof(tile_t **) * (size + 2));
+    layer->id = id;
+    layer->filepath = strdup(pathfile);
     FILE *fp = fopen(pathfile, "r");
     char *line = NULL;
     size_t len = 0;
@@ -50,11 +58,12 @@ map_t *load_map_from_file(const char *pathfile, manifest_t *manifest)
     int index = 0;
     while ((read_size = getline(&line, &len, fp)) != -1) {
         line[read_size - 1] = '\0';
-        map->map[index] = load_map_line(manifest, line, index, size);
+        layer->layer[index] = load_map_line(map_object, line,
+            (sfVector2i){index, size}, player);
         index += 1;
     }
     free(line);
-    map->map[index] = NULL;
+    layer->layer[index] = NULL;
     fclose(fp);
-    return map;
+    return layer;
 }

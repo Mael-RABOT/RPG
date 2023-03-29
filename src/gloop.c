@@ -9,6 +9,9 @@
 
 int choose_state(app_t *app)
 {
+    get_fps(app);
+    if (app->fps->key_f == 1)
+        show_fps(app);
     main_event(app);
     switch (app->state) {
         case splash:
@@ -21,6 +24,6 @@ int choose_state(app_t *app)
 
 int gloop(app_t *app)
 {
-    display_map(app->window, app->map);
+    display_map(app->window, app->tutorial, app->player);
     return 0;
 }

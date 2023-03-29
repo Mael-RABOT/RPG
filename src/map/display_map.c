@@ -7,15 +7,27 @@
 
 #include "../../include/prototype.h"
 
-int display_map(sfRenderWindow *window, map_t *map)
+static int display_layer(sfRenderWindow *window, layer_t *layer)
 {
     int i = 0;
-    while (map->map[i] != NULL) {
+    while (layer->layer[i] != NULL) {
         int j = 0;
-        while (map->map[i][j] != NULL) {
-            sfRenderWindow_drawSprite(window, map->map[i][j]->tile, NULL);
+        while (layer->layer[i][j] != NULL) {
+            sfRenderWindow_drawSprite(window, layer->layer[i][j]->tile, NULL);
             j += 1;
         }
+        i += 1;
+    }
+    return 0;
+}
+
+int display_map(sfRenderWindow *window, map_t *map, entity_t *player)
+{
+    int i = 0;
+    while (map->layer[i] != NULL) {
+        display_layer(window, map->layer[i]);
+        if (i == player->layer)
+            sfRenderWindow_drawSprite(window, player->sprite->sprite, NULL);
         i += 1;
     }
     return 0;

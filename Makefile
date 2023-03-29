@@ -8,31 +8,36 @@
 SRC	=	src/main.c	\
 		src/gloop.c \
 		src/my_rpg.c \
-		src/map/load_map.c \
+		\
+		src/map/create_map_object.c \
 		src/map/create_tile.c \
 		src/map/display_map.c \
-		src/map/destroy_map.c \
-		src/manifest/load_manifest.c \
-		src/manifest/create_manifest.c \
-		src/manifest/extract_from_manifest.c \
-		src/manifest/destroy_manifest.c \
+		src/map/extract_map_object.c \
+		src/map/get_manifest_info.c \
+		src/map/load_manifest.c \
+		src/map/load_map.c \
+		\
 		src/event/main_event.c \
 		src/app/create_app.c \
 		src/app/destroy_app.c \
 		src/window/create_window.c \
 		src/array_manipulation/split.c \
 		src/array_manipulation/array_manipulation.c \
-		src/splash_screen/create_splash_screen.c    \
-        src/splash_screen/splash_screen.c    \
-        src/splash_screen/update_splash_screen.c    \
+		src/splash_screen/create_splash_screen.c \
+        src/splash_screen/splash_screen.c \
+        src/splash_screen/update_splash_screen.c  \
         src/splash_screen/clean_splash_screen.c \
         src/sounds/musics/startup_sound.c \
         src/pathfinding/pathfinder.c \
+		src/fps/fps.c \
+		src/fps/my_int_to_str.c	\
+		src/player/create_player.c \
+		src/object/sprite.c \
 
 OBJ	=	$(SRC:.c=.o)
 
 CC	=	gcc
-CFLAGS	=
+CFLAGS	= -Wall
 FLAGS	= -lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio
 LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib
 EXE	=	my_rpg

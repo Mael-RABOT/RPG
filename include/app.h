@@ -8,7 +8,7 @@
 #ifndef APP_H_
     #define APP_H_
 
-    #include "prototype.h"
+    #include "include.h"
 
     typedef struct tile {
         int id;
@@ -18,35 +18,38 @@
         sfSprite *tile;
     } tile_t;
 
-    typedef struct map {
-        tile_t ***map;
-    } map_t;
+    typedef struct layer {
+        int id;
+        char *filepath;
+        tile_t ***layer;
+    } layer_t;
 
-    typedef struct manifest {
+    typedef struct map_object {
         int id;
         char *path;
-        sfTexture *texture;
         int collision;
-        struct manifest *next_object;
-    } manifest_t;
+        sfTexture *texture;
+    } map_object_t;
 
-typedef enum state {
-        splash = 0,
-        main_menu,
-        settings,
-        pause_menu,
-        game,
-        cinematics
-    } state_t;
+    typedef struct map {
+        map_object_t **map_object;
+        layer_t **layer;
+    } map_t;
+
+    typedef struct entity {
+        sprite_t *sprite;
+        int layer;
+    } entity_t;
 
     typedef struct app {
+        int state;
         sfVideoMode videomode;
         sfRenderWindow *window;
-        manifest_t *manifest;
-        map_t *map;
-        state_t state;
+        map_t *tutorial;
+        entity_t *player;
         struct splash_screen *splash_screen;
         sfMusic *music;
+        struct fps *fps;
     } app_t;
 
 #endif //APP_H_
