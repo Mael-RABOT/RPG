@@ -8,6 +8,11 @@
 #ifndef ENUM_H_
     #define ENUM_H_
 
+    typedef enum cinematic {
+        Tutorial_door,
+        Death
+    } cinematic_t;
+
     typedef enum state {
         splash = 0,
         main_menu,

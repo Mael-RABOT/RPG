@@ -96,4 +96,12 @@
     void display_background(app_t *app);
     void destroy_background(app_t *app);
 
+    /* Cinematics */
+    int launch_cinematic(app_t *app, cinematic_t cinematic_type);
+    char *get_cinematic_path(cinematic_t cinematic_type);
+    int find_max_frame(cinematic_t cinematic_type);
+    char *get_cinematic_path(cinematic_t cinematic_type);
+    int find_max_frame(cinematic_t cinematic_type);
+    void destroy_cinematic(my_sprite_t *sprite, sfClock *clock);
+
 #endif //BASE_REPO_PROTOTYPE_H

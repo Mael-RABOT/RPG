@@ -8,33 +8,53 @@
 #ifndef MY_MACROS_H_
     #define MY_MACROS_H_
 
+    #define MIN(x, y)           ((x) < (y) ? (x) : (y))
+    #define MAX(x, y)           ((x) > (y) ? (x) : (y))
+
+    /* Game State*/
     #define DEFAULT_GAME_STATE  4
 
+    /* Time */
+    #define TIME_DIVIDER        1000000.0
+
+    /* Quick Path*/
     #define IMAGES              "./assets/images/"
     #define MUSICS              "./assets/sounds/musics/"
     #define FONTS               "./assets/fonts/"
     #define BACKGROUND          "./assets/backgrounds/"
 
+    /* Splash Screen */
     #define RUINED_BACK         IMAGES "ruined_back.png"
     #define RUINED_FORE         IMAGES "ruined_fore.png"
     #define TITLE               IMAGES "title.png"
     #define SKIP                IMAGES "skip.png"
 
+    /* Fonts */
     #define QUICKSAND_BOLD      FONTS  "quicksand/Quicksand-Bold.otf"
     #define QUICKSAND_REGULAR   FONTS  "quicksand/Quicksand-Regular.otf"
     #define FFFFORWA            FONTS "FFFFORWA.TTF"
 
+    /* Main Menu */
     #define RUINED_FORE_WIDTH   2880
     #define RUINED_BACK_WIDTH   2880
     #define SKIP_WIDTH          200
 
     #define FADE_ITERATION      50
 
-
+    /* FPS Counter*/
     #define SHOW_FPS_DEFAULT    1
 
+    /* Sounds */
     #define INTRO_MUSIC         MUSICS "intro.ogg"
 
+    /* Backgrounds */
     #define NIGHT_SKY           BACKGROUND "night_sky.png"
+
+    /* Cinematic */
+    #define CINEMATIC           "./assets/cinematic/"
+    #define TUTORIAL_DOOR       CINEMATIC "door_tutorial.png"
+    #define TUTORIAL_FRAME      9
+    #define DEATH_SCREEN        CINEMATIC "death_screen.png"
+    #define DEATH_FRAME         17
 
 #endif /* !MY_MACROS_H_ */

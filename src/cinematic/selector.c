@@ -15,6 +15,7 @@ char *get_cinematic_path(cinematic_t cinematic_type)
         case Death:
             return DEATH_SCREEN;
     }
+    return NULL;
 }
 
 int find_max_frame(cinematic_t cinematic_type)
@@ -25,4 +26,5 @@ int find_max_frame(cinematic_t cinematic_type)
         case Death:
             return DEATH_FRAME;
     }
+    return -1;
 }
