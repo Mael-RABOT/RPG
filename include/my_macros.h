@@ -8,6 +8,9 @@
 #ifndef MY_MACROS_H_
     #define MY_MACROS_H_
 
+    /* Time */
+    #define TIME_DIVIDER 1000000.0
+
     #define DEFAULT_GAME_STATE  4
 
     #define IMAGES              "./assets/images/"

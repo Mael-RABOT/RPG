@@ -7,8 +7,6 @@
 
 #include "../../include/prototype.h"
 
-#define TIME_DIVIDER 1000000.0
-
 void update_particle(app_t *app)
 {
     double time = sfClock_getElapsedTime(
