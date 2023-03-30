@@ -14,6 +14,13 @@ fps_t *create_fps_counter(void)
     return fps;
 }
 
+particle_t **init_particle_list(void)
+{
+    particle_t **list = malloc(sizeof(particle_t*));
+    list[0] = NULL;
+    return (list);
+}
+
 app_t *create_app(sfVideoMode videomode)
 {
     app_t *app = malloc(sizeof(app_t));
@@ -24,5 +31,8 @@ app_t *create_app(sfVideoMode videomode)
     sfRenderWindow_setFramerateLimit(app->window, 60);
     app->fps = create_fps_counter();
     app->background = init_background();
+    app->particle_count = 0;
+    app->particle_list = init_particle_list();
+    app->particle_clock = sfClock_create();
     return app;
 }

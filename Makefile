@@ -18,22 +18,35 @@ SRC	=	src/main.c	\
 		src/map/load_map.c \
 		\
 		src/event/main_event.c \
+		\
 		src/app/create_app.c \
 		src/app/destroy_app.c \
+		\
 		src/window/create_window.c \
+		\
 		src/array_manipulation/split.c \
 		src/array_manipulation/array_manipulation.c \
+		\
 		src/splash_screen/create_splash_screen.c \
         src/splash_screen/splash_screen.c \
         src/splash_screen/update_splash_screen.c  \
         src/splash_screen/clean_splash_screen.c \
+		\
         src/sounds/musics/startup_sound.c \
+		\
 		src/fps/fps.c \
 		src/fps/my_int_to_str.c	\
+		\
 		src/player/create_player.c \
+		\
 		src/object/sprite.c \
+		\
 		src/background/background.c \
 		src/background/destroy_background.c \
+		\
+		src/particle_engine/add_particle.c \
+		src/particle_engine/update_particle.c \
+		src/particle_engine/clean_particle_list.c \
 
 OBJ	=	$(SRC:.c=.o)
 

@@ -14,6 +14,8 @@
         sfTexture *texture;
         sfSprite *sprite;
         sfVector2f position;
+        int frame;
+        int max_frame;
     } particle_t;
 
 #endif //B_MUL_200_LYN_2_1_MYRPG_MATHIEU_BOREL_PARTICLE_H

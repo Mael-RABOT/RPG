@@ -26,5 +26,6 @@ int gloop(app_t *app)
 {
     display_background(app);
     display_map(app->window, app->tutorial, app->player);
+    update_particle(app);
     return 0;
 }

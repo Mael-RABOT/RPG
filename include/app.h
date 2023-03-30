@@ -56,6 +56,9 @@
         sfMusic *music;
         struct fps *fps;
         background_t *background;
+        particle_t **particle_list;
+        int particle_count;
+        sfClock *particle_clock;
     } app_t;
 
 #endif //APP_H_

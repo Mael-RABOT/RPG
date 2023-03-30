@@ -37,4 +37,7 @@
 
     #define NIGHT_SKY           BACKGROUND "night_sky.png"
 
+    #define PARTICLE    "./assets/particles/"
+    #define FIRE        PARTICLE "fire_sheet.png"
+
 #endif /* !MY_MACROS_H_ */

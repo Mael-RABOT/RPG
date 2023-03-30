@@ -97,6 +97,7 @@
     void destroy_background(app_t *app);
 
     /* Particle */
-    particle_t *add_particle(app_t *app, sfVector2f position);
+    void add_particle(app_t *app, sfVector2f position, char* filepath);
+    void update_particle(app_t *app);
 
 #endif //BASE_REPO_PROTOTYPE_H
