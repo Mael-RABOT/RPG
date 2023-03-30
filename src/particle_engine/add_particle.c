@@ -6,7 +6,9 @@
 */
 
 #include "../../include/prototype.h"
-
+//particle->position = (sfVector2f){((position.x - position.y) * 32 / 2) +
+//    size.x * 32, ((position.x + position.y) * 32 / 4)};
+// UPDATE THE particle->position WITH IT'S ISOMETRIC POSITION
 static particle_t *create_particle(sfVector2f position, char* filepath)
 {
     particle_t *particle = malloc(sizeof(particle_t));
@@ -18,7 +20,7 @@ static particle_t *create_particle(sfVector2f position, char* filepath)
     sfSprite_setTexture(particle->sprite, particle->texture, sfFalse);
     sfSprite_setTextureRect(particle->sprite,
         (sfIntRect){0, 0, 32 * particle->frame, 32});
-    sfSprite_setPosition(particle->sprite, position);
+    sfSprite_setPosition(particle->sprite, particle->position);
     return (particle);
 }
 
