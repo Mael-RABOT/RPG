@@ -34,6 +34,8 @@ SRC	=	src/main.c	\
 		src/object/sprite.c \
 		src/background/background.c \
 		src/background/destroy_background.c \
+		src/cursor/create_cursor.c \
+		src/cursor/update_cursor.c \
 
 OBJ	=	$(SRC:.c=.o)
 

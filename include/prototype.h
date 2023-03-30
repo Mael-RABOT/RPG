@@ -96,4 +96,8 @@
     void display_background(app_t *app);
     void destroy_background(app_t *app);
 
+    /* Cursor */
+    void create_cursor(app_t *app);
+    void update_cursor(app_t *app);
+
 #endif //BASE_REPO_PROTOTYPE_H

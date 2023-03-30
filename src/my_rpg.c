@@ -17,6 +17,7 @@ int my_rpg(const int ac, const char **av)
     while (sfRenderWindow_isOpen(app->window)) {
         sfRenderWindow_clear(app->window, sfBlack);
         choose_state(app);
+        update_cursor(app);
         sfRenderWindow_display(app->window);
     }
     destroy_app(app);

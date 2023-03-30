@@ -37,4 +37,8 @@
 
     #define NIGHT_SKY           BACKGROUND "night_sky.png"
 
+    #define CURSOR              "./assets/cursor.png"
+    #define CURSOR_OFFSET_X     0
+    #define CURSOR_OFFSET_Y     0
+
 #endif /* !MY_MACROS_H_ */
