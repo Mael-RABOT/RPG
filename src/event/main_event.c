@@ -25,6 +25,7 @@ int main_event(app_t *app)
             skip_splash_screen(app);
         if (app->state == game && event.type == sfEvtKeyPressed)
             manage_keys(app, event.key.code);
+        move_player(app->view, app->tutorial, app->player, event);
     }
     return 0;
 }

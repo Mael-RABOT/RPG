@@ -8,12 +8,12 @@
 #ifndef APP_H_
     #define APP_H_
 
-    #include "include.h"
+    #include "../include.h"
 
     typedef struct tile {
         int id;
         int collision;
-        sfVector2i position;
+        sfVector2f position;
         sfTexture *texture;
         sfSprite *tile;
     } tile_t;
@@ -34,10 +34,12 @@
     typedef struct map {
         map_object_t **map_object;
         layer_t **layer;
+        sfVector2f size;
     } map_t;
 
     typedef struct entity {
         sprite_t *sprite;
+        sfVector2f position;
         int layer;
     } entity_t;
 
@@ -59,9 +61,10 @@
         entity_t *player;
         struct splash_screen *splash_screen;
         sfMusic *music;
-        struct fps *fps;
         background_t *background;
         my_sprite_t *cursor;
+        fps_t *fps;
+        sfView *view;
     } app_t;
 
 #endif //APP_H_

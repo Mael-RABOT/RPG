@@ -8,7 +8,7 @@
 #ifndef SPLASH_SCREEN_H_
     #define SPLASH_SCREEN_H_
 
-    #include "include.h"
+    #include "../include.h"
 
     typedef struct ruined_back {
         sfSprite *sprite;

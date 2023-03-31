@@ -7,6 +7,12 @@
 
 #include "../../include/prototype.h"
 
+void destroy_fps(fps_t *fps)
+{
+    sfClock_destroy(fps->clock);
+    free(fps);
+}
+
 void show_fps(app_t *app)
 {
     sfFont *font = sfFont_createFromFile(FFFFORWA);

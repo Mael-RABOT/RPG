@@ -8,7 +8,7 @@
 #ifndef OBJECT_H_
     #define OBJECT_H_
 
-    #include "prototype.h"
+    #include "../prototype.h"
 
     typedef struct sprite {
         sfSprite *sprite;

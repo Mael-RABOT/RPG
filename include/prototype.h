@@ -21,6 +21,7 @@
     /* app */
     app_t *create_app(sfVideoMode videomode);
     int destroy_app(app_t *app);
+    int destroy_game(app_t *app);
 
     /* splash_screen */
     splash_screen_t *create_splash_screen(sfRenderWindow *window);
@@ -64,6 +65,8 @@
     int append_manifest(map_object_t **map_object, int id, char *path,
         int collision);
 
+    int destroy_map(map_t *map);
+
     /* array manipulation */
     int print_array(char **array);
     int len_array(char **array);
@@ -74,6 +77,7 @@
     void show_fps(app_t *app);
     void get_fps(app_t *app);
     char *my_int_to_str(int nb);
+    void destroy_fps(fps_t *fps);
 
     /* Musics */
     int launch_startup_sound(app_t *app);
@@ -83,12 +87,20 @@
 
     /* object */
     sprite_t *create_sprite(const char *pathfile);
-    int free_sprite(sprite_t *sprite);
+    int destroy_sprite(sprite_t *sprite);
 
-    /* player */
-    entity_t *create_player(const char *pathfile);
+    /* entity */
+    entity_t *create_entity(const char *pathfile);
+    int destroy_entity(entity_t *entity);
+    int move_player(sfView *view, map_t *map, entity_t *player, sfEvent event);
+
+    /* view */
+    sfView *create_view(sfVector2f position, sfVector2f size);
+
+    /* conversion */
     int set_isometric_pos(entity_t *entity, sfVector2f position,
         sfVector2f size);
+    sfVector2f get_isometric_pos(sfVector2f position, sfVector2f size);
 
     /* Background */
     void change_background(background_t *background, char *filepath);

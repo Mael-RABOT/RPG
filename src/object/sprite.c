@@ -7,7 +7,7 @@
 
 #include "../../include/prototype.h"
 
-int free_sprite(sprite_t *sprite)
+int destroy_sprite(sprite_t *sprite)
 {
     sfSprite_destroy(sprite->sprite);
     sfTexture_destroy(sprite->texture);
