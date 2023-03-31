@@ -15,6 +15,8 @@
     int choose_state(app_t *app);
     int gloop(app_t *app);
 
+    int generator(int x, int y, int perfect);
+
     /* window */
     sfRenderWindow *create_window(sfVideoMode videomode, const char *title);
 
@@ -42,6 +44,7 @@
 
     /* event */
     int main_event(app_t *app);
+    int detect_collision(entity_t *player, map_t *map);
 
     /* map*/
     tile_t *create_tile(int id, map_object_t **map_object, sfVector2i position,

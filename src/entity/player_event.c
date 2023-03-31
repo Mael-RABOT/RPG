@@ -95,6 +95,6 @@ int move_player(sfView *view, map_t *map, entity_t *player, sfEvent event)
             default:
                 break;
         }
-    return 0;
     }
+    return 0;
 }
