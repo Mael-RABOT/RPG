@@ -9,7 +9,8 @@
     #define MY_MACROS_H_
 
     /* Time */
-    #define TIME_DIVIDER 1000000.0
+    #define TIME_DIVIDER        1000000.0
+    #define ANIMATION_TICK      0.15
 
     #define DEFAULT_GAME_STATE  4
 

@@ -14,7 +14,9 @@ int my_rpg(const int ac, const char **av)
     launch_startup_sound(app);
     app->player = create_player("./assets/player_debug.png");
     app->tutorial = load_manifest("./maps/manifest", app->player);
-    add_particle(app, (sfVector2f){20, 20}, FIRE);
+    add_particle(app, (sfVector2f){20, 20}, FIRE, sfTrue);
+    add_particle(app, (sfVector2f){70, 20}, SMOKE, sfTrue);
+    //add_particle(app, (sfVector2f){70, 50}, FIRE, sfTrue);
     while (sfRenderWindow_isOpen(app->window)) {
         sfRenderWindow_clear(app->window, sfBlack);
         choose_state(app);

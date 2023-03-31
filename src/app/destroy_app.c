@@ -7,17 +7,6 @@
 
 #include "../../include/prototype.h"
 
-/*
- *     typedef struct particle {
-        sfTexture *texture;
-        sfSprite *sprite;
-        sfVector2f position;
-        int frame;
-        int max_frame;
-    } particle_t;
- *
- * */
-
 void destroy_particle(app_t *app)
 {
     for (int i = 0; app->particle_list[i] != NULL; i++) {
@@ -33,7 +22,7 @@ int destroy_app(app_t *app)
     destroy_background(app);
     sfMusic_destroy(app->music);
     sfRenderWindow_destroy(app->window);
-    destroy_particle(app);
+    //destroy_particle(app);
     free(app);
     return 0;
 }
