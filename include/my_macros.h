@@ -57,4 +57,9 @@
     #define DEATH_SCREEN        CINEMATIC "death_screen.png"
     #define DEATH_FRAME         17
 
+    /* Cursor */
+    #define CURSOR              "./assets/cursor.png"
+    #define CURSOR_OFFSET_X     0
+    #define CURSOR_OFFSET_Y     0
+
 #endif /* !MY_MACROS_H_ */

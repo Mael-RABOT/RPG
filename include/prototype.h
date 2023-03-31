@@ -103,5 +103,10 @@
     char *get_cinematic_path(cinematic_t cinematic_type);
     int find_max_frame(cinematic_t cinematic_type);
     void destroy_cinematic(my_sprite_t *sprite, sfClock *clock);
+    void cinematic_event(sfRenderWindow *window);
+
+    /* Cursor */
+    void create_cursor(app_t *app);
+    void update_cursor(app_t *app);
 
 #endif //BASE_REPO_PROTOTYPE_H

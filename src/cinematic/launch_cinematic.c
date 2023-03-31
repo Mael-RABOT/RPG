@@ -7,15 +7,6 @@
 
 #include "../../include/prototype.h"
 
-static void cinematic_event(sfRenderWindow *window)
-{
-    sfEvent event;
-    while (sfRenderWindow_pollEvent(window, &event)) {
-        if (event.type == sfEvtClosed)
-            sfRenderWindow_close(window);
-    }
-}
-
 static my_sprite_t *init_cinematic_sprite(cinematic_t cinematic_type,
     sfVector2f scale)
 {
@@ -50,11 +41,17 @@ static void update_sprite(my_sprite_t *sprite, const int frame,
     );
 }
 
-static void tick(app_t *app, my_sprite_t *sprite, int frame, int max_frame)
+static void cinematic_update(my_sprite_t *sprite, int frame, int max_frame,
+    sfClock *clock)
 {
     update_sprite(sprite, frame, max_frame);
-    sfRenderWindow_clear(app->window, sfBlack);
+    sfClock_restart(clock);
+}
+
+static void tick(app_t *app, my_sprite_t *sprite)
+{
     sfRenderWindow_drawSprite(app->window, sprite->sprite, NULL);
+    update_cursor(app);
     sfRenderWindow_display(app->window);
 }
 
@@ -69,12 +66,13 @@ int launch_cinematic(app_t *app, cinematic_t cinematic_type)
     sfRenderWindow_clear(app->window, sfBlack);
     while (frame < max_frame && sfRenderWindow_isOpen(app->window)) {
         cinematic_event(app->window);
+        sfRenderWindow_clear(app->window, sfBlack);
         if (sfClock_getElapsedTime(cinematic_clock).microseconds
             / TIME_DIVIDER > 0.15) {
-            tick(app, sprite, frame, max_frame);
-            sfClock_restart(cinematic_clock);
+            cinematic_update(sprite, frame, max_frame, cinematic_clock);
             ++frame;
         }
+        tick(app, sprite);
     }
     destroy_cinematic(sprite, cinematic_clock);
     return EXIT_SUCCESS;

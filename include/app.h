@@ -61,6 +61,7 @@
         sfMusic *music;
         struct fps *fps;
         background_t *background;
+        my_sprite_t *cursor;
     } app_t;
 
 #endif //APP_H_

@@ -24,5 +24,6 @@ app_t *create_app(sfVideoMode videomode)
     sfRenderWindow_setFramerateLimit(app->window, 60);
     app->fps = create_fps_counter();
     app->background = init_background();
+    create_cursor(app);
     return app;
 }

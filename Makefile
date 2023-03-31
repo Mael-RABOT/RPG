@@ -46,6 +46,10 @@ SRC	=	src/main.c	\
 		src/cinematic/launch_cinematic.c \
 		src/cinematic/selector.c \
 		src/cinematic/destroy_ressources.c \
+		src/cinematic/cinematic_events.c \
+		\
+		src/cursor/create_cursor.c \
+		src/cursor/update_cursor.c \
 
 OBJ	=	$(SRC:.c=.o)
 
