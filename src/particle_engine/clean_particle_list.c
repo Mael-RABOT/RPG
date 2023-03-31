@@ -7,37 +7,27 @@
 
 #include "../../include/prototype.h"
 
-static void copy_list(app_t *app, particle_t **tmp_list, int *count)
+static void add_copy(particle_t **new_list, particle_t *old_particle,
+    int *new_count)
 {
-    for (int i = 0; i < app->particle_count; i++) {
-        if (app->particle_list[i]->frame >= app->particle_list[i]->max_frame) {
-            tmp_list[*count] = malloc(sizeof(particle_t));
-            *tmp_list[*count] = *app->particle_list[i];
-            tmp_list[*count]->sprite =
-                sfSprite_copy(app->particle_list[i]->sprite);
-            tmp_list[*count]->texture =
-                sfTexture_copy(app->particle_list[i]->texture);
-            (*count)++;
-        } else {
-            sfSprite_destroy(app->particle_list[i]->sprite);
-            sfTexture_destroy(app->particle_list[i]->texture);
-            free(app->particle_list[i]);
-        }
-    }
+    new_list[(*new_count)] = malloc(sizeof(particle_t));
+    new_list[(*new_count)]->sprite = sfSprite_copy(old_particle->sprite);
+    new_list[(*new_count)]->texture = sfTexture_copy(old_particle->texture);
+    new_list[(*new_count)]->frame = old_particle->frame;
+    new_list[(*new_count)]->max_frame = old_particle->max_frame;
+    new_list[(*new_count)]->position = old_particle->position;
+    new_list[(++(*new_count))] = NULL;
 }
 
 void clean_particle_list(app_t *app)
 {
-    particle_t **tmp_list = malloc(sizeof(particle_t*) * app->particle_count);
-    int count = 0;
-    copy_list(app, tmp_list, &count);
-    free(app->particle_list);
-    app->particle_list = tmp_list;
-    app->particle_count = count;
-    for (int i = 0; i < count; i++) {
-        sfSprite_destroy(tmp_list[i]->sprite);
-        sfTexture_destroy(tmp_list[i]->texture);
-        free(tmp_list[i]);
-    }
-    free(tmp_list);
+    particle_t **new_list = malloc(sizeof(particle_t*) * 100);
+    int new_count = 0;
+    for (int i = 0; i < app->particle_count; i++)
+        if (app->particle_list[i]->frame <= app->particle_list[i]->max_frame)
+            add_copy(new_list, app->particle_list[i], &new_count);
+    for (int i = 0; i < app->particle_count; i++)
+        free(app->particle_list[i]);
+    app->particle_list = new_list;
+    app->particle_count = new_count;
 }

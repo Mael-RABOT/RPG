@@ -11,7 +11,7 @@ void update_particle(app_t *app)
 {
     double time = sfClock_getElapsedTime(
         app->particle_clock).microseconds / TIME_DIVIDER;
-    if (time < 0.7) {
+    if (time < ANIMATION_TICK) {
         for (int i = 0; i < app->particle_count; i++)
             sfRenderWindow_drawSprite(app->window,
                 app->particle_list[i]->sprite, NULL);

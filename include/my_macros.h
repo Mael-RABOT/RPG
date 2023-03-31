@@ -44,5 +44,6 @@
     #define PARTICLE    "./assets/particles/"
     #define FIRE        PARTICLE "fire_sheet.png"
     #define SMOKE       PARTICLE "smoke_sheet.png"
+    #define DEBUG       PARTICLE "debug.png"
 
 #endif /* !MY_MACROS_H_ */

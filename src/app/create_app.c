@@ -16,7 +16,7 @@ fps_t *create_fps_counter(void)
 
 particle_t **init_particle_list(void)
 {
-    particle_t **list = malloc(sizeof(particle_t*));
+    particle_t **list = malloc(sizeof(particle_t *) * 100);
     list[0] = NULL;
     return (list);
 }

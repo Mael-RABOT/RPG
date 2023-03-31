@@ -14,17 +14,14 @@ int my_rpg(const int ac, const char **av)
     launch_startup_sound(app);
     app->player = create_player("./assets/player_debug.png");
     app->tutorial = load_manifest("./maps/manifest", app->player);
-    add_particle(app, (sfVector2f){20, 20}, FIRE, sfTrue);
     add_particle(app, (sfVector2f){70, 20}, SMOKE, sfTrue);
-    add_particle(app, (sfVector2f){70, 50}, FIRE, sfTrue);
-    printf("Particles init\n");
     while (sfRenderWindow_isOpen(app->window)) {
         sfRenderWindow_clear(app->window, sfBlack);
         choose_state(app);
-        //update_particle(app);
+        update_particle(app);
+        clean_particle_list(app);
         sfRenderWindow_display(app->window);
     }
-    //destroy_app(app);
-    //printf("App destroyed\n");
+    destroy_app(app);
     return 0;
 }
