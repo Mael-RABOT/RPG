@@ -16,13 +16,15 @@ int my_rpg(const int ac, const char **av)
     app->tutorial = load_manifest("./maps/manifest", app->player);
     add_particle(app, (sfVector2f){20, 20}, FIRE, sfTrue);
     add_particle(app, (sfVector2f){70, 20}, SMOKE, sfTrue);
-    //add_particle(app, (sfVector2f){70, 50}, FIRE, sfTrue);
+    add_particle(app, (sfVector2f){70, 50}, FIRE, sfTrue);
+    printf("Particles init\n");
     while (sfRenderWindow_isOpen(app->window)) {
         sfRenderWindow_clear(app->window, sfBlack);
         choose_state(app);
-        update_particle(app);
+        //update_particle(app);
         sfRenderWindow_display(app->window);
     }
-    destroy_app(app);
+    //destroy_app(app);
+    //printf("App destroyed\n");
     return 0;
 }

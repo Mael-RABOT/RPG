@@ -100,8 +100,6 @@
     void add_particle(app_t *app, sfVector2f position, char* filepath,
         sfBool isometric);
     void update_particle(app_t *app);
-    int create_register(app_t *app);
-    int check_register(app_t *app);
     void clean_particle_list(app_t *app);
 
 #endif //BASE_REPO_PROTOTYPE_H
