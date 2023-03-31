@@ -16,6 +16,7 @@
 
     /* Time */
     #define TIME_DIVIDER        1000000.0
+    #define ANIMATION_TICK      0.15
 
     /* Quick Path*/
     #define IMAGES              "./assets/images/"

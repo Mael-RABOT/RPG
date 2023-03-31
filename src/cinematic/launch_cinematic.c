@@ -68,7 +68,7 @@ int launch_cinematic(app_t *app, cinematic_t cinematic_type)
         cinematic_event(app->window);
         sfRenderWindow_clear(app->window, sfBlack);
         if (sfClock_getElapsedTime(cinematic_clock).microseconds
-            / TIME_DIVIDER > 0.15) {
+            / TIME_DIVIDER > ANIMATION_TICK) {
             cinematic_update(sprite, frame, max_frame, cinematic_clock);
             ++frame;
         }
