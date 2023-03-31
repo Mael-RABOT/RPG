@@ -9,5 +9,6 @@
 
 int main(const int ac, const char **av)
 {
+    srand(time(NULL));
     return my_rpg(ac, av);
 }

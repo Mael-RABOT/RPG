@@ -11,19 +11,24 @@
     #include <stdio.h>
     #include <stdlib.h>
     #include <string.h>
+    #include <time.h>
 
     #include <SFML/Window.h>
     #include <SFML/Graphics.h>
     #include <SFML/System.h>
     #include <SFML/Audio.h>
 
-    #include "object.h"
-    #include "fps.h"
+    #include "prototype.h"
     #include "enum.h"
     #include "my_lib.h"
-    #include "prototype.h"
-    #include "app.h"
-    #include "splash_screen.h"
     #include "my_macros.h"
+
+    #include "./game/object.h"
+    #include "./game/fps.h"
+    #include "./game/app.h"
+    #include "./game/splash_screen.h"
+
+    #include "dante/dante.h"
+    #include "dante/maze.h"
 
 #endif //BASE_REPO_INCLUDE_H

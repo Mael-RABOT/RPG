@@ -8,7 +8,7 @@
 #ifndef APP_H_
     #define APP_H_
 
-    #include "include.h"
+    #include "../include.h"
 
     typedef struct tile {
         int id;

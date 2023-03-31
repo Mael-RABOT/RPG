@@ -37,7 +37,21 @@ SRC	=	src/main.c	\
 		src/entity/player_event.c \
 		src/entity/detect_collision.c \
 		src/object/sprite.c \
-		src/view/create_view.c
+		src/view/create_view.c \
+		\
+		src/generator/random.c \
+		src/generator/display.c \
+		src/generator/generator.c	\
+		src/generator/free_resources.c \
+		src/generator/init_resources.c \
+		src/generator/complete_maze.c \
+		src/generator/algo/recursive_division.c \
+		src/generator/algo/kruskal/int_list.c \
+		src/generator/algo/kruskal/prepare_maze.c \
+		src/generator/algo/kruskal/kruskal.c \
+		src/generator/algo/kruskal/get_node_list.c \
+		src/generator/algo/kruskal/create_connection.c \
+		src/generator/algo/kruskal/finish_maze.c
 
 OBJ	=	$(SRC:.c=.o)
 
