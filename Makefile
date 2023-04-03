@@ -76,6 +76,8 @@ SRC	=	src/main.c	\
 		src/particle_engine/add_particle.c \
 		src/particle_engine/update_particle.c \
 		src/particle_engine/clean_particle_list.c \
+		\
+		src/dialogue_manager/dialogue_manager.c \
 
 OBJ	=	$(SRC:.c=.o)
 
