@@ -26,6 +26,7 @@ int gloop(app_t *app)
 {
     display_background(app);
     display_map(app->window, app->maps->selected_map, app->player);
-    //sfRenderWindow_setView(app->window, app->view);
+    center_view(app->view, app->player);
+    sfRenderWindow_setView(app->window, app->view);
     return 0;
 }

@@ -60,6 +60,7 @@ SRC	=	src/main.c	\
 		src/entity/detect_collision.c \
 		\
 		src/view/create_view.c \
+		src/view/center_view.c \
 		\
 		src/generator/random.c \
 		src/generator/display.c \

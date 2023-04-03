@@ -11,6 +11,12 @@ int manage_keys(app_t *app, sfKeyCode code)
 {
     if (code == sfKeyF)
         app->fps->key_f = 1 - app->fps->key_f;
+    if (code == sfKeyC) {
+        if (app->fps->key_f == 0)
+            change_map(app->maps, app->player, 0);
+        else
+            change_map(app->maps, app->player, 1);
+    }
     return 0;
 }
 

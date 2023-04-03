@@ -105,6 +105,7 @@
 
     /* view */
     sfView *create_view(void);
+    int center_view(sfView *view, entity_t *player);
 
     /* Conversion */
     int set_isometric_pos(entity_t *entity, sfVector2f position,
