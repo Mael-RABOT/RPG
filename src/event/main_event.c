@@ -7,25 +7,16 @@
 
 #include "../../include/prototype.h"
 
-int main_menu_event(main_menu_t *main_menu, sfMouseButtonEvent button_event,
-sfMouseMoveEvent move_event)
+int main_menu_events(app_t *app, sfEvent event)
 {
-    is_button_clicked(main_menu->play, &button_event);
-    is_button_released(main_menu->play, &button_event);
-    is_button_hover(main_menu->play, &move_event);
-
-    is_button_clicked(main_menu->resume, &button_event);
-    is_button_released(main_menu->resume, &button_event);
-    is_button_hover(main_menu->resume, &move_event);
-
-    is_button_clicked(main_menu->settings, &button_event);
-    is_button_released(main_menu->settings, &button_event);
-    is_button_hover(main_menu->settings, &move_event);
-
-    is_button_clicked(main_menu->quit, &button_event);
-    is_button_released(main_menu->quit, &button_event);
-    is_button_hover(main_menu->quit, &move_event);
-
+    if (app->state == main_menu && event.type == sfEvtMouseButtonPressed)
+        main_menu_click(app->main_menu,  &event.mouseButton);
+    if (app->state == main_menu && event.type == sfEvtMouseButtonReleased)
+        main_menu_release(app->main_menu,  &event.mouseButton);
+    if (app->state == main_menu && event.type == sfEvtMouseMoved)
+        main_menu_hover(app->main_menu,  &event.mouseMove);
+    update_all_buttons_textures(app);
+    main_menu_buttons_actions(app);
     return 0;
 }
 
@@ -38,10 +29,8 @@ int main_event(app_t *app)
             sfRenderWindow_close(app->window);
         if (app->state == splash && event.type == sfEvtKeyPressed)
             skip_splash_screen(app);
-        if (app->state == main_menu && (event.type == sfEvtMouseButtonPressed ||
-        event.type == sfEvtMouseButtonReleased ||
-        event.type == sfEvtMouseMoved))
-            main_menu_event(app->main_menu, event.mouseButton, event.mouseMove);
+        if (app->state == main_menu)
+            main_menu_events(app, event);
     }
     return 0;
 }

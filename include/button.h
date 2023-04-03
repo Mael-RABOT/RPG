@@ -34,7 +34,7 @@
         int (*is_clicked) (struct button *, sfMouseButtonEvent *);
         int (*is_released) (struct button *, sfMouseButtonEvent *);
         int (*is_hover) (struct button *, sfMouseMoveEvent *);
-        void (*action) (struct app *, int);
+        void (*action) (struct app *);
         button_state_t state;
         sfIntRect texture_rect;
         sfTexture *texture;

@@ -31,6 +31,8 @@ SRC	=	src/main.c	\
 		src/main_menu/create_main_menu.c	\
 		src/main_menu/callback.c	\
 		src/main_menu/buttons.c	\
+		src/main_menu/states.c \
+		src/main_menu/update_textures.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

@@ -38,4 +38,9 @@
 
     #define FADE_ITERATION      50
 
+    #define IS_NORMAL(x)            (((x) == (0)) ? (1) : (0))
+    #define IS_HOVER(x)             (((x) == (1)) ? (1) : (0))
+    #define IS_PRESSED(x)           (((x) == (2)) ? (1) : (0))
+    #define IS_RELEASED(x)          (((x) == (3)) ? (1) : (0))
+
 #endif /* !MY_MACROS_H_ */

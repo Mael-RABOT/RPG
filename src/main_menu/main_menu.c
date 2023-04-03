@@ -7,19 +7,6 @@
 
 #include "../../include/prototype.h"
 
-int detect_button(button_t *button, sfEvent event)
-{
-    button->state = NONE;
-    if (event.type == sfEvtMouseMoved)
-        button->is_hover(button, &event.mouseMove);
-    if (event.type == sfEvtMouseButtonPressed)
-        button->is_clicked(button, &event.mouseButton);
-    if (event.type == sfEvtMouseButtonReleased)
-        button->is_released(button, &event.mouseButton);
-    sfRectangleShape_setOutlineThickness(button->rect, 0);
-    return 0;
-}
-
 static int load_texture(button_t *button, char *pathfile, int nb_element)
 {
     button->texture = sfTexture_createFromFile(pathfile, NULL);
@@ -32,7 +19,7 @@ static int load_texture(button_t *button, char *pathfile, int nb_element)
 }
 
 button_t *create_button(button_info_t *info, int nb_element,
-char *pathfile, void (*action)(app_t *app, int))
+char *pathfile, void (*action)(app_t *app))
 {
     button_t *button = malloc(sizeof(button_t));
     button->rect = sfRectangleShape_create();

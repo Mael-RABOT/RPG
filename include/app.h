@@ -36,7 +36,8 @@ typedef enum state {
         settings,
         pause_menu,
         game,
-        cinematics
+        cinematics,
+        closed
     } state_t;
 
     typedef struct app {
