@@ -6,6 +6,7 @@
 */
 
 #include "../../include/prototype.h"
+#include <errno.h>
 
 int count_manifest_map(const char *filepath)
 {
@@ -42,7 +43,6 @@ int count_manifest_object(const char *filepath)
 
 int count_map_layer(const char *filepath)
 {
-    printf("%s\n", filepath);
     FILE *fp = fopen(filepath, "r");
     char *line = NULL;
     size_t count = 0;

@@ -19,6 +19,7 @@ map_object_t **load_object(const char *pathfile)
     size_t len = 0;
     size_t read_size = 0;
     while ((read_size = getline(&line, &len, fp)) != -1) {
+        line[read_size - 1] = '\0';
         if (my_strncmp(line, "maps", 4) == 0)
             continue;
         char **array = split(line, ':');
@@ -40,6 +41,7 @@ map_t **load_map(const char *pathfile, map_object_t **map_object)
     int index = 0;
     size_t read_size = 0;
     while ((read_size = getline(&line, &len, fp)) != -1) {
+        line[read_size - 1] = '\0';
         if (my_strncmp(line, "maps", 4) == 0) {
             char **array = split(line, ':');
             map[index] = create_map(array[1], array[2], map_object);
