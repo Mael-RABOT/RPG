@@ -20,7 +20,7 @@
 
     typedef struct layer {
         int id;
-        char *filepath;
+        char *pathfile;
         tile_t ***layer;
     } layer_t;
 
@@ -32,10 +32,18 @@
     } map_object_t;
 
     typedef struct map {
-        map_object_t **map_object;
         layer_t **layer;
+        char *name;
+        char *path;
         sfVector2f size;
+        sfVector2f spawn;
     } map_t;
+
+    typedef struct maps {
+        map_t **map;
+        map_object_t **map_object;
+        map_t *selected_map;
+    } maps_t;
 
     typedef struct entity {
         sprite_t *sprite;
@@ -57,7 +65,7 @@
         int state;
         sfVideoMode videomode;
         sfRenderWindow *window;
-        map_t *tutorial;
+        maps_t *maps;
         entity_t *player;
         struct splash_screen *splash_screen;
         sfMusic *music;

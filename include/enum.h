@@ -18,9 +18,14 @@
         main_menu,
         settings,
         pause_menu,
-        tutorial,
         game,
         cinematics
     } state_t;
+
+    typedef enum map_index {
+        tutorial = 0,
+        hub,
+        maze
+     } map_index_t;
 
 #endif

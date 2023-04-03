@@ -1,3 +1,6 @@
+maps:tutorial:./maps/Tutorial/layer
+maps:hub:./maps/Hub/layer
+maps:layer:./maps/Maze/layer
 0:./assets/blocks/water.png:0
 1:./assets/blocks/grass.png:1
 2:./assets/blocks/dirt.png:1

@@ -1,0 +1,4 @@
+id:texture_path:collision
+layer:./maps/Hub/hub_Tile_Layer_1.csv
+layer:./maps/Hub/hub_Tile_Layer_2.csv
+layer:./maps/Hub/hub_Tile_Layer_3.csv

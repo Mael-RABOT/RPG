@@ -6,7 +6,7 @@
 */
 
 #include "../../include/prototype.h"
-
+/*
 int destroy_object(map_object_t *object)
 {
     free(object->path);
@@ -54,4 +54,4 @@ int destroy_map(map_t *map)
     free(map->map_object);
     free(map);
     return 0;
-}
+}*/

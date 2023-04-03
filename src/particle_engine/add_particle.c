@@ -36,7 +36,7 @@ void add_particle(app_t *app, sfVector2f position, char* filepath,
     sfBool isometric)
 {
     app->particle_list[app->particle_count] =
-        init_particle(position, app->tutorial->size, isometric);
+        init_particle(position, app->maps->map[0]->size, isometric);
     add_particle_data(&(app->particle_list[app->particle_count++]), filepath);
     app->particle_list[app->particle_count] = NULL;
 }
