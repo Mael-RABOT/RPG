@@ -22,13 +22,33 @@ static int get_map_size(const char *pathfile)
     return no;
 }
 
-int load_tile(const char *pathfile, map_object_t **map_object)
+static int load_tile_line(map_object_t **map_object, char *line, int index, int size)
 {
-    tile_t ***tile = malloc(sizeof(tile_t **) * get_map_size(pathfile));
+    char **array = split(line, ',');
+    tile_t **tile = malloc(sizeof(tile_t *) * (len_array(array) + 1));
+    int i = 0;
+    while (array[i] != NULL) {
+        tile[i] = create_tile(my_atoi(array[i]), map_object,
+            (sfVector2i){index, i}, (sfVector2i){size, len_array(array)});
+        i += 1;
+    }
+    tile[index + 1] = NULL;
+    free_array(array);
+    return 0;
+}
+
+tile_t ***load_tile(const char *pathfile, map_object_t **map_object)
+{
+    int size = get_map_size(pathfile);
+    tile_t ***tile = malloc(sizeof(tile_t **) * (size + 1));
     FILE *fp = fopen(pathfile, "r");
     char *line = NULL;
     size_t len = 0;
+    int index =  0;
     while (getline(&line, &len, fp) != -1) {
+        load_tile_line(map_object, line, index, size);
+        index += 1;
     }
-    return 0;
+    fclose(fp);
+    return tile;
 }

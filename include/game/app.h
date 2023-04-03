@@ -65,8 +65,7 @@
         int state;
         sfVideoMode videomode;
         sfRenderWindow *window;
-        map_t **maps;
-        map_t *selected_map;
+        maps_t *maps;
         entity_t *player;
         struct splash_screen *splash_screen;
         sfMusic *music;

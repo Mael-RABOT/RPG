@@ -68,7 +68,7 @@
     map_object_t *create_map_object(int id, char *path, int collision);
     int append_manifest(map_object_t **map_object, int id, char *path,
         int collision);
-    map_t *create_map(const char *name, const char *path);
+    map_t *create_map(const char *name, const char *path, map_object_t **mo);
 
     int destroy_map(map_t *map);
 

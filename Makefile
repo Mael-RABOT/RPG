@@ -18,6 +18,7 @@ SRC	=	src/main.c	\
 		src/map/get_manifest_info.c \
 		src/map/load_manifest.c \
 		src/map/load_layer.c \
+		src/map/load_tile.c \
 		src/map/destroy_map.c \
 		\
 		src/event/main_event.c \

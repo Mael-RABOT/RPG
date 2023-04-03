@@ -13,7 +13,8 @@ map_object_t *create_map_object(int id, char *path, int collision)
     manifest->id = id;
     manifest->path = my_strdup(path);
     manifest->collision = collision;
-    manifest->texture = sfTexture_createFromFile(path, NULL);
+    if (id != 0)
+        manifest->texture = sfTexture_createFromFile(path, NULL);
     return manifest;
 }
 
@@ -29,10 +30,10 @@ int append_manifest(map_object_t **map_object, int id, char *path,
     return 0;
 }
 
-map_t *create_map(const char *name, const char *path)
+map_t *create_map(const char *name, const char *path, map_object_t **map_object)
 {
     map_t *map = malloc(sizeof(map_t));
-    map->layer = NULL;
+    map->layer = load_layer(path, map_object);
     map->name = my_strdup(name);
     map->path = my_strdup(path);
     map->size = (sfVector2f){0, 0};

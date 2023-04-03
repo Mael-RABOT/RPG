@@ -15,19 +15,14 @@ static int create_player(app_t *app)
 
 static int create_player_view(app_t *app)
 {
-    sfVector2f position = sfSprite_getPosition(app->player->sprite->sprite);
-    app->view = create_view(position, app->tutorial->size);
-    sfRenderWindow_setView(app->window, app->view);
     return 0;
 }
 
-static map_t **load_maps(void)
+static maps_t *load_maps(void)
 {
-    map_t **map = malloc(sizeof(map_t *) * 4);
-    map[tutorial] = load_manifest("./maps/Tutorial/manifest");
-    map[hub] = load_manifest("./maps/Hub/manifest");
-    map[maze] = load_manifest("./maps/maze/manifest");
-    return map;
+    maps_t *maps = load_manifest("./maps/manifest");
+    maps->selected_map = maps->map[0];
+    return maps;
 }
 
 int my_rpg(const int ac, const char **av)
@@ -37,8 +32,7 @@ int my_rpg(const int ac, const char **av)
     app_t *app = create_app(videomode);
     launch_startup_sound(app);
     create_player(app);
-    app->tutorial = load_manifest("./maps/maze/manifest", app->player);
-    create_player_view(app);
+    app->maps = load_maps();
     app->state = game;
     while (sfRenderWindow_isOpen(app->window)) {
         sfRenderWindow_clear(app->window, sfBlack);

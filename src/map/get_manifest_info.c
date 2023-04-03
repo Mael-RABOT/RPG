@@ -19,6 +19,7 @@ int count_manifest_map(const char *filepath)
             count += 1;
     }
     free(line);
+    fclose(fp);
     return count;
 }
 
@@ -35,11 +36,13 @@ int count_manifest_object(const char *filepath)
         count += 1;
     }
     free(line);
+    fclose(fp);
     return count;
 }
 
 int count_map_layer(const char *filepath)
 {
+    printf("%s\n", filepath);
     FILE *fp = fopen(filepath, "r");
     char *line = NULL;
     size_t count = 0;
@@ -47,9 +50,9 @@ int count_map_layer(const char *filepath)
     size_t read_size = 0;
     while ((read_size = getline(&line, &len, fp)) != -1) {
         if (my_strncmp(line, "layer", 5) == 0)
-            continue;
-        count += 1;
+            count += 1;
     }
     free(line);
+    fclose(fp);
     return count;
 }
