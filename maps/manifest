@@ -67,3 +67,5 @@ maps:layer:./maps/Maze/layer
 85:./assets/blocks/nature/diamond_ore.png:1
 86:./assets/blocks/nature/gold_ore.png:1
 87:./assets/blocks/nature/coal_ore.png:1
+88:./assets/blocks/misc/end_portal_frame.png:1
+89:./assets/blocks/misc/end_portal.png:1
