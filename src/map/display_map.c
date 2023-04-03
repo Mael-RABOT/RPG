@@ -19,9 +19,8 @@ static sfVector2i get_layer_dimension(layer_t *layer)
 
 static int display_layer(sfRenderWindow *window, layer_t *layer, entity_t *player)
 {
-    sfVector2i size = get_layer_dimension(layer);
-    int i = 0 * (size.y - 1);
-    while (i < size.y) {
+    int i = 0;
+    while (layer->layer[i] != NULL) {
         int j = 0;
         while (layer->layer[i][j] != NULL) {
             if (i == player->position.y && j == player->position.x)
