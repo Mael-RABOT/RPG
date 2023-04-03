@@ -20,6 +20,8 @@ SRC	=	src/main.c	\
 		src/map/load_layer.c \
 		src/map/load_tile.c \
 		src/map/destroy_map.c \
+		src/map/detect_spawn.c \
+		src/map/change_map.c \
 		\
 		src/event/main_event.c \
 		\
@@ -81,17 +83,21 @@ OBJ	=	$(SRC:.c=.o)
 
 CC	=	gcc
 CFLAGS	= -Wall
-FLAGS	= -lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio
-LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib
+LDFLAGS	= -lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio -L./lib -lmy_string -lmy_printf -lmy_stdlib
 EXE	=	my_rpg
 
 all:	$(EXE)
 
-$(EXE):
+%.o	:	%.c
+		@echo COMPILATION
+		$(CC) -o $@ -c $^ $(CFLAGS) -g3
+
+$(EXE): $(OBJ)
 		@make -C ./lib
-		$(CC) -o $(EXE) $(SRC) $(CFLAGS) $(FLAGS) $(LIB) -g3
+		$(CC) -o $(EXE) $(SRC) $(LDFLAGS) -g3
 
 clean:
+		@rm -rf $(OBJ)
 		@make -C ./lib clean
 		@make -C ./tests clean
 		@rm -rf vgcore*
@@ -102,10 +108,6 @@ fclean:	clean
 		@make -C ./lib fclean
 		@make -C ./tests fclean
 		@rm -rf $(EXE)
-
-valgrind:
-			@make -C ./lib
-			$(CC) -o $(EXE) $(SRC) $(CFLAGS) $(FLAGS) $(LIB) -g3
 
 re:	fclean all
 

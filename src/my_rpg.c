@@ -21,7 +21,6 @@ static int create_player_view(app_t *app)
 static maps_t *load_maps(void)
 {
     maps_t *maps = load_manifest("./maps/manifest");
-    maps->selected_map = maps->map[0];
     return maps;
 }
 
@@ -32,6 +31,8 @@ int my_rpg(const int ac, const char **av)
     launch_startup_sound(app);
     create_player(app);
     app->maps = load_maps();
+    app->maps->selected_map = app->maps->map[0];
+    change_map(app->maps, app->player, 0);
     app->state = game;
     add_particle(app, (sfVector2f){70, 20}, SMOKE, sfTrue);
     while (sfRenderWindow_isOpen(app->window)) {

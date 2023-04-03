@@ -21,6 +21,7 @@
     typedef struct layer {
         int id;
         char *pathfile;
+        sfVector2f size;
         tile_t ***layer;
     } layer_t;
 

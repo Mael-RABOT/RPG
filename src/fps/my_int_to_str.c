@@ -33,7 +33,7 @@ int nbsize(int nb)
 
 char *my_int_to_str(int nb)
 {
-    char *result = malloc(nbsize(nb));
+    char *result = malloc(nbsize(nb) + 2);
     int reverse_nb = rev(nb);
     int size = nbsize(nb);
 

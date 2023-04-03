@@ -13,8 +13,7 @@ map_object_t *create_map_object(int id, char *path, int collision)
     manifest->id = id;
     manifest->path = my_strdup(path);
     manifest->collision = collision;
-    if (id != 0)
-        manifest->texture = sfTexture_createFromFile(path, NULL);
+    manifest->texture = sfTexture_createFromFile(path, NULL);
     return manifest;
 }
 

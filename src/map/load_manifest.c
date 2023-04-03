@@ -34,7 +34,7 @@ map_object_t **load_object(const char *pathfile)
 
 map_t **load_map(const char *pathfile, map_object_t **map_object)
 {
-    map_t **map = malloc(sizeof(map_t *) * count_manifest_map(pathfile));
+    map_t **map = malloc(sizeof(map_t *) * (count_manifest_map(pathfile) + 1));
     FILE *fp = fopen(pathfile, "r");
     char *line = NULL;
     size_t len = 0;
@@ -45,11 +45,12 @@ map_t **load_map(const char *pathfile, map_object_t **map_object)
         if (my_strncmp(line, "maps", 4) == 0) {
             char **array = split(line, ':');
             map[index] = create_map(array[1], array[2], map_object);
-            map[index + 1] = NULL;
+            detect_spawn(map[index]);
             index += 1;
             free_array(array);
         }
     }
+    map[index] = NULL;
     free(line);
     fclose(fp);
     return map;
