@@ -104,7 +104,7 @@
     int move_player(sfView *view, map_t *map, entity_t *player, sfEvent event);
 
     /* view */
-    sfView *create_view(sfVector2f position, sfVector2f size);
+    sfView *create_view(void);
 
     /* Conversion */
     int set_isometric_pos(entity_t *entity, sfVector2f position,
@@ -123,7 +123,7 @@
     int find_max_frame(cinematic_t cinematic_type);
     char *get_cinematic_path(cinematic_t cinematic_type);
     int find_max_frame(cinematic_t cinematic_type);
-    void destroy_cinematic(my_sprite_t *sprite, sfClock *clock);
+    void destroy_cinematic(sprite_t *sprite, sfClock *clock);
     void cinematic_event(sfRenderWindow *window);
 
     /* Cursor */

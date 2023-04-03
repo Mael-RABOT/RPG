@@ -10,8 +10,6 @@
 int choose_state(app_t *app)
 {
     get_fps(app);
-    if (app->fps->key_f == 1)
-        show_fps(app);
     main_event(app);
     switch (app->state) {
         case splash:
@@ -19,6 +17,8 @@ int choose_state(app_t *app)
         case game:
             gloop(app); break;
     }
+    if (app->fps->key_f == 1)
+        show_fps(app);
     return 0;
 }
 
@@ -26,5 +26,6 @@ int gloop(app_t *app)
 {
     display_background(app);
     display_map(app->window, app->maps->selected_map, app->player);
+    //sfRenderWindow_setView(app->window, app->view);
     return 0;
 }

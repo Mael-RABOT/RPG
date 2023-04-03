@@ -7,13 +7,6 @@
 
 #include "../../include/prototype.h"
 
-void destroy_sprite_t(my_sprite_t *sprite)
-{
-    sfTexture_destroy(sprite->texture);
-    sfSprite_destroy(sprite->sprite);
-    free(sprite);
-}
-
 void destroy_particle(app_t *app)
 {
     free(app->particle_list);
@@ -24,7 +17,7 @@ int destroy_app(app_t *app)
     destroy_background(app);
     sfMusic_destroy(app->music);
     sfRenderWindow_destroy(app->window);
-    destroy_sprite_t(app->cursor);
+    destroy_sprite(app->cursor);
     destroy_particle(app);
     free(app);
     return 0;

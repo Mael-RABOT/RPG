@@ -7,10 +7,9 @@
 
 #include "../../include/prototype.h"
 
-sfView *create_view(sfVector2f position, sfVector2f size)
+sfView *create_view(void)
 {
     sfView *view = sfView_create();
-    sfView_setCenter(view, position);
     sfView_setSize(view, (sfVector2f){426, 240});
     return view;
 }

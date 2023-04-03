@@ -10,7 +10,7 @@
 void create_cursor(app_t *app)
 {
     sfRenderWindow_setMouseCursorVisible(app->window, sfFalse);
-    app->cursor = malloc(sizeof(my_sprite_t));
+    app->cursor = malloc(sizeof(sprite_t));
     app->cursor->texture = sfTexture_createFromFile(CURSOR, sfFalse);
     app->cursor->sprite = sfSprite_create();
     sfSprite_setTexture(app->cursor->sprite, app->cursor->texture, sfFalse);

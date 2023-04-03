@@ -7,17 +7,6 @@
 
 #include "../include/prototype.h"
 
-static int create_player(app_t *app)
-{
-    app->player = create_entity("./assets/player_debug.png");
-        return 0;
-}
-
-static int create_player_view(app_t *app)
-{
-    return 0;
-}
-
 static maps_t *load_maps(void)
 {
     maps_t *maps = load_manifest("./maps/manifest");
@@ -29,12 +18,11 @@ int my_rpg(const int ac, const char **av)
     sfVideoMode videomode = {1920, 1080, 32};
     app_t *app = create_app(videomode);
     launch_startup_sound(app);
-    create_player(app);
+    app->view = create_view();
+    app->player = create_entity("./assets/player_debug.png");
     app->maps = load_maps();
-    app->maps->selected_map = app->maps->map[0];
-    change_map(app->maps, app->player, 0);
+    change_map(app->maps, app->player, 1);
     app->state = game;
-    add_particle(app, (sfVector2f){70, 20}, SMOKE, sfTrue);
     while (sfRenderWindow_isOpen(app->window)) {
         sfRenderWindow_clear(app->window, sfBlack);
         choose_state(app);

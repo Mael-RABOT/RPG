@@ -7,10 +7,10 @@
 
 #include "../../include/prototype.h"
 
-static my_sprite_t *init_cinematic_sprite(cinematic_t cinematic_type,
+static sprite_t *init_cinematic_sprite(cinematic_t cinematic_type,
     sfVector2f scale)
 {
-    my_sprite_t *sprite = malloc(sizeof(sprite));
+    sprite_t *sprite = malloc(sizeof(sprite_t));
     sprite->texture = sfTexture_createFromFile(
         get_cinematic_path(cinematic_type),
         sfFalse);
@@ -30,7 +30,7 @@ static my_sprite_t *init_cinematic_sprite(cinematic_t cinematic_type,
     return (sprite);
 }
 
-static void update_sprite(my_sprite_t *sprite, const int frame,
+static void update_sprite(sprite_t *sprite, const int frame,
     const int max_frame)
 {
     sfSprite_setTextureRect(sprite->sprite, (sfIntRect){
@@ -41,14 +41,14 @@ static void update_sprite(my_sprite_t *sprite, const int frame,
     );
 }
 
-static void cinematic_update(my_sprite_t *sprite, int frame, int max_frame,
+static void cinematic_update(sprite_t *sprite, int frame, int max_frame,
     sfClock *clock)
 {
     update_sprite(sprite, frame, max_frame);
     sfClock_restart(clock);
 }
 
-static void tick(app_t *app, my_sprite_t *sprite)
+static void tick(app_t *app, sprite_t *sprite)
 {
     sfRenderWindow_drawSprite(app->window, sprite->sprite, NULL);
     update_cursor(app);
@@ -58,7 +58,7 @@ static void tick(app_t *app, my_sprite_t *sprite)
 int launch_cinematic(app_t *app, cinematic_t cinematic_type)
 {
     sfClock *cinematic_clock = sfClock_create();
-    my_sprite_t *sprite = init_cinematic_sprite(cinematic_type,
+    sprite_t *sprite = init_cinematic_sprite(cinematic_type,
         (sfVector2f){sfRenderWindow_getSize(app->window).x,
         sfRenderWindow_getSize(app->window).y});
     int frame = 0;

@@ -57,11 +57,6 @@
         sfSprite *sprite;
     } background_t;
 
-    typedef struct my_sprite {
-        sfSprite *sprite;
-        sfTexture *texture;
-    } my_sprite_t;
-
     typedef struct app {
         int state;
         sfVideoMode videomode;
@@ -71,7 +66,7 @@
         struct splash_screen *splash_screen;
         sfMusic *music;
         background_t *background;
-        my_sprite_t *cursor;
+        sprite_t *cursor;
         fps_t *fps;
         sfView *view;
         particle_t **particle_list;

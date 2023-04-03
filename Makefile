@@ -89,7 +89,6 @@ EXE	=	my_rpg
 all:	$(EXE)
 
 %.o	:	%.c
-		@echo COMPILATION
 		$(CC) -o $@ -c $^ $(CFLAGS) -g3
 
 $(EXE): $(OBJ)

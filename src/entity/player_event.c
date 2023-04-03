@@ -20,7 +20,7 @@ int move_top(map_t *map, entity_t *player, sfView *view)
         player->position.y += 1;
         return 1;
     }
-    //sfView_setCenter(view, new_position);
+    sfView_setCenter(view, new_position);
     return 0;
 }
 
@@ -37,7 +37,7 @@ int move_bot(map_t *map, entity_t *player, sfView *view)
         player->position.y -= 1;
         return 1;
     }
-    //sfView_setCenter(view, new_position);
+    sfView_setCenter(view, new_position);
     return 0;
 }
 
@@ -54,7 +54,7 @@ int move_left(map_t *map, entity_t *player, sfView *view)
         player->position.x += 1;
         return 1;
     }
-    //sfView_setCenter(view, new_position);
+    sfView_setCenter(view, new_position);
     return 0;
 }
 
@@ -71,7 +71,7 @@ int move_right(map_t *map, entity_t *player, sfView *view)
         player->position.x -= 1;
         return 1;
     }
-    //sfView_setCenter(view, new_position);
+    sfView_setCenter(view, new_position);
     return 0;
 }
 

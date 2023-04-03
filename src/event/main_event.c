@@ -10,7 +10,7 @@
 int manage_keys(app_t *app, sfKeyCode code)
 {
     if (code == sfKeyF)
-        app->fps->key_f = app->fps->key_f == 1 ? 0 : 1;
+        app->fps->key_f = 1 - app->fps->key_f;
     return 0;
 }
 
