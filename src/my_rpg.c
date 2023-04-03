@@ -34,7 +34,6 @@ int my_rpg(const int ac, const char **av)
     app->maps->selected_map = app->maps->map[0];
     change_map(app->maps, app->player, 0);
     app->state = game;
-    add_particle(app, (sfVector2f){70, 20}, SMOKE, sfTrue);
     while (sfRenderWindow_isOpen(app->window)) {
         sfRenderWindow_clear(app->window, sfBlack);
         choose_state(app);
