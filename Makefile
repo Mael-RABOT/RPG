@@ -40,8 +40,6 @@ SRC	=	src/main.c	\
 		src/fps/fps.c \
 		src/fps/my_int_to_str.c	\
 		\
-		src/player/create_player.c \
-		\
 		src/object/sprite.c \
 		\
 		src/background/background.c \

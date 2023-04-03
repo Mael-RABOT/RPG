@@ -100,9 +100,6 @@
     /* view */
     sfView *create_view(sfVector2f position, sfVector2f size);
 
-    /* Player */
-    entity_t *create_player(const char *pathfile);
-
     /* Conversion */
     int set_isometric_pos(entity_t *entity, sfVector2f position,
         sfVector2f size);

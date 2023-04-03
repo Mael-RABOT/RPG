@@ -25,7 +25,7 @@ static int display_line(node_t **line, int line_i,int fd)
     if (line[i]->status == CELL)
         write(fd, "-1\n", 3);
     else
-       write(fd, "20\n", 3);
+        write(fd, "20\n", 3);
     return 0;
 }
 
@@ -58,7 +58,6 @@ int display_maze(maze_t *maze)
     int fd = open("./maps/maze/map_2.csv", O_WRONLY | O_CREAT | O_TRUNC);
     while (i < get_len(maze) - 1) {
         display_line(maze->maze[i], i, fd);
-        printf("\n");
         i += 1;
     }
     display_line(maze->maze[i], i, fd);

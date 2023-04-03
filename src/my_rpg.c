@@ -27,10 +27,8 @@ int my_rpg(const int ac, const char **av)
     app_t *app = create_app(videomode);
     launch_startup_sound(app);
     create_player(app);
-    app->tutorial = load_manifest("./maps/maze/manifest", app->player);
     create_player_view(app);
     app->state = game;
-    app->player = create_player("./assets/player_debug.png");
     app->tutorial = load_manifest("./maps/Hub/manifest", app->player);
     add_particle(app, (sfVector2f){70, 20}, SMOKE, sfTrue);
     while (sfRenderWindow_isOpen(app->window)) {
