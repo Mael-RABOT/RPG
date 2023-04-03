@@ -136,4 +136,11 @@
     void update_particle(app_t *app);
     void clean_particle_list(app_t *app);
 
+    /* Dialogues */
+    int dialogue_manager(app_t *app, char *filepath);
+    void display_game_dialogue(app_t *app);
+    void display_dialogue(app_t *app, sprite_t *background);
+    void scale_sprite(app_t *app, sprite_t *background);
+    void dialogue_events(app_t *app);
+
 #endif //BASE_REPO_PROTOTYPE_H
