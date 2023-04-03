@@ -65,6 +65,9 @@
         my_sprite_t *cursor;
         fps_t *fps;
         sfView *view;
+        particle_t **particle_list;
+        int particle_count;
+        sfClock *particle_clock;
     } app_t;
 
 #endif //APP_H_

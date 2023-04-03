@@ -18,6 +18,10 @@
     #define TIME_DIVIDER        1000000.0
     #define ANIMATION_TICK      0.15
 
+    /* Time */
+    #define TIME_DIVIDER        1000000.0
+    #define ANIMATION_TICK      0.15
+
     /* Quick Path*/
     #define IMAGES              "./assets/images/"
     #define MUSICS              "./assets/sounds/musics/"
@@ -62,5 +66,11 @@
     #define CURSOR              "./assets/cursor.png"
     #define CURSOR_OFFSET_X     0
     #define CURSOR_OFFSET_Y     0
+
+    /* Particle Engine */
+    #define PARTICLE    "./assets/particles/"
+    #define FIRE        PARTICLE "fire_sheet.png"
+    #define SMOKE       PARTICLE "smoke_sheet.png"
+    #define DEBUG       PARTICLE "debug.png"
 
 #endif /* !MY_MACROS_H_ */

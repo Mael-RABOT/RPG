@@ -13,6 +13,7 @@
     #include <string.h>
     #include <time.h>
     #include <fcntl.h>
+    #include <sys/stat.h>
 
     #include <SFML/Window.h>
     #include <SFML/Graphics.h>
@@ -24,6 +25,7 @@
     #include "my_lib.h"
     #include "prototype.h"
     #include "my_macros.h"
+    #include "particle.h"
 
     #include "game/object.h"
     #include "game/fps.h"

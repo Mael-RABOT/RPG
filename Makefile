@@ -21,6 +21,7 @@ SRC	=	src/main.c	\
 		src/map/destroy_map.c \
 		\
 		src/event/main_event.c \
+		\
 		src/app/create_app.c \
 		src/app/destroy_app.c \
 		\
@@ -38,6 +39,8 @@ SRC	=	src/main.c	\
 		\
 		src/fps/fps.c \
 		src/fps/my_int_to_str.c	\
+		\
+		src/player/create_player.c \
 		\
 		src/object/sprite.c \
 		\
@@ -69,7 +72,11 @@ SRC	=	src/main.c	\
 		src/generator/algo/kruskal/kruskal.c \
 		src/generator/algo/kruskal/get_node_list.c \
 		src/generator/algo/kruskal/create_connection.c \
-		src/generator/algo/kruskal/finish_maze.c
+		src/generator/algo/kruskal/finish_maze.c \
+		\
+		src/particle_engine/add_particle.c \
+		src/particle_engine/update_particle.c \
+		src/particle_engine/clean_particle_list.c \
 
 OBJ	=	$(SRC:.c=.o)
 

@@ -23,7 +23,6 @@ static int create_player_view(app_t *app)
 
 int my_rpg(const int ac, const char **av)
 {
-    sfBool is_dead = sfFalse;
     sfVideoMode videomode = {1920, 1080, 32};
     app_t *app = create_app(videomode);
     launch_startup_sound(app);
@@ -31,12 +30,14 @@ int my_rpg(const int ac, const char **av)
     app->tutorial = load_manifest("./maps/maze/manifest", app->player);
     create_player_view(app);
     app->state = game;
+    app->player = create_player("./assets/player_debug.png");
+    app->tutorial = load_manifest("./maps/Hub/manifest", app->player);
+    add_particle(app, (sfVector2f){70, 20}, SMOKE, sfTrue);
     while (sfRenderWindow_isOpen(app->window)) {
         sfRenderWindow_clear(app->window, sfBlack);
-        if (is_dead)
-            launch_cinematic(app, Death);
         choose_state(app);
         update_cursor(app);
+        update_particle(app);
         sfRenderWindow_display(app->window);
     }
     destroy_game(app);

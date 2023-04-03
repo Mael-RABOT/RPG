@@ -88,7 +88,7 @@
     /* Pathfinding */
     int pathfinder(app_t *app);
 
-    /* object */
+    /* Object */
     sprite_t *create_sprite(const char *pathfile);
     int destroy_sprite(sprite_t *sprite);
 
@@ -100,7 +100,10 @@
     /* view */
     sfView *create_view(sfVector2f position, sfVector2f size);
 
-    /* conversion */
+    /* Player */
+    entity_t *create_player(const char *pathfile);
+
+    /* Conversion */
     int set_isometric_pos(entity_t *entity, sfVector2f position,
         sfVector2f size);
     sfVector2f get_isometric_pos(sfVector2f position, sfVector2f size);
@@ -123,5 +126,11 @@
     /* Cursor */
     void create_cursor(app_t *app);
     void update_cursor(app_t *app);
+
+    /* Particle */
+    void add_particle(app_t *app, sfVector2f position, char* filepath,
+        sfBool isometric);
+    void update_particle(app_t *app);
+    void clean_particle_list(app_t *app);
 
 #endif //BASE_REPO_PROTOTYPE_H
