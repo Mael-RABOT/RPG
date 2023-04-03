@@ -1,0 +1,3 @@
+id:texture_path:collision
+layer:./maps/Tutorial/Tutorial_Ground.csv
+layer:./maps/Tutorial/Tutorial_Wall.csv

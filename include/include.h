@@ -13,6 +13,7 @@
     #include <string.h>
     #include <time.h>
     #include <fcntl.h>
+    #include <errno.h>
 
     #include <SFML/Window.h>
     #include <SFML/Graphics.h>

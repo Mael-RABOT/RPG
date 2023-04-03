@@ -56,17 +56,19 @@
 
     int destroy_map(map_t *map);
 
+    int count_manifest_map(const char *filepath);
     int count_manifest_object(const char *filepath);
-    int count_manifest_layer(const char *filepath);
+    int count_map_layer(const char *filepath);
 
     int get_collision(map_object_t **map_object, int id);
     sfTexture *get_texture(map_object_t **map_object, int id);
 
-    map_t *load_manifest(const char *filepath, entity_t *player);
+    maps_t *load_manifest(const char *filepath);
 
     map_object_t *create_map_object(int id, char *path, int collision);
     int append_manifest(map_object_t **map_object, int id, char *path,
         int collision);
+    map_t *create_map(const char *name, const char *path);
 
     int destroy_map(map_t *map);
 

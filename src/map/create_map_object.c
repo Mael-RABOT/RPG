@@ -28,3 +28,14 @@ int append_manifest(map_object_t **map_object, int id, char *path,
     map_object[i + 1] = NULL;
     return 0;
 }
+
+map_t *create_map(const char *name, const char *path)
+{
+    map_t *map = malloc(sizeof(map_t));
+    map->layer = NULL;
+    map->name = my_strdup(name);
+    map->path = my_strdup(path);
+    map->size = (sfVector2f){0, 0};
+    map->spawn = (sfVector2f){0, 0};
+    return map;
+}

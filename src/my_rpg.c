@@ -21,6 +21,15 @@ static int create_player_view(app_t *app)
     return 0;
 }
 
+static map_t **load_maps(void)
+{
+    map_t **map = malloc(sizeof(map_t *) * 4);
+    map[tutorial] = load_manifest("./maps/Tutorial/manifest");
+    map[hub] = load_manifest("./maps/Hub/manifest");
+    map[maze] = load_manifest("./maps/maze/manifest");
+    return map;
+}
+
 int my_rpg(const int ac, const char **av)
 {
     sfBool is_dead = sfFalse;

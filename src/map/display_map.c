@@ -7,13 +7,27 @@
 
 #include "../../include/prototype.h"
 
-static int display_layer(sfRenderWindow *window, layer_t *layer)
+static sfVector2i get_layer_dimension(layer_t *layer)
 {
-    int i = 0;
-    while (layer->layer[i] != NULL) {
+    sfVector2i position = {0, 0};
+    while (layer->layer[position.y] != NULL)
+        position.y += 1;
+    while (layer->layer[0][position.x] != NULL)
+        position.x += 1;
+    return position;
+}
+
+static int display_layer(sfRenderWindow *window, layer_t *layer, entity_t *player)
+{
+    sfVector2i size = get_layer_dimension(layer);
+    int i = 0 * (size.y - 1);
+    while (i < size.y) {
         int j = 0;
         while (layer->layer[i][j] != NULL) {
-            sfRenderWindow_drawSprite(window, layer->layer[i][j]->tile, NULL);
+            if (i == player->position.y && j == player->position.x)
+                sfRenderWindow_drawSprite(window, player->sprite->sprite, NULL);
+            else
+                sfRenderWindow_drawSprite(window, layer->layer[i][j]->tile, NULL);
             j += 1;
         }
         i += 1;
@@ -25,9 +39,8 @@ int display_map(sfRenderWindow *window, map_t *map, entity_t *player)
 {
     int i = 0;
     while (map->layer[i] != NULL) {
-        display_layer(window, map->layer[i]);
+        display_layer(window, map->layer[i], player);
         i += 1;
     }
-    sfRenderWindow_drawSprite(window, player->sprite->sprite, NULL);
     return 0;
 }
