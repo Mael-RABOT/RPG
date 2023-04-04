@@ -69,6 +69,7 @@
         sprite_t *background;
         sprite_t *cursor;
         fps_t *fps;
+        sfView *default_view;
         sfView *view;
         particle_t **particle_list;
         int particle_count;

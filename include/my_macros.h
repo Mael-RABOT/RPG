@@ -71,7 +71,7 @@
     #define PARTICLE            "./assets/particles/"
     #define FIRE                PARTICLE "fire_sheet.png"
     #define SMOKE               PARTICLE "smoke_sheet.png"
-    #define DEBUG       P       ARTICLE "debug.png"
+    #define DEBUG               ARTICLE "debug.png"
 
     /* Dialogues */
     #define HEAD                "./assets/head/"
@@ -79,5 +79,15 @@
     #define PLAYER_FACE         HEAD "Player.png"
     #define LEONARDO_FACE       HEAD "Leonardo.png"
     #define MARILYN_FACE        HEAD "Marilyn.png"
+
+    #define CINEMATIC           "./assets/cinematic/"
+    #define TUTORIAL_DOOR       CINEMATIC "door_tutorial.png"
+    #define TUTORIAL_FRAME      9
+    #define DEATH_SCREEN        CINEMATIC "death_screen.png"
+    #define DEATH_FRAME         17
+    #define SPINNING_CAT        CINEMATIC "spinning_cat"
+    #define CAT_FRAME           4
+    #define PORTAL_TP           CINEMATIC "portal.png"
+    #define PORTAL_FRAME        9
 
 #endif /* !MY_MACROS_H_ */

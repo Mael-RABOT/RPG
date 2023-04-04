@@ -15,7 +15,7 @@ static int detect_on_sprite(app_t *app, entity_t *player, maps_t *maps,
         if (player->position.x == tile[i]->position.x &&
             player->position.y == tile[i]->position.y &&
             tile[i]->state == TELEPORTER) {
-            change_map_by_name(maps, player, tile[i]->teleport->name);
+            change_map_by_name(app, maps, player, tile[i]->teleport->name);
             return 0;
         }
         if (player->position.x == tile[i]->position.x &&

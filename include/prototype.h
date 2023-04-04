@@ -107,11 +107,10 @@
     /* entity */
     entity_t *create_entity(const char *pathfile);
     int destroy_entity(entity_t *entity);
-    int move_player(sfView *view, maps_t *maps, entity_t *player,
-        sfEvent event);
+    int move_player(app_t *app, sfEvent event);
 
     /* view */
-    sfView *create_view(void);
+    sfView *create_view(sfVector2f size);
     int center_view(sfView *view, entity_t *player);
 
     /* Conversion */
