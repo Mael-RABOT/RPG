@@ -10,7 +10,9 @@
 
     typedef enum cinematic {
         Tutorial_door,
-        Death
+        Death,
+        Spinning_cat,
+        Portal
     } cinematic_t;
 
     typedef enum state {

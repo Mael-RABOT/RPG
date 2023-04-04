@@ -34,10 +34,10 @@ static void update_sprite(sprite_t *sprite, const int frame,
     const int max_frame)
 {
     sfSprite_setTextureRect(sprite->sprite, (sfIntRect){
-        (sfTexture_getSize(sprite->texture).x / max_frame) * (frame),
+        ((int)sfTexture_getSize(sprite->texture).x / max_frame) * (frame),
         0,
-        sfTexture_getSize(sprite->texture).x / max_frame,
-        sfTexture_getSize(sprite->texture).y}
+        (int)sfTexture_getSize(sprite->texture).x / max_frame,
+        (int)sfTexture_getSize(sprite->texture).y}
     );
 }
 
