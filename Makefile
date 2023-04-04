@@ -94,6 +94,7 @@ SRC	=	src/main.c	\
 		src/sfText/create_text.c \
 		\
 		src/player/creation/create_player.c \
+		src/player/level_cost.c \
 		\
 
 OBJ	=	$(SRC:.c=.o)

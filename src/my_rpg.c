@@ -13,6 +13,17 @@ static maps_t *load_maps(void)
     return maps;
 }
 
+void print_player_stat(app_t *app)
+{
+    my_printf("level: %d\n", app->player_stats->level);
+    my_printf("hp: %d\n", app->player_stats->hp);
+    my_printf("stamina: %d\n", app->player_stats->stamina);
+    my_printf("strength: %d\n", app->player_stats->strength);
+    my_printf("dexterity: %d\n", app->player_stats->dexterity);
+    my_printf("defense: %d\n", app->player_stats->defense);
+    my_printf("level_cost: %d\n", app->player_stats->level_cost);
+}
+
 int my_rpg(const int ac, const char **av)
 {
     sfVideoMode videomode = {1920, 1080, 32};
@@ -29,6 +40,8 @@ int my_rpg(const int ac, const char **av)
         update_cursor(app);
         update_particle(app);
         sfRenderWindow_display(app->window);
+        print_player_stat(app);
+        sfRenderWindow_close(app->window);
     }
     destroy_game(app);
     return 0;

@@ -165,5 +165,6 @@
 
     /* Player */
     player_t *create_player(player_preset_t preset);
+    void set_level_cost(player_t *player);
 
 #endif //BASE_REPO_PROTOTYPE_H
