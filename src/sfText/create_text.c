@@ -7,7 +7,7 @@
 
 #include "../../include/prototype.h"
 
-sfText *create_text(sfVector2f position, int size)
+sfText *init_text(sfVector2f position, int size)
 {
     sfText *text = sfText_create();
     sfFont *font = sfFont_createFromFile(FFFFORWA);

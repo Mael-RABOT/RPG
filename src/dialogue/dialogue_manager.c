@@ -45,7 +45,7 @@ int dialogue_loop(app_t *app, FILE *stream, sprite_t *background,
     state_t old_state)
 {
     sfClock *timer = sfClock_create();
-    speakers_t *speakers = init_speakers(stream,
+    speakers_t *speakers = init_speakers(app, stream,
         sfRenderWindow_getSize(app->window));
     while (sfRenderWindow_isOpen(app->window) && app->state == dialogue) {
         dialogue_events(app);

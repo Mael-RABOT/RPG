@@ -144,14 +144,16 @@
         speakers_t *speakers);
     void scale_sprite(app_t *app, sprite_t *background);
     void dialogue_events(app_t *app);
-    speakers_t *init_speakers(FILE *stream, sfVector2u size);
+    speakers_t *init_speakers(app_t *app, FILE *stream, sfVector2u size);
     face_t find_face_id(char *line);
     char *find_head_sprite(face_t face_id);
+    sfVector2f find_head_position(app_t *app, sfBool player);
+    sfVector2f find_text_position(app_t *app);
 
     /* String */
     void remove_trailing_newline_or_space(char *line);
 
     /* sfText */
-    sfText *create_text(sfVector2f position, int size);
+    sfText *init_text(sfVector2f position, int size);
 
 #endif //BASE_REPO_PROTOTYPE_H
