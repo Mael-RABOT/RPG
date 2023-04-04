@@ -9,6 +9,8 @@
 
 int move_top(maps_t *maps, entity_t *player, sfView *view)
 {
+    player->texture_rect.left = 64;
+    sfSprite_setTextureRect(player->sprite->sprite, player->texture_rect);
     sfVector2f position = sfSprite_getPosition(player->sprite->sprite);
     sfVector2f new_position = {position.x, position.y};
     new_position.y -= 8;
@@ -25,6 +27,8 @@ int move_top(maps_t *maps, entity_t *player, sfView *view)
 
 int move_bot(maps_t *maps, entity_t *player, sfView *view)
 {
+    player->texture_rect.left = 32;
+    sfSprite_setTextureRect(player->sprite->sprite, player->texture_rect);
     sfVector2f position = sfSprite_getPosition(player->sprite->sprite);
     sfVector2f new_position = {position.x, position.y};
     new_position.y += 8;
@@ -41,6 +45,8 @@ int move_bot(maps_t *maps, entity_t *player, sfView *view)
 
 int move_left(maps_t *maps, entity_t *player, sfView *view)
 {
+    player->texture_rect.left = 96;
+    sfSprite_setTextureRect(player->sprite->sprite, player->texture_rect);
     sfVector2f position = sfSprite_getPosition(player->sprite->sprite);
     sfVector2f new_position = {position.x, position.y};
     new_position.y -= 8;
@@ -57,6 +63,8 @@ int move_left(maps_t *maps, entity_t *player, sfView *view)
 
 int move_right(maps_t *maps, entity_t *player, sfView *view)
 {
+    player->texture_rect.left = 0;
+    sfSprite_setTextureRect(player->sprite->sprite, player->texture_rect);
     sfVector2f position = sfSprite_getPosition(player->sprite->sprite);
     sfVector2f new_position = {position.x, position.y};
     new_position.y += 8;

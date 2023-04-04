@@ -54,6 +54,7 @@
     typedef struct entity {
         sprite_t *sprite;
         sfVector2f position;
+        sfIntRect texture_rect;
         int layer;
     } entity_t;
 
