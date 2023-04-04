@@ -22,7 +22,7 @@ void show_fps(app_t *app)
     position.x -= (size.x / 2) - 5;
     position.y -= (size.y / 2) - 5;
     sfText_setPosition(app->fps->text, position);
-    sfText_setScale(app->fps->text, (sfVector2f){0.3, 0.3});
+    sfText_setScale(app->fps->text, (sfVector2f){0.3f, 0.3f});
     sfText_setCharacterSize(app->fps->text, 10);
     sfText_setFillColor(app->fps->text, sfGreen);
     sfText_setString(app->fps->text, my_int_to_str(app->fps->fps));
