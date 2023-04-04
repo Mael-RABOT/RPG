@@ -144,5 +144,6 @@
     int is_button_clicked(button_t *button, sfMouseButtonEvent *mouse);
     int is_button_released(button_t *button, sfMouseButtonEvent *mouse);
     int is_button_hover(button_t *button, sfMouseMoveEvent *mouse);
+    void update_settings_menu(settings_menu_t *, sfRenderWindow *);
 
 #endif //BASE_REPO_PROTOTYPE_H

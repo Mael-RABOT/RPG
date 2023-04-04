@@ -75,5 +75,6 @@ settings_menu_t *create_settings_menu(sfRenderWindow *window)
 
     button_info->position = (sfVector2f){window_size.x / 4 * 1 + 30, 600};
     settings_menu->high_resolution =  create_button(button_info, 3, HIGH_RESOLUTION, &play);*/
+    update_settings_menu(settings_menu, window);
     return settings_menu;
 }
