@@ -9,16 +9,16 @@
 
 static int display_first_layer(int x, int y)
 {
-    int fd = open("./maps/maze/map_1.csv", O_WRONLY | O_CREAT | O_TRUNC);
+    int fd = open("./maps/Maze/map_1.csv", O_WRONLY | O_CREAT | O_TRUNC);
     for (int i = 0; i < 2; i++) {
-        for (int j = 0; j < x; j += 1) {
+        for (int j = 0; j <= x; j += 1) {
             write(fd, "-1,", 3);
         }
         write(fd, "-1\n", 3);
     }
 
-    for (int i = 0; i <= y; i++) {
-        for (int j = 0; j < x; j += 1) {
+    for (int i = 0; i < y; i++) {
+        for (int j = 0; j <= x; j += 1) {
             write(fd, "1,", 2);
         }
         write(fd, "1\n", 2);
@@ -45,7 +45,7 @@ static int display_line(node_t **line, int line_i, int fd)
         if (i == 0)
             write(fd, "20,", 3);
         if (i == 0 && line_i == 0) {
-            write(fd, "P,", 2);
+            write(fd, "67,", 3);
             i += 1;
             continue;
         }
@@ -75,7 +75,7 @@ int display_maze(maze_t *maze)
 {
     display_first_layer(maze->size->x, maze->size->y);
     int i = 0;
-    int fd = open("./maps/maze/map_2.csv", O_WRONLY | O_CREAT | O_TRUNC);
+    int fd = open("./maps/Maze/map_2.csv", O_WRONLY | O_CREAT | O_TRUNC);
     display_first_line(fd, maze);
     while (i < get_len(maze) - 1) {
         display_line(maze->maze[i], i, fd);

@@ -18,10 +18,11 @@ int my_rpg(const int ac, const char **av)
     sfVideoMode videomode = {1920, 1080, 32};
     app_t *app = create_app(videomode);
     launch_startup_sound(app);
-    app->view = create_view();
+    app->default_view = create_view((sfVector2f){1920, 1080});
+    app->view = create_view((sfVector2f){426, 240});
     app->player = create_entity("./assets/player_debug.png");
     app->maps = load_maps();
-    change_map(app->maps, app->player, 0);
+    change_map(app, app->maps, app->player, 0);
     while (sfRenderWindow_isOpen(app->window)) {
         sfRenderWindow_clear(app->window, sfBlack);
         choose_state(app);

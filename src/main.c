@@ -10,5 +10,6 @@
 int main(const int ac, const char **av)
 {
     srand(time(NULL));
+    generator(30, 30, 1);
     return my_rpg(ac, av);
 }

@@ -7,7 +7,7 @@
 
 #include "../../include/prototype.h"
 
-int move_top(maps_t *maps, entity_t *player, sfView *view)
+int move_top(app_t *app, maps_t *maps, entity_t *player, sfView *view)
 {
     player->texture_rect.left = 64;
     sfSprite_setTextureRect(player->sprite->sprite, player->texture_rect);
@@ -17,7 +17,7 @@ int move_top(maps_t *maps, entity_t *player, sfView *view)
     new_position.x += 16;
     player->position.y -= 1;
     sfSprite_setPosition(player->sprite->sprite, new_position);
-    if (detect_collision(player, maps) == 1) {
+    if (detect_collision(app, player, maps) == 1) {
         sfSprite_setPosition(player->sprite->sprite, position);
         player->position.y += 1;
         return 1;
@@ -25,7 +25,7 @@ int move_top(maps_t *maps, entity_t *player, sfView *view)
     return 0;
 }
 
-int move_bot(maps_t *maps, entity_t *player, sfView *view)
+int move_bot(app_t *app, maps_t *maps, entity_t *player, sfView *view)
 {
     player->texture_rect.left = 32;
     sfSprite_setTextureRect(player->sprite->sprite, player->texture_rect);
@@ -35,7 +35,7 @@ int move_bot(maps_t *maps, entity_t *player, sfView *view)
     new_position.x -= 16;
     player->position.y += 1;
     sfSprite_setPosition(player->sprite->sprite, new_position);
-    if (detect_collision(player, maps) == 1) {
+    if (detect_collision(app, player, maps) == 1) {
         sfSprite_setPosition(player->sprite->sprite, position);
         player->position.y -= 1;
         return 1;
@@ -43,7 +43,7 @@ int move_bot(maps_t *maps, entity_t *player, sfView *view)
     return 0;
 }
 
-int move_left(maps_t *maps, entity_t *player, sfView *view)
+int move_left(app_t *app, maps_t *maps, entity_t *player, sfView *view)
 {
     player->texture_rect.left = 96;
     sfSprite_setTextureRect(player->sprite->sprite, player->texture_rect);
@@ -53,7 +53,7 @@ int move_left(maps_t *maps, entity_t *player, sfView *view)
     new_position.x -= 16;
     player->position.x -= 1;
     sfSprite_setPosition(player->sprite->sprite, new_position);
-    if (detect_collision(player, maps) == 1) {
+    if (detect_collision(app, player, maps) == 1) {
         sfSprite_setPosition(player->sprite->sprite, position);
         player->position.x += 1;
         return 1;
@@ -61,7 +61,7 @@ int move_left(maps_t *maps, entity_t *player, sfView *view)
     return 0;
 }
 
-int move_right(maps_t *maps, entity_t *player, sfView *view)
+int move_right(app_t *app, maps_t *maps, entity_t *player, sfView *view)
 {
     player->texture_rect.left = 0;
     sfSprite_setTextureRect(player->sprite->sprite, player->texture_rect);
@@ -71,7 +71,7 @@ int move_right(maps_t *maps, entity_t *player, sfView *view)
     new_position.x += 16;
     player->position.x += 1;
     sfSprite_setPosition(player->sprite->sprite, new_position);
-    if (detect_collision(player, maps) == 1) {
+    if (detect_collision(app, player, maps) == 1) {
         sfSprite_setPosition(player->sprite->sprite, position);
         player->position.x -= 1;
         return 1;
@@ -79,22 +79,22 @@ int move_right(maps_t *maps, entity_t *player, sfView *view)
     return 0;
 }
 
-int move_player(sfView *view, maps_t *maps, entity_t *player, sfEvent event)
+int move_player(app_t *app, sfEvent event)
 {
     if (event.type == sfEvtKeyPressed) {
         int code = event.key.code;
         switch (code) {
             case 25:
-                move_top(maps, player, view);
+                move_top(app, app->maps, app->player, app->view);
                 break;
             case 18:
-                move_bot(maps, player, view);
+                move_bot(app, app->maps, app->player, app->view);
                 break;
             case 16:
-                move_left(maps, player, view);
+                move_left(app, app->maps, app->player, app->view);
                 break;
             case 3:
-                move_right(maps, player, view);
+                move_right(app, app->maps, app->player, app->view);
                 break;
             default:
                 break;

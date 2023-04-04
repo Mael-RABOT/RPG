@@ -44,7 +44,7 @@
 
     /* event */
     int main_event(app_t *app);
-    int detect_collision(entity_t *player, maps_t *maps);
+    int detect_collision(app_t *app, entity_t *player, maps_t *maps);
 
     /* map*/
     tile_t *create_tile(int id, map_object_t **map_object, sfVector2i position,
@@ -72,8 +72,8 @@
     layer_t **load_layer(const char *pathfile, map_object_t **map_object);
     int load_tile(layer_t *layer, const char *pathfile,
         map_object_t **map_object);
-    int change_map(maps_t *maps, entity_t *player, int id);
-    int change_map_by_name(maps_t *maps, entity_t *player, char *name);
+    int change_map(app_t *app, maps_t *maps, entity_t *player, int id);
+    int change_map_by_name(app_t *app, maps_t *maps, entity_t *player, char *name);
     int detect_spawn(map_t *map);
 
     int destroy_map(map_t *map);
@@ -107,11 +107,10 @@
     /* entity */
     entity_t *create_entity(const char *pathfile);
     int destroy_entity(entity_t *entity);
-    int move_player(sfView *view, maps_t *maps, entity_t *player,
-        sfEvent event);
+    int move_player(app_t *app, sfEvent event);
 
     /* view */
-    sfView *create_view(void);
+    sfView *create_view(sfVector2f size);
     int center_view(sfView *view, entity_t *player);
 
     /* Conversion */
@@ -120,8 +119,7 @@
     sfVector2f get_isometric_pos(sfVector2f position, sfVector2f size);
 
     /* Background */
-    void change_background(background_t *background, char *filepath);
-    background_t *init_background(void);
+    void change_background(sprite_t *background, char *filepath);
     void display_background(app_t *app);
     void destroy_background(app_t *app);
 

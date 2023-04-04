@@ -18,8 +18,10 @@ int destroy_object(map_object_t *object)
 int destroy_tile(tile_t *tile)
 {
     sfSprite_destroy(tile->tile);
-    if (tile->teleport != NULL)
+    if (tile->teleport != NULL) {
+        free(tile->teleport->name);
         free(tile->teleport);
+    }
     free(tile);
     return 0;
 }
@@ -34,8 +36,10 @@ int destroy_layer(layer_t *layer)
             destroy_tile(layer->layer[i][j]);
             j += 1;
         }
+        free(layer->layer[i]);
         i += 1;
     }
+    free(layer->layer);
     free(layer);
     return 0;
 }
@@ -49,6 +53,7 @@ int destroy_map(map_t *map)
         destroy_layer(map->layer[i]);
         i += 1;
     }
+    free(map->layer);
     free(map);
     return 0;
 }
