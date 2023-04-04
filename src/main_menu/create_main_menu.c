@@ -34,7 +34,7 @@ ruined_city_t *create_ruined_city(sfRenderWindow *window)
 main_menu_t *create_main_menu(sfRenderWindow *window)
 {
     main_menu_t *main_menu = malloc(sizeof(main_menu_t));
-    button_info_t *button_info = malloc(sizeof(button_state_t));
+    button_info_t *button_info = malloc(sizeof(button_info_t));
     sfVector2u window_size = sfRenderWindow_getSize(window);
 
     button_info->size = (sfVector2f){64 * 3, 32 * 3};

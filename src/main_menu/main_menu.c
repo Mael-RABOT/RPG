@@ -19,7 +19,7 @@ static int load_texture(button_t *button, char *pathfile, int nb_element)
 }
 
 button_t *create_button(button_info_t *info, int nb_element,
-char *pathfile, void (*action)(app_t *app))
+    char *pathfile, void (*action)(app_t *app))
 {
     button_t *button = malloc(sizeof(button_t));
     button->rect = sfRectangleShape_create();
