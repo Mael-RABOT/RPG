@@ -68,9 +68,16 @@
     #define CURSOR_OFFSET_Y     0
 
     /* Particle Engine */
-    #define PARTICLE    "./assets/particles/"
-    #define FIRE        PARTICLE "fire_sheet.png"
-    #define SMOKE       PARTICLE "smoke_sheet.png"
-    #define DEBUG       PARTICLE "debug.png"
+    #define PARTICLE            "./assets/particles/"
+    #define FIRE                PARTICLE "fire_sheet.png"
+    #define SMOKE               PARTICLE "smoke_sheet.png"
+    #define DEBUG       P       ARTICLE "debug.png"
+
+    /* Dialogues */
+    #define HEAD                "./assets/head/"
+    #define COLOR_LAYER         "./assets/color_layer.png"
+    #define PLAYER_FACE         HEAD "Player.png"
+    #define LEONARDO_FACE       HEAD "Leonardo.png"
+    #define MARILYN_FACE        HEAD "Marilyn.png"
 
 #endif /* !MY_MACROS_H_ */

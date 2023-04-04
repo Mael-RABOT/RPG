@@ -145,6 +145,22 @@
     void clean_particle_list(app_t *app);
 
     /* Dialogues */
-    int launch_dialogue(app_t *app);
+    int dialogue_manager(app_t *app, char *filepath);
+    void display_game_dialogue(app_t *app);
+    void display_dialogue(app_t *app, sprite_t *background,
+        speakers_t *speakers);
+    void scale_sprite(app_t *app, sprite_t *background);
+    void dialogue_events(app_t *app);
+    speakers_t *init_speakers(app_t *app, FILE *stream, sfVector2u size);
+    face_t find_face_id(char *line);
+    char *find_head_sprite(face_t face_id);
+    sfVector2f find_head_position(app_t *app, sfBool player);
+    sfVector2f find_text_position(app_t *app);
+
+    /* String */
+    void remove_trailing_newline_or_space(char *line);
+
+    /* sfText */
+    sfText *init_text(sfVector2f position, int size);
 
 #endif //BASE_REPO_PROTOTYPE_H

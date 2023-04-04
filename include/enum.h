@@ -19,6 +19,7 @@
         settings,
         pause_menu,
         game,
+        dialogue,
         cinematics
     } state_t;
 
@@ -36,4 +37,10 @@
         maze
     } map_index_t;
 
-#endif
+    typedef enum face {
+        Player = 0,
+        Leonardo,
+        Marilyn
+    } face_t;
+
+#endif // ENUM_H_

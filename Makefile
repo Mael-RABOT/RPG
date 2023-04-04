@@ -82,7 +82,16 @@ SRC	=	src/main.c	\
 		src/particle_engine/update_particle.c \
 		src/particle_engine/clean_particle_list.c \
 		\
-		src/dialogue_manager/dialogue_manager.c \
+		src/dialogue/dialogue_manager.c \
+		src/dialogue/display.c \
+		src/dialogue/ressources.c \
+		src/dialogue/events.c \
+		src/dialogue/init_speaker.c \
+		src/dialogue/position.c \
+		\
+		src/string/remove_trailing.c \
+		\
+		src/sfText/create_text.c \
 
 OBJ	=	$(SRC:.c=.o)
 
