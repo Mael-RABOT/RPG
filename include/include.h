@@ -28,12 +28,13 @@
     #include "my_macros.h"
     #include "particle.h"
 
-    #include "game/object.h"
-    #include "game/fps.h"
-    #include "game/app.h"
-    #include "game/splash_screen.h"
-
     #include "dante/dante.h"
     #include "dante/maze.h"
+
+    #include "game/object.h"
+    #include "game/fps.h"
+    #include "game/splash_screen.h"
+    #include "game/app.h"
+    #include "game/speaker.h"
 
 #endif //BASE_REPO_INCLUDE_H

@@ -45,45 +45,53 @@ void remove_trailing_newline_or_space(char *line)
             ? '\0' : line[my_strlen(line) - 1];
 }
 
-int update_dialogue(app_t *app, FILE *stream, sprite_t *speaker)
+void scale_head_sprite(sprite_t *sprite, face_t face_id, sfVector2u size)
 {
-    size_t len;
-    char *line = NULL;
-    if (getline(&line, &len, stream) == -1)
-        return -1;
-    remove_trailing_newline_or_space(line);
-    face_t face_id = find_face_id(line);
-    if (face_id != -1)
-        update_speaker(app, &speaker, face_id);
-    if (face_id == -1)
-        printf("line: %s\n", line);
-    free(line);
-    return 0;
+    float scale_factor = 3.0f;
+    sfSprite_scale(sprite->sprite, (sfVector2f){scale_factor, scale_factor});
+    if (face_id == Player) {
+        sfSprite_setPosition(sprite->sprite, (sfVector2f){0, 20});
+    } else {
+        sfSprite_setPosition(sprite->sprite, (sfVector2f){size.y - 64, 20});
+    }
 }
 
-int update_text(app_t *app, FILE *stream, sfClock *timer, sprite_t *speaker)
+void fill_speaker(speakers_t *speakers, char **names, sfVector2u size)
 {
-    if (sfClock_getElapsedTime(timer).microseconds / TIME_DIVIDER < 1.5)
-        return 0;
-    if (update_dialogue(app, stream, speaker) == -1)
-        return -1;
-    sfClock_restart(timer);
-    return 0;
+    face_t face_id;
+    for (int i = 0; names[i] != NULL; i++) {
+        face_id = find_face_id(names[i]);
+        speakers->face_list[i] = create_sprite(find_head_sprite(face_id));
+        scale_head_sprite(speakers->face_list[i], face_id, size);
+    }
+}
+
+speakers_t *init_speakers(FILE *stream, sfVector2u size)
+{
+    speakers_t *speakers = malloc(sizeof(speakers_t));
+    size_t len;
+    char *line = NULL;
+    getline(&line, &len, stream);
+    remove_trailing_newline_or_space(line);
+    char **names = split(line, ':');
+    free(line);
+    int arr_size = len_array(names);
+    speakers->face_list = malloc(sizeof(sprite_t) * arr_size + 1);
+    speakers->name_list = malloc(sizeof(char *) * arr_size + 1);
+    fill_speaker(speakers, names, size);
+    return speakers;
 }
 
 static int dialogue_loop(app_t *app, FILE *stream, sprite_t *background,
     state_t old_state)
 {
     sfClock *timer = sfClock_create();
-    sprite_t *speaker = create_sprite(PLAYER_FACE);
+    speakers_t *speakers = init_speakers(stream, sfRenderWindow_getSize(app->window));
     while(sfRenderWindow_isOpen(app->window) && app->state == dialogue) {
         dialogue_events(app);
         sfRenderWindow_clear(app->window, sfBlack);
         display_game_dialogue(app);
         display_dialogue(app, background);
-        if (update_text(app, stream, timer, speaker) == -1)
-            app->state = old_state;
-        sfRenderWindow_drawSprite(app->window, speaker->sprite, NULL);
         sfRenderWindow_display(app->window);
     }
     sfClock_destroy(timer);

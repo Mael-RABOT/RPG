@@ -35,4 +35,4 @@
         Marilyn
     } face_t;
 
-#endif
+#endif // ENUM_H_
