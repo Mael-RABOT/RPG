@@ -38,7 +38,7 @@ void display_settings_menu(app_t *app)
     sfRenderWindow_drawRectangleShape(app->window, app->settings_menu->music_less->rect, NULL);
     sfRenderWindow_drawRectangleShape(app->window, app->settings_menu->full_screen->rect, NULL);
     sfRenderWindow_drawRectangleShape(app->window, app->settings_menu->windowded->rect, NULL);
-    //sfRenderWindow_drawRectangleShape(app->window, app->settings_menu->low_resolution->rect, NULL);
-    //sfRenderWindow_drawRectangleShape(app->window, app->settings_menu->high_resolution->rect, NULL);
+    sfRenderWindow_drawRectangleShape(app->window, app->settings_menu->low_resolution->rect, NULL);
+    sfRenderWindow_drawRectangleShape(app->window, app->settings_menu->high_resolution->rect, NULL);
     return ;
 }

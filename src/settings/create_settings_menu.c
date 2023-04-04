@@ -64,17 +64,13 @@ settings_menu_t *create_settings_menu(sfRenderWindow *window)
     button_info->size = (sfVector2f){372 / 4 * 2.9, 32 * 2.9};
     button_info->position = (sfVector2f){half + quarter - 372 / 4 * 2.9 / 2 - 160, 420};
     settings_menu->full_screen = create_button(button_info, 3, FULLSCREEN, &play);
-
     button_info->position = (sfVector2f){half + quarter - 372 / 4 * 2.9 / 2 + 190, 420};
     settings_menu->windowded = create_button(button_info, 3, WINDOWDED, &play);
-    /*
-    //button_info->size =
-
-    button_info->position = (sfVector2f){window_size.x / 4 * 1 + 30, 600};
+    button_info->size = (sfVector2f){261 / 3 * 2.9, 32 * 2.9};
+    button_info->position = (sfVector2f){half + quarter - 372 / 4 * 2.9 / 2 - 160, 610};
     settings_menu->low_resolution = create_button(button_info, 3, LOW_RESOLUTION, &play);
-
-    button_info->position = (sfVector2f){window_size.x / 4 * 1 + 30, 600};
-    settings_menu->high_resolution =  create_button(button_info, 3, HIGH_RESOLUTION, &play);*/
+    button_info->position = (sfVector2f){half + quarter - 372 / 4 * 2.9 / 2 + 190, 610};
+    settings_menu->high_resolution =  create_button(button_info, 3, HIGH_RESOLUTION, &play);
     update_settings_menu(settings_menu, window);
     return settings_menu;
 }
