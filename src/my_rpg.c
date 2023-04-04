@@ -21,7 +21,7 @@ int my_rpg(const int ac, const char **av)
     app->view = create_view();
     app->player = create_entity("./assets/player_debug.png");
     app->maps = load_maps();
-    change_map(app->maps, app->player, 2);
+    change_map(app->maps, app->player, 1);
     app->state = game;
     while (sfRenderWindow_isOpen(app->window)) {
         sfRenderWindow_clear(app->window, sfBlack);

@@ -120,8 +120,7 @@
     sfVector2f get_isometric_pos(sfVector2f position, sfVector2f size);
 
     /* Background */
-    void change_background(background_t *background, char *filepath);
-    background_t *init_background(void);
+    void change_background(sprite_t *background, char *filepath);
     void display_background(app_t *app);
     void destroy_background(app_t *app);
 

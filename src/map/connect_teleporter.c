@@ -50,4 +50,5 @@ int connect_teleporter(const char *pathfile, layer_t *layer)
         }
         i += 1;
     }
+    return 0;
 }

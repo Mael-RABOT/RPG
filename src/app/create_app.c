@@ -34,7 +34,8 @@ app_t *create_app(sfVideoMode videomode)
     app->splash_screen = create_splash_screen(app->window);
     sfRenderWindow_setFramerateLimit(app->window, 60);
     app->fps = create_fps_counter();
-    app->background = init_background();
+    app->background = create_sprite(NIGHT_SKY);
+
     create_cursor(app);
     app->particle_count = 0;
     app->particle_list = init_particle_list();
