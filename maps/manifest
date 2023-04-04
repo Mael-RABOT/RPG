@@ -1,6 +1,6 @@
 maps:tutorial:./maps/Tutorial/layer
 maps:hub:./maps/Hub/layer
-maps:layer:./maps/Maze/layer
+maps:maze:./maps/Maze/layer
 0:./assets/blocks/nature/water.png:0
 1:./assets/blocks/nature/grass.png:1
 2:./assets/blocks/nature/dirt.png:1
@@ -52,7 +52,7 @@ maps:layer:./maps/Maze/layer
 63:./assets/blocks/neon/broken_left1.png:1
 64:./assets/blocks/misc/workbench_right.png:1
 65:./assets/blocks/misc/workbench_left.png:1
-66:./assets/blocks/debug/wireframe.png:1
+66:./assets/blocks/debug/wireframe.png:4
 67:./assets/blocks/debug/spawn_tile.png:3
 72:./assets/blocks/nature/log.png:1
 73:./assets/blocks/nature/fallen_log_right.png:1
@@ -67,3 +67,5 @@ maps:layer:./maps/Maze/layer
 85:./assets/blocks/nature/diamond_ore.png:1
 86:./assets/blocks/nature/gold_ore.png:1
 87:./assets/blocks/nature/coal_ore.png:1
+88:./assets/blocks/misc/end_portal_frame.png:1
+89:./assets/blocks/misc/end_portal.png:1

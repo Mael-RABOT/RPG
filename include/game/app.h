@@ -10,9 +10,14 @@
 
     #include "../include.h"
 
+    typedef struct teleport {
+        char *name;
+    } teleport_t;
+
     typedef struct tile {
         int id;
-        int collision;
+        block_t state;
+        teleport_t *teleport;
         sfVector2f position;
         sfTexture *texture;
         sfSprite *tile;
@@ -28,7 +33,7 @@
     typedef struct map_object {
         int id;
         char *path;
-        int collision;
+        block_t state;
         sfTexture *texture;
     } map_object_t;
 

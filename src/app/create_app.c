@@ -12,6 +12,9 @@ fps_t *create_fps_counter(void)
     fps_t *fps = malloc(sizeof(fps_t));
     fps->key_f = SHOW_FPS_DEFAULT;
     fps->fps = 0;
+    fps->font = sfFont_createFromFile(FFFFORWA);
+    fps->text = sfText_create();
+    sfText_setFont(fps->text, fps->font);
     return fps;
 }
 

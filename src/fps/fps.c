@@ -15,20 +15,20 @@ void destroy_fps(fps_t *fps)
 
 void show_fps(app_t *app)
 {
-    sfFont *font = sfFont_createFromFile(FFFFORWA);
-    sfText *text = sfText_create();
-
-    sfText_setFont(text, font);
-    sfText_setCharacterSize(text, 10);
-    sfText_setFillColor(text, sfGreen);
-    sfText_setString(text, my_int_to_str(app->fps->fps));
-    sfText_setPosition(text, (sfVector2f) {10, 10});
-    sfRenderWindow_drawText(app->window, text, NULL);
-    sfText_setString(text, "FPS");
-    sfText_setPosition(text, (sfVector2f) {30, 10});
-    sfRenderWindow_drawText(app->window, text, NULL);
-    sfText_destroy(text);
-    sfFont_destroy(font);
+    sfVector2f position = sfView_getCenter(app->view);
+    sfVector2f size = sfView_getSize(app->view);
+    position.x -= (size.x / 2) - 5;
+    position.y -= (size.y / 2) - 5;
+    sfText_setPosition(app->fps->text, position);
+    sfText_setScale(app->fps->text, (sfVector2f){0.3, 0.3});
+    sfText_setCharacterSize(app->fps->text, 10);
+    sfText_setFillColor(app->fps->text, sfGreen);
+    sfText_setString(app->fps->text, my_int_to_str(app->fps->fps));
+    sfRenderWindow_drawText(app->window, app->fps->text, NULL);
+    position.x += 5;
+    sfText_setPosition(app->fps->text, position);
+    sfText_setString(app->fps->text, "FPS");
+    sfRenderWindow_drawText(app->window, app->fps->text, NULL);
 }
 
 void get_fps(app_t *app)

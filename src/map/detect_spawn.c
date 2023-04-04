@@ -11,7 +11,7 @@ static int detect_spawn_line(map_t *map, int i, int j)
 {
     int k = 0;
     while (map->layer[i]->layer[j][k] != NULL) {
-        if (map->layer[i]->layer[j][k]->collision == 3) {
+        if (map->layer[i]->layer[j][k]->state == PLAYER_SPAWNER) {
             map->spawn = (sfVector2f){k, j};
         }
         k += 1;

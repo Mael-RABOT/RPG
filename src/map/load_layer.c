@@ -7,11 +7,13 @@
 
 #include "../../include/prototype.h"
 
-layer_t *create_layer(const char *pathfile, map_object_t **map_object)
+layer_t *create_layer(const char *pathfile, const char *layer_path,
+    map_object_t **map_object)
 {
     layer_t *layer = malloc(sizeof(layer_t));
     layer->pathfile = my_strdup(pathfile);
     load_tile(layer, pathfile, map_object);
+    connect_teleporter(layer_path, layer);
     return layer;
 }
 
@@ -27,7 +29,7 @@ layer_t **load_layer(const char *pathfile, map_object_t **map_object)
         line[read_size - 1] = '\0';
         if (my_strncmp(line, "layer", 5) == 0) {
             char **array = split(line, ':');
-            layer[index] = create_layer(array[1], map_object);
+            layer[index] = create_layer(array[1], pathfile, map_object);
             index += 1;
             free_array(array);
         }

@@ -22,6 +22,8 @@ SRC	=	src/main.c	\
 		src/map/destroy_map.c \
 		src/map/detect_spawn.c \
 		src/map/change_map.c \
+		src/map/create_teleport.c \
+		src/map/connect_teleporter.c \
 		\
 		src/event/main_event.c \
 		\

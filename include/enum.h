@@ -22,6 +22,14 @@
         cinematics
     } state_t;
 
+    typedef enum block {
+        TRANSPARENT = 0,
+        SOLID,
+        STAIRS,
+        PLAYER_SPAWNER,
+        TELEPORTER
+    } block_t;
+
     typedef enum map_index {
         tutorial = 0,
         hub,
