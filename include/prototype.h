@@ -44,7 +44,7 @@
 
     /* event */
     int main_event(app_t *app);
-    int detect_collision(entity_t *player, maps_t *maps);
+    int detect_collision(app_t *app, entity_t *player, maps_t *maps);
 
     /* map*/
     tile_t *create_tile(int id, map_object_t **map_object, sfVector2i position,
@@ -72,8 +72,8 @@
     layer_t **load_layer(const char *pathfile, map_object_t **map_object);
     int load_tile(layer_t *layer, const char *pathfile,
         map_object_t **map_object);
-    int change_map(maps_t *maps, entity_t *player, int id);
-    int change_map_by_name(maps_t *maps, entity_t *player, char *name);
+    int change_map(app_t *app, maps_t *maps, entity_t *player, int id);
+    int change_map_by_name(app_t *app, maps_t *maps, entity_t *player, char *name);
     int detect_spawn(map_t *map);
 
     int destroy_map(map_t *map);
