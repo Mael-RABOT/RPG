@@ -86,17 +86,19 @@ OBJ	=	$(SRC:.c=.o)
 
 CC	=	gcc
 CFLAGS	= -Wall
-LDFLAGS	= -lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio -L./lib -lmy_string -lmy_printf -lmy_stdlib
+LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib
+LDFLAGS	=	-lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio $(LIB)
+
 EXE	=	my_rpg
 
 all:	$(EXE)
 
 %.o	:	%.c
-		$(CC) -o $@ -c $^ $(CFLAGS) -g3
+		$(CC) -o $@ -c $^ $(CFLAGS)
 
 $(EXE): $(OBJ)
 		@make -C ./lib
-		$(CC) -o $(EXE) $(SRC) $(LDFLAGS) -g3
+		$(CC) -o $(EXE) $(SRC) $(LDFLAGS)
 
 clean:
 		@rm -rf $(OBJ)

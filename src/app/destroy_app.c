@@ -19,6 +19,7 @@ int destroy_app(app_t *app)
     sfRenderWindow_destroy(app->window);
     destroy_sprite(app->cursor);
     destroy_particle(app);
+    destroy_maps(app->maps);
     free(app);
     return 0;
 }

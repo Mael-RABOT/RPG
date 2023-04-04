@@ -53,7 +53,7 @@ maps:maze:./maps/Maze/layer
 64:./assets/blocks/misc/workbench_right.png:1
 65:./assets/blocks/misc/workbench_left.png:1
 66:./assets/blocks/debug/wireframe.png:4
-67:./assets/blocks/debug/spawn_tile.png:3
+67:./assets/blocks/debug/null.png:3
 72:./assets/blocks/nature/log.png:1
 73:./assets/blocks/nature/fallen_log_right.png:1
 74:./assets/blocks/nature/fallen_log_left.png:1

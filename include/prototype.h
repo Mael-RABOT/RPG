@@ -54,7 +54,7 @@
         map_object_t **map_object, entity_t *player);
     int display_map(sfRenderWindow *window, map_t *map, entity_t *player);
 
-    int destroy_map(map_t *map);
+    int destroy_maps(maps_t *maps);
 
     int count_manifest_map(const char *filepath);
     int count_manifest_object(const char *filepath);
