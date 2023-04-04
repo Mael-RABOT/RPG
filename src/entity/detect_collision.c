@@ -14,7 +14,6 @@ static int detect_on_sprite(entity_t *player, maps_t *maps, tile_t **tile)
         if (player->position.x == tile[i]->position.x &&
             player->position.y == tile[i]->position.y &&
             tile[i]->state == TELEPORTER) {
-            printf("%s\n", tile[i]->teleport->name);
             change_map_by_name(maps, player, tile[i]->teleport->name);
             return 0;
         }
