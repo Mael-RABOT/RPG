@@ -18,10 +18,10 @@ void sound_settings(settings_menu_t *settings_menu, button_info_t *button_info,
     button_info->size = (sfVector2f){32 * 1.8, 54 * 1.8};
     button_info->position =
     (sfVector2f){half - quarter + TEXT_BUTTON_WIDTH / 2, 420};
-    settings_menu->sounds_more = create_button(button_info, 3, PLUS, &play);
+    settings_menu->sounds_more = create_button(button_info, 3, PLUS, &nothing);
     button_info->position = (sfVector2f){
     half - quarter - TEXT_BUTTON_WIDTH / 2 - button_info->size.x + 2, 420};
-    settings_menu->sounds_less = create_button(button_info, 3, MINUS, &play);
+    settings_menu->sounds_less = create_button(button_info, 3, MINUS, &nothing);
     return;
 }
 
@@ -34,10 +34,10 @@ void music_settings(settings_menu_t *settings_menu, button_info_t *button_info,
     settings_menu->music = create_sprite(MUSIC);
     button_info->position =
     (sfVector2f){half - quarter + TEXT_BUTTON_WIDTH / 2, 610};
-    settings_menu->music_more = create_button(button_info, 3, PLUS, &play);
+    settings_menu->music_more = create_button(button_info, 3, PLUS, &nothing);
     button_info->position = (sfVector2f){
     half - quarter - TEXT_BUTTON_WIDTH / 2 - button_info->size.x + 2, 610};
-    settings_menu->music_less = create_button(button_info, 3, MINUS, &play);
+    settings_menu->music_less = create_button(button_info, 3, MINUS, &nothing);
     return;
 }
 
@@ -51,11 +51,11 @@ void resolution_bis(settings_menu_t *settings_menu, button_info_t *button_info,
     button_info->position =
         (sfVector2f){half + quarter - 372 / 4 * 2.9 / 2 - 160, 610};
     settings_menu->low_resolution =
-        create_button(button_info, 3, LOW_RESOLUTION, &play);
+        create_button(button_info, 3, LOW_RESOLUTION, &nothing);
     button_info->position =
         (sfVector2f){half + quarter - 372 / 4 * 2.9 / 2 + 190, 610};
     settings_menu->high_resolution =
-        create_button(button_info, 3, HIGH_RESOLUTION, &play);
+        create_button(button_info, 3, HIGH_RESOLUTION, &nothing);
 }
 
 void resolution_settings(settings_menu_t *settings_menu,
@@ -69,10 +69,10 @@ void resolution_settings(settings_menu_t *settings_menu,
     button_info->position =
     (sfVector2f){half + quarter - 372 / 4 * 2.9 / 2 - 160, 420};
     settings_menu->full_screen =
-    create_button(button_info, 3, FULLSCREEN, &play);
+    create_button(button_info, 3, FULLSCREEN, &nothing);
     button_info->position =
     (sfVector2f){half + quarter - 372 / 4 * 2.9 / 2 + 190, 420};
     settings_menu->windowded =
-    create_button(button_info, 3, WINDOWDED, &play);
+    create_button(button_info, 3, WINDOWDED, &nothing);
 
 }

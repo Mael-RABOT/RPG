@@ -85,7 +85,6 @@ SRC	=	src/main.c	\
 		\
 		src/settings/create_settings_menu.c	\
 		src/settings/display_settings_menu.c	\
-		src/settings/callback.c	\
 		src/settings/states.c	\
 		src/settings/button_creation.c	\
 		\

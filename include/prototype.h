@@ -148,9 +148,6 @@
     /* Settings */
     settings_menu_t *create_settings_menu(sfRenderWindow *window);
     void display_settings_menu(sfRenderWindow *window, settings_menu_t *menu);
-    int is_button_clicked(button_t *button, sfMouseButtonEvent *mouse);
-    int is_button_released(button_t *button, sfMouseButtonEvent *mouse);
-    int is_button_hover(button_t *button, sfMouseMoveEvent *mouse);
     void update_settings_menu(settings_menu_t *, sfRenderWindow *);
     void sound_settings(settings_menu_t *settings_menu,
         button_info_t *button_info, sfVector2u window_size);
@@ -158,7 +155,7 @@
         button_info_t *button_info, sfVector2u window_size);
     void resolution_settings(settings_menu_t *settings_menu,
         button_info_t *button_info, sfVector2u window_size);
-    void play(app_t *app);
+    void nothing(app_t *app);
     button_t *create_button(button_info_t *info, int nb_element,
     char *pathfile, void (*action)(app_t *app));
 
