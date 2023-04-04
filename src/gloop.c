@@ -17,7 +17,7 @@ int choose_state(app_t *app)
         case game:
             gloop(app); break;
         case settings:
-            display_settings_menu(app); break;
+            display_settings_menu(app->window, app->settings_menu); break;
     }
     if (app->fps->key_f == 1 && app->state == game)
         show_fps(app);

@@ -7,7 +7,8 @@
 
 #include "../../include/prototype.h"
 
-int settings_menu_click(settings_menu_t *settings_menu, sfMouseButtonEvent *button_event)
+int settings_menu_click(settings_menu_t *settings_menu,
+    sfMouseButtonEvent *button_event)
 {
     //main_menu->play->is_clicked(main_menu->play, button_event);
     //main_menu->resume->is_clicked(main_menu->resume, button_event);
@@ -16,7 +17,8 @@ int settings_menu_click(settings_menu_t *settings_menu, sfMouseButtonEvent *butt
     return 0;
 }
 
-int main_menu_release(settings_menu_t *settings_menu, sfMouseButtonEvent *button_event)
+int main_menu_release(settings_menu_t *settings_menu,
+    sfMouseButtonEvent *button_event)
 {
     //main_menu->play->is_released(main_menu->play, button_event);
     //main_menu->resume->is_released(main_menu->resume, button_event);
@@ -25,7 +27,8 @@ int main_menu_release(settings_menu_t *settings_menu, sfMouseButtonEvent *button
     return 0;
 }
 
-int main_menu_hover(settings_menu_t *settings_menu, sfMouseMoveEvent *move_event)
+int main_menu_hover(settings_menu_t *settings_menu,
+    sfMouseMoveEvent *move_event)
 {
     //main_menu->play->is_hover(main_menu->play, move_event);
     //main_menu->resume->is_hover(main_menu->resume, move_event);

@@ -97,7 +97,8 @@
     /* Object */
     sprite_t *create_sprite(const char *pathfile);
     int destroy_sprite(sprite_t *sprite);
-    text_t *create_text(const char *pathfile, int size, sfColor color, char *texts);
+    text_t *create_text(const char *pathfile, int size, sfColor color,
+    char *texts);
 
     /* entity */
     entity_t *create_entity(const char *pathfile);
@@ -140,10 +141,19 @@
 
     /* Settings */
     settings_menu_t *create_settings_menu(sfRenderWindow *window);
-    void display_settings_menu(app_t *app);
+    void display_settings_menu(sfRenderWindow *window, settings_menu_t *menu);
     int is_button_clicked(button_t *button, sfMouseButtonEvent *mouse);
     int is_button_released(button_t *button, sfMouseButtonEvent *mouse);
     int is_button_hover(button_t *button, sfMouseMoveEvent *mouse);
     void update_settings_menu(settings_menu_t *, sfRenderWindow *);
+    void sound_settings(settings_menu_t *settings_menu,
+        button_info_t *button_info, sfVector2u window_size);
+    void music_settings(settings_menu_t *settings_menu,
+        button_info_t *button_info, sfVector2u window_size);
+    void resolution_settings(settings_menu_t *settings_menu,
+        button_info_t *button_info, sfVector2u window_size);
+    void play(app_t *app);
+    button_t *create_button(button_info_t *info, int nb_element,
+    char *pathfile, void (*action)(app_t *app));
 
 #endif //BASE_REPO_PROTOTYPE_H

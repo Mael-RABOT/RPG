@@ -85,13 +85,16 @@ SRC	=	src/main.c	\
 		src/settings/display_settings_menu.c	\
 		src/settings/callback.c	\
 		src/settings/states.c	\
+		src/settings/button_creation.c	\
 
-OBJ	=	$(SRC:.c=.o)
+OBJ    =    $(SRC:.c=.o)
 
-CC	=	gcc
-CFLAGS	= -Wall
-LDFLAGS	= -lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio -L./lib -lmy_string -lmy_printf -lmy_stdlib
-EXE	=	my_rpg
+CC      = gcc
+CFLAGS  = -Wall
+LIB     = -L./lib -lmy_string -lmy_printf -lmy_stdlib -lm
+LDFLAGS = -lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio $(LIB)
+
+EXE    =    my_rpg
 
 all:	$(EXE)
 
