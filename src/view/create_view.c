@@ -11,5 +11,6 @@ sfView *create_view(sfVector2f size)
 {
     sfView *view = sfView_create();
     sfView_setSize(view, size);
+    sfView_setCenter(view, (sfVector2f){960, 540});
     return view;
 }
