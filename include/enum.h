@@ -10,7 +10,9 @@
 
     typedef enum cinematic {
         Tutorial_door,
-        Death
+        Death,
+        Spinning_cat,
+        Portal
     } cinematic_t;
 
     typedef enum state {
@@ -43,5 +45,31 @@
         Leonardo,
         Marilyn
     } face_t;
+
+    typedef enum player_preset {
+        Default = 0,
+        Strength,
+        Dexterity
+    } player_preset_t;
+
+    typedef enum scaling {
+        None = 0,
+        Scale_Strength,
+        Scale_Dexterity
+    } scaling_t;
+
+    typedef enum weapon_type {
+        Fist = 0,
+        Sword,
+        Bat,
+        Saber
+    } weapon_type_t;
+
+    typedef enum weapon_tier {
+        Bad = 0,
+        Normal,
+        Good,
+        Excellent
+    } weapon_tier;
 
 #endif // ENUM_H_

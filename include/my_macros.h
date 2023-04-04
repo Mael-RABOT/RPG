@@ -65,6 +65,10 @@
     #define TUTORIAL_FRAME      9
     #define DEATH_SCREEN        CINEMATIC "death_screen.png"
     #define DEATH_FRAME         17
+    #define SPINNING_CAT        CINEMATIC "spinning_cat"
+    #define CAT_FRAME           4
+    #define PORTAL_TP           CINEMATIC "portal.png"
+    #define PORTAL_FRAME        9
 
     /* Cursor */
     #define CURSOR              "./assets/cursor.png"

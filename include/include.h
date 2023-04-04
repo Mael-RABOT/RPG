@@ -16,6 +16,8 @@
     #include <sys/stat.h>
     #include <errno.h>
 
+    #include <math.h>
+
     #include <SFML/Window.h>
     #include <SFML/Graphics.h>
     #include <SFML/System.h>
@@ -25,6 +27,7 @@
     #include "game/object.h"
     #include "game/fps.h"
     #include "particle.h"
+    #include "game/player.h"
     #include "game/app.h"
     #include "my_lib.h"
     #include "game/button.h"

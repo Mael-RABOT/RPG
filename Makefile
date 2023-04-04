@@ -92,6 +92,7 @@ SRC	=	src/main.c	\
 		src/string/remove_trailing.c \
 		\
 		src/sfText/create_text.c \
+		\
 		src/main_menu/display_main_menu.c	\
 		src/main_menu/main_menu.c	\
 		src/main_menu/create_main_menu.c	\
@@ -99,12 +100,19 @@ SRC	=	src/main.c	\
 		src/main_menu/buttons.c	\
 		src/main_menu/states.c \
 		src/main_menu/update_textures.c	\
+		\
+		src/player/creation/create_player.c \
+		src/player/creation/create_weapon.c \
+		src/player/level_cost.c \
+		src/player/level_up.c \
+		src/player/attack.c \
+		\
 
 OBJ	=	$(SRC:.c=.o)
 
 CC	=	gcc
 CFLAGS	= -Wall
-LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib
+LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib -lm
 LDFLAGS	=	-lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio $(LIB)
 
 EXE	=	my_rpg
