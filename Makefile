@@ -97,8 +97,8 @@ OBJ	=	$(SRC:.c=.o)
 
 CC	=	gcc
 CFLAGS	= -Wall
-LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib
-LDFLAGS	=	-lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio $(LIB)
+LIB	= -L./lib -lmy_string -lmy_printf -lmy_stdlib -g3
+LDFLAGS = -lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio $(LIB)
 
 EXE	=	my_rpg
 

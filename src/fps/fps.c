@@ -10,6 +10,8 @@
 void destroy_fps(fps_t *fps)
 {
     sfClock_destroy(fps->clock);
+    sfText_destroy(fps->text);
+    sfFont_destroy(fps->font);
     free(fps);
 }
 
