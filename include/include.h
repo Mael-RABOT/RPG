@@ -16,6 +16,8 @@
     #include <sys/stat.h>
     #include <errno.h>
 
+    #include <math.h>
+
     #include <SFML/Window.h>
     #include <SFML/Graphics.h>
     #include <SFML/System.h>

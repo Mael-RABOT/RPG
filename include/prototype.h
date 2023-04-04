@@ -164,7 +164,10 @@
     sfText *init_text(sfVector2f position, int size);
 
     /* Player */
-    player_t *create_player(player_preset_t preset);
+    player_t *create_player(player_preset_t preset, weapon_type_t type);
+    void attack(player_t *attacker, player_t *defender);
+    weapon_t *create_weapon(weapon_type_t type);
     void set_level_cost(player_t *player);
+    int level_up(player_t *player);
 
 #endif //BASE_REPO_PROTOTYPE_H

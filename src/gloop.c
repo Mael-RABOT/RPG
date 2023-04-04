@@ -26,8 +26,6 @@ int gloop(app_t *app)
 {
     display_background(app);
     display_map(app->window, app->maps->selected_map, app->player);
-    sfVector2f size = sfView_getSize(app->view);
-    sfVector2f center = sfView_getCenter(app->view);
     center_view(app->view, app->player);
     sfRenderWindow_setView(app->window, app->view);
     return 0;

@@ -40,7 +40,7 @@ static void apply_default(player_t *player)
     player->experience = 0;
 }
 
-player_t *create_player(player_preset_t preset)
+player_t *create_player(player_preset_t preset, weapon_type_t type)
 {
     player_t *player = malloc(sizeof(player_t));
     switch (preset) {
@@ -52,5 +52,7 @@ player_t *create_player(player_preset_t preset)
             apply_default(player); break;
     }
     set_level_cost(player);
+    player->weapon = create_weapon(type);
+    player->alive = sfTrue;
     return player;
 }
