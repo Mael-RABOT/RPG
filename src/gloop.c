@@ -19,7 +19,7 @@ int choose_state(app_t *app)
         case game:
             gloop(app); break;
     }
-    if (app->fps->key_f == 1)
+    if (app->fps->key_f == 1 && app->state == game)
         show_fps(app);
     return 0;
 }
