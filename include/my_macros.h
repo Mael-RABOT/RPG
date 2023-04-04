@@ -28,6 +28,7 @@
     #define MUSICS              "./assets/sounds/musics/"
     #define FONTS               "./assets/fonts/"
     #define BACKGROUND          "./assets/backgrounds/"
+    #define TITLES              "./assets/Titles/"
 
     /* Splash Screen */
     #define RUINED_BACK         IMAGES "ruined_back.png"
@@ -36,14 +37,17 @@
     #define SKIP                IMAGES "skip.png"
 
     /* Settings */
-    #define LOW_RESOLUTION      SETTINGS "800_600.png"
-    #define HIGH_RESOLUTION     SETTINGS "1920_1080.png"
+    #define LOW_RESOLUTION      SETTINGS "800x600.png"
+    #define HIGH_RESOLUTION     SETTINGS "1920x1080.png"
     #define FULLSCREEN          SETTINGS "fullscreen.png"
     #define MINUS               SETTINGS "minus.png"
     #define MUSIC               SETTINGS "music.png"
     #define PLUS                SETTINGS "plus.png"
     #define SOUND               SETTINGS "sound.png"
     #define WINDOWDED           SETTINGS "windowded.png"
+    #define SETTINGS_BACKGROUND BACKGROUND "settings_background.png"
+    #define RESOLUTION_TITLE    TITLES "resolution_title.png"
+    #define SOUNDS_TITLE        TITLES "sounds_title.png"
 
     /* Fonts */
     #define QUICKSAND_BOLD      FONTS "quicksand/Quicksand-Bold.otf"
@@ -83,5 +87,9 @@
     #define FIRE        PARTICLE "fire_sheet.png"
     #define SMOKE       PARTICLE "smoke_sheet.png"
     #define DEBUG       PARTICLE "debug.png"
+
+    /* Settings screen */
+    #define TITLE_WIDTH         320
+    #define TEXT_BUTTON_WIDTH   129
 
 #endif /* !MY_MACROS_H_ */

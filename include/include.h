@@ -31,7 +31,9 @@
     #include "game/object.h"
     #include "game/fps.h"
     #include "game/app.h"
+    #include "game/button.h"
     #include "game/splash_screen.h"
+    #include "game/settings_menu.h"
 
     #include "dante/dante.h"
     #include "dante/maze.h"

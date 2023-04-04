@@ -44,6 +44,7 @@ SRC	=	src/main.c	\
 		src/fps/my_int_to_str.c	\
 		\
 		src/object/sprite.c \
+		src/object/text.c	\
 		\
 		src/background/background.c \
 		src/background/destroy_background.c \
@@ -79,6 +80,11 @@ SRC	=	src/main.c	\
 		src/particle_engine/add_particle.c \
 		src/particle_engine/update_particle.c \
 		src/particle_engine/clean_particle_list.c \
+		\
+		src/settings/create_settings_menu.c	\
+		src/settings/display_settings_menu.c	\
+		src/settings/callback.c	\
+		src/settings/states.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

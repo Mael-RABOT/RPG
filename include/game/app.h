@@ -72,6 +72,7 @@
         particle_t **particle_list;
         int particle_count;
         sfClock *particle_clock;
+        struct settings_menu *settings_menu;
     } app_t;
 
 #endif //APP_H_

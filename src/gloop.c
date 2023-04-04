@@ -16,8 +16,10 @@ int choose_state(app_t *app)
             splash_screen(app, app->window, app->splash_screen); break;
         case game:
             gloop(app); break;
+        case settings:
+            display_settings_menu(app); break;
     }
-    if (app->fps->key_f == 1)
+    if (app->fps->key_f == 1 && app->state == game)
         show_fps(app);
     return 0;
 }

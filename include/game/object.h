@@ -15,4 +15,9 @@
         sfTexture *texture;
     } sprite_t;
 
+    typedef struct text {
+        sfFont *font;
+        sfText *text;
+    } text_t;
+
 #endif

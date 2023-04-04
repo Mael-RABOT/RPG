@@ -97,6 +97,7 @@
     /* Object */
     sprite_t *create_sprite(const char *pathfile);
     int destroy_sprite(sprite_t *sprite);
+    text_t *create_text(const char *pathfile, int size, sfColor color, char *texts);
 
     /* entity */
     entity_t *create_entity(const char *pathfile);
@@ -136,5 +137,12 @@
         sfBool isometric);
     void update_particle(app_t *app);
     void clean_particle_list(app_t *app);
+
+    /* Settings */
+    settings_menu_t *create_settings_menu(sfRenderWindow *window);
+    void display_settings_menu(app_t *app);
+    int is_button_clicked(button_t *button, sfMouseButtonEvent *mouse);
+    int is_button_released(button_t *button, sfMouseButtonEvent *mouse);
+    int is_button_hover(button_t *button, sfMouseMoveEvent *mouse);
 
 #endif //BASE_REPO_PROTOTYPE_H
