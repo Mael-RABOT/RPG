@@ -163,4 +163,7 @@
     /* sfText */
     sfText *init_text(sfVector2f position, int size);
 
+    /* Player */
+    player_t *create_player(player_preset_t preset);
+
 #endif //BASE_REPO_PROTOTYPE_H

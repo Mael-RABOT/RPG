@@ -45,4 +45,10 @@
         Marilyn
     } face_t;
 
+    typedef enum player_preset {
+        Default = 0,
+        Strength,
+        Dexterity
+    } player_preset_t;
+
 #endif // ENUM_H_

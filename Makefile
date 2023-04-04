@@ -92,6 +92,9 @@ SRC	=	src/main.c	\
 		src/string/remove_trailing.c \
 		\
 		src/sfText/create_text.c \
+		\
+		src/player/creation/create_player.c \
+		\
 
 OBJ	=	$(SRC:.c=.o)
 

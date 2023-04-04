@@ -34,6 +34,7 @@
     #include "game/object.h"
     #include "game/fps.h"
     #include "game/splash_screen.h"
+    #include "game/player.h"
     #include "game/app.h"
     #include "game/speaker.h"
 
