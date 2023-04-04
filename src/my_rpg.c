@@ -29,7 +29,6 @@ int my_rpg(const int ac, const char **av)
         update_cursor(app);
         update_particle(app);
         sfRenderWindow_display(app->window);
-        sfRenderWindow_close(app->window);
     }
     destroy_game(app);
     return 0;
