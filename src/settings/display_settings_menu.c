@@ -46,5 +46,5 @@ void display_settings_menu(sfRenderWindow *window, settings_menu_t *menu)
     sfRenderWindow_drawRectangleShape(window, menu->low_resolution->rect, NULL);
     sfRenderWindow_drawRectangleShape(window, menu->high_resolution->rect,
     NULL);
-    return ;
+    return;
 }
