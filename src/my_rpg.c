@@ -28,6 +28,10 @@ int my_rpg(const int ac, const char **av)
         choose_state(app);
         update_cursor(app);
         update_particle(app);
+        if (app->state == game)
+            sfRenderWindow_setView(app->window, app->view);
+        else
+            sfRenderWindow_setView(app->window, app->default_view);
         sfRenderWindow_display(app->window);
     }
     destroy_game(app);
