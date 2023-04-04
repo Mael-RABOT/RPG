@@ -18,6 +18,8 @@ entity_t *create_entity(const char *pathfile)
 {
     entity_t *player = malloc(sizeof(entity_t));
     player->sprite = create_sprite(pathfile);
+    sfIntRect rect = sfSprite_getLocalBounds(player->sprite->sprite);
+    rect.width /= 4;
     player->layer = 0;
     return player;
 }
