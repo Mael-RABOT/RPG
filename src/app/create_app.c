@@ -32,6 +32,7 @@ app_t *create_app(sfVideoMode videomode)
     app->window = create_window(app->videomode, "my_rpg");
     app->state = DEFAULT_GAME_STATE;
     app->splash_screen = create_splash_screen(app->window);
+    app->main_menu = create_main_menu(app->window);
     sfRenderWindow_setFramerateLimit(app->window, 60);
     app->fps = create_fps_counter();
     app->background = init_background();

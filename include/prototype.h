@@ -163,4 +163,24 @@
     /* sfText */
     sfText *init_text(sfVector2f position, int size);
 
+    /* main_menu */
+    main_menu_t *create_main_menu(sfRenderWindow *window);
+    int display_main_menu(app_t *app);
+    button_t *create_button(button_info_t *info, int nb_element,
+    char *pathfile, void (*action)(app_t *app));
+    int is_button_hover(button_t *button, sfMouseMoveEvent *mouse);
+    int is_button_released(button_t *button, sfMouseButtonEvent *mouse);
+    int is_button_clicked(button_t *button, sfMouseButtonEvent *mouse);
+    void play(app_t *app);
+    void resume(app_t *app);
+    void settings_b(app_t *app);
+    void quit(app_t *app);
+    int main_menu_click(main_menu_t *main_menu,
+    sfMouseButtonEvent *button_event);
+    int main_menu_release(main_menu_t *main_menu,
+    sfMouseButtonEvent *button_event);
+    int main_menu_hover(main_menu_t *main_menu, sfMouseMoveEvent *move_event);
+    int update_all_buttons_textures(app_t *app);
+    int main_menu_buttons_actions(app_t *app);
+
 #endif //BASE_REPO_PROTOTYPE_H

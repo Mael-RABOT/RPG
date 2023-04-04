@@ -92,6 +92,13 @@ SRC	=	src/main.c	\
 		src/string/remove_trailing.c \
 		\
 		src/sfText/create_text.c \
+		src/main_menu/display_main_menu.c	\
+		src/main_menu/main_menu.c	\
+		src/main_menu/create_main_menu.c	\
+		src/main_menu/callback.c	\
+		src/main_menu/buttons.c	\
+		src/main_menu/states.c \
+		src/main_menu/update_textures.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

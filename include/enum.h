@@ -20,7 +20,8 @@
         pause_menu,
         game,
         dialogue,
-        cinematics
+        cinematics,
+        closed
     } state_t;
 
     typedef enum block {
