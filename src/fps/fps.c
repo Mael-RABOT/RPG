@@ -30,8 +30,7 @@ void show_fps(app_t *app)
     position.x += 5;
     sfText_setPosition(app->fps->text, position);
     sfText_setString(app->fps->text, "FPS");
-    if (app->state == game)
-        sfRenderWindow_drawText(app->window, app->fps->text, NULL);
+    sfRenderWindow_drawText(app->window, app->fps->text, NULL);
 }
 
 void get_fps(app_t *app)
