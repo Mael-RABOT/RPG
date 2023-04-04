@@ -19,7 +19,8 @@ tile_t *create_tile(int id, map_object_t **map_object, sfVector2i position,
     tile->tile = sfSprite_create();
     tile->teleport = NULL;
     sfSprite_setTexture(tile->tile, tile->texture, sfFalse);
-    sfVector2f real_position = {((position.x - position.y) * 32 / 2), ((position.x + position.y) * 32 / 4)};
+    sfVector2f real_position = {((position.x - position.y) * 32 / 2),
+        ((position.x + position.y) * 32 / 4)};
     sfSprite_setPosition(tile->tile, real_position);
     return tile;
 }

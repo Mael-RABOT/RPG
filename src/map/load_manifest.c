@@ -12,7 +12,8 @@
 
 map_object_t **load_object(const char *pathfile)
 {
-    map_object_t **map_object = malloc(sizeof(map_object_t) * count_manifest_object(pathfile));
+    int size = count_manifest_object(pathfile);
+    map_object_t **map_object = malloc(sizeof(map_object_t) * (size + 1));
     map_object[0] = NULL;
     FILE *fp = fopen(pathfile, "r");
     char *line = NULL;

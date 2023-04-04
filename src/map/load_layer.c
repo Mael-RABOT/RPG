@@ -19,7 +19,8 @@ layer_t *create_layer(const char *pathfile, const char *layer_path,
 
 layer_t **load_layer(const char *pathfile, map_object_t **map_object)
 {
-    layer_t **layer = malloc(sizeof(layer_t *) * (count_map_layer(pathfile) + 1));
+    int size = count_map_layer(pathfile);
+    layer_t **layer = malloc(sizeof(layer_t *) * (size + 1));
     FILE *fp = fopen(pathfile, "r");
     char *line = NULL;
     size_t len = 0;

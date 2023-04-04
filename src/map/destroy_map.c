@@ -50,6 +50,7 @@ int destroy_map(map_t *map)
         i += 1;
     }
     free(map);
+    return 0;
 }
 
 int destroy_maps(maps_t *maps)

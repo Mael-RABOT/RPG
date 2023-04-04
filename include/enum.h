@@ -34,6 +34,6 @@
         tutorial = 0,
         hub,
         maze
-     } map_index_t;
+    } map_index_t;
 
 #endif
