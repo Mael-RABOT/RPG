@@ -70,7 +70,8 @@
         int collision);
     map_t *create_map(const char *name, const char *path, map_object_t **mo);
     layer_t **load_layer(const char *pathfile, map_object_t **map_object);
-    int load_tile(layer_t *layer, const char *pathfile, map_object_t **map_object);
+    int load_tile(layer_t *layer, const char *pathfile,
+        map_object_t **map_object);
     int change_map(maps_t *maps, entity_t *player, int id);
     int detect_spawn(map_t *map);
 
@@ -139,8 +140,15 @@
     /* Dialogues */
     int dialogue_manager(app_t *app, char *filepath);
     void display_game_dialogue(app_t *app);
-    void display_dialogue(app_t *app, sprite_t *background);
+    void display_dialogue(app_t *app, sprite_t *background,
+        speakers_t *speakers);
     void scale_sprite(app_t *app, sprite_t *background);
     void dialogue_events(app_t *app);
+    speakers_t *init_speakers(FILE *stream, sfVector2u size);
+    face_t find_face_id(char *line);
+    char *find_head_sprite(face_t face_id);
+
+    /* String */
+    void remove_trailing_newline_or_space(char *line);
 
 #endif //BASE_REPO_PROTOTYPE_H

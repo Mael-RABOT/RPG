@@ -83,12 +83,16 @@ SRC	=	src/main.c	\
 		src/dialogue/display.c \
 		src/dialogue/ressources.c \
 		src/dialogue/events.c \
+		src/dialogue/init_speaker.c \
+		\
+		src/string/remove_trailing.c \
 
 OBJ	=	$(SRC:.c=.o)
 
 CC	=	gcc
 CFLAGS	= -Wall
-LDFLAGS	= -lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio -L./lib -lmy_string -lmy_printf -lmy_stdlib
+LDFLAGS	= -lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio \
+-L./lib -lmy_string -lmy_printf -lmy_stdlib
 EXE	=	my_rpg
 
 all:	$(EXE)

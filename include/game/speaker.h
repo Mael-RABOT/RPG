@@ -13,6 +13,7 @@
     typedef struct speakers {
         sprite_t **face_list;
         char **name_list;
+        face_t speaker_id;
     } speakers_t;
 
 #endif //B_MUL_200_LYN_2_1_MYRPG_MATHIEU_BOREL_SPEAKER_H
