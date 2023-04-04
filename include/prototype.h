@@ -44,7 +44,7 @@
 
     /* event */
     int main_event(app_t *app);
-    int detect_collision(entity_t *player, map_t *map);
+    int detect_collision(app_t *app, entity_t *player, maps_t *maps);
 
     /* map*/
     tile_t *create_tile(int id, map_object_t **map_object, sfVector2i position,
@@ -54,7 +54,7 @@
         map_object_t **map_object, entity_t *player);
     int display_map(sfRenderWindow *window, map_t *map, entity_t *player);
 
-    int destroy_map(map_t *map);
+    int destroy_maps(maps_t *maps);
 
     int count_manifest_map(const char *filepath);
     int count_manifest_object(const char *filepath);
@@ -70,11 +70,18 @@
         int collision);
     map_t *create_map(const char *name, const char *path, map_object_t **mo);
     layer_t **load_layer(const char *pathfile, map_object_t **map_object);
-    int load_tile(layer_t *layer, const char *pathfile, map_object_t **map_object);
-    int change_map(maps_t *maps, entity_t *player, int id);
+    int load_tile(layer_t *layer, const char *pathfile,
+        map_object_t **map_object);
+    int change_map(app_t *app, maps_t *maps, entity_t *player, int id);
+    int change_map_by_name(app_t *app, maps_t *maps, entity_t *player,
+        char *name);
     int detect_spawn(map_t *map);
 
     int destroy_map(map_t *map);
+
+    teleport_t *create_teleport(int id);
+    int destroy_teleport(teleport_t *teleport);
+    int connect_teleporter(const char *pathfile, layer_t *layer);
 
     /* array manipulation */
     int print_array(char **array);
@@ -103,10 +110,10 @@
     /* entity */
     entity_t *create_entity(const char *pathfile);
     int destroy_entity(entity_t *entity);
-    int move_player(sfView *view, map_t *map, entity_t *player, sfEvent event);
+    int move_player(app_t *app, sfEvent event);
 
     /* view */
-    sfView *create_view(void);
+    sfView *create_view(sfVector2f size);
     int center_view(sfView *view, entity_t *player);
 
     /* Conversion */
@@ -115,8 +122,7 @@
     sfVector2f get_isometric_pos(sfVector2f position, sfVector2f size);
 
     /* Background */
-    void change_background(background_t *background, char *filepath);
-    background_t *init_background(void);
+    void change_background(sprite_t *background, char *filepath);
     void display_background(app_t *app);
     void destroy_background(app_t *app);
 
@@ -155,5 +161,51 @@
     void play(app_t *app);
     button_t *create_button(button_info_t *info, int nb_element,
     char *pathfile, void (*action)(app_t *app));
+
+    /* Dialogues */
+    int dialogue_manager(app_t *app, char *filepath);
+    void display_game_dialogue(app_t *app);
+    void display_dialogue(app_t *app, sprite_t *background,
+        speakers_t *speakers);
+    void scale_sprite(app_t *app, sprite_t *background);
+    void dialogue_events(app_t *app);
+    speakers_t *init_speakers(app_t *app, FILE *stream, sfVector2u size);
+    face_t find_face_id(char *line);
+    char *find_head_sprite(face_t face_id);
+    sfVector2f find_head_position(app_t *app, sfBool player);
+    sfVector2f find_text_position(app_t *app);
+
+    /* String */
+    void remove_trailing_newline_or_space(char *line);
+
+    /* sfText */
+    sfText *init_text(sfVector2f position, int size);
+
+    /* main_menu */
+    main_menu_t *create_main_menu(sfRenderWindow *window);
+    int display_main_menu(app_t *app);
+    button_t *create_button(button_info_t *info, int nb_element,
+    char *pathfile, void (*action)(app_t *app));
+    int is_button_hover(button_t *button, sfMouseMoveEvent *mouse);
+    int is_button_released(button_t *button, sfMouseButtonEvent *mouse);
+    int is_button_clicked(button_t *button, sfMouseButtonEvent *mouse);
+    void play(app_t *app);
+    void resume(app_t *app);
+    void settings_b(app_t *app);
+    void quit(app_t *app);
+    int main_menu_click(main_menu_t *main_menu,
+    sfMouseButtonEvent *button_event);
+    int main_menu_release(main_menu_t *main_menu,
+    sfMouseButtonEvent *button_event);
+    int main_menu_hover(main_menu_t *main_menu, sfMouseMoveEvent *move_event);
+    int update_all_buttons_textures(app_t *app);
+    int main_menu_buttons_actions(app_t *app);
+
+    /* Player */
+    player_t *create_player(player_preset_t preset, weapon_type_t type);
+    void attack(player_t *attacker, player_t *defender);
+    weapon_t *create_weapon(weapon_type_t type);
+    void set_level_cost(player_t *player);
+    int level_up(player_t *player);
 
 #endif //BASE_REPO_PROTOTYPE_H

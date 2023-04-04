@@ -1,0 +1,5 @@
+id:texture_path:collision
+layer:./maps/fight_forest/fight_forest_layer1.csv
+layer:./maps/fight_forest/fight_forest_layer2.csv
+layer:./maps/fight_forest/fight_forest_layer3.csv
+layer:./maps/fight_forest/fight_forest_layer4.csv

@@ -8,7 +8,7 @@
 #ifndef BUTTON_H_
     #define BUTTON_H_
 
-    #include "../include.h"
+    #include "../prototype.h"
 
     typedef enum bool {
         false = 0,

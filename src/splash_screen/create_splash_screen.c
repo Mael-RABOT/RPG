@@ -7,7 +7,7 @@
 
 #include "../../include/prototype.h"
 
-title_t *create_title(sfRenderWindow *window)
+static title_t *create_title(sfRenderWindow *window)
 {
     title_t *title = malloc(sizeof(title_t));
     sfVector2u window_size = sfRenderWindow_getSize(window);

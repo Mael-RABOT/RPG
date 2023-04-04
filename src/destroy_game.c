@@ -10,8 +10,8 @@
 int destroy_game(app_t *app)
 {
     destroy_entity(app->player);
-    //destroy_map(app->tutorial);
     destroy_fps(app->fps);
+    destroy_maps(app->maps);
     destroy_app(app);
     return 0;
 }

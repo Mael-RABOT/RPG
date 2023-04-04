@@ -22,7 +22,8 @@ static int get_map_size(const char *pathfile)
     return no;
 }
 
-static tile_t **load_tile_line(map_object_t **map_object, char *line, int index, int size)
+static tile_t **load_tile_line(map_object_t **map_object, char *line, int index,
+    int size)
 {
     char **array = split(line, ',');
     tile_t **tile = malloc(sizeof(tile_t *) * (len_array(array) + 1));
@@ -53,7 +54,7 @@ int load_tile(layer_t *layer, const char *pathfile, map_object_t **map_object)
     FILE *fp = fopen(pathfile, "r");
     char *line = NULL;
     size_t len = 0;
-    int index =  0;
+    int index = 0;
     int read_size = 0;
     while ((read_size = getline(&line, &len, fp)) != -1) {
         line[read_size - 1] = '\0';

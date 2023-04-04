@@ -10,9 +10,14 @@
 
     #include "../include.h"
 
+    typedef struct teleport {
+        char *name;
+    } teleport_t;
+
     typedef struct tile {
         int id;
-        int collision;
+        block_t state;
+        teleport_t *teleport;
         sfVector2f position;
         sfTexture *texture;
         sfSprite *tile;
@@ -28,7 +33,7 @@
     typedef struct map_object {
         int id;
         char *path;
-        int collision;
+        block_t state;
         sfTexture *texture;
     } map_object_t;
 
@@ -49,13 +54,9 @@
     typedef struct entity {
         sprite_t *sprite;
         sfVector2f position;
+        sfIntRect texture_rect;
         int layer;
     } entity_t;
-
-    typedef struct background {
-        sfTexture *texture;
-        sfSprite *sprite;
-    } background_t;
 
     typedef struct app {
         int state;
@@ -65,14 +66,17 @@
         entity_t *player;
         struct splash_screen *splash_screen;
         sfMusic *music;
-        background_t *background;
+        sprite_t *background;
         sprite_t *cursor;
         fps_t *fps;
+        sfView *default_view;
         sfView *view;
         particle_t **particle_list;
         int particle_count;
         sfClock *particle_clock;
         struct settings_menu *settings_menu;
+        struct main_menu *main_menu;
+        player_t *player_stats;
     } app_t;
 
 #endif //APP_H_

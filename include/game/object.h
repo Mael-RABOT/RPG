@@ -10,6 +10,12 @@
 
     #include "../prototype.h"
 
+    typedef struct sfVector3i {
+        int x;
+        int y;
+        int z;
+    } sfVector3i;
+
     typedef struct sprite {
         sfSprite *sprite;
         sfTexture *texture;

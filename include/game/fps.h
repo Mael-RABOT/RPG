@@ -12,6 +12,8 @@
 
     typedef struct fps {
         sfClock *clock;
+        sfFont *font;
+        sfText *text;
         int fps;
         int key_f;
     } fps_t;

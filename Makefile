@@ -22,6 +22,8 @@ SRC	=	src/main.c	\
 		src/map/destroy_map.c \
 		src/map/detect_spawn.c \
 		src/map/change_map.c \
+		src/map/create_teleport.c \
+		src/map/connect_teleporter.c \
 		\
 		src/event/main_event.c \
 		\
@@ -86,15 +88,41 @@ SRC	=	src/main.c	\
 		src/settings/callback.c	\
 		src/settings/states.c	\
 		src/settings/button_creation.c	\
+		\
+		src/dialogue/dialogue_manager.c \
+		src/dialogue/display.c \
+		src/dialogue/ressources.c \
+		src/dialogue/events.c \
+		src/dialogue/init_speaker.c \
+		src/dialogue/position.c \
+		\
+		src/string/remove_trailing.c \
+		\
+		src/sfText/create_text.c \
+		\
+		src/main_menu/display_main_menu.c	\
+		src/main_menu/main_menu.c	\
+		src/main_menu/create_main_menu.c	\
+		src/main_menu/callback.c	\
+		src/main_menu/buttons.c	\
+		src/main_menu/states.c \
+		src/main_menu/update_textures.c	\
+		\
+		src/player/creation/create_player.c \
+		src/player/creation/create_weapon.c \
+		src/player/level_cost.c \
+		src/player/level_up.c \
+		src/player/attack.c \
+		\
 
 OBJ    =    $(SRC:.c=.o)
 
-CC      = gcc
-CFLAGS  = -Wall
-LIB     = -L./lib -lmy_string -lmy_printf -lmy_stdlib -lm
-LDFLAGS = -lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio $(LIB)
+CC	=	gcc
+CFLAGS	= -Wall
+LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib -lm
+LDFLAGS	=	-lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio $(LIB)
 
-EXE    =    my_rpg
+EXE	=	my_rpg
 
 all:	$(EXE)
 

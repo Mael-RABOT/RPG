@@ -12,7 +12,7 @@ int get_collision(map_object_t **map_object, int id)
     int i = 0;
     while (map_object[i] != NULL) {
         if (map_object[i]->id == id) {
-            return map_object[i]->collision;
+            return map_object[i]->state;
         }
         i += 1;
     }
