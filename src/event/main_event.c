@@ -33,7 +33,9 @@ int main_event(app_t *app)
     while (sfRenderWindow_pollEvent(app->window, &event)) {
         if (event.type == sfEvtClosed)
             sfRenderWindow_close(app->window);
-        if (app->state == splash && event.type == sfEvtKeyPressed)
+        if (app->state == splash &&
+            (event.type == sfEvtKeyPressed
+            || event.type == sfEvtMouseButtonReleased))
             skip_splash_screen(app);
         if (app->state == game && event.type == sfEvtKeyPressed)
             manage_keys(app, event.key.code);

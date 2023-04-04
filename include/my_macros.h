@@ -14,7 +14,6 @@
     #define BACKGROUND         "assets/backgrounds/"
     #define BUTTONS             "assets/buttons/main_menu/"
     #define MENU_SETTINGS       "assets/buttons/main_menu/settings/"
-    #define CINEMATICS          "assets/cinematics/"
     #define FONTS               "assets/fonts/"
     #define IMAGES              "assets/images/"
     #define EFFECTS             "assets/sounds/effects/"
@@ -22,7 +21,7 @@
     #define TITLES              "assets/titles/"
 
     /* Game State*/
-    #define DEFAULT_GAME_STATE  1
+    #define DEFAULT_GAME_STATE  0
 
     /* Time */
     #define TIME_DIVIDER        1000000.0
@@ -51,7 +50,7 @@
     #define FADE_ITERATION      50
 
     /* FPS Counter*/
-    #define SHOW_FPS_DEFAULT    0
+    #define SHOW_FPS_DEFAULT    1
 
     /* Sounds */
     #define INTRO_MUSIC         MUSICS "intro.ogg"
