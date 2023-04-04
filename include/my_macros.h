@@ -24,6 +24,7 @@
 
     /* Quick Path*/
     #define IMAGES              "./assets/images/"
+    #define SETTINGS            "./assets/buttons/main_menu/settings/"
     #define MUSICS              "./assets/sounds/musics/"
     #define FONTS               "./assets/fonts/"
     #define BACKGROUND          "./assets/backgrounds/"
@@ -34,9 +35,19 @@
     #define TITLE               IMAGES "title.png"
     #define SKIP                IMAGES "skip.png"
 
+    /* Settings */
+    #define LOW_RESOLUTION      SETTINGS "800_600.png"
+    #define HIGH_RESOLUTION     SETTINGS "1920_1080.png"
+    #define FULLSCREEN          SETTINGS "fullscreen.png"
+    #define MINUS               SETTINGS "minus.png"
+    #define MUSIC               SETTINGS "music.png"
+    #define PLUS                SETTINGS "plus.png"
+    #define SOUND               SETTINGS "sound.png"
+    #define WINDOWDED           SETTINGS "windowded.png"
+
     /* Fonts */
-    #define QUICKSAND_BOLD      FONTS  "quicksand/Quicksand-Bold.otf"
-    #define QUICKSAND_REGULAR   FONTS  "quicksand/Quicksand-Regular.otf"
+    #define QUICKSAND_BOLD      FONTS "quicksand/Quicksand-Bold.otf"
+    #define QUICKSAND_REGULAR   FONTS "quicksand/Quicksand-Regular.otf"
     #define FFFFORWA            FONTS "FFFFORWA.TTF"
 
     /* Main Menu */
