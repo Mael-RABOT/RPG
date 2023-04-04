@@ -22,15 +22,12 @@ int my_rpg(const int ac, const char **av)
     app->player = create_entity("./assets/player_debug.png");
     app->maps = load_maps();
     change_map(app->maps, app->player, 0);
-    //app->state = game;
     while (sfRenderWindow_isOpen(app->window)) {
         sfRenderWindow_clear(app->window, sfBlack);
         choose_state(app);
         update_cursor(app);
         update_particle(app);
         sfRenderWindow_display(app->window);
-        attack(app->player_stats, NULL);
-        sfRenderWindow_close(app->window);
     }
     destroy_game(app);
     return 0;
