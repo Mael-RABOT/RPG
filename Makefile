@@ -86,6 +86,8 @@ SRC	=	src/main.c	\
 		src/dialogue/init_speaker.c \
 		\
 		src/string/remove_trailing.c \
+		\
+		src/sfText/create_text.c \
 
 OBJ	=	$(SRC:.c=.o)
 

@@ -15,10 +15,16 @@ int update_speaker(app_t *app, sprite_t **speaker, face_t face_id)
     return 0;
 }
 
+void update_text(app_t  *app, speakers_t *speakers, char *line)
+{
+    sfText_setString(speakers->text, line);
+    sfRenderWindow_drawText(app->window, speakers->text, NULL);
+}
+
 int update_dialogue(app_t *app, speakers_t *speakers, FILE *stream,
     sfClock *timer)
 {
-    if (sfClock_getElapsedTime(timer).microseconds / TIME_DIVIDER < 1.5)
+    if (sfClock_getElapsedTime(timer).microseconds / TIME_DIVIDER < 0.7f)
         return 0;
     size_t len;
     char *line = NULL;
@@ -27,7 +33,7 @@ int update_dialogue(app_t *app, speakers_t *speakers, FILE *stream,
     remove_trailing_newline_or_space(line);
     face_t id = find_face_id(line);
     if (id == -1) {
-        printf("Line: %s\n", line);
+        update_text(app, speakers, line);
     } else {
         speakers->speaker_id = id;
     }
@@ -35,7 +41,7 @@ int update_dialogue(app_t *app, speakers_t *speakers, FILE *stream,
     return 0;
 }
 
-static int dialogue_loop(app_t *app, FILE *stream, sprite_t *background,
+int dialogue_loop(app_t *app, FILE *stream, sprite_t *background,
     state_t old_state)
 {
     sfClock *timer = sfClock_create();

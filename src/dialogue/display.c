@@ -49,4 +49,5 @@ void display_dialogue(app_t *app, sprite_t *background, speakers_t *speakers)
     sfRenderWindow_drawSprite(app->window, background->sprite, NULL);
     display_head(app->window, speakers);
     update_cursor(app);
+    sfRenderWindow_drawText(app->window, speakers->text, NULL);
 }

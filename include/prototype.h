@@ -151,4 +151,7 @@
     /* String */
     void remove_trailing_newline_or_space(char *line);
 
+    /* sfText */
+    sfText *create_text(sfVector2f position, int size);
+
 #endif //BASE_REPO_PROTOTYPE_H

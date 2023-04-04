@@ -28,9 +28,10 @@ char *find_head_sprite(face_t face_id)
         case Marilyn:
             return MARILYN_FACE;
     }
+    return NULL;
 }
 
-void scale_head_sprite(sprite_t *sprite, face_t face_id, sfVector2u size)
+static void scale_head_sprite(sprite_t *sprite, face_t face_id, sfVector2u size)
 {
     float scale_factor = 3.0f;
     sfSprite_scale(sprite->sprite, (sfVector2f){scale_factor, scale_factor});
@@ -41,7 +42,7 @@ void scale_head_sprite(sprite_t *sprite, face_t face_id, sfVector2u size)
     }
 }
 
-void fill_speaker(speakers_t *speakers, char **names, sfVector2u size)
+static void fill_speaker(speakers_t *speakers, char **names, sfVector2u size)
 {
     face_t face_id;
     for (int i = 0; names[i] != NULL; i++) {
@@ -67,5 +68,6 @@ speakers_t *init_speakers(FILE *stream, sfVector2u size)
     speakers->face_list = malloc(sizeof(sprite_t) * arr_size + 1);
     fill_speaker(speakers,
         speakers->name_list, size);
+    speakers->text = create_text((sfVector2f){150, 700}, 40);
     return speakers;
 }
