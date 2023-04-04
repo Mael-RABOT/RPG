@@ -120,11 +120,11 @@ EXE	=	my_rpg
 all:	$(EXE)
 
 %.o	:	%.c
-		$(CC) -o $@ -c $^ $(CFLAGS)
+		$(CC) -o $@ -c $^ $(CFLAGS) -g3
 
 $(EXE): $(OBJ)
 		@make -C ./lib
-		$(CC) -o $(EXE) $(SRC) $(LDFLAGS)
+		$(CC) -o $(EXE) $(SRC) $(LDFLAGS) -g3
 
 clean:
 		@rm -rf $(OBJ)

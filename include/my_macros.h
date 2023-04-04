@@ -51,7 +51,7 @@
     #define FADE_ITERATION      50
 
     /* FPS Counter*/
-    #define SHOW_FPS_DEFAULT    1
+    #define SHOW_FPS_DEFAULT    0
 
     /* Sounds */
     #define INTRO_MUSIC         MUSICS "intro.ogg"
