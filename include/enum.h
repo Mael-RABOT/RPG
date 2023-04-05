@@ -23,7 +23,8 @@
         game,
         dialogue,
         cinematics,
-        closed
+        closed,
+        credits_screen
     } state_t;
 
     typedef enum block {

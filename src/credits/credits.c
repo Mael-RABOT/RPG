@@ -7,11 +7,34 @@
 
 #include "../../include/prototype.h"
 
+static void credits_event(app_t *app)
+{
+    sfEvent event;
+    while (sfRenderWindow_pollEvent(app->window, &event)) {
+        if (event.type == sfEvtClosed)
+            sfRenderWindow_close(app->window);
+    }
+}
+
 void credits(app_t *app)
 {
-    sfBool credits_playing = sfTrue;
-    while (sfRenderWindow_isOpen(app->window) && credits_playing) {
-        credits_playing = sfFalse;
+    app->state = credits_screen;
+    sfRenderWindow_setView(app->window, app->default_view);
+    sprite_t *credit = create_sprite(CREDITS);
+    sfClock *timer = sfClock_create();
+    sfVector2f pos = (sfVector2f){0.0f, 0.0f};
+    while (sfRenderWindow_isOpen(app->window) && pos.y > -6500) {
+        credits_event(app);
+        sfRenderWindow_clear(app->window, sfBlack);
+        if ((float )sfClock_getElapsedTime(timer).microseconds / TIME_DIVIDER
+        > 0.02) {
+            pos.y -= 3;
+            sfSprite_setPosition(credit->sprite, pos);
+            sfClock_restart(timer);
+        }
+        sfRenderWindow_drawSprite(app->window, credit->sprite, NULL);
+        sfRenderWindow_display(app->window);
     }
+    sfClock_destroy(timer);
     app->state = main_menu;
 }

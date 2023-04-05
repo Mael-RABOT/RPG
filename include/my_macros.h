@@ -21,6 +21,9 @@
     /* Game State*/
     #define DEFAULT_GAME_STATE  4
 
+    /* Credits */
+    #define CREDITS             BACKGROUND "credits.png"
+
     /* Time */
     #define TIME_DIVIDER        1000000.0
     #define ANIMATION_TICK      0.15
