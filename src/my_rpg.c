@@ -24,11 +24,11 @@ static int chose_view(app_t *app)
 
 static int main_display(app_t *app)
 {
+    chose_view(app);
     sfRenderWindow_clear(app->window, sfBlack);
     choose_state(app);
     update_cursor(app);
     update_particle(app);
-    chose_view(app);
     sfRenderWindow_display(app->window);
     return 0;
 }

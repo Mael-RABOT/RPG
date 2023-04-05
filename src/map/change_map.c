@@ -13,10 +13,11 @@ int change_map(app_t *app, maps_t *maps, entity_t *player, int id)
     player->position = maps->selected_map->spawn;
     sfVector2f size = maps->selected_map->layer[1]->size;
     set_isometric_pos(player, maps->selected_map->spawn, size);
-    sfRenderWindow_setView(app->window, app->default_view);
-    if (app->state == game)
+    if (app->state == game) {
+        sfRenderWindow_setView(app->window, app->default_view);
         launch_cinematic(app, Portal);
-    sfRenderWindow_setView(app->window, app->view);
+        sfRenderWindow_setView(app->window, app->view);
+    }
     return 0;
 }
 

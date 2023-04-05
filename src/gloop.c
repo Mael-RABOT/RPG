@@ -19,15 +19,15 @@ int choose_state(app_t *app)
         case game:
             gloop(app); break;
     }
-    if (app->fps->key_f == 1 && app->state == game)
-        show_fps(app);
-    return 0;
+        return 0;
 }
 
 int gloop(app_t *app)
 {
     display_background(app);
-    display_map(app->window, app->maps->selected_map, app->player);
+    if (app->fps->key_f == 1 && app->state == game)
+        show_fps(app);
     center_view(app->view, app->player);
+    display_map(app->window, app->maps->selected_map, app->player);
     return 0;
 }
