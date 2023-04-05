@@ -7,11 +7,10 @@
 
 #include "../../include/prototype.h"
 
-int launch_startup_sound(app_t *app, int id)
+int launch_sound(app_t *app, int id)
 {
     if (id >= app->music_handler->song_number)
         return EXIT_FAILURE;
-    sfMusic_destroy(app->music_handler->music);
     app->music_handler->music = sfMusic_createFromFile(
         app->music_handler->songs[id]->path);
     if (app->music_handler->songs[id]->type == Music)

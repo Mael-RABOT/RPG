@@ -11,3 +11,8 @@ void stop_sound(app_t *app)
 {
     sfMusic_stop(app->music_handler->music);
 }
+
+void close_sound(app_t *app)
+{
+    sfMusic_destroy(app->music_handler->music);
+}

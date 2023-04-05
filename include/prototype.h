@@ -97,8 +97,9 @@
 
     /* Musics */
     void create_music_handler(app_t *app);
-    int launch_startup_sound(app_t *app, int id);
+    int launch_sound(app_t *app, int id);
     void stop_sound(app_t *app);
+    void close_sound(app_t *app);
 
     /* Pathfinding */
     int pathfinder(app_t *app);
