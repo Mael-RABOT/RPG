@@ -6,4 +6,4 @@ vgcore.*
 *.gcda
 *.gcno
 my_rpg
-map_2.csv
+maps/Maze/map_2.csv
