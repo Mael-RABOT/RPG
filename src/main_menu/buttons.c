@@ -34,13 +34,13 @@ void quit(app_t *app)
 
 int main_menu_buttons_actions(app_t *app)
 {
-    if (IS_PRESSED(app->main_menu->play->state))
+    if (IS_RELEASED(app->main_menu->play->state))
         play(app);
-    if (IS_PRESSED(app->main_menu->resume->state))
+    if (IS_RELEASED(app->main_menu->resume->state))
         resume(app);
-    if (IS_PRESSED(app->main_menu->settings->state))
+    if (IS_RELEASED(app->main_menu->settings->state))
         settings_b(app);
-    if (IS_PRESSED(app->main_menu->quit->state))
+    if (IS_RELEASED(app->main_menu->quit->state))
         quit(app);
     return 0;
 }

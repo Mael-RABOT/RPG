@@ -36,6 +36,7 @@ int is_button_hover(button_t *button, sfMouseMoveEvent *mouse)
         button->state = HOVER;
         return 1;
     } else {
+        button->state = NONE;
         return 0;
     }
 }
