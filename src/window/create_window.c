@@ -10,6 +10,7 @@
 sfRenderWindow *create_window(sfVideoMode videomode, const char *title)
 {
     sfRenderWindow *window = sfRenderWindow_create(videomode, title,
-        sfResize | sfClose, NULL);
+        sfClose, NULL);
+    sfRenderWindow_setPosition(window, (sfVector2i){0, 0});
     return window;
 }

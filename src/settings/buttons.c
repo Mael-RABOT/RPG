@@ -42,6 +42,7 @@ void resize_window(app_t *app, sfVector2u size)
     sfRenderWindow_setSize(app->window, size);
     app->settings_menu->high_resolution->state = NONE;
     app->settings_menu->low_resolution->state = NONE;
+    sfRenderWindow_setPosition(app->window, (sfVector2i){0, 0});
     return;
 }
 
@@ -49,17 +50,17 @@ void toggle_fullscreen(app_t *app, sfBool is_fullscreen)
 {
     sfVideoMode mode = {1920, 1080, 32};
 
-    if (!is_fullscreen) {
-        sfRenderWindow_close(app->window);
-        sfRenderWindow_destroy(app->window);
+    sfRenderWindow_close(app->window);
+    sfRenderWindow_destroy(app->window);
+    if (is_fullscreen == sfFalse) {
         app->window = sfRenderWindow_create(mode, "my_rpg", sfFullscreen, NULL);
         app->settings_menu->full_screen->state = NONE;
     } else {
-        sfRenderWindow_close(app->window);
-        app->window = sfRenderWindow_create(mode, "my_rpg", sfDefaultStyle,
-        NULL);
+        app->window = sfRenderWindow_create(mode, "my_rpg", sfClose, NULL);
         app->settings_menu->windowded->state = NONE;
+        sfRenderWindow_setPosition(app->window, (sfVector2i){0, 0});
     }
+    sfRenderWindow_setMouseCursorVisible(app->window, sfFalse);
     return;
 }
 
@@ -78,7 +79,7 @@ int settings_menu_buttons_actions(app_t *app)
     if (IS_RELEASED(app->settings_menu->windowded->state))
         toggle_fullscreen(app, sfTrue);
     if (IS_RELEASED(app->settings_menu->low_resolution->state))
-        resize_window(app, (sfVector2u){800, 600});
+        resize_window(app, (sfVector2u){854, 480});
     if (IS_RELEASED(app->settings_menu->high_resolution->state))
         resize_window(app, (sfVector2u){1920, 1080});
     return 0;
