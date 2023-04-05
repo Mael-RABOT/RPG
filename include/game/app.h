@@ -65,7 +65,7 @@
         maps_t *maps;
         entity_t *player;
         struct splash_screen *splash_screen;
-        sfMusic *music;
+        music_t *music_handler;
         sprite_t *background;
         sprite_t *cursor;
         fps_t *fps;

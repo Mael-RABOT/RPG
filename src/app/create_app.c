@@ -36,11 +36,11 @@ app_t *create_app(sfVideoMode videomode)
     sfRenderWindow_setFramerateLimit(app->window, 60);
     app->fps = create_fps_counter();
     app->background = create_sprite(NIGHT_SKY);
-
     create_cursor(app);
     app->particle_count = 0;
     app->particle_list = init_particle_list();
     app->particle_clock = sfClock_create();
     app->player_stats = create_player(Default, Fist);
+    create_music_handler(app);
     return app;
 }

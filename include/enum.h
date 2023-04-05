@@ -72,4 +72,9 @@
         Excellent
     } weapon_tier;
 
+    typedef enum song_type {
+        Music = 0,
+        Effect
+    } song_type_t;
+
 #endif // ENUM_H_

@@ -40,7 +40,9 @@ SRC	=	src/main.c	\
         src/splash_screen/update_splash_screen.c  \
         src/splash_screen/clean_splash_screen.c \
 		\
-        src/sounds/musics/startup_sound.c \
+        src/sounds/create_music_handler.c \
+        src/sounds/launch_sound.c \
+        src/sounds/stop_sound.c \
 		\
 		src/fps/fps.c \
 		src/fps/my_int_to_str.c	\
@@ -57,6 +59,7 @@ SRC	=	src/main.c	\
 		\
 		src/cursor/create_cursor.c \
 		src/cursor/update_cursor.c \
+		\
 		src/entity/create_entity.c \
 		src/entity/player_event.c \
 		src/entity/detect_collision.c \

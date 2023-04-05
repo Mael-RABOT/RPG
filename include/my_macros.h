@@ -16,8 +16,6 @@
     #define MENU_SETTINGS       "assets/buttons/main_menu/settings/"
     #define FONTS               "assets/fonts/"
     #define IMAGES              "assets/images/"
-    #define EFFECTS             "assets/sounds/effects/"
-    #define MUSICS              "assets/sounds/musics/"
     #define TITLES              "assets/titles/"
 
     /* Game State*/
@@ -53,7 +51,7 @@
     #define SHOW_FPS_DEFAULT    1
 
     /* Sounds */
-    #define INTRO_MUSIC         MUSICS "intro.ogg"
+    #define SOUND_MANIFEST      "./assets/sounds/manifest"
 
     /* Backgrounds */
     #define NIGHT_SKY           BACKGROUND "night_sky.png"
