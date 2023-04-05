@@ -11,7 +11,7 @@
     #define MIN(x, y)           ((x) < (y) ? (x) : (y))
     #define MAX(x, y)           ((x) > (y) ? (x) : (y))
 
-    #define BACKGROUND         "assets/backgrounds/"
+    #define BACKGROUND          "assets/backgrounds/"
     #define BUTTONS             "assets/buttons/main_menu/"
     #define MENU_SETTINGS       "assets/buttons/main_menu/settings/"
     #define FONTS               "assets/fonts/"
