@@ -16,7 +16,7 @@
         scaling_t scaling;
     } weapon_t;
 
-    typedef struct player {
+    typedef struct stat_entity {
         sfBool alive;
         int level;
         int hp;
@@ -27,6 +27,14 @@
         int experience;
         int level_cost;
         weapon_t *weapon;
-    } player_t;
+    } stat_t;
+
+    typedef struct entity {
+        sprite_t *sprite;
+        sfVector2f position;
+        sfIntRect texture_rect;
+        stat_t *stat;
+        int layer;
+    } entity_t;
 
 #endif //B_MUL_200_LYN_2_1_MYRPG_MATHIEU_BOREL_PLAYER_H

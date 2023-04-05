@@ -42,7 +42,7 @@ static int detect_on_layer(app_t *app, entity_t *player, maps_t *maps,
 
 int detect_collision(app_t *app, entity_t *player, maps_t *maps)
 {
-    int i = player->layer + 1;
+    int i = player->layer;
     return detect_on_layer(app, player, maps,
         maps->selected_map->layer[i]->layer);
 }

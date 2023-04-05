@@ -16,13 +16,14 @@ int destroy_entity(entity_t *entity)
 
 entity_t *create_entity(const char *pathfile)
 {
-    entity_t *player = malloc(sizeof(entity_t));
-    player->sprite = create_sprite(pathfile);
-    sfFloatRect rect = sfSprite_getLocalBounds(player->sprite->sprite);
+    entity_t *entity = malloc(sizeof(entity_t));
+    entity->sprite = create_sprite(pathfile);
+    entity->stat = create_player(Default, Fist);
+    sfFloatRect rect = sfSprite_getLocalBounds(entity->sprite->sprite);
     rect.width /= 4;
     sfIntRect new_rect = {rect.left, rect.top, rect.width, rect.height};
-    player->texture_rect = new_rect;
-    sfSprite_setTextureRect(player->sprite->sprite, new_rect);
-    player->layer = 0;
-    return player;
+    entity->texture_rect = new_rect;
+    sfSprite_setTextureRect(entity->sprite->sprite, new_rect);
+    entity->layer = 1;
+    return entity;
 }

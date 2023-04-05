@@ -7,7 +7,7 @@
 
 #include "../../include/prototype.h"
 
-int calcul_damage(player_t *player)
+int calcul_damage(stat_t *player)
 {
     switch (player->weapon->scaling) {
         case None:
@@ -22,12 +22,12 @@ int calcul_damage(player_t *player)
     return 0;
 }
 
-int calcul_damage_taken(player_t *player, int damage)
+int calcul_damage_taken(stat_t *player, int damage)
 {
     return (int)(damage - (player->defense / 5));
 }
 
-void attack(player_t *attacker, player_t *defender)
+void attack(stat_t *attacker, stat_t *defender)
 {
     int damage = calcul_damage(attacker);
     int damage_taken = calcul_damage_taken(defender, damage);

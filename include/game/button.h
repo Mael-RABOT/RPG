@@ -5,10 +5,10 @@
 ** button
 */
 
+#include "../prototype.h"
+
 #ifndef BUTTON_H_
     #define BUTTON_H_
-
-    #include "../prototype.h"
 
     typedef enum bool {
         false = 0,

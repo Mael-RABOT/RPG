@@ -21,7 +21,7 @@
     #define TITLES              "assets/titles/"
 
     /* Game State*/
-    #define DEFAULT_GAME_STATE  0
+    #define DEFAULT_GAME_STATE  4
 
     /* Time */
     #define TIME_DIVIDER        1000000.0

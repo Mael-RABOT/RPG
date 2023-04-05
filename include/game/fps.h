@@ -5,10 +5,10 @@
 ** fps
 */
 
+#include "../include.h"
+
 #ifndef FPS_H_
     #define FPS_H_
-
-    #include "../include.h"
 
     typedef struct fps {
         sfClock *clock;
