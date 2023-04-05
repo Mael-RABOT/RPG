@@ -110,6 +110,7 @@ SRC	=	src/main.c	\
 		src/player/level_up.c \
 		src/player/attack.c \
 		\
+		src/credits/credits.c \
 
 OBJ	=	$(SRC:.c=.o)
 

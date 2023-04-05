@@ -192,4 +192,7 @@
     void set_level_cost(player_t *player);
     int level_up(player_t *player);
 
+    /* Credits */
+    void credits(app_t *app);
+
 #endif //BASE_REPO_PROTOTYPE_H

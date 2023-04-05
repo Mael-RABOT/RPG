@@ -45,6 +45,7 @@ int my_rpg(const int ac, const char **av)
     change_map(app, app->maps, app->player, 0);
     while (sfRenderWindow_isOpen(app->window)) {
         main_display(app);
+        credits(app);
     }
     destroy_game(app);
     return 0;
