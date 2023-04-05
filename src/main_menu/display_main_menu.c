@@ -36,5 +36,7 @@ int display_main_menu(app_t *app)
     sfRenderWindow_drawSprite(app->window, app->main_menu->title->sprite,
     NULL);
     display_main_menu_buttons(app);
+        launch_sound(app, 0);
+
     return 0;
 }

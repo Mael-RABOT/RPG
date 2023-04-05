@@ -40,7 +40,9 @@ SRC	=	src/main.c	\
         src/splash_screen/update_splash_screen.c  \
         src/splash_screen/clean_splash_screen.c \
 		\
-        src/sounds/musics/startup_sound.c \
+		src/sounds/create_music_handler.c \
+        src/sounds/launch_sound.c \
+        src/sounds/stop_sound.c	\
 		\
 		src/fps/fps.c \
 		src/fps/my_int_to_str.c	\
@@ -87,6 +89,8 @@ SRC	=	src/main.c	\
 		src/settings/display_settings_menu.c	\
 		src/settings/states.c	\
 		src/settings/button_creation.c	\
+		src/settings/buttons.c	\
+		src/settings/update_textures.c	\
 		\
 		src/dialogue/dialogue_manager.c \
 		src/dialogue/display.c \

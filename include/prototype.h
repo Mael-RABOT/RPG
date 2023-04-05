@@ -96,7 +96,10 @@
     void destroy_fps(fps_t *fps);
 
     /* Musics */
-    int launch_startup_sound(app_t *app);
+    void create_music_handler(app_t *app);
+    int launch_sound(app_t *app, int id);
+    void stop_sound(app_t *app);
+    void close_sound(app_t *app);
 
     /* Pathfinding */
     int pathfinder(app_t *app);
@@ -158,6 +161,14 @@
     void nothing(app_t *app);
     button_t *create_button(button_info_t *info, int nb_element,
     char *pathfile, void (*action)(app_t *app));
+    int settings_menu_click(settings_menu_t *settings_menu,
+    sfMouseButtonEvent *button_event);
+    int settings_menu_release(settings_menu_t *settings_menu,
+    sfMouseButtonEvent *button_event);
+    int settings_menu_hover(settings_menu_t *settings_menu,
+    sfMouseMoveEvent *move_event);
+    int update_all_settings_buttons_textures(app_t *app);
+    int settings_menu_buttons_actions(app_t *app);
 
     /* Dialogues */
     int dialogue_manager(app_t *app, char *filepath);
@@ -197,6 +208,7 @@
     int main_menu_hover(main_menu_t *main_menu, sfMouseMoveEvent *move_event);
     int update_all_buttons_textures(app_t *app);
     int main_menu_buttons_actions(app_t *app);
+    int update_buttons_textures(button_t *button);
 
     /* Player */
     player_t *create_player(player_preset_t preset, weapon_type_t type);

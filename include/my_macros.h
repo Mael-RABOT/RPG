@@ -72,6 +72,7 @@
 
     /* Sounds */
     #define INTRO_MUSIC         MUSICS "intro.ogg"
+    #define SOUND_MANIFEST      "./assets/sounds/manifest"
 
     /* Backgrounds */
     #define NIGHT_SKY           BACKGROUND "night_sky.png"

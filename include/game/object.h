@@ -26,4 +26,16 @@
         sfText *text;
     } text_t;
 
+    typedef struct song {
+        int id;
+        char *path;
+        song_type_t type;
+    } song_t;
+
+    typedef struct music {
+        song_t **songs;
+        int song_number;
+        sfMusic *music;
+    } music_t;
+
 #endif

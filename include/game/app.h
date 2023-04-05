@@ -77,6 +77,7 @@
         struct settings_menu *settings_menu;
         struct main_menu *main_menu;
         player_t *player_stats;
+        music_t *music_handler;
     } app_t;
 
 #endif //APP_H_
