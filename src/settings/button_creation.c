@@ -74,5 +74,5 @@ void resolution_settings(settings_menu_t *settings_menu,
     (sfVector2f){half + quarter - 372 / 4 * 2.9 / 2 + 190, 420};
     settings_menu->windowded =
     create_button(button_info, 3, WINDOWDED, &nothing);
-
+    resolution_bis(settings_menu, button_info, window_size);
 }
