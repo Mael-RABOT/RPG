@@ -44,7 +44,7 @@
 
     /* event */
     int main_event(app_t *app);
-    int detect_collision(app_t *app, entity_t *player, maps_t *maps);
+    int detect_collision(app_t *app, entity_t *entity);
 
     /* map*/
     tile_t *create_tile(int id, map_object_t **map_object, sfVector2i position,
