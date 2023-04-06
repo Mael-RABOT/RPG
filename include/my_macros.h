@@ -19,7 +19,7 @@
     #define TITLES              "assets/titles/"
 
     /* Game State*/
-    #define DEFAULT_GAME_STATE  4
+    #define DEFAULT_GAME_STATE  0
 
     /* Icon */
     #define ICON                "./assets/images/icon.png"
