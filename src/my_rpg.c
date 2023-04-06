@@ -39,7 +39,8 @@ int my_rpg(const int ac, const char **av)
     app_t *app = create_app(videomode);
     app->default_view = create_view((sfVector2f){1920, 1080});
     app->view = create_view((sfVector2f){426, 240});
-    app->player = create_entity("./assets/jessica.png", Default, Fist);
+    app->player = create_entity("./assets/characters/jessica.png",
+        Default, Fist);
     app->maps = load_maps();
     launch_sound(app, 0);
     change_map(app, app->maps, app->player, 5);

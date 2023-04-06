@@ -22,7 +22,7 @@
     #define DEFAULT_GAME_STATE  4
 
     /* Icon */
-    #define ICON "./assets/images/icon.png"
+    #define ICON                "./assets/images/icon.png"
 
     /* Credits */
     #define CREDITS             BACKGROUND "credits.png"
@@ -86,7 +86,7 @@
 
     /* Dialogues */
     #define HEAD                "./assets/head/"
-    #define COLOR_LAYER         "./assets/color_layer.png"
+    #define COLOR_LAYER         "./assets/overlay/color_layer.png"
     #define PLAYER_FACE         HEAD "Player.png"
     #define LEONARDO_FACE       HEAD "Leonardo.png"
     #define MARILYN_FACE        HEAD "Marilyn.png"
