@@ -15,7 +15,7 @@ void nothing(app_t *app)
 settings_menu_t *create_settings_menu(sfRenderWindow *window)
 {
     settings_menu_t *settings_menu = malloc(sizeof(settings_menu_t));
-    button_info_t *button_info = malloc(sizeof(button_info_t));
+    object_info_t button_info;
     sfVector2u window_size = sfRenderWindow_getSize(window);
 
     settings_menu->background = create_sprite(SETTINGS_BACKGROUND);

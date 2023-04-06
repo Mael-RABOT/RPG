@@ -91,13 +91,9 @@ SRC	=	src/main.c	\
 		src/particle_engine/update_particle.c \
 		src/particle_engine/clean_particle_list.c \
 		\
-		src/settings/musi_callback.c \
-		src/settings/create_settings_menu.c	\
-		src/settings/display_settings_menu.c	\
-		src/settings/states.c	\
+		src/settings/resolution.c \
+		src/settings/music_callback.c \
 		src/settings/button_creation.c	\
-		src/settings/buttons.c	\
-		src/settings/update_textures.c	\
 		\
 		src/dialogue/dialogue_manager.c \
 		src/dialogue/display.c \
@@ -126,7 +122,7 @@ SRC	=	src/main.c	\
 OBJ    =    $(SRC:.c=.o)
 
 CC	=	gcc
-CFLAGS	= -Wall
+CFLAGS	= -Wall -Wextra
 LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib -lm
 LDFLAGS	=	-lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio $(LIB)
 

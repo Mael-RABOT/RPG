@@ -15,9 +15,11 @@
         sprite_t *text_sounds;
         sprite_t *text_resolution;
         sprite_t *sounds;
+        sprite_t *music;
+        button_t *button;
+
         button_t *sounds_more;
         button_t *sounds_less;
-        sprite_t *music;
         button_t *music_more;
         button_t *music_less;
         button_t *full_screen;

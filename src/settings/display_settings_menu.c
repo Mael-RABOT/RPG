@@ -7,6 +7,7 @@
 
 #include "../../include/prototype.h"
 
+/*
 void update_settings_menu(settings_menu_t *settings_menu,
 sfRenderWindow *window)
 {
@@ -47,4 +48,4 @@ void display_settings_menu(sfRenderWindow *window, settings_menu_t *menu)
     sfRenderWindow_drawRectangleShape(window, menu->high_resolution->rect,
     NULL);
     return;
-}
+}*/

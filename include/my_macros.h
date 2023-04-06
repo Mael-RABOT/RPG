@@ -52,7 +52,7 @@
     #define MUSIC               SETTINGS "music.png"
     #define PLUS                SETTINGS "plus.png"
     #define SOUND               SETTINGS "sound.png"
-    #define WINDOWDED           SETTINGS "windowded.png"
+    #define WINDOWED            SETTINGS "windowed.png"
     #define SETTINGS_BACKGROUND BACKGROUND "settings_background.png"
     #define RESOLUTION_TITLE    TITLES "resolution_title.png"
     #define SOUNDS_TITLE        TITLES "sounds_title.png"

@@ -167,23 +167,18 @@
     void display_settings_menu(sfRenderWindow *window, settings_menu_t *menu);
     void update_settings_menu(settings_menu_t *, sfRenderWindow *);
 
-    /*void sound_settings(settings_menu_t *settings_menu,
-        button_info_t *button_info, sfVector2u window_size);
-    void music_settings(settings_menu_t *settings_menu,
-        button_info_t *button_info, sfVector2u window_size);
-    void resolution_settings(settings_menu_t *settings_menu,
-        button_info_t *button_info, sfVector2u window_size);*/
+    void toggle_windowed(app_t *app);
+    void toggle_borderless(app_t *app);
+    void toggle_fullscreen(app_t *app);
+
+    void increase_music_volume(app_t *app);
+    void decrease_music_volume(app_t *app);
+    void increase_global_volume(app_t *app);
+    void decrease_global_volume(app_t *app);
 
     void nothing(app_t *app);
 
-    int settings_menu_click(settings_menu_t *settings_menu,
-    sfMouseButtonEvent *button_event);
-    int settings_menu_release(settings_menu_t *settings_menu,
-    sfMouseButtonEvent *button_event);
-    int settings_menu_hover(settings_menu_t *settings_menu,
-    sfMouseMoveEvent *move_event);
-    int update_all_settings_buttons_textures(app_t *app);
-    int settings_menu_buttons_actions(app_t *app);
+
 
     /* Dialogues */
     int dialogue_manager(app_t *app, char *filepath);
