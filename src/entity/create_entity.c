@@ -14,7 +14,8 @@ int destroy_entity(entity_t *entity)
     return 0;
 }
 
-entity_t *create_entity(const char *pathfile)
+entity_t *create_entity(const char *pathfile,
+    player_preset_t preset, weapon_type_t type)
 {
     entity_t *entity = malloc(sizeof(entity_t));
     entity->sprite = create_sprite(pathfile);

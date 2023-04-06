@@ -3,6 +3,7 @@ maps:hub:./maps/Hub/layer
 maps:maze:./maps/Maze/layer
 maps:fight_forest:./maps/fight_forest/layer
 maps:debug:./maps/debug/layer
+maps:wilderness:./maps/Wilderness/layer
 0:./assets/blocks/nature/water.png:0
 1:./assets/blocks/nature/grass.png:1
 2:./assets/blocks/nature/dirt.png:1
@@ -72,3 +73,9 @@ maps:debug:./maps/debug/layer
 87:./assets/blocks/nature/coal_ore.png:1
 88:./assets/blocks/misc/end_portal_frame.png:1
 89:./assets/blocks/misc/end_portal.png:1
+90:./assets/blocks/misc/glass.png:0
+91:./assets/blocks/misc/plank.png:0
+92:./assets/blocks/misc/slope_plank_back_right.png:2
+93:./assets/blocks/misc/slope_plank_back_left.png:2
+94:./assets/blocks/misc/slope_plank_front_left.png:2
+95:./assets/blocks/misc/slope_plank_front_right.png:2

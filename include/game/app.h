@@ -51,13 +51,17 @@
         map_t *selected_map;
     } maps_t;
 
+    typedef struct enemy {
+        entity_t **entity_list;
+        int enemy_no;
+    } enemy_t;
+
     typedef struct app {
         int state;
         sfVideoMode videomode;
         sfRenderWindow *window;
         maps_t *maps;
         entity_t *player;
-        entity_t **enemy;
         struct splash_screen *splash_screen;
         music_t *music_handler;
         sprite_t *background;
@@ -69,6 +73,7 @@
         int particle_count;
         sfClock *particle_clock;
         struct main_menu *main_menu;
+        enemy_t *enemy;
     } app_t;
 
 #endif //APP_H_
