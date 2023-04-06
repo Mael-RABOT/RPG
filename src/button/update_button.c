@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2023
-** B-MUL-200-LYN-2-1-myrpg-mael.rabot
+** B-MUL-200-LYN-2-1-myrpg-mathieu.borel
 ** File description:
-** update_textures.c
+** update_button.c
 */
 
 #include "../../include/prototype.h"
@@ -23,11 +23,13 @@ int update_buttons_textures(button_t *button)
     return 0;
 }
 
-int update_all_buttons_textures(app_t *app)
+int update_button_texture(app_t *app, button_t *button)
 {
-    update_buttons_textures(app->main_menu->play);
-    update_buttons_textures(app->main_menu->resume);
-    update_buttons_textures(app->main_menu->settings);
-    update_buttons_textures(app->main_menu->quit);
+    if (button == NULL) {
+        return 0;
+    } else {
+        update_buttons_textures(button);
+        return update_button_texture(app, button->next_button);
+    }
     return 0;
 }

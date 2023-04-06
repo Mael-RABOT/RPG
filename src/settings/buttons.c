@@ -7,37 +7,7 @@
 
 #include "../../include/prototype.h"
 
-void adjust_music_volume(app_t *app, sfMusic* music, float increment)
-{
-    float volume = sfMusic_getVolume(music);
-
-    volume += increment;
-    if (volume < 0.0f)
-        volume = 0.0f;
-    if (volume > 100.0f)
-        volume = 100.0f;
-    sfMusic_setVolume(music, volume);
-    app->settings_menu->music_more->state = NONE;
-    app->settings_menu->music_less->state = NONE;
-    return;
-}
-
-void adjust_global_volume(app_t *app, float increment)
-{
-    float volume = sfListener_getGlobalVolume();
-
-    volume += increment;
-    if (volume < 0.0f)
-        volume = 0.0f;
-    if (volume > 100.0f)
-        volume = 100.0f;
-    sfListener_setGlobalVolume(volume);
-    app->settings_menu->sounds_more->state = NONE;
-    app->settings_menu->sounds_less->state = NONE;
-    return;
-}
-
-void resize_window(app_t *app, sfVector2u size)
+void resize_window(app_t *app)
 {
     sfRenderWindow_setSize(app->window, size);
     app->settings_menu->high_resolution->state = NONE;

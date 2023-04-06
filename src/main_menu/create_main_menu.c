@@ -20,37 +20,27 @@ static title_t *create_title(sfRenderWindow *window)
     return title;
 }
 
-ruined_city_t *create_ruined_city(sfRenderWindow *window)
-{
-    ruined_city_t *ruined_city = malloc(sizeof(ruined_city_t));
-    sfVector2u window_size = sfRenderWindow_getSize(window);
-
-    ruined_city->sprite = sfSprite_create();
-    ruined_city->texture = sfTexture_createFromFile(RUINED_CITY, NULL);
-    sfSprite_setTexture(ruined_city->sprite, ruined_city->texture, sfTrue);
-    return ruined_city;
-}
-
 main_menu_t *create_main_menu(sfRenderWindow *window)
 {
     main_menu_t *main_menu = malloc(sizeof(main_menu_t));
-    button_info_t *button_info = malloc(sizeof(button_info_t));
+    object_info_t button_info;
     sfVector2u window_size = sfRenderWindow_getSize(window);
-
-    button_info->size = (sfVector2f){64 * 3, 32 * 3};
-    main_menu->ruined_city = create_ruined_city(window);
+    main_menu->button = NULL;
+    button_info.size = (sfVector2f){64 * 3, 32 * 3};
+    main_menu->ruined_city = create_sprite(RUINED_CITY);
     main_menu->title = create_title(window);
     main_menu->fade_index = 0;
-    button_info->position = (sfVector2f){window_size.x / 4 * 1 + 30, 600};
-    main_menu->play = create_button(button_info, 3, PLAY, &play);
-    button_info->position = (sfVector2f){window_size.x / 4 * 1.5 + 15, 600};
-    button_info->size = (sfVector2f){78 * 3, 32 * 3};
-    main_menu->resume = create_button(button_info, 4, RESUME, &resume);
-    button_info->position = (sfVector2f){window_size.x / 4 * 2 + 30, 600};
-    main_menu->settings = create_button(button_info, 3, SETTING, &settings_b);
-    button_info->position = (sfVector2f){window_size.x / 4 * 2.5 + 40, 600};
-    button_info->size = (sfVector2f){64 * 3, 32 * 3};
-    main_menu->quit = create_button(button_info, 3, QUIT, &quit);
-    free(button_info);
+    button_info.position = (sfVector2f){window_size.x / 4 * 1 + 30, 600};
+    main_menu->button = append_button(main_menu->button, button_info, &play,
+        PLAY);
+
+    button_info.position = (sfVector2f){window_size.x / 4 * 1.5 + 15, 600};
+    button_info.size = (sfVector2f){78 * 3, 32 * 3};
+    append_button(main_menu->button, button_info, &resume, RESUME);
+    button_info.position = (sfVector2f){window_size.x / 4 * 2 + 30, 600};
+    append_button(main_menu->button, button_info, &settings_b, SETTING);
+    button_info.position = (sfVector2f){window_size.x / 4 * 2.5 + 40, 600};
+    button_info.size = (sfVector2f){64 * 3, 32 * 3};
+    append_button(main_menu->button, button_info, &quit, QUIT);
     return main_menu;
 }

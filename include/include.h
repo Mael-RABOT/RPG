@@ -39,7 +39,7 @@
     #include "dante/maze.h"
 
     #include "game/splash_screen.h"
-    #include "main_menu.h"
+    #include "game/main_menu.h"
     #include "game/speaker.h"
 
 #endif //BASE_REPO_INCLUDE_H

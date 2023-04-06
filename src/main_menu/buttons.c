@@ -31,16 +31,3 @@ void quit(app_t *app)
     sfRenderWindow_close(app->window);
     return;
 }
-
-int main_menu_buttons_actions(app_t *app)
-{
-    if (IS_RELEASED(app->main_menu->play->state))
-        play(app);
-    if (IS_RELEASED(app->main_menu->resume->state))
-        resume(app);
-    if (IS_RELEASED(app->main_menu->settings->state))
-        settings_b(app);
-    if (IS_RELEASED(app->main_menu->quit->state))
-        quit(app);
-    return 0;
-}

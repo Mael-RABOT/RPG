@@ -25,6 +25,20 @@
     int destroy_app(app_t *app);
     int destroy_game(app_t *app);
 
+    /* button */
+    button_t *create_button(object_info_t info, void (*action)(app_t *app));
+    button_t *append_button(button_t *button, object_info_t info,
+        void (*action)(app_t *app), char *texture_path);
+    int load_button_texture(button_t *button, char *pathfile);
+    int display_button(sfRenderWindow *window, button_t *button);
+
+    int button_event(button_t *button, sfMouseButtonEvent event);
+    int update_texture(button_t *button, app_t *app);
+
+    int is_button_hover(button_t *button, sfMouseMoveEvent mouse);
+    int is_button_released(button_t *button, sfMouseButtonEvent mouse);
+    int is_button_clicked(button_t *button, sfMouseButtonEvent mouse);
+
     /* splash_screen */
     splash_screen_t *create_splash_screen(sfRenderWindow *window);
     int splash_screen(app_t *app, sfRenderWindow *window,
@@ -152,15 +166,16 @@
     settings_menu_t *create_settings_menu(sfRenderWindow *window);
     void display_settings_menu(sfRenderWindow *window, settings_menu_t *menu);
     void update_settings_menu(settings_menu_t *, sfRenderWindow *);
-    void sound_settings(settings_menu_t *settings_menu,
+
+    /*void sound_settings(settings_menu_t *settings_menu,
         button_info_t *button_info, sfVector2u window_size);
     void music_settings(settings_menu_t *settings_menu,
         button_info_t *button_info, sfVector2u window_size);
     void resolution_settings(settings_menu_t *settings_menu,
-        button_info_t *button_info, sfVector2u window_size);
+        button_info_t *button_info, sfVector2u window_size);*/
+
     void nothing(app_t *app);
-    button_t *create_button(button_info_t *info, int nb_element,
-    char *pathfile, void (*action)(app_t *app));
+
     int settings_menu_click(settings_menu_t *settings_menu,
     sfMouseButtonEvent *button_event);
     int settings_menu_release(settings_menu_t *settings_menu,
@@ -192,15 +207,11 @@
     /* main_menu */
     main_menu_t *create_main_menu(sfRenderWindow *window);
     int display_main_menu(app_t *app);
-    button_t *create_button(button_info_t *info, int nb_element,
-    char *pathfile, void (*action)(app_t *app));
-    int is_button_hover(button_t *button, sfMouseMoveEvent *mouse);
-    int is_button_released(button_t *button, sfMouseButtonEvent *mouse);
-    int is_button_clicked(button_t *button, sfMouseButtonEvent *mouse);
     void play(app_t *app);
     void resume(app_t *app);
     void settings_b(app_t *app);
     void quit(app_t *app);
+
     int main_menu_click(main_menu_t *main_menu,
     sfMouseButtonEvent *button_event);
     int main_menu_release(main_menu_t *main_menu,

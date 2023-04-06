@@ -27,6 +27,12 @@ SRC	=	src/main.c	\
 		\
 		src/event/main_event.c \
 		\
+		src/button/create_button.c \
+		src/button/display_button.c \
+		src/button/button_event.c \
+		src/button/state_button_callback.c \
+		src/button/update_button.c \
+		\
 		src/app/create_app.c \
 		src/app/destroy_app.c \
 		\
@@ -85,6 +91,7 @@ SRC	=	src/main.c	\
 		src/particle_engine/update_particle.c \
 		src/particle_engine/clean_particle_list.c \
 		\
+		src/settings/musi_callback.c \
 		src/settings/create_settings_menu.c	\
 		src/settings/display_settings_menu.c	\
 		src/settings/states.c	\
@@ -106,7 +113,6 @@ SRC	=	src/main.c	\
 		src/main_menu/display_main_menu.c	\
 		src/main_menu/main_menu.c	\
 		src/main_menu/create_main_menu.c	\
-		src/main_menu/callback.c	\
 		src/main_menu/buttons.c	\
 		src/main_menu/states.c \
 		src/main_menu/update_textures.c	\
@@ -115,8 +121,7 @@ SRC	=	src/main.c	\
 		src/player/creation/create_weapon.c \
 		src/player/level_cost.c \
 		src/player/level_up.c \
-		src/player/attack.c \
-		\
+		src/player/attack.c
 
 OBJ    =    $(SRC:.c=.o)
 
