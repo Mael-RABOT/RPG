@@ -62,6 +62,8 @@ maps:wilderness:./maps/Wilderness/layer
 73:./assets/blocks/nature/fallen_log_right.png:1
 74:./assets/blocks/nature/fallen_log_left.png:1
 75:./assets/blocks/nature/leaves.png:1
+76:./assets/blocks/misc/pathway_left.png:1
+77:./assets/blocks/misc/pathway_right.png:1
 78:./assets/blocks/misc/portal_right.png:4
 79:./assets/blocks/misc/portal_left.png:4
 80:./assets/blocks/misc/portal_block.png:4
