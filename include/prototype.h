@@ -195,4 +195,13 @@
     /* Credits */
     void credits(app_t *app);
 
+    /* Save */
+    int choose_save(void);
+    void create_save(app_t *app);
+    void write_info(FILE *file, int int_info, sfBool last);
+    void create_save(app_t *app);
+    void write_map_name(FILE *file, char *map_name);
+    void write_player_infos(FILE *file, player_t *player_stats);
+    void write_weapon_infos(FILE *file, weapon_t *weapon);
+
 #endif //BASE_REPO_PROTOTYPE_H
