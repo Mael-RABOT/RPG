@@ -2,6 +2,7 @@ maps:tutorial:./maps/Tutorial/layer
 maps:hub:./maps/Hub/layer
 maps:maze:./maps/Maze/layer
 maps:fight_forest:./maps/fight_forest/layer
+maps:debug:./maps/debug/layer
 0:./assets/blocks/nature/water.png:0
 1:./assets/blocks/nature/grass.png:1
 2:./assets/blocks/nature/dirt.png:1
