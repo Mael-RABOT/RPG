@@ -13,9 +13,9 @@ void get_weapon_infos(app_t *app, char *line, size_t len, FILE *file)
 
     getline(&line, &len, file);
     weapon_vals = split(line, ':');
-    app->player_stats->weapon->damage_point =
+    app->player->stat->weapon->damage_point =
     my_atoi(weapon_vals[Damage_Point]);
-    app->player_stats->weapon->tier = my_atoi(weapon_vals[normal]);
-    app->player_stats->weapon->scaling = my_atoi(weapon_vals[scale_strength]);
+    app->player->stat->weapon->tier = my_atoi(weapon_vals[normal]);
+    app->player->stat->weapon->scaling = my_atoi(weapon_vals[scale_strength]);
     return;
 }

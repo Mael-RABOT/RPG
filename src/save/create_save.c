@@ -26,8 +26,8 @@ void create_save(app_t *app)
     my_strcat(pathfile, my_int_to_str(nb_save));
     FILE *file = fopen(pathfile, "w");
     write_map_name(file, app->maps->selected_map->name);
-    write_player_infos(file, app->player_stats);
-    write_weapon_infos(file, app->player_stats->weapon);
+    write_player_infos(file, app->player->stat);
+    write_weapon_infos(file, app->player->stat->weapon);
     fclose(file);
     return;
 }

@@ -7,7 +7,7 @@
 
 #include "../../include/prototype.h"
 
-void write_player_infos(FILE *file, player_t *player_stats)
+void write_player_infos(FILE *file, stat_t *player_stats)
 {
     write_info(file, player_stats->level);
     write_info(file, player_stats->hp);

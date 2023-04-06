@@ -203,7 +203,7 @@
     void write_info(FILE *file, int int_info);
     void create_save(app_t *app);
     void write_map_name(FILE *file, char *map_name);
-    void write_player_infos(FILE *file, player_t *player_stats);
+    void write_player_infos(FILE *file, stat_t *player_stats);
     void write_weapon_infos(FILE *file, weapon_t *weapon);
     int save_exist(char *pathfile);
 

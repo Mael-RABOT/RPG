@@ -20,6 +20,5 @@ int load_save(app_t *app, char *pathfile)
     get_player_infos(app, line, len, file);
     get_weapon_infos(app, line, len, file);
     fclose(file);
-    print_info(app);
     return 0;
 }
