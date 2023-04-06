@@ -55,6 +55,7 @@ maps:fight_forest:./maps/fight_forest/layer
 65:./assets/blocks/misc/workbench_left.png:1
 66:./assets/blocks/debug/wireframe.png:4
 67:./assets/blocks/debug/null.png:3
+69:./assets/blocks/debug/null.png:5
 72:./assets/blocks/nature/log.png:1
 73:./assets/blocks/nature/fallen_log_right.png:1
 74:./assets/blocks/nature/fallen_log_left.png:1
