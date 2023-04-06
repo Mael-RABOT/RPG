@@ -197,4 +197,20 @@
     /* Credits */
     void credits(app_t *app);
 
+    /* Save */
+    int choose_save(void);
+    void create_save(app_t *app);
+    void write_info(FILE *file, int int_info);
+    void create_save(app_t *app);
+    void write_map_name(FILE *file, char *map_name);
+    void write_player_infos(FILE *file, player_t *player_stats);
+    void write_weapon_infos(FILE *file, weapon_t *weapon);
+    int save_exist(char *pathfile);
+
+    /* Load */
+    int load_save(app_t *app, char *pathfile);
+    void get_map_name(app_t *app, char *line, size_t len, FILE *file);
+    void get_player_infos(app_t *app, char *line, size_t len, FILE *file);
+    void get_weapon_infos(app_t *app, char *line, size_t len, FILE *file);
+
 #endif //BASE_REPO_PROTOTYPE_H

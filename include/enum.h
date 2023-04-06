@@ -78,4 +78,21 @@
         Effect
     } song_type_t;
 
+    typedef enum player_save {
+        Level = 0,
+        HP,
+        Stamina,
+        strength,
+        dexterity,
+        Defense,
+        Experience,
+        Level_Cost
+    } player_save_t;
+
+    typedef enum weapon_save {
+        Damage_Point = 0,
+        normal,
+        scale_strength
+    } weapon_save_t;
+
 #endif // ENUM_H_
