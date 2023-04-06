@@ -43,7 +43,7 @@ int my_rpg(const int ac, const char **av)
         Default, Fist);
     app->maps = load_maps();
     launch_sound(app, 0);
-    change_map(app, app->maps, app->player, 0);
+    change_map(app, app->maps, app->player, 1);
     while (sfRenderWindow_isOpen(app->window)) {
         main_display(app);
     }
