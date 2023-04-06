@@ -15,11 +15,15 @@ int choose_state(app_t *app)
         case splash:
             splash_screen(app, app->window, app->splash_screen); break;
         case main_menu:
-            display_main_menu(app); break;
+            display_main_menu(app);
+            update_texture(app->main_menu->button, app);
+            break;
         case game:
             gloop(app); break;
         case settings:
-            display_settings_menu(app->window, app->settings_menu); break;
+            display_settings_menu(app->window, app->settings_menu);
+            update_texture(app->settings_menu->button, app);
+            break;
     }
     if (app->fps->key_f == 1 && app->state == game)
         show_fps(app);

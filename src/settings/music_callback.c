@@ -17,8 +17,6 @@ void increase_music_volume(app_t *app)
     if (volume > 100.0f)
         volume = 100.0f;
     sfMusic_setVolume(app->music, volume);
-    app->settings_menu->music_more->state = NONE;
-    app->settings_menu->music_less->state = NONE;
     return;
 }
 
@@ -32,8 +30,6 @@ void decrease_music_volume(app_t *app)
     if (volume > 100.0f)
         volume = 100.0f;
     sfMusic_setVolume(app->music, volume);
-    app->settings_menu->music_more->state = NONE;
-    app->settings_menu->music_less->state = NONE;
     return;
 }
 
@@ -47,8 +43,6 @@ void increase_global_volume(app_t *app)
     if (volume > 100.0f)
         volume = 100.0f;
     sfListener_setGlobalVolume(volume);
-    app->settings_menu->sounds_more->state = NONE;
-    app->settings_menu->sounds_less->state = NONE;
     return;
 }
 
@@ -62,7 +56,5 @@ void decrease_global_volume(app_t *app)
     if (volume > 100.0f)
         volume = 100.0f;
     sfListener_setGlobalVolume(volume);
-    app->settings_menu->sounds_more->state = NONE;
-    app->settings_menu->sounds_less->state = NONE;
     return;
 }

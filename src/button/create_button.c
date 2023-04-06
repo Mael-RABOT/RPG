@@ -38,11 +38,11 @@ button_t *append_button(button_t *button, object_info_t info,
 {
     button_t *tmp_button = button;
     if (tmp_button != NULL) {
-        while (button->next_button != NULL) {
-            button = button->next_button;
+        while (tmp_button->next_button != NULL) {
+            tmp_button = tmp_button->next_button;
         }
-        button->next_button = create_button(info, action);
-        load_button_texture(button->next_button, texture_path);
+        tmp_button->next_button = create_button(info, action);
+        load_button_texture(tmp_button->next_button, texture_path);
     } else {
         button = create_button(info, action);
         load_button_texture(button, texture_path);

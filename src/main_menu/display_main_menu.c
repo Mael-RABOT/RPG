@@ -22,6 +22,5 @@ int display_main_menu(app_t *app)
     NULL);
     display_button(app->window, app->main_menu->button);
     launch_sound(app, 0);
-
     return 0;
 }

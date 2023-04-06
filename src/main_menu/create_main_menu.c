@@ -7,14 +7,10 @@
 
 #include "../../include/prototype.h"
 
-static title_t *create_title(sfRenderWindow *window)
+static sprite_t *create_title(sfRenderWindow *window)
 {
-    title_t *title = malloc(sizeof(title_t));
+    sprite_t *title = create_sprite(TITLE);
     sfVector2u window_size = sfRenderWindow_getSize(window);
-
-    title->sprite = sfSprite_create();
-    title->texture = sfTexture_createFromFile(TITLE, NULL);
-    sfSprite_setTexture(title->sprite, title->texture, sfTrue);
     sfSprite_setPosition(title->sprite,
     (sfVector2f){((float)window_size.x - (float)window_size.x / 2) / 2, -50});
     return title;

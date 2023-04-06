@@ -32,7 +32,7 @@
     int load_button_texture(button_t *button, char *pathfile);
     int display_button(sfRenderWindow *window, button_t *button);
 
-    int button_event(button_t *button, sfMouseButtonEvent event);
+    int button_event(button_t *button, sfEvent event);
     int update_texture(button_t *button, app_t *app);
 
     int is_button_hover(button_t *button, sfMouseMoveEvent mouse);
@@ -164,7 +164,7 @@
 
     /* Settings */
     settings_menu_t *create_settings_menu(sfRenderWindow *window);
-    void display_settings_menu(sfRenderWindow *window, settings_menu_t *menu);
+    //void display_settings_menu(sfRenderWindow *window, settings_menu_t *menu);
     void update_settings_menu(settings_menu_t *, sfRenderWindow *);
 
     void toggle_windowed(app_t *app);
@@ -201,17 +201,12 @@
 
     /* main_menu */
     main_menu_t *create_main_menu(sfRenderWindow *window);
-    int display_main_menu(app_t *app);
+    //int display_main_menu(app_t *app);
     void play(app_t *app);
     void resume(app_t *app);
     void settings_b(app_t *app);
     void quit(app_t *app);
 
-    int main_menu_click(main_menu_t *main_menu,
-    sfMouseButtonEvent *button_event);
-    int main_menu_release(main_menu_t *main_menu,
-    sfMouseButtonEvent *button_event);
-    int main_menu_hover(main_menu_t *main_menu, sfMouseMoveEvent *move_event);
     int update_all_buttons_textures(app_t *app);
     int main_menu_buttons_actions(app_t *app);
     int update_buttons_textures(button_t *button);

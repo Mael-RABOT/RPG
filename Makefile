@@ -94,6 +94,8 @@ SRC	=	src/main.c	\
 		src/settings/resolution.c \
 		src/settings/music_callback.c \
 		src/settings/button_creation.c	\
+		src/settings/display_settings_menu.c \
+		src/settings/create_settings_menu.c \
 		\
 		src/dialogue/dialogue_manager.c \
 		src/dialogue/display.c \
@@ -107,11 +109,8 @@ SRC	=	src/main.c	\
 		src/sfText/create_text.c \
 		\
 		src/main_menu/display_main_menu.c	\
-		src/main_menu/main_menu.c	\
 		src/main_menu/create_main_menu.c	\
 		src/main_menu/buttons.c	\
-		src/main_menu/states.c \
-		src/main_menu/update_textures.c	\
 		\
 		src/player/creation/create_player.c \
 		src/player/creation/create_weapon.c \
@@ -122,7 +121,7 @@ SRC	=	src/main.c	\
 OBJ    =    $(SRC:.c=.o)
 
 CC	=	gcc
-CFLAGS	= -Wall -Wextra
+CFLAGS	= -Wall
 LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib -lm
 LDFLAGS	=	-lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio $(LIB)
 

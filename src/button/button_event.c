@@ -7,12 +7,14 @@
 
 #include "../../include/prototype.h"
 
-int button_event(button_t *button, sfMouseButtonEvent event)
+int button_event(button_t *button, sfEvent event)
 {
     if (button == NULL) {
         return 0;
     } else {
-        button->is_clicked(button, event);
+        button->is_clicked(button, event.mouseButton);
+        button->is_hover(button, event.mouseMove);
+        button->is_released(button, event.mouseButton);
         return button_event(button->next_button, event);
     }
 }

@@ -15,6 +15,7 @@
     #include <fcntl.h>
     #include <sys/stat.h>
     #include <errno.h>
+    #include <stdarg.h>
 
     #include <math.h>
 

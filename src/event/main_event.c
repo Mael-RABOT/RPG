@@ -15,27 +15,13 @@ int manage_keys(app_t *app, sfKeyCode code)
 
 int settings_menu_events(app_t *app, sfEvent event)
 {
-    if (app->state == settings && event.type == sfEvtMouseButtonPressed)
-        settings_menu_click(app->settings_menu,  &event.mouseButton);
-    if (app->state == settings && event.type == sfEvtMouseButtonReleased)
-        settings_menu_release(app->settings_menu,  &event.mouseButton);
-    if (app->state == settings && event.type == sfEvtMouseMoved)
-        settings_menu_hover(app->settings_menu,  &event.mouseMove);
-    update_all_settings_buttons_textures(app);
-    settings_menu_buttons_actions(app);
+    button_event(app->settings_menu->button, event);
     return 0;
 }
 
 int main_menu_events(app_t *app, sfEvent event)
 {
-    if (app->state == main_menu && event.type == sfEvtMouseButtonPressed)
-        main_menu_click(app->main_menu,  &event.mouseButton);
-    if (app->state == main_menu && event.type == sfEvtMouseButtonReleased)
-        main_menu_release(app->main_menu,  &event.mouseButton);
-    if (app->state == main_menu && event.type == sfEvtMouseMoved)
-        main_menu_hover(app->main_menu,  &event.mouseMove);
-    update_all_buttons_textures(app);
-    main_menu_buttons_actions(app);
+    button_event(app->main_menu->button, event);
     return 0;
 }
 

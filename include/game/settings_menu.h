@@ -17,15 +17,6 @@
         sprite_t *sounds;
         sprite_t *music;
         button_t *button;
-
-        button_t *sounds_more;
-        button_t *sounds_less;
-        button_t *music_more;
-        button_t *music_less;
-        button_t *full_screen;
-        button_t *windowded;
-        button_t *low_resolution;
-        button_t *high_resolution;
     } settings_menu_t;
 
 #endif //SETTINGS_MENU_H_

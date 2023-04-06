@@ -13,7 +13,7 @@
     typedef struct main_menu {
         button_t *button;
         sprite_t *ruined_city;
-        title_t *title;
+        sprite_t *title;
         int fade_index;
     } main_menu_t;
 
