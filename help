@@ -1,0 +1,33 @@
+DESCRIPTION
+    Tower of Disasters
+
+SYNOPSIS
+    ./my_rpg [OPTIONS]
+
+OPTIONS
+    -h                  display the help
+
+KEY INPUT
+    In Game:
+
+        `ESC`           Pause the game and open the menu
+        `z`             Move forward
+        `q`             Move to the left
+        `s`             Move Backward
+        `d`             Move to the right
+        `f`             enable / disable fps counter
+
+    In Settings:
+
+        `ESC`           Go back to the menu
+
+EXIT STATUS
+    0                   Successful program execution,
+    1                   Usage, syntax or file error.
+
+COPYRIGHT
+    Copyright © 2023 ASM PRODUCTION, Inc. License GPTv2+: GNU GPT version 3 or later https://bit.ly/3ZKasOu.
+    This isn't a free software: you aren't free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law.
+
+REPORTING BUG
+    there is no bug
