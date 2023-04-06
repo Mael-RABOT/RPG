@@ -17,7 +17,7 @@ int move_top(app_t *app, maps_t *maps, entity_t *player, sfView *view)
     new_position.x += 16;
     player->position.y -= 1;
     sfSprite_setPosition(player->sprite->sprite, new_position);
-    if (detect_collision(app, player, maps) == 1) {
+    if (detect_collision(app, player) == 1) {
         sfSprite_setPosition(player->sprite->sprite, position);
         player->position.y += 1;
         return 1;
@@ -35,7 +35,7 @@ int move_bot(app_t *app, maps_t *maps, entity_t *player, sfView *view)
     new_position.x -= 16;
     player->position.y += 1;
     sfSprite_setPosition(player->sprite->sprite, new_position);
-    if (detect_collision(app, player, maps) == 1) {
+    if (detect_collision(app, player) == 1) {
         sfSprite_setPosition(player->sprite->sprite, position);
         player->position.y -= 1;
         return 1;
@@ -53,7 +53,7 @@ int move_left(app_t *app, maps_t *maps, entity_t *player, sfView *view)
     new_position.x -= 16;
     player->position.x -= 1;
     sfSprite_setPosition(player->sprite->sprite, new_position);
-    if (detect_collision(app, player, maps) == 1) {
+    if (detect_collision(app, player) == 1) {
         sfSprite_setPosition(player->sprite->sprite, position);
         player->position.x += 1;
         return 1;
@@ -71,7 +71,7 @@ int move_right(app_t *app, maps_t *maps, entity_t *player, sfView *view)
     new_position.x += 16;
     player->position.x += 1;
     sfSprite_setPosition(player->sprite->sprite, new_position);
-    if (detect_collision(app, player, maps) == 1) {
+    if (detect_collision(app, player) == 1) {
         sfSprite_setPosition(player->sprite->sprite, position);
         player->position.x -= 1;
         return 1;

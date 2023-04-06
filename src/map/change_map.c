@@ -30,5 +30,5 @@ int change_map_by_name(app_t *app, maps_t *maps, entity_t *player, char *name)
         }
         i += 1;
     }
-        return 0;
+    return 0;
 }

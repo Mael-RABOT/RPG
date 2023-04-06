@@ -11,7 +11,7 @@ static int display_layer_line(sfRenderWindow *window, entity_t *player,
     tile_t *tile, sfVector3i position)
 {
     if (position.y == player->position.y && position.x == player->position.x
-        && player->layer + 1 == position.z)
+        && player->layer == position.z)
         sfRenderWindow_drawSprite(window, player->sprite->sprite, NULL);
     else
         sfRenderWindow_drawSprite(window, tile->tile, NULL);

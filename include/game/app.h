@@ -5,10 +5,10 @@
 ** app.h
 */
 
+#include "../include.h"
+
 #ifndef APP_H_
     #define APP_H_
-
-    #include "../include.h"
 
     typedef struct teleport {
         char *name;
@@ -51,19 +51,13 @@
         map_t *selected_map;
     } maps_t;
 
-    typedef struct entity {
-        sprite_t *sprite;
-        sfVector2f position;
-        sfIntRect texture_rect;
-        int layer;
-    } entity_t;
-
     typedef struct app {
         int state;
         sfVideoMode videomode;
         sfRenderWindow *window;
         maps_t *maps;
         entity_t *player;
+        entity_t **enemy;
         struct splash_screen *splash_screen;
         music_t *music_handler;
         sprite_t *background;
@@ -75,7 +69,6 @@
         int particle_count;
         sfClock *particle_clock;
         struct main_menu *main_menu;
-        player_t *player_stats;
     } app_t;
 
 #endif //APP_H_

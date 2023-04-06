@@ -7,7 +7,7 @@
 
 #include "../../../include/prototype.h"
 
-static void apply_strength(player_t *player)
+static void apply_strength(stat_t *player)
 {
     player->level = 5;
     player->hp = 7;
@@ -18,7 +18,7 @@ static void apply_strength(player_t *player)
     player->experience = 0;
 }
 
-static void apply_dexterity(player_t *player)
+static void apply_dexterity(stat_t *player)
 {
     player->level = 5;
     player->hp = 7;
@@ -29,7 +29,7 @@ static void apply_dexterity(player_t *player)
     player->experience = 0;
 }
 
-static void apply_default(player_t *player)
+static void apply_default(stat_t *player)
 {
     player->level = 0;
     player->hp = 5;
@@ -40,9 +40,9 @@ static void apply_default(player_t *player)
     player->experience = 0;
 }
 
-player_t *create_player(player_preset_t preset, weapon_type_t type)
+stat_t *create_player(player_preset_t preset, weapon_type_t type)
 {
-    player_t *player = malloc(sizeof(player_t));
+    stat_t *player = malloc(sizeof(stat_t));
     switch (preset) {
         case Strength:
             apply_strength(player); break;

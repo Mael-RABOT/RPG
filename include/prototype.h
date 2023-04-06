@@ -44,7 +44,7 @@
 
     /* event */
     int main_event(app_t *app);
-    int detect_collision(app_t *app, entity_t *player, maps_t *maps);
+    int detect_collision(app_t *app, entity_t *entity);
 
     /* map*/
     tile_t *create_tile(int id, map_object_t **map_object, sfVector2i position,
@@ -112,6 +112,7 @@
     entity_t *create_entity(const char *pathfile);
     int destroy_entity(entity_t *entity);
     int move_player(app_t *app, sfEvent event);
+    entity_t **create_enemy(void);
 
     /* view */
     sfView *create_view(sfVector2f size);
@@ -186,11 +187,11 @@
     int main_menu_buttons_actions(app_t *app);
 
     /* Player */
-    player_t *create_player(player_preset_t preset, weapon_type_t type);
-    void attack(player_t *attacker, player_t *defender);
+    stat_t *create_player(player_preset_t preset, weapon_type_t type);
+    void attack(stat_t *attacker, stat_t *defender);
     weapon_t *create_weapon(weapon_type_t type);
-    void set_level_cost(player_t *player);
-    int level_up(player_t *player);
+    void set_level_cost(stat_t *player);
+    int level_up(stat_t *player);
 
     /* Credits */
     void credits(app_t *app);

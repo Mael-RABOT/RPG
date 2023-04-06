@@ -8,6 +8,7 @@
 SRC	=	src/main.c	\
 		src/gloop.c \
 		src/my_rpg.c \
+		src/create_enemy.c \
 		src/conversion.c \
 		src/destroy_game.c \
 		\

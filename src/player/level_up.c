@@ -7,7 +7,7 @@
 
 #include "../../include/prototype.h"
 
-int level_up(player_t *player)
+int level_up(stat_t *player)
 {
     if (player->experience < player->level_cost)
         return EXIT_FAILURE;
