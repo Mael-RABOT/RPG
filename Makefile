@@ -117,6 +117,11 @@ SRC	=	src/main.c	\
 		src/save/map.c	\
 		src/save/player.c	\
 		src/save/weapon.c	\
+		\
+		src/load/load_save.c	\
+		src/load/map.c	\
+		src/load/player.c	\
+		src/load/weapon.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
