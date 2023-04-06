@@ -7,13 +7,12 @@
 
 #include "../../include/prototype.h"
 
-void write_info(FILE *file, int int_info, sfBool last)
+void write_info(FILE *file, int int_info)
 {
     char *info = my_int_to_str(int_info);
 
     fwrite(info, sizeof(char), my_strlen(info), file);
-    if (!last)
-        fwrite(":", sizeof(char), 1, file);
+    fwrite(":", sizeof(char), 1, file);
     return;
 }
 

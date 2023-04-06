@@ -9,8 +9,8 @@
 
 void write_weapon_infos(FILE *file, weapon_t *weapon)
 {
-    write_info(file, weapon->damage_point, sfFalse);
-    write_info(file, weapon->tier, sfFalse);
-    write_info(file, weapon->scaling, sfTrue);
+    write_info(file, weapon->damage_point);
+    write_info(file, weapon->tier);
+    write_info(file, weapon->scaling);
     return;
 }
