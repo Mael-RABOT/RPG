@@ -11,18 +11,20 @@ int manage_keys(app_t *app, sfKeyCode code)
 {
     if (code == sfKeyF)
         app->fps->key_f = 1 - app->fps->key_f;
+    return 0;
+}
+
+int settings_menu_events(app_t *app, sfEvent event)
+{
+    button_event(app->settings_menu->button, event);
+    update_button_texture(app, app->settings_menu->button);
+    return 0;
 }
 
 int main_menu_events(app_t *app, sfEvent event)
 {
-    if (app->state == main_menu && event.type == sfEvtMouseButtonPressed)
-        main_menu_click(app->main_menu,  &event.mouseButton);
-    if (app->state == main_menu && event.type == sfEvtMouseButtonReleased)
-        main_menu_release(app->main_menu,  &event.mouseButton);
-    if (app->state == main_menu && event.type == sfEvtMouseMoved)
-        main_menu_hover(app->main_menu,  &event.mouseMove);
-    update_all_buttons_textures(app);
-    main_menu_buttons_actions(app);
+    button_event(app->main_menu->button, event);
+    update_button_texture(app, app->main_menu->button);
     return 0;
 }
 
@@ -41,6 +43,8 @@ int main_event(app_t *app)
             manage_keys(app, event.key.code);
         if (app->state == main_menu)
             main_menu_events(app, event);
+        if (app->state == settings)
+            settings_menu_events(app, event);
         move_player(app, event);
     }
     return 0;

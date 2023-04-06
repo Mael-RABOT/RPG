@@ -10,6 +10,5 @@
 entity_t **create_enemy(void)
 {
     entity_t **list = malloc(sizeof(entity_t *) * 20);
-    int i = 0;
     return list;
 }

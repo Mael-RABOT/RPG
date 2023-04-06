@@ -61,7 +61,6 @@
         sfVideoMode videomode;
         sfRenderWindow *window;
         maps_t *maps;
-        entity_t *player;
         struct splash_screen *splash_screen;
         music_t *music_handler;
         sprite_t *background;
@@ -72,8 +71,10 @@
         particle_t **particle_list;
         int particle_count;
         sfClock *particle_clock;
+        struct settings_menu *settings_menu;
         struct main_menu *main_menu;
         enemy_t *enemy;
+        entity_t *player;
     } app_t;
 
 #endif //APP_H_

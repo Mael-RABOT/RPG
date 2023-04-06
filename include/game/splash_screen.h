@@ -20,11 +20,6 @@
         sfTexture *texture;
     } ruined_fore_t;
 
-    typedef struct title {
-        sfSprite *sprite;
-        sfTexture *texture;
-    } title_t;
-
     typedef struct skip {
         sfSprite *sprite;
         sfTexture *texture;
@@ -33,7 +28,7 @@
     typedef struct splash_screen {
         ruined_back_t *ruined_back;
         ruined_fore_t *ruined_fore;
-        title_t *title;
+        sprite_t *title;
         skip_t *skip;
         int fade_index;
         int fade_index_skip;

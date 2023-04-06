@@ -28,6 +28,12 @@ SRC	=	src/main.c	\
 		\
 		src/event/main_event.c \
 		\
+		src/button/create_button.c \
+		src/button/display_button.c \
+		src/button/button_event.c \
+		src/button/state_button_callback.c \
+		src/button/update_button.c \
+		\
 		src/app/create_app.c \
 		src/app/destroy_app.c \
 		\
@@ -41,14 +47,15 @@ SRC	=	src/main.c	\
         src/splash_screen/update_splash_screen.c  \
         src/splash_screen/clean_splash_screen.c \
 		\
-        src/sounds/create_music_handler.c \
+		src/sounds/create_music_handler.c \
         src/sounds/launch_sound.c \
-        src/sounds/stop_sound.c \
+        src/sounds/stop_sound.c	\
 		\
 		src/fps/fps.c \
 		src/fps/my_int_to_str.c	\
 		\
 		src/object/sprite.c \
+		src/object/text.c	\
 		\
 		src/background/background.c \
 		src/background/destroy_background.c \
@@ -86,6 +93,12 @@ SRC	=	src/main.c	\
 		src/particle_engine/update_particle.c \
 		src/particle_engine/clean_particle_list.c \
 		\
+		src/settings/resolution.c \
+		src/settings/music_callback.c \
+		src/settings/button_creation.c	\
+		src/settings/display_settings_menu.c \
+		src/settings/create_settings_menu.c \
+		\
 		src/dialogue/dialogue_manager.c \
 		src/dialogue/display.c \
 		src/dialogue/ressources.c \
@@ -98,12 +111,8 @@ SRC	=	src/main.c	\
 		src/sfText/create_text.c \
 		\
 		src/main_menu/display_main_menu.c	\
-		src/main_menu/main_menu.c	\
 		src/main_menu/create_main_menu.c	\
-		src/main_menu/callback.c	\
 		src/main_menu/buttons.c	\
-		src/main_menu/states.c \
-		src/main_menu/update_textures.c	\
 		\
 		src/player/creation/create_player.c \
 		src/player/creation/create_weapon.c \
@@ -122,9 +131,9 @@ SRC	=	src/main.c	\
 		src/load/load_save.c	\
 		src/load/map.c	\
 		src/load/player.c	\
-		src/load/weapon.c	\
+		src/load/weapon.c
 
-OBJ	=	$(SRC:.c=.o)
+OBJ    =    $(SRC:.c=.o)
 
 CC	=	gcc
 CFLAGS	= -Wall

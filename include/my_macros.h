@@ -17,6 +17,7 @@
     #define FONTS               "assets/fonts/"
     #define IMAGES              "assets/images/"
     #define TITLES              "assets/titles/"
+    #define SETTINGS            "./assets/buttons/main_menu/settings/"
 
     /* Game State*/
     #define DEFAULT_GAME_STATE  0
@@ -31,6 +32,10 @@
     #define TIME_DIVIDER        1000000.0
     #define ANIMATION_TICK      0.15
 
+    /* Time */
+    #define TIME_DIVIDER        1000000.0
+    #define ANIMATION_TICK      0.15
+
     /* Splash Screen */
     #define RUINED_BACK         IMAGES "ruined_back.png"
     #define RUINED_FORE         IMAGES "ruined_fore.png"
@@ -40,8 +45,21 @@
 
     #define PLAY                BUTTONS "play.png"
     #define RESUME              BUTTONS "resume.png"
-    #define SETTINGS            BUTTONS "settings.png"
+    #define SETTING             BUTTONS "settings.png"
     #define QUIT                BUTTONS "quit.png"
+
+    /* Settings */
+    #define LOW_RESOLUTION      SETTINGS "800x600.png"
+    #define HIGH_RESOLUTION     SETTINGS "1920x1080.png"
+    #define FULLSCREEN          SETTINGS "fullscreen.png"
+    #define MINUS               SETTINGS "minus.png"
+    #define MUSIC               SETTINGS "music.png"
+    #define PLUS                SETTINGS "plus.png"
+    #define SOUND               SETTINGS "sound.png"
+    #define WINDOWED            SETTINGS "windowed.png"
+    #define SETTINGS_BACKGROUND BACKGROUND "settings_background.png"
+    #define RESOLUTION_TITLE    TITLES "resolution_title.png"
+    #define SOUNDS_TITLE        TITLES "sounds_title.png"
 
     /* Fonts */
     #define FFFFORWA            FONTS "FFFFORWA.TTF"
@@ -57,6 +75,7 @@
     #define SHOW_FPS_DEFAULT    1
 
     /* Sounds */
+    #define INTRO_MUSIC         MUSICS "intro.ogg"
     #define SOUND_MANIFEST      "./assets/sounds/manifest"
 
     /* Backgrounds */
@@ -95,5 +114,9 @@
     #define IS_HOVER(x)             (((x) == (1)) ? (1) : (0))
     #define IS_PRESSED(x)           (((x) == (2)) ? (1) : (0))
     #define IS_RELEASED(x)          (((x) == (3)) ? (1) : (0))
+
+    /* Settings screen */
+    #define TITLE_WIDTH         320
+    #define TEXT_BUTTON_WIDTH   129
 
 #endif /* !MY_MACROS_H_ */
