@@ -21,6 +21,9 @@
     /* Game State*/
     #define DEFAULT_GAME_STATE  4
 
+    /* Icon */
+    #define ICON "./assets/images/icon.png"
+
     /* Credits */
     #define CREDITS             BACKGROUND "credits.png"
 
