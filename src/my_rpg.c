@@ -41,7 +41,7 @@ int my_rpg(const int ac, const char **av)
     app->view = create_view((sfVector2f){426, 240});
     app->player = create_entity("./assets/player_debug.png");
     app->maps = load_maps();
-    change_map(app, app->maps, app->player, 0);
+    change_map(app, app->maps, app->player, 2);
     while (sfRenderWindow_isOpen(app->window)) {
         main_display(app);
     }
