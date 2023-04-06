@@ -24,7 +24,8 @@
         dialogue,
         cinematics,
         closed,
-        credits_screen
+        credits_screen,
+        character_stat_selection
     } state_t;
 
     typedef enum block {
