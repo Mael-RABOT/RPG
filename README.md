@@ -30,7 +30,7 @@
 [<img src="https://github.com/Mael-RABOT.png?size=85" width=85><br><sub>Maël RABOT</sub>](https://github.com/Mael-RABOT)
 
 ## Developer : <br/>
-[<img src="https://github.com/mat0904.png?size=85" width=85><br><sub>Mathieu BOREL</sub>](https://github.com/mat0904)<br/>
+[<img src="https://github.com/mat0904.png?size=85" width=85><br><sub>Mathieu BOREL</sub>](https://github.com/mat0904)<br/><br/>
 [<img src="https://github.com/YohannMgt.png?size=85" width=85><br><sub>Yohann MANGENOT</sub>](https://github.com/YohannMgt)
 
 <p align='center'>
