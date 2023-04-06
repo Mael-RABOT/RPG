@@ -22,6 +22,5 @@ settings_menu_t *create_settings_menu(sfRenderWindow *window)
     sound_settings(settings_menu, button_info, window_size);
     music_settings(settings_menu, button_info, window_size);
     resolution_settings(settings_menu, button_info, window_size);
-    //update_settings_menu(settings_menu, window);
     return settings_menu;
 }

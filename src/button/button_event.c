@@ -9,14 +9,15 @@
 
 int button_event(button_t *button, sfEvent event)
 {
-    if (button == NULL) {
-        return 0;
-    } else {
+    button_t *tmp_button = button;
+    while (tmp_button != NULL) {
         button->is_clicked(button, event.mouseButton);
         button->is_hover(button, event.mouseMove);
         button->is_released(button, event.mouseButton);
-        return button_event(button->next_button, event);
+        button_event(button->next_button, event);
+        tmp_button = tmp_button->next_button;
     }
+    return 0;
 }
 
 int update_texture(button_t *button, app_t *app)

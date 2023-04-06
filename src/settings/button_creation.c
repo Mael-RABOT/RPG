@@ -26,7 +26,6 @@ void sound_settings(settings_menu_t *settings_menu, object_info_t button_info,
     half - quarter - TEXT_BUTTON_WIDTH / 2 - button_info.size.x + 2, 420};
     settings_menu->button = append_button(settings_menu->button,
         button_info, &decrease_global_volume, MINUS);
-
     return;
 }
 

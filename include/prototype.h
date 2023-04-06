@@ -178,6 +178,13 @@
 
     void nothing(app_t *app);
 
+    void sound_settings(settings_menu_t *settings_menu, object_info_t
+        button_info, sfVector2u window_size);
+    void music_settings(settings_menu_t *settings_menu, object_info_t
+        button_info, sfVector2u window_size);
+    void resolution_settings(settings_menu_t *settings_menu,
+        object_info_t button_info, sfVector2u window_size);
+
 
 
     /* Dialogues */
