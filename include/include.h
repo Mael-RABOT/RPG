@@ -33,14 +33,13 @@
 
     #include "my_lib.h"
     #include "game/button.h"
-    #include "game/settings_menu.h"
+    #include "game/menu.h"
     #include "my_macros.h"
 
     #include "dante/dante.h"
     #include "dante/maze.h"
 
     #include "game/splash_screen.h"
-    #include "game/main_menu.h"
     #include "game/speaker.h"
 
 #endif //BASE_REPO_INCLUDE_H

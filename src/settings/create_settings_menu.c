@@ -15,9 +15,12 @@ void nothing(app_t *app)
 settings_menu_t *create_settings_menu(sfRenderWindow *window)
 {
     settings_menu_t *settings_menu = malloc(sizeof(settings_menu_t));
+    settings_menu->button = malloc(sizeof(button_t) * 11);
     object_info_t button_info;
+    memset(&button_info, 0, sizeof(object_info_t));
+    button_info.scale = (sfVector2f){1, 1};
+
     sfVector2u window_size = sfRenderWindow_getSize(window);
-    settings_menu->button = NULL;
     settings_menu->background = create_sprite(SETTINGS_BACKGROUND);
     sound_settings(settings_menu, button_info, window_size);
     music_settings(settings_menu, button_info, window_size);

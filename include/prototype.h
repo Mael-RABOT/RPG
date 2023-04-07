@@ -26,16 +26,15 @@
     int destroy_game(app_t *app);
 
     /* button */
-    button_t *create_button(object_info_t info, void (*action)(app_t *app));
-    button_t *append_button(button_t *button, object_info_t info,
-        void (*action)(app_t *app), char *texture_path);
+    button_t *create_button(object_info_t info, void (*action)(app_t *app),
+        char *texture_path);
     int load_button_texture(button_t *button, char *pathfile);
-    int display_button(sfRenderWindow *window, button_t *button);
+    int display_button(sfRenderWindow *window, button_t **button);
 
-    int button_event(button_t *button, sfEvent event);
-    int update_texture(button_t *button, app_t *app);
+    int button_event(button_t **button, sfEvent event);
+    int update_texture(button_t **button, app_t *app);
 
-    int update_button_texture(app_t *app, button_t *button);
+    int update_button_texture(app_t *app, button_t **button);
 
     int is_button_hover(button_t *button, sfMouseMoveEvent mouse);
     int is_button_released(button_t *button, sfMouseButtonEvent mouse);

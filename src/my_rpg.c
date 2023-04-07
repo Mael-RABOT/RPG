@@ -42,7 +42,8 @@ int my_rpg(const int ac, const char **av)
     app->player = create_entity("./assets/characters/small_knight.png",
         Default, Fist);
     app->maps = load_maps();
-    launch_sound(app, 0);
+    //launch_sound(app, 0);
+    app->state = 1;
     change_map(app, app->maps, app->player, 1);
     while (sfRenderWindow_isOpen(app->window)) {
         main_display(app);
