@@ -29,7 +29,6 @@ main_menu_t *create_main_menu(sfRenderWindow *window)
     button_info.position = (sfVector2f){window_size.x / 4 * 1 + 30, 600};
     main_menu->button = append_button(main_menu->button, button_info, &play,
         PLAY);
-
     button_info.position = (sfVector2f){window_size.x / 4 * 1.5 + 15, 600};
     button_info.size = (sfVector2f){78 * 3, 32 * 3};
     append_button(main_menu->button, button_info, &resume, RESUME);

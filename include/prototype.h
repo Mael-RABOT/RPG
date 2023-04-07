@@ -247,4 +247,7 @@
     void get_player_infos(app_t *app, char *line, size_t len, FILE *file);
     void get_weapon_infos(app_t *app, char *line, size_t len, FILE *file);
 
+    /* Weapons */
+    void create_weapons_list(app_t *app);
+
 #endif //BASE_REPO_PROTOTYPE_H

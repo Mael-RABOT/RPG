@@ -96,4 +96,12 @@
         scale_strength
     } weapon_save_t;
 
+    typedef enum weapons_args {
+        weapons_id = 0,
+        weapons_filepath = 1,
+        weapons_damage = 2,
+        weapons_tier = 3,
+        weapons_scaling = 4
+    } weapons_args_t;
+
 #endif // ENUM_H_

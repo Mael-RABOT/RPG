@@ -14,6 +14,7 @@
         int damage_point;
         weapon_tier tier;
         scaling_t scaling;
+        sprite_t *sprite;
     } weapon_t;
 
     typedef struct stat_entity {
