@@ -38,9 +38,8 @@
     #define TIME_DIVIDER        1000000.0
     #define ANIMATION_TICK      0.15
 
-    /* Time */
-    #define TIME_DIVIDER        1000000.0
-    #define ANIMATION_TICK      0.15
+    /* Key Code*/
+    #define ESCAPE              36
 
     /* Splash Screen */
     #define RUINED_BACK         IMAGES "ruined_back.png"

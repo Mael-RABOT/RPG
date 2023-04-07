@@ -16,6 +16,8 @@ int manage_keys(app_t *app, sfKeyCode code)
 
 int settings_menu_events(app_t *app, sfEvent event)
 {
+    if (event.type == sfEvtKeyPressed && event.key.code == ESCAPE)
+        app->state = main_menu;
     button_event(app->settings_menu->button, event);
     update_button_texture(app, app->settings_menu->button);
     return 0;

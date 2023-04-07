@@ -16,8 +16,6 @@ int detect_collision(app_t *app, entity_t *entity)
     tile_t *ptile = map->layer[entity->layer - 1]->layer[y - 1][x - 1];
     ptile->id = -1;
     tile_t *tile = map->layer[entity->layer]->layer[y][x];
-    if (ptile->state == TRANSPARENT)
-        return 1;
     switch (tile->state) {
         case SOLID:
             return 1;
@@ -29,4 +27,5 @@ int detect_collision(app_t *app, entity_t *entity)
         case STAIRS_DOWN:
             entity->layer -= 1; return 1;
     }
+    return 0;
 }
