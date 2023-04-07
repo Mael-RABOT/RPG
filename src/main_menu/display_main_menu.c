@@ -21,6 +21,5 @@ int display_main_menu(app_t *app)
     sfRenderWindow_drawSprite(app->window, app->main_menu->title->sprite,
     NULL);
     display_button(app->window, app->main_menu->button);
-    //launch_sound(app, 0);
     return 0;
 }

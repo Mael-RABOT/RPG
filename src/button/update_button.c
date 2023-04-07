@@ -23,13 +23,12 @@ int update_buttons_textures(button_t *button)
     return 0;
 }
 
-int update_button_texture(app_t *app, button_t *button)
+int update_button_texture(app_t *app, button_t **button)
 {
-    if (button == NULL) {
-        return 0;
-    } else {
-        update_buttons_textures(button);
-        return update_button_texture(app, button->next_button);
+    int i = 0;
+    while (button[i] != NULL) {
+        update_buttons_textures(button[i]);
+        i += 1;
     }
     return 0;
 }

@@ -28,6 +28,7 @@ particle_t **init_particle_list(void)
 app_t *create_app(sfVideoMode videomode)
 {
     app_t *app = malloc(sizeof(app_t));
+    create_weapons_list(app);
     app->videomode = (sfVideoMode){1920, 1080, 32};
     app->window = create_window(app->videomode, "my_rpg");
     app->state = DEFAULT_GAME_STATE;

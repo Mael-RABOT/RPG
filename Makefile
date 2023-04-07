@@ -116,6 +116,7 @@ SRC	=	src/main.c	\
 		\
 		src/player/creation/create_player.c \
 		src/player/creation/create_weapon.c \
+		src/player/weapons/create_weapons_list.c \
 		src/player/level_cost.c \
 		src/player/level_up.c \
 		src/player/attack.c \

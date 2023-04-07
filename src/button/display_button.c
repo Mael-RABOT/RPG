@@ -7,12 +7,12 @@
 
 #include "../../include/prototype.h"
 
-int display_button(sfRenderWindow *window, button_t *button)
+int display_button(sfRenderWindow *window, button_t **button)
 {
-    if (button == NULL) {
-        return 0;
-    } else {
-        sfRenderWindow_drawRectangleShape(window, button->rect, NULL);
-        return display_button(window, button->next_button);
+    int i = 0;
+    while (button[i] != NULL) {
+        sfRenderWindow_drawRectangleShape(window, button[i]->rect, NULL);
+        i += 1;
     }
+    return 0;
 }

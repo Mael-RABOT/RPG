@@ -75,6 +75,8 @@
         struct main_menu *main_menu;
         enemy_t *enemy;
         entity_t *player;
+        weapon_t **weapons_list;
+        int weapons_count;
     } app_t;
 
 #endif //APP_H_
