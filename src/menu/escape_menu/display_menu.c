@@ -9,6 +9,6 @@
 
 int display_escape_menu(app_t *app, escape_menu_t *escape_menu)
 {
-    display_button(app->window, app->menu->main->button);
+    display_button(app->window, escape_menu->button);
     return 0;
 }
