@@ -9,4 +9,4 @@ layer:./maps/Wilderness/wilderness_l6.csv
 layer:./maps/Wilderness/wilderness_l7.csv
 layer:./maps/Wilderness/wilderness_l8.csv
 layer:./maps/Wilderness/wilderness_l9.csv
-teleport:66:tower
+teleport:79:tower
