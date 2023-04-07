@@ -13,17 +13,13 @@ int choose_state(app_t *app)
     main_event(app);
     switch (app->state) {
         case splash:
-            splash_screen(app, app->window, app->splash_screen); break;
+            splash_screen(app, app->window, app->menu->splash_screen); break;
         case main_menu:
-            display_main_menu(app);
-            update_texture(app->main_menu->button, app);
-            break;
+            display_main_menu(app); break;
         case game:
             gloop(app); break;
         case settings:
-            display_settings_menu(app->window, app->settings_menu);
-            update_texture(app->settings_menu->button, app);
-            break;
+            display_settings_menu(app->window, app->menu->settings); break;
     }
         return 0;
 }

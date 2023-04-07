@@ -31,10 +31,9 @@
     int load_button_texture(button_t *button, char *pathfile);
     int display_button(sfRenderWindow *window, button_t **button);
 
-    int button_event(button_t **button, sfEvent event);
-    int update_texture(button_t **button, app_t *app);
+    int button_event(app_t *app, button_t **button, sfEvent event);
 
-    int update_button_texture(app_t *app, button_t **button);
+    int update_buttons_texture(app_t *app, button_t **button);
 
     int is_button_hover(button_t *button, sfMouseMoveEvent mouse);
     int is_button_released(button_t *button, sfMouseButtonEvent mouse);

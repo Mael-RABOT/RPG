@@ -16,15 +16,13 @@ int manage_keys(app_t *app, sfKeyCode code)
 
 int settings_menu_events(app_t *app, sfEvent event)
 {
-    button_event(app->settings_menu->button, event);
-    update_button_texture(app, app->settings_menu->button);
+    button_event(app, app->menu->settings->button, event);
     return 0;
 }
 
 int main_menu_events(app_t *app, sfEvent event)
 {
-    button_event(app->main_menu->button, event);
-    update_button_texture(app, app->main_menu->button);
+    button_event(app, app->menu->main->button, event);
     return 0;
 }
 

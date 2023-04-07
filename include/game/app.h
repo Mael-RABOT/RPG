@@ -57,9 +57,10 @@
     } enemy_t;
 
     typedef struct app_menu {
-        main_menu_t *main_menu;
-        settings_menu_t *settings_menu;
-        escape_menu_t *escape_menu;
+        main_menu_t *main;
+        settings_menu_t *settings;
+        escape_menu_t *escape;
+        splash_screen_t *splash_screen;
     } app_menu_t;
 
     typedef struct app {
@@ -67,7 +68,7 @@
         sfVideoMode videomode;
         sfRenderWindow *window;
         maps_t *maps;
-        struct splash_screen *splash_screen;
+        app_menu_t *menu;
         music_t *music_handler;
         sprite_t *background;
         sprite_t *cursor;
@@ -77,8 +78,6 @@
         particle_t **particle_list;
         int particle_count;
         sfClock *particle_clock;
-        struct settings_menu *settings_menu;
-        struct main_menu *main_menu;
         enemy_t *enemy;
         entity_t *player;
         weapon_t **weapons_list;
