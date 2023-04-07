@@ -18,6 +18,10 @@
     #define IMAGES              "./assets/images/"
     #define TITLES              "./assets/titles/"
     #define SETTINGS            "./assets/buttons/main_menu/settings/"
+    #define OVERLAY             "./assets/overlay/"
+
+    /* escape menu */
+    #define ESCAPE_MENU         OVERLAY "./in_game_menu.png"
 
     /* Game State*/
     #define DEFAULT_GAME_STATE  0

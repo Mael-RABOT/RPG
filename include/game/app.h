@@ -56,6 +56,12 @@
         int enemy_no;
     } enemy_t;
 
+    typedef struct app_menu {
+        main_menu_t *main_menu;
+        settings_menu_t *settings_menu;
+        escape_menu_t *escape_menu;
+    } app_menu_t;
+
     typedef struct app {
         int state;
         sfVideoMode videomode;

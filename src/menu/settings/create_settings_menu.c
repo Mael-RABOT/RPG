@@ -5,7 +5,7 @@
 ** create_settings_menu
 */
 
-#include "../../include/prototype.h"
+#include "../../../include/prototype.h"
 
 void nothing(app_t *app)
 {

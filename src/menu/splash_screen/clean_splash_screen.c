@@ -5,7 +5,7 @@
 ** create_splash_screen
 */
 
-#include "../../include/prototype.h"
+#include "../../../include/prototype.h"
 
 int free_splash_screen(app_t *app)
 {

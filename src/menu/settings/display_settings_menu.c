@@ -5,7 +5,7 @@
 ** display_settings_menu
 */
 
-#include "../../include/prototype.h"
+#include "../../../include/prototype.h"
 
 void display_settings_menu(sfRenderWindow *window, settings_menu_t *menu)
 {

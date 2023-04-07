@@ -28,18 +28,22 @@
     #include "game/object.h"
     #include "game/fps.h"
     #include "particle.h"
+    #include "game/button.h"
+    #include "game/menu.h"
     #include "game/player.h"
     #include "game/app.h"
 
     #include "my_lib.h"
-    #include "game/button.h"
-    #include "game/menu.h"
     #include "my_macros.h"
+
+    #include "game/speaker.h"
+
+#endif //BASE_REPO_INCLUDE_H
+
+#ifndef DANTE_H_
+    #define FANTE_H_
 
     #include "dante/dante.h"
     #include "dante/maze.h"
 
-    #include "game/splash_screen.h"
-    #include "game/speaker.h"
-
-#endif //BASE_REPO_INCLUDE_H
+#endif //DANTE_H_

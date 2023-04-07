@@ -5,7 +5,7 @@
 ** buttons.c
 */
 
-#include "../../include/prototype.h"
+#include "../../../include/prototype.h"
 
 void play(app_t *app)
 {

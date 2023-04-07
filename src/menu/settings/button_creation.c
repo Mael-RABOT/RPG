@@ -5,7 +5,7 @@
 ** button_creation
 */
 
-#include "../../include/prototype.h"
+#include "../../../include/prototype.h"
 
 void sound_settings(settings_menu_t *settings_menu, object_info_t button_info,
     sfVector2u window_size)

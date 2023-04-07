@@ -5,7 +5,7 @@
 ** splash_screen
 */
 
-#include "../../include/prototype.h"
+#include "../../../include/prototype.h"
 
 int skip_splash_screen(app_t *app)
 {

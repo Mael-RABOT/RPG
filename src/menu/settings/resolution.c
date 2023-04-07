@@ -5,7 +5,7 @@
 ** resolution.c
 */
 
-#include "../../include/prototype.h"
+#include "../../../include/prototype.h"
 
 void toggle_windowed(app_t *app)
 {

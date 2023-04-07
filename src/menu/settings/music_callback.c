@@ -5,7 +5,7 @@
 ** musiccallback.c
 */
 
-#include "../../include/prototype.h"
+#include "../../../include/prototype.h"
 
 void increase_music_volume(app_t *app)
 {

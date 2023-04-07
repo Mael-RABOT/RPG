@@ -5,7 +5,7 @@
 ** main_menu.c
 */
 
-#include "../../include/prototype.h"
+#include "../../../include/prototype.h"
 
 int display_main_menu(app_t *app)
 {
