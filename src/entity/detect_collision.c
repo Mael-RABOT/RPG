@@ -10,8 +10,8 @@
 int detect_collision(app_t *app, entity_t *entity)
 {
     int i = 0;
-    int x = entity->position.x;
-    int y = entity->position.y;
+    int x = (int)entity->position.x;
+    int y = (int)entity->position.y;
     map_t *map = app->maps->selected_map;
     tile_t *ptile = map->layer[entity->layer - 1]->layer[y - 1][x - 1];
     ptile->id = -1;
