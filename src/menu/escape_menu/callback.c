@@ -7,7 +7,22 @@
 
 #include "../../../include/prototype.h"
 
-int resume_game(app_t *app)
+void fonction_tres_tres_utile(app_t *app)
 {
+    int i = 0;
+    nothing(app);
+    while (sfFalse) {
+        nothing(app);
+        i += 1;
+    }
+}
 
+void pause_game(app_t *app)
+{
+    app->state = game;
+}
+
+void resume_game(app_t *app)
+{
+    app->state = game;
 }

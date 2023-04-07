@@ -27,7 +27,6 @@ int choose_state(app_t *app)
 int gloop(app_t *app)
 {
     display_background(app);
-
     display_map(app->window, app->maps->selected_map, app->player);
     if (app->fps->key_f == 1 && app->state == game)
         show_fps(app);

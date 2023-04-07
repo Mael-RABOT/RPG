@@ -47,6 +47,9 @@ SRC	=	src/main.c	\
         src/menu/splash_screen/update_splash_screen.c  \
         src/menu/splash_screen/clean_splash_screen.c \
 		\
+		src/menu/escape_menu/create_escape_menu.c \
+		src/menu/escape_menu/callback.c \
+		\
 		src/sounds/create_music_handler.c \
         src/sounds/launch_sound.c \
         src/sounds/stop_sound.c	\
