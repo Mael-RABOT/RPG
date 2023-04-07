@@ -13,8 +13,9 @@ int button_event(button_t **button, sfEvent event)
     while (button[i] != NULL) {
         if (event.type == sfEvtMouseMoved)
             button[i]->is_hover(button[i], event.mouseMove);
-        if (event.type == sfEvtMouseButtonPressed)
+        if (event.type == sfEvtMouseButtonPressed) {
             button[i]->is_clicked(button[i] , event.mouseButton);
+        }
         if (event.type == sfEvtMouseButtonReleased)
             button[i]->is_released(button[i], event.mouseButton);
         i += 1;

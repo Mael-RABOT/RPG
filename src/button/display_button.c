@@ -11,7 +11,6 @@ int display_button(sfRenderWindow *window, button_t **button)
 {
     int i = 0;
     while (button[i] != NULL) {
-        printf("%d\n", i);
         sfRenderWindow_drawRectangleShape(window, button[i]->rect, NULL);
         i += 1;
     }
