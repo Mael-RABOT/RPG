@@ -4,6 +4,7 @@ maps:maze:./maps/Maze/layer
 maps:fight_forest:./maps/fight_forest/layer
 maps:debug:./maps/debug/layer
 maps:wilderness:./maps/Wilderness/layer
+maps:tower:./maps/Tower/layer
 0:./assets/blocks/nature/water.png:0
 1:./assets/blocks/nature/grass.png:1
 2:./assets/blocks/nature/dirt.png:1
@@ -29,6 +30,7 @@ maps:wilderness:./maps/Wilderness/layer
 32:./assets/blocks/neon/slope_front_right1.png:2
 33:./assets/blocks/neon/slope_front_left1.png:2
 34:./assets/blocks/neon/double1.png:1
+35:./assets/blocks/neon/on.png:1
 36:./assets/blocks/neon/slope_front_double_right.png:2
 37:./assets/blocks/neon/slope_front_double_left.png:2
 38:./assets/blocks/neon/slope_front_off_right.png:2
@@ -75,8 +77,8 @@ maps:wilderness:./maps/Wilderness/layer
 87:./assets/blocks/nature/coal_ore.png:1
 88:./assets/blocks/misc/end_portal_frame.png:1
 89:./assets/blocks/misc/end_portal.png:1
-90:./assets/blocks/misc/glass.png:0
-91:./assets/blocks/misc/plank.png:0
+90:./assets/blocks/misc/glass.png:1
+91:./assets/blocks/misc/plank.png:1
 92:./assets/blocks/misc/slope_plank_back_right.png:2
 93:./assets/blocks/misc/slope_plank_back_left.png:2
 94:./assets/blocks/misc/slope_plank_front_left.png:2
