@@ -41,7 +41,6 @@ app_t *create_app(sfVideoMode videomode)
     app->particle_list = init_particle_list();
     app->particle_clock = sfClock_create();
     create_music_handler(app);
-
     app->settings_menu = create_settings_menu(app->window);
     return app;
 }

@@ -24,6 +24,8 @@ int choose_state(app_t *app)
             display_settings_menu(app->window, app->settings_menu);
             update_texture(app->settings_menu->button, app);
             break;
+        case character_stat_selection:
+            character_selection(app);
     }
         return 0;
 }

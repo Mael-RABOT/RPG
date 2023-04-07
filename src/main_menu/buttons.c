@@ -9,7 +9,7 @@
 
 void play(app_t *app)
 {
-    app->state = game;
+    app->state = character_stat_selection;
     return;
 }
 

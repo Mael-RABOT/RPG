@@ -20,7 +20,7 @@
     #define SETTINGS            "./assets/buttons/main_menu/settings/"
 
     /* Game State*/
-    #define DEFAULT_GAME_STATE  4
+    #define DEFAULT_GAME_STATE  1
 
     /* Icon */
     #define ICON                "./assets/images/icon.png"
