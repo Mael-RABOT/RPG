@@ -18,6 +18,12 @@
     #define IMAGES              "./assets/images/"
     #define TITLES              "./assets/titles/"
     #define SETTINGS            "./assets/buttons/main_menu/settings/"
+    #define STATS               BUTTONS "../character_stats/"
+
+    #define STAT_DEFAULT        STATS "try-hard.png"
+    #define STAT_STRENGTH       STATS "strenght.png"
+    #define STAT_DEXTERITY      STATS "dext.png"
+
 
     /* Game State*/
     #define DEFAULT_GAME_STATE  1

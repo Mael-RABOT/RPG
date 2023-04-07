@@ -134,7 +134,8 @@ SRC	=	src/main.c	\
 		src/load/player.c	\
 		src/load/weapon.c \
 		\
-		src/character_selection/character_selection.c \
+		src/character_selection/stats/character_selection.c \
+		src/character_selection/stats/callbacks.c \
 
 OBJ    =    $(SRC:.c=.o)
 

@@ -226,6 +226,9 @@
     weapon_t *create_weapon(weapon_type_t type);
     void set_level_cost(stat_t *player);
     int level_up(stat_t *player);
+    void apply_strength(stat_t *player);
+    void apply_dexterity(stat_t *player);
+    void apply_default(stat_t *player);
 
     /* Credits */
     void credits(app_t *app);
@@ -248,6 +251,9 @@
 
     /* Character selection */
     void character_selection(app_t *app);
+    void stat_default_button(app_t *app);
+    void stat_strength_button(app_t *app);
+    void stat_dexterity_button(app_t *app);
 
     /* Weapons */
     void create_weapons_list(app_t *app);
