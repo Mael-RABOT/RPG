@@ -36,6 +36,5 @@ int main(const int ac, const char **av)
     if (parsing_value != -1)
         return (parsing_value);
     srand(time(NULL));
-    //generator(30, 30, 1);
     return my_rpg(ac, av);
 }

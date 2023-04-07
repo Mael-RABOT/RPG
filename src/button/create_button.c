@@ -18,34 +18,20 @@ int load_button_texture(button_t *button, char *texture_path)
     return 0;
 }
 
-button_t *create_button(object_info_t info, void (*action)(app_t *app))
+button_t *create_button(object_info_t info, void (*action)(app_t *app),
+    char *texture_path)
 {
     button_t *button = malloc(sizeof(button_t));
     button->rect = sfRectangleShape_create();
     sfRectangleShape_setPosition(button->rect, info.position);
     sfRectangleShape_setSize(button->rect, info.size);
+    sfRectangleShape_setScale(button->rect, info.scale);
     button->is_clicked = &is_button_clicked;
     button->is_released = &is_button_released;
     button->is_hover = &is_button_hover;
     button->state = NONE;
+    button->pressed = false;
     button->action = action;
-    button->next_button = NULL;
-    return button;
-}
-
-button_t *append_button(button_t *button, object_info_t info,
-    void (*action)(app_t *app), char *texture_path)
-{
-    button_t *tmp_button = button;
-    if (tmp_button != NULL) {
-        while (tmp_button->next_button != NULL) {
-            tmp_button = tmp_button->next_button;
-        }
-        tmp_button->next_button = create_button(info, action);
-        load_button_texture(tmp_button->next_button, texture_path);
-    } else {
-        button = create_button(info, action);
-        load_button_texture(button, texture_path);
-    }
+    load_button_texture(button, texture_path);
     return button;
 }

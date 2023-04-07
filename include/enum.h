@@ -31,9 +31,10 @@
     typedef enum block {
         TRANSPARENT = 0,
         SOLID,
-        STAIRS,
+        STAIRS_UP,
         PLAYER_SPAWNER,
-        TELEPORTER
+        TELEPORTER,
+        STAIRS_DOWN
     } block_t;
 
     typedef enum map_index {

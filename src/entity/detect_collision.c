@@ -7,38 +7,26 @@
 
 #include "../../include/prototype.h"
 
-static int detect_on_sprite(app_t *app, entity_t *entity, int i)
-{
-    int j = 0;
-    while (app->maps->selected_map->layer[entity->layer]->layer[i][j] != NULL) {
-tile_t *tile = app->maps->selected_map->layer[entity->layer]->layer[i][j++];
-        if (entity->position.x == tile->position.x &&
-            entity->position.y == tile->position.y
-            && tile->state == STAIRS) {
-            entity->layer += 1;
-            return 1;
-        }
-        if (entity->position.x == tile->position.x &&
-            entity->position.y == tile->position.y &&
-            tile->state == TELEPORTER) {
-            change_map_by_name(app, app->maps, entity, tile->teleport->name);
-            return 0;
-        }
-        if (entity->position.x == tile->position.x &&
-            entity->position.y == tile->position.y
-            && tile->state == SOLID)
-            return 1;
-    } return 0;
-}
-
 int detect_collision(app_t *app, entity_t *entity)
 {
     int i = 0;
+    int x = entity->position.x;
+    int y = entity->position.y;
     map_t *map = app->maps->selected_map;
-    while (map->layer[entity->layer]->layer[i] != NULL) {
-        if (detect_on_sprite(app, entity, i) == 1)
+    tile_t *ptile = map->layer[entity->layer - 1]->layer[y - 1][x - 1];
+    ptile->id = -1;
+    tile_t *tile = map->layer[entity->layer]->layer[y][x];
+    if (ptile->state == TRANSPARENT)
+        return 1;
+    switch (tile->state) {
+        case SOLID:
             return 1;
-        i += 1;
+        case TELEPORTER:
+            change_map_by_name(app, app->maps, entity, tile->teleport->name);
+            break;
+        case STAIRS_UP:
+            entity->layer += 1; return 1;
+        case STAIRS_DOWN:
+            entity->layer -= 1; return 1;
     }
-    return 0;
 }

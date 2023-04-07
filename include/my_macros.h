@@ -11,16 +11,16 @@
     #define MIN(x, y)           ((x) < (y) ? (x) : (y))
     #define MAX(x, y)           ((x) > (y) ? (x) : (y))
 
-    #define BACKGROUND          "assets/backgrounds/"
-    #define BUTTONS             "assets/buttons/main_menu/"
-    #define MENU_SETTINGS       "assets/buttons/main_menu/settings/"
-    #define FONTS               "assets/fonts/"
-    #define IMAGES              "assets/images/"
-    #define TITLES              "assets/titles/"
+    #define BACKGROUND          "./assets/backgrounds/"
+    #define BUTTONS             "./assets/buttons/main_menu/"
+    #define MENU_SETTINGS       "./assets/buttons/main_menu/settings/"
+    #define FONTS               "./assets/fonts/"
+    #define IMAGES              "./assets/images/"
+    #define TITLES              "./assets/titles/"
     #define SETTINGS            "./assets/buttons/main_menu/settings/"
 
     /* Game State*/
-    #define DEFAULT_GAME_STATE  4
+    #define DEFAULT_GAME_STATE  0
 
     /* Icon */
     #define ICON                "./assets/images/icon.png"
@@ -57,6 +57,7 @@
     #define PLUS                SETTINGS "plus.png"
     #define SOUND               SETTINGS "sound.png"
     #define WINDOWED            SETTINGS "windowed.png"
+    #define BORDERLESS          SETTINGS "borderless.png"
     #define SETTINGS_BACKGROUND BACKGROUND "settings_background.png"
     #define RESOLUTION_TITLE    TITLES "resolution_title.png"
     #define SOUNDS_TITLE        TITLES "sounds_title.png"
