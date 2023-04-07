@@ -164,6 +164,10 @@
     void update_particle(app_t *app);
     void clean_particle_list(app_t *app);
 
+    /* escape menu */
+    escape_menu_t *create_escape_menu(sfRenderWindow *window);
+    int display_escape_menu(app_t *app, escape_menu_t *escape_menu);
+
     /* Settings */
     settings_menu_t *create_settings_menu(sfRenderWindow *window);
     void display_settings_menu(sfRenderWindow *window, settings_menu_t *menu);
