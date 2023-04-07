@@ -127,7 +127,7 @@
     char *texts);
 
     /* entity */
-    entity_t *create_entity(const char *pathfile,
+    entity_t *create_entity(app_t *app, const char *pathfile,
         player_preset_t preset, weapon_type_t type);
     int destroy_entity(entity_t *entity);
     int move_player(app_t *app, sfEvent event);
@@ -222,7 +222,7 @@
     int main_menu_buttons_actions(app_t *app);
 
     /* Player */
-    stat_t *create_player(player_preset_t preset, weapon_type_t type);
+    stat_t *create_player(app_t *app, player_preset_t preset);
     void attack(stat_t *attacker, stat_t *defender);
     weapon_t *create_weapon(weapon_type_t type);
     void set_level_cost(stat_t *player);

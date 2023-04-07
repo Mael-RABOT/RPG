@@ -28,6 +28,7 @@ particle_t **init_particle_list(void)
 app_t *create_app(sfVideoMode videomode)
 {
     app_t *app = malloc(sizeof(app_t));
+    create_weapons_list(app);
     app->videomode = (sfVideoMode){1920, 1080, 32};
     app->window = create_window(app->videomode, "my_rpg");
     app->state = DEFAULT_GAME_STATE;
@@ -41,7 +42,6 @@ app_t *create_app(sfVideoMode videomode)
     app->particle_list = init_particle_list();
     app->particle_clock = sfClock_create();
     create_music_handler(app);
-    create_weapons_list(app);
     app->settings_menu = create_settings_menu(app->window);
     return app;
 }

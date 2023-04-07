@@ -51,9 +51,7 @@ void create_weapons_list(app_t *app)
         remove_trailing_newline_or_space(line);
         args = split(line, ':');
         add_weapons(app, args);
-        free_array(args);
     }
     free(line);
     fclose(stream);
-    app->weapons_list[app->weapons_count + 1] = NULL;
 }
