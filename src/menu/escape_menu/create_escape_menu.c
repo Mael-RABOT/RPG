@@ -19,7 +19,7 @@ escape_menu_t *create_escape_menu(sfRenderWindow *window)
     button_info.position = (sfVector2f){window_size.x / 2 - button_info.size.x / 2, 300};
     escape_menu->button[0] = create_button(button_info, &play, RESUME);
     button_info.position = (sfVector2f){window_size.x / 2 - button_info.size.x / 2, 400};
-    escape_menu->button[1] = create_button(button_info, &nothing, SETTING);
+    escape_menu->button[1] = create_button(button_info, &launch_setting, SETTING);
     escape_menu->button[2] = NULL;
     return escape_menu;
 }

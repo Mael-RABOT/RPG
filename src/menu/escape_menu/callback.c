@@ -17,6 +17,11 @@ void fonction_tres_tres_utile(app_t *app)
     }
 }
 
+void launch_setting(app_t *app)
+{
+    app->state = settings;
+}
+
 void pause_game(app_t *app)
 {
     app->state = game;

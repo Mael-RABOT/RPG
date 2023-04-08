@@ -31,6 +31,7 @@
     #include "game/button.h"
     #include "game/menu.h"
     #include "game/player.h"
+    #include "game/map.h"
     #include "game/app.h"
 
     #include "my_lib.h"
