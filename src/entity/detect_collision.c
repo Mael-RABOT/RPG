@@ -31,7 +31,7 @@ int detect_collision(app_t *app, entity_t *entity)
     int y = entity->position.y;
     map_t *map = app->maps->selected_map;
     layer_t *layer = map->layer[entity->layer];
-    if (x < 0 || y < 0 || x > layer->size.x || y > layer->size.y)
+    if (x < 0 || y < 0 || x > layer->size.x - 1 || y > layer->size.y - 1)
         return 1;
     sfTexture *texture = sfTexture_createFromFile("./assets/blocks/debug/placeholder.png", NULL);
     tile_t *tile = map->layer[entity->layer]->layer[y][x];
