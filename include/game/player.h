@@ -33,6 +33,8 @@
     typedef struct entity {
         sprite_t *sprite;
         sfVector2f position;
+        sfVector2f real_position;
+        sfVector2f destination;
         sfIntRect texture_rect;
         stat_t *stat;
         int layer;
