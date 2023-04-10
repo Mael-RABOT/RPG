@@ -91,6 +91,7 @@ SRC	=	src/main.c	\
 		\
 		src/generator/random.c \
 		src/generator/display.c \
+		src/generator/display_first_layer.c \
 		src/generator/generator.c	\
 		src/generator/free_resources.c \
 		src/generator/init_resources.c \

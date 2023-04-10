@@ -1,2 +1,4 @@
 id:texture_path:collision
 layer:./maps/Maze/map_1.csv
+layer:./maps/Maze/map_2.csv
+teleport:66:wilderness

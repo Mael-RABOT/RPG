@@ -7,30 +7,10 @@
 
 #include "../../include/dante/dante.h"
 
-static int display_first_layer(int x, int y)
-{
-    int fd = open("./maps/Maze/map_1.csv", O_WRONLY | O_CREAT | O_TRUNC);
-    for (int i = 0; i < 2; i++) {
-        for (int j = 0; j <= x; j += 1) {
-            write(fd, "-1,", 3);
-        }
-        write(fd, "-1\n", 3);
-    }
-
-    for (int i = 0; i < y; i++) {
-        for (int j = 0; j <= x; j += 1) {
-            write(fd, "1,", 2);
-        }
-        write(fd, "1\n", 2);
-    }
-    close(fd);
-    return 0;
-}
-
 static int display_first_line(int fd, maze_t *maze)
 {
     int i = 0;
-    while (maze->maze[0][i + 1] != NULL) {
+    while (maze->maze[0][i] != NULL) {
         write(fd, "20,", 3);
         i += 1;
     }
@@ -38,7 +18,23 @@ static int display_first_line(int fd, maze_t *maze)
     return 0;
 }
 
-static int display_line(node_t **line, int line_i, int fd)
+static int display_cell(int fd, int is_end, int status)
+{
+    if (is_end == 0) {
+        if (status == CELL)
+            write(fd, "-1,", 3);
+        else
+            write(fd, "20,", 3);
+    } else {
+        if (status == CELL)
+            write(fd, "-1\n", 3);
+        else
+            write(fd, "20\n", 3);
+    }
+
+}
+
+static int display_line(node_t **line, int line_i, int fd, int is_end)
 {
     int i = 0;
     while (line[i + 1] != NULL) {
@@ -49,26 +45,14 @@ static int display_line(node_t **line, int line_i, int fd)
             i += 1;
             continue;
         }
-        if (line[i]->status == CELL)
-            write(fd, "-1,", 3);
-        else
-            write(fd, "20,", 3);
+        display_cell(fd, 0, line[i]->status);
         i += 1;
     }
-    if (line[i]->status == CELL)
-        write(fd, "-1\n", 3);
+    if (is_end == 1)
+        write(fd, "66\n", 3);
     else
-        write(fd, "20\n", 3);
+        display_cell(fd, 1, line[i]->status);
     return 0;
-}
-
-static int get_len(maze_t *maze)
-{
-    int len = 0;
-    while (maze->maze[len] != NULL) {
-        len += 1;
-    }
-    return len;
 }
 
 int display_maze(maze_t *maze)
@@ -77,11 +61,10 @@ int display_maze(maze_t *maze)
     int i = 0;
     int fd = open("./maps/Maze/map_2.csv", O_WRONLY | O_CREAT | O_TRUNC);
     display_first_line(fd, maze);
-    while (i < get_len(maze) - 1) {
-        display_line(maze->maze[i], i, fd);
+    while (maze->maze[i] != NULL) {
+        display_line(maze->maze[i], i, fd, maze->maze[i + 1] == NULL);
         i += 1;
     }
-    display_line(maze->maze[i], i, fd);
     close(fd);
     return 0;
 }
