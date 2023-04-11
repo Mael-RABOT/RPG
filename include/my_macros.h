@@ -26,7 +26,7 @@
 
 
     /* Game State*/
-    #define DEFAULT_GAME_STATE  1
+    #define DEFAULT_GAME_STATE  0
 
     /* Icon */
     #define ICON                "./assets/images/icon.png"
