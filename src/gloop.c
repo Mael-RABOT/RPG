@@ -11,7 +11,7 @@ int choose_state(app_t *app)
 {
     get_fps(app);
     main_event(app);
-    switch (app->state) {
+    switch (app->menu->state) {
         case splash:
             splash_screen(app, app->window, app->menu->splash_screen); break;
         case main_menu:
@@ -30,10 +30,10 @@ int gloop(app_t *app)
 {
     display_background(app);
     display_map(app->window, app->maps->selected_map, app->player);
-    if (app->fps->key_f == 1 && app->state == game)
+    if (app->fps->key_f == 1 && app->menu->state == game)
         show_fps(app);
     center_view(app->view, app->player);
-    if (app->state == paused)
+    if (app->menu->state == paused)
         display_escape_menu(app, app->menu->escape);
     return 0;
 }

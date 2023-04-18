@@ -10,7 +10,7 @@
 int skip_splash_screen(app_t *app)
 {
     if (app->menu->splash_screen->fade_index >= 255) {
-        app->state = main_menu;
+        app->menu->state = main_menu;
         clean_splash_screen(app);
     }
     return 0;
@@ -31,7 +31,7 @@ splash_screen_t *splash_screen)
         update_skip(window, splash_screen);
     }
     if (pos.x == 0) {
-        app->state = main_menu;
+        app->menu->state = main_menu;
         clean_splash_screen(app);
     }
     return 0;

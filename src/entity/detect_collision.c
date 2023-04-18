@@ -39,7 +39,7 @@ int detect_collision(app_t *app, entity_t *entity)
     if (status != 0)
         return status;
     tile_t *ptile = map->layer[entity->layer - 1]->layer[y + 1][x + 1];
-    if (ptile->id == -1)
+    if (ptile->state != SOLID)
         return 1;
     return 0;
 }

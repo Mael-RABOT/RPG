@@ -73,7 +73,7 @@
     #define RUINED_FORE_WIDTH   2880
     #define RUINED_BACK_WIDTH   2880
     #define SKIP_WIDTH          200
-
+    #define MAIN_MENU           BUTTONS "main_menu.png"
     #define FADE_ITERATION      50
 
     /* FPS Counter*/

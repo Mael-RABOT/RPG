@@ -20,10 +20,11 @@
         settings_menu_t *settings;
         escape_menu_t *escape;
         splash_screen_t *splash_screen;
+        int state;
+        int old_state;
     } app_menu_t;
 
     typedef struct app {
-        int state;
         sfVideoMode videomode;
         sfRenderWindow *window;
         maps_t *maps;

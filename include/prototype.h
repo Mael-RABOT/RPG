@@ -165,6 +165,7 @@
     void clean_particle_list(app_t *app);
 
     /* escape menu */
+    void launch_main_menu(app_t *app);
     escape_menu_t *create_escape_menu(sfRenderWindow *window);
     int display_escape_menu(app_t *app, escape_menu_t *escape_menu);
     void launch_setting(app_t *app);

@@ -9,25 +9,29 @@
 
 void play(app_t *app)
 {
-    app->state = game;
+    app->menu->old_state = app->menu->state;
+    app->menu->state = game;
     return;
 }
 
 void resume(app_t *app)
 {
-    app->state = game;
+    app->menu->old_state = app->menu->state;
+    app->menu->state = game;
     return;
 }
 
 void settings_b(app_t *app)
 {
-    app->state = settings;
+    app->menu->old_state = app->menu->state;
+    app->menu->state = settings;
     return;
 }
 
 void quit(app_t *app)
 {
-    app->state = closed;
+    app->menu->old_state = app->menu->state;
+    app->menu->state = closed;
     sfRenderWindow_close(app->window);
     return;
 }

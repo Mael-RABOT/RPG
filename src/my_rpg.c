@@ -15,7 +15,7 @@ static maps_t *load_maps(void)
 
 static int chose_view(app_t *app)
 {
-    if (app->state == game)
+    if (app->menu->state == game)
         sfRenderWindow_setView(app->window, app->view);
     else
         sfRenderWindow_setView(app->window, app->default_view);
