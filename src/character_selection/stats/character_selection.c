@@ -14,10 +14,8 @@ static void event_character(app_t *app, button_t **button_list)
     while (sfRenderWindow_pollEvent(app->window, &event)) {
         if (event.type == sfEvtClosed)
             sfRenderWindow_close(app->window);
-        button_event(button_list, event);
+        button_event(app, button_list, event);
     }
-    update_button_texture(app, button_list);
-    update_texture(button_list, app);
 }
 
 static button_t **init_character_stats_buttons(void)
@@ -54,13 +52,13 @@ static void display_character_stats(app_t *app, sprite_t *background,
 
 void character_selection(app_t *app)
 {
-    app->state = character_stat_selection;
+    app->menu->state = character_stat_selection;
     sprite_t *background =
         create_sprite("./assets/backgrounds/character_stats.png");
     button_t **button_list = init_character_stats_buttons();
 
     while (sfRenderWindow_isOpen(app->window)
-        && app->state == character_stat_selection) {
+        && app->menu->state == character_stat_selection) {
         event_character(app, button_list);
         sfRenderWindow_clear(app->window, sfBlack);
         display_character_stats(app, background,button_list);

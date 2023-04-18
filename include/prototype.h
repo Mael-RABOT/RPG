@@ -31,10 +31,9 @@
     int load_button_texture(button_t *button, char *pathfile);
     int display_button(sfRenderWindow *window, button_t **button);
 
-    int button_event(button_t **button, sfEvent event);
-    int update_texture(button_t **button, app_t *app);
+    int button_event(app_t *app, button_t **button, sfEvent event);
 
-    int update_button_texture(app_t *app, button_t **button);
+    int update_buttons_texture(app_t *app, button_t **button);
 
     int is_button_hover(button_t *button, sfMouseMoveEvent mouse);
     int is_button_released(button_t *button, sfMouseButtonEvent mouse);
@@ -164,6 +163,12 @@
         sfBool isometric);
     void update_particle(app_t *app);
     void clean_particle_list(app_t *app);
+
+    /* escape menu */
+    void launch_main_menu(app_t *app);
+    escape_menu_t *create_escape_menu(sfRenderWindow *window);
+    int display_escape_menu(app_t *app, escape_menu_t *escape_menu);
+    void launch_setting(app_t *app);
 
     /* Settings */
     settings_menu_t *create_settings_menu(sfRenderWindow *window);

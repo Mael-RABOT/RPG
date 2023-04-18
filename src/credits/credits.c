@@ -18,7 +18,7 @@ static void credits_event(app_t *app)
 
 void credits(app_t *app)
 {
-    app->state = credits_screen;
+    app->menu->state = credits_screen;
     sfRenderWindow_setView(app->window, app->default_view);
     sprite_t *credit = create_sprite(CREDITS);
     sfClock *timer = sfClock_create();
@@ -36,5 +36,5 @@ void credits(app_t *app)
         sfRenderWindow_display(app->window);
     }
     sfClock_destroy(timer);
-    app->state = main_menu;
+    app->menu->state = main_menu;
 }

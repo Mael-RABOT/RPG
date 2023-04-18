@@ -24,9 +24,13 @@
     #define STAT_STRENGTH       STATS "strenght.png"
     #define STAT_DEXTERITY      STATS "dext.png"
 
+    #define OVERLAY             "./assets/overlay/"
+
+    /* escape menu */
+    #define ESCAPE_MENU         OVERLAY "./in_game_menu.png"
 
     /* Game State*/
-    #define DEFAULT_GAME_STATE  0
+    #define DEFAULT_GAME_STATE  4
 
     /* Icon */
     #define ICON                "./assets/images/icon.png"
@@ -74,7 +78,7 @@
     #define RUINED_FORE_WIDTH   2880
     #define RUINED_BACK_WIDTH   2880
     #define SKIP_WIDTH          200
-
+    #define MAIN_MENU           BUTTONS "main_menu.png"
     #define FADE_ITERATION      50
 
     /* FPS Counter*/

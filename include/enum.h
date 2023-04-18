@@ -21,6 +21,7 @@
         settings,
         pause_menu,
         game,
+        paused,
         dialogue,
         cinematics,
         closed,

@@ -25,15 +25,22 @@ particle_t **init_particle_list(void)
     return (list);
 }
 
+app_menu_t *create_menu(app_t *app)
+{
+    app_menu_t *menu = malloc(sizeof(app_menu_t));
+    menu->splash_screen = create_splash_screen(app->window);
+    menu->main = create_main_menu(app->window);
+    menu->settings = create_settings_menu(app->window);
+    menu->escape = create_escape_menu(app->window);
+    return menu;
+}
+
 app_t *create_app(sfVideoMode videomode)
 {
     app_t *app = malloc(sizeof(app_t));
     create_weapons_list(app);
     app->videomode = (sfVideoMode){1920, 1080, 32};
     app->window = create_window(app->videomode, "my_rpg");
-    app->state = DEFAULT_GAME_STATE;
-    app->splash_screen = create_splash_screen(app->window);
-    app->main_menu = create_main_menu(app->window);
     sfRenderWindow_setFramerateLimit(app->window, 60);
     app->fps = create_fps_counter();
     app->background = create_sprite(NIGHT_SKY);
@@ -42,6 +49,7 @@ app_t *create_app(sfVideoMode videomode)
     app->particle_list = init_particle_list();
     app->particle_clock = sfClock_create();
     create_music_handler(app);
-    app->settings_menu = create_settings_menu(app->window);
+    app->menu = create_menu(app);
+    app->menu->state = DEFAULT_GAME_STATE;
     return app;
 }

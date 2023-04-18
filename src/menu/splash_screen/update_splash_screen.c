@@ -5,7 +5,7 @@
 ** update_splash_screen
 */
 
-#include "../../include/prototype.h"
+#include "../../../include/prototype.h"
 
 int update_ruined_back(sfRenderWindow *window, splash_screen_t *splash_screen)
 {

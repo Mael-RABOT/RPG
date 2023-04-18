@@ -10,6 +10,8 @@
 #ifndef BUTTON_H_
     #define BUTTON_H_
 
+    typedef struct app app_t;
+
     typedef enum bool {
         false = 0,
         true

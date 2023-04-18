@@ -5,7 +5,7 @@
 ** create_main_menu.c
 */
 
-#include "../../include/prototype.h"
+#include "../../../include/prototype.h"
 
 static sprite_t *create_title(sfRenderWindow *window)
 {

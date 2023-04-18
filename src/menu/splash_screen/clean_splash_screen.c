@@ -5,15 +5,15 @@
 ** create_splash_screen
 */
 
-#include "../../include/prototype.h"
+#include "../../../include/prototype.h"
 
 int free_splash_screen(app_t *app)
 {
-    free(app->splash_screen->ruined_back);
-    free(app->splash_screen->ruined_fore);
-    free(app->splash_screen->title);
-    free(app->splash_screen->skip);
-    free(app->splash_screen);
+    free(app->menu->splash_screen->ruined_back);
+    free(app->menu->splash_screen->ruined_fore);
+    free(app->menu->splash_screen->title);
+    free(app->menu->splash_screen->skip);
+    free(app->menu->splash_screen);
     return 0;
 }
 
@@ -33,7 +33,7 @@ int destroy_splash_screen(splash_screen_t *splash_screen)
 
 int clean_splash_screen(app_t *app)
 {
-    destroy_splash_screen(app->splash_screen);
+    destroy_splash_screen(app->menu->splash_screen);
     free_splash_screen(app);
     return 0;
 }

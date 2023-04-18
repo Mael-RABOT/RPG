@@ -10,16 +10,16 @@
 void stat_default_button(app_t *app)
 {
     apply_default(app->player->stat);
-    app->state = game;
+    app->menu->state = game;
 }
 
 void stat_strength_button(app_t *app)
 {
     apply_strength(app->player->stat);
-    app->state = game;
+    app->menu->state = game;
 }
 void stat_dexterity_button(app_t *app)
 {
     apply_dexterity(app->player->stat);
-    app->state = game;
+    app->menu->state = game;
 }

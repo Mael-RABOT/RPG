@@ -47,12 +47,12 @@ int dialogue_loop(app_t *app, FILE *stream, sprite_t *background,
     sfClock *timer = sfClock_create();
     speakers_t *speakers = init_speakers(app, stream,
         sfRenderWindow_getSize(app->window));
-    while (sfRenderWindow_isOpen(app->window) && app->state == dialogue) {
+    while (sfRenderWindow_isOpen(app->window) && app->menu->state == dialogue) {
         dialogue_events(app);
         sfRenderWindow_clear(app->window, sfBlack);
         display_game_dialogue(app);
         if (update_dialogue(app, speakers, stream, timer))
-            app->state = old_state;
+            app->menu->state = old_state;
         display_dialogue(app, background, speakers);
         sfRenderWindow_display(app->window);
     }
@@ -67,8 +67,8 @@ int dialogue_manager(app_t *app, char *filepath)
         return EXIT_FAILURE;
     sprite_t *background = create_sprite(COLOR_LAYER);
     scale_sprite(app, background);
-    state_t state = app->state;
-    app->state = dialogue;
+    state_t state = app->menu->state;
+    app->menu->state = dialogue;
     dialogue_loop(app, stream, background, state);
     destroy_sprite(background);
     fclose(stream);

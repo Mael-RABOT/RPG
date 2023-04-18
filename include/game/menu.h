@@ -10,6 +10,19 @@
 #ifndef MENU_H_
     #define MENU_H_
 
+    typedef struct splash_screen {
+        sprite_t *ruined_back;
+        sprite_t *ruined_fore;
+        sprite_t *title;
+        sprite_t *skip;
+        int fade_index;
+        int fade_index_skip;
+        int increment;
+        sfClock *clock;
+        sfTime time;
+        float seconds;
+    } splash_screen_t;
+
     typedef struct settings_menu {
         sprite_t *background;
         sprite_t *text_sounds;
@@ -25,5 +38,9 @@
         sprite_t *title;
         int fade_index;
     } main_menu_t;
+
+    typedef struct escape_menu {
+        button_t **button;
+    } escape_menu_t;
 
 #endif //MENU_H_

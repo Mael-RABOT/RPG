@@ -20,6 +20,7 @@
     int free_resources(maze_t *maze);
 
     //display
+    int display_first_layer(int x, int y);
     int display_maze(maze_t *maze);
 
     //error handling
