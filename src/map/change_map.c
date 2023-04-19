@@ -10,6 +10,7 @@
 int change_map(app_t *app, maps_t *maps, entity_t *player, int id)
 {
     maps->selected_map = maps->map[id];
+    player->layer = 1;
     player->position = maps->selected_map->spawn;
     sfVector2f size = maps->selected_map->layer[1]->size;
     set_isometric_pos(player, maps->selected_map->spawn, size);

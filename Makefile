@@ -28,6 +28,8 @@ SRC	=	src/main.c	\
 		\
 		src/event/main_event.c \
 		\
+		src/fight/fight.c \
+		\
 		src/button/create_button.c \
 		src/button/display_button.c \
 		src/button/button_event.c \
