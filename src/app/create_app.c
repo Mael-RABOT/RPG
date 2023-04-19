@@ -41,7 +41,7 @@ app_t *create_app(sfVideoMode videomode)
     create_weapons_list(app);
     app->videomode = (sfVideoMode){1920, 1080, 32};
     app->window = create_window(app->videomode, "my_rpg");
-    sfRenderWindow_setFramerateLimit(app->window, 60);
+    sfRenderWindow_setFramerateLimit(app->window, 120);
     app->fps = create_fps_counter();
     app->background = create_sprite(NIGHT_SKY);
     create_cursor(app);
