@@ -11,6 +11,8 @@
     #define MIN(x, y)           ((x) < (y) ? (x) : (y))
     #define MAX(x, y)           ((x) > (y) ? (x) : (y))
 
+    #define RENDER_DISTANCE     15
+
     #define BACKGROUND          "./assets/backgrounds/"
     #define BUTTONS             "./assets/buttons/main_menu/"
     #define MENU_SETTINGS       "./assets/buttons/main_menu/settings/"

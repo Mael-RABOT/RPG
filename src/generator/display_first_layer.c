@@ -27,4 +27,3 @@ int display_first_layer(int x, int y)
     close(fd);
     return 0;
 }
-

@@ -90,12 +90,14 @@
     int change_map_by_name(app_t *app, maps_t *maps, entity_t *player,
         char *name);
     int detect_spawn(map_t *map);
+    int special_block(const char *pathfile, layer_t *layer);
 
     int destroy_map(map_t *map);
 
-    teleport_t *create_teleport(int id);
+    teleport_t *create_teleport(void);
     int destroy_teleport(teleport_t *teleport);
     int connect_teleporter(const char *pathfile, layer_t *layer);
+    int connect_teleporter_tile(const char *pathfile, tile_t *tile);
 
     /* array manipulation */
     int print_array(char **array);

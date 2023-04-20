@@ -5,9 +5,9 @@
 ** create_teleport.c
 */
 
-#include "../../include/prototype.h"
+#include "../../../include/prototype.h"
 
-teleport_t *create_teleport(int id)
+teleport_t *create_teleport(void)
 {
     teleport_t *teleport = malloc(sizeof(teleport_t));
     teleport->name = NULL;

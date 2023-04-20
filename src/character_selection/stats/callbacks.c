@@ -18,6 +18,7 @@ void stat_strength_button(app_t *app)
     apply_strength(app->player->stat);
     app->menu->state = game;
 }
+
 void stat_dexterity_button(app_t *app)
 {
     apply_dexterity(app->player->stat);

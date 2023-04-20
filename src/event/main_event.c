@@ -17,7 +17,7 @@ int manage_keys(app_t *app, sfKeyCode code)
 static int detect_escape(app_t *app, sfEvent event)
 {
     if (event.type == sfEvtKeyPressed && event.key.code == 36) {
-        switch(app->menu->state) {
+        switch (app->menu->state) {
             case game:
                 app->menu->state = paused; break;
             case paused:

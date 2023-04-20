@@ -35,7 +35,8 @@
         STAIRS_UP,
         PLAYER_SPAWNER,
         TELEPORTER,
-        STAIRS_DOWN
+        STAIRS_DOWN,
+        NPC
     } block_t;
 
     typedef enum map_index {

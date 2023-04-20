@@ -14,10 +14,17 @@
         char *name;
     } teleport_t;
 
+    typedef struct npc {
+        char *file;
+    } npc_t;
+
     typedef struct tile {
         int id;
         block_t state;
-        teleport_t *teleport;
+        union {
+            teleport_t *teleport;
+            npc_t *npc;
+        } sb;
         sfVector2f position;
         sfTexture *texture;
         sfSprite *tile;

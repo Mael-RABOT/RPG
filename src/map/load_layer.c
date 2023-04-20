@@ -13,7 +13,7 @@ layer_t *create_layer(const char *pathfile, const char *layer_path,
     layer_t *layer = malloc(sizeof(layer_t));
     layer->pathfile = my_strdup(pathfile);
     load_tile(layer, pathfile, map_object);
-    connect_teleporter(layer_path, layer);
+    special_block(layer_path, layer);
     return layer;
 }
 

@@ -17,7 +17,7 @@ static int detect_block(app_t *app, entity_t *entity, tile_t *tile)
         case SOLID:
             return 1;
         case TELEPORTER:
-            change_map_by_name(app, app->maps, entity, tile->teleport->name);
+            change_map_by_name(app, app->maps, entity, tile->sb.teleport->name);
             break;
         case STAIRS_UP:
             entity->layer += 1; return 2;
@@ -38,7 +38,8 @@ int detect_collision(app_t *app, entity_t *entity)
     layer_t *layer = map->layer[entity->layer];
     if (x < 0 || y < 0 || x > layer->size.x - 1 || y > layer->size.y - 1)
         return 1;
-    sfTexture *texture = sfTexture_createFromFile("./assets/blocks/debug/placeholder.png", NULL);
+    sfTexture *texture =
+        sfTexture_createFromFile("./assets/blocks/debug/placeholder.png", NULL);
     tile_t *tile = map->layer[entity->layer]->layer[y][x];
     int status = detect_block(app, entity, tile);
     if (status != 0)

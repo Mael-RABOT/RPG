@@ -18,10 +18,6 @@ int destroy_object(map_object_t *object)
 int destroy_tile(tile_t *tile)
 {
     sfSprite_destroy(tile->tile);
-    if (tile->teleport != NULL) {
-        free(tile->teleport->name);
-        free(tile->teleport);
-    }
     free(tile);
     return 0;
 }
