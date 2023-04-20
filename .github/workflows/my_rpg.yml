@@ -7,7 +7,6 @@ env:
   EXECUTABLES: my_rpg
 
 jobs:
-
   check_program_compilation:
     name: Checking that the program compiles correctly
     runs-on: ubuntu-latest
@@ -15,7 +14,6 @@ jobs:
       image: epitechcontent/epitest-docker
     timeout-minutes: 10
     steps:
-      - name: Notif discord
       - name: Discord Notification
         uses: appleboy/discord-action@master
         env:
