@@ -19,7 +19,7 @@ jobs:
         with:
           webhook_id: "1098645970016800878"
           webhook_token: "-ApcSsSQy-Wg-EoDkAEk-EN0xaMw3FxLdiF8to16UmDEMt6TtklgTgeW2NFB-RYPo9dG"
-          message: "Workflow '${{ github.workflow }}' ${{ job.status }} on branch '${{ github.ref }}'."
+          args: "Workflow '${{ github.workflow }}' ${{ job.status }} on branch '${{ github.ref }}'."
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Make
