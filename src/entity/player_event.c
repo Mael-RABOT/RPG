@@ -96,6 +96,10 @@ int move_right(app_t *app, maps_t *maps, entity_t *player, sfView *view)
 
 int move_player(app_t *app, sfEvent event)
 {
+    sfTime time = sfClock_getElapsedTime(app->player->move_clock);
+    if (time.microseconds < 1000)
+        return 0;
+    sfClock_restart(app->player->move_clock);
     if (event.type == sfEvtKeyPressed) {
         int code = event.key.code;
         switch (code) {

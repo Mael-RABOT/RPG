@@ -18,6 +18,7 @@ entity_t *create_entity(app_t *app, const char *pathfile,
     player_preset_t preset, weapon_type_t type)
 {
     entity_t *entity = malloc(sizeof(entity_t));
+    entity->move_clock = sfClock_create();
     entity->sprite = create_sprite(pathfile);
     entity->stat = create_player(app, Default);
     sfFloatRect rect = sfSprite_getLocalBounds(entity->sprite->sprite);

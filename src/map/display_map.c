@@ -22,12 +22,12 @@ static int display_layer(sfRenderWindow *window, map_t *map, entity_t *player,
     sfVector3i position)
 {
     sfVector2f pos = player->position;
-    position.y = (pos.y - 20 > 0) ? pos.y - 20 : 0;
+    position.y = (pos.y - 15 > 0) ? pos.y - 15 : 0;
     while (map->layer[position.z]->layer[position.y] != NULL &&
-        position.y < pos.y + 20) {
-        position.x = (pos.x - 20 > 0) ? pos.x - 20 : 0;
+        position.y < pos.y + 15) {
+        position.x = (pos.x - 15 > 0) ? pos.x - 15 : 0;
         while (map->layer[position.z]->layer[position.y][position.x] != NULL &&
-                position.x < pos.x + 20) {
+                position.x < pos.x + 15) {
             display_layer_line(window, player, map->layer[position.z]->
                 layer[position.y][position.x], position);
             position.x += 1;

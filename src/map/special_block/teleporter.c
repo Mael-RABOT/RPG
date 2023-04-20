@@ -5,7 +5,7 @@
 ** connect_teleporter.c
 */
 
-#include "../../include/prototype.h"
+#include "../../../include/prototype.h"
 
 static int connect_teleporter_tile_condition(tile_t *tile, char *line)
 {

@@ -37,6 +37,7 @@
         sfVector2f destination;
         sfIntRect texture_rect;
         stat_t *stat;
+        sfClock *move_clock;
         int layer;
     } entity_t;
 
