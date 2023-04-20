@@ -90,6 +90,7 @@ SRC	=	src/main.c	\
 		src/entity/create_entity.c \
 		src/entity/player_event.c \
 		src/entity/detect_collision.c \
+		src/entity/player_direction.c \
 		\
 		src/view/create_view.c \
 		src/view/center_view.c \

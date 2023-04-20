@@ -58,6 +58,10 @@
 
     /* event */
     int main_event(app_t *app);
+    int move_top(app_t *app, maps_t *maps, entity_t *player, sfView *view);
+    int move_bot(app_t *app, maps_t *maps, entity_t *player, sfView *view);
+    int move_left(app_t *app, maps_t *maps, entity_t *player, sfView *view);
+    int move_right(app_t *app, maps_t *maps, entity_t *player, sfView *view);
     int detect_collision(app_t *app, entity_t *entity);
 
     /* map*/
