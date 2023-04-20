@@ -15,6 +15,15 @@ jobs:
       image: epitechcontent/epitest-docker
     timeout-minutes: 10
     steps:
+      - name: Notif discord
+      - name: Discord Notification
+        uses: appleboy/discord-action@master
+        env:
+          DISCORD_WEBHOOK: "https://discordapp.com/api/webhooks/1098645970016800878/-ApcSsSQy-Wg-EoDkAEk-EN0xaMw3FxLdiF8to16UmDEMt6TtklgTgeW2NFB-RYPo9dG"
+        with:
+          status: ${{ job.status }}
+          author_name: ${{ github.actor }}
+          message: "Workflow '${{ github.workflow }}' ${{ job.status }} on branch '${{ github.ref }}'."
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Make
