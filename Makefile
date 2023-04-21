@@ -154,7 +154,7 @@ SRC	=	src/main.c	\
 OBJ    =    $(SRC:.c=.o)
 
 CC	=	gcc
-CFLAGS	= -Wall -fsanitize=address
+CFLAGS	= -Wall -Wextra
 LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib -lm
 LDFLAGS	=	-lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio $(LIB)
 
@@ -167,7 +167,7 @@ all:	$(EXE)
 
 $(EXE): $(OBJ)
 		@make -C ./lib
-		$(CC) -o $(EXE) $(SRC) $(LDFLAGS) -fsanitize=address
+		$(CC) -o $(EXE) $(SRC) $(LDFLAGS)
 
 clean:
 		@rm -rf $(OBJ)

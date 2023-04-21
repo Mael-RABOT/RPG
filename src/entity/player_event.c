@@ -22,16 +22,16 @@ int move_player(app_t *app, sfEvent event)
         int code = event.key.code;
         switch (code) {
             case 25:
-                move_top(app, app->maps, app->player, app->view);
+                move_top(app, app->player);
                 break;
             case 18:
-                move_bot(app, app->maps, app->player, app->view);
+                move_bot(app, app->player);
                 break;
             case 16:
-                move_left(app, app->maps, app->player, app->view);
+                move_left(app, app->player);
                 break;
             case 3:
-                move_right(app, app->maps, app->player, app->view);
+                move_right(app, app->player);
                 break;
             default:
                 break;

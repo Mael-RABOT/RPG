@@ -37,7 +37,7 @@ int propagate_value(maze_t *maze, vector_t position, vector_t origin,
     return 0;
 }
 
-static int create_connection(maze_t *maze, node_t **node, node_t *tmp_node)
+static int create_connection(maze_t *maze, node_t *tmp_node)
 {
     if (tmp_node->status == V_EDGE)
         return create_vert(maze, tmp_node);
@@ -52,7 +52,7 @@ static int iteral_kruskal(maze_t *maze, node_t **node)
     while (len_list(node) > 1) {
         int index = generate_random(0, len_list(node) - 1);
         node_t *tmp_node = node[index];
-        if (create_connection(maze, node, tmp_node) == 1)
+        if (create_connection(maze, tmp_node) == 1)
             shift_list(node, index);
         i += 1;
     }

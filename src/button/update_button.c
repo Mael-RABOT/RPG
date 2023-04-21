@@ -23,7 +23,7 @@ int update_button_textures(button_t *button)
     return 0;
 }
 
-int update_buttons_texture(app_t *app, button_t **button)
+int update_buttons_texture(button_t **button)
 {
     int i = 0;
     while (button[i] != NULL) {

@@ -8,8 +8,7 @@
 #include "../../include/prototype.h"
 #include <stdio.h>
 
-tile_t *create_tile(int id, map_object_t **map_object, sfVector2i position,
-    sfVector2i size)
+tile_t *create_tile(int id, map_object_t **map_object, sfVector2i position)
 {
     tile_t *tile = malloc(sizeof(tile_t));
     tile->id = id;

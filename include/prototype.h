@@ -33,7 +33,7 @@
 
     int button_event(app_t *app, button_t **button, sfEvent event);
 
-    int update_buttons_texture(app_t *app, button_t **button);
+    int update_buttons_texture(button_t **button);
 
     int is_button_hover(button_t *button, sfMouseMoveEvent mouse);
     int is_button_released(button_t *button, sfMouseButtonEvent mouse);
@@ -58,17 +58,16 @@
 
     /* event */
     int main_event(app_t *app);
-    int move_top(app_t *app, maps_t *maps, entity_t *player, sfView *view);
-    int move_bot(app_t *app, maps_t *maps, entity_t *player, sfView *view);
-    int move_left(app_t *app, maps_t *maps, entity_t *player, sfView *view);
-    int move_right(app_t *app, maps_t *maps, entity_t *player, sfView *view);
+    int move_top(app_t *app, entity_t *player);
+    int move_bot(app_t *app, entity_t *player);
+    int move_left(app_t *app, entity_t *player);
+    int move_right(app_t *app, entity_t *player);
     int detect_collision(app_t *app, entity_t *entity);
 
     int menu_event(app_t *app, sfEvent event);
 
     /* map*/
-    tile_t *create_tile(int id, map_object_t **map_object, sfVector2i position,
-        sfVector2i size);
+    tile_t *create_tile(int id, map_object_t **map_object, sfVector2i position);
     int destroy_tile(tile_t *tile);
     layer_t *load_map_from_file(const char *pathfile, int id,
         map_object_t **map_object, entity_t *player);
@@ -148,9 +147,8 @@
     int center_view(sfView *view, entity_t *player);
 
     /* Conversion */
-    int set_isometric_pos(entity_t *entity, sfVector2f position,
-        sfVector2f size);
-    sfVector2f get_isometric_pos(sfVector2f position, sfVector2f size);
+    int set_isometric_pos(entity_t *entity, sfVector2f position);
+    sfVector2f get_isometric_pos(sfVector2f position);
 
     /* Background */
     void change_background(sprite_t *background, char *filepath);

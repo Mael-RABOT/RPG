@@ -23,6 +23,6 @@ int button_event(app_t *app, button_t **button, sfEvent event)
         }
         i += 1;
     }
-    update_buttons_texture(app, button);
+    update_buttons_texture(button);
     return 0;
 }

@@ -17,7 +17,7 @@ static particle_t *init_particle(sfVector2f position, sfVector2f size,
     if (isometric == sfFalse)
         particle->position = position;
     else
-        particle->position = get_isometric_pos(position, size);
+        particle->position = get_isometric_pos(position);
     return (particle);
 }
 
