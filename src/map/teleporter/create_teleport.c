@@ -7,10 +7,10 @@
 
 #include "../../../include/prototype.h"
 
-teleport_t *create_teleport(void)
+teleport_t *create_teleport(char *map_name)
 {
     teleport_t *teleport = malloc(sizeof(teleport_t));
-    teleport->name = NULL;
+    teleport->name = my_strdup(map_name);
     return teleport;
 }
 

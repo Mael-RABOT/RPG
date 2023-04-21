@@ -16,6 +16,7 @@
 
     typedef struct npc {
         char *file;
+        sfVector2i position; 
     } npc_t;
 
     typedef struct tile {

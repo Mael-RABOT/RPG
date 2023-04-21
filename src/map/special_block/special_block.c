@@ -7,13 +7,15 @@
 
 #include "../../../include/prototype.h"
 
-static int detect_block_on_tile(const char *pathfile, tile_t *tile)
+static int detect_block_on_tile(const char *pathfile, layer_t *layer,
+    sfVector2i position)
 {
+    tile_t *tile = layer->layer[position.y][position.x];
     switch (tile->state) {
         case TELEPORTER:
-            connect_teleporter_tile(pathfile, tile); break;
+            teleporter_parser(pathfile, tile); break;
         case NPC:
-            return 0;
+            npc_parser(pathfile, tile, position); break;
         default:
             return 0;
     }
@@ -22,14 +24,14 @@ static int detect_block_on_tile(const char *pathfile, tile_t *tile)
 
 int special_block(const char *pathfile, layer_t *layer)
 {
-    int i = 0;
-    while (layer->layer[i] != NULL) {
-        int j = 0;
-        while (layer->layer[i][j]) {
-            detect_block_on_tile(pathfile, layer->layer[i][j]);
-            j += 1;
+    sfVector2i position = {0, 0};
+    while (layer->layer[position.y] != NULL) {
+        position.x = 0;
+        while (layer->layer[position.y][position.x]) {
+            detect_block_on_tile(pathfile, layer, position);
+            position.x += 1;
         }
-        i += 1;
+        position.y += 1;
     }
     return 0;
 }

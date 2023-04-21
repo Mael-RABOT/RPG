@@ -7,17 +7,28 @@
 
 #include "../../../include/prototype.h"
 
-npc_t *create_npc(void)
+static int is_npc(tile_t *tile, char *line, sfVector2i position)
 {
-    npc_t *npc = malloc(sizeof(npc_t));
-    npc->file = NULL;
-    return npc;
+    if (my_strncmp(line, "npc", 3) == 0) {
+        char **array = split(line, ':');
+        tile->sb.npc = create_npc(array[2], position);
+        free_array(array);
+    }
+    return 0;
 }
 
-int destroy_npc(npc_t *npc)
+int npc_parser(const char *pathfile, tile_t *tile, sfVector2i position)
 {
-    if (npc->file != NULL)
-        free(npc->file);
-    free(npc);
+    FILE *fp = fopen(pathfile, "r");
+    char *line = NULL;
+    size_t len = 0;
+    int read_size = 0;
+    while ((read_size = getline(&line, &len, fp)) != -1) {
+        if (line[read_size - 1] == '\n')
+            line[read_size - 1] = '\0';
+        is_npc(tile, line, position);
+        free(line);
+        line = NULL;
+    }
     return 0;
 }

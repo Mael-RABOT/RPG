@@ -98,10 +98,14 @@
 
     int destroy_map(map_t *map);
 
-    teleport_t *create_teleport(void);
+    teleport_t *create_teleport(char *map_name);
     int destroy_teleport(teleport_t *teleport);
-    int connect_teleporter(const char *pathfile, layer_t *layer);
-    int connect_teleporter_tile(const char *pathfile, tile_t *tile);
+
+    npc_t *create_npc(char *name, sfVector2i position);
+    int destroy_npc(npc_t *npc);
+
+    int teleporter_parser(const char *pathfile, tile_t *tile);
+    int npc_parser(const char *pathfile, tile_t *tile, sfVector2i position);
 
     /* array manipulation */
     int print_array(char **array);

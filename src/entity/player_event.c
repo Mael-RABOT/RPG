@@ -10,7 +10,7 @@
 static int detect_move_clock(app_t *app)
 {
     sfTime time = sfClock_getElapsedTime(app->player->move_clock);
-    if (time.microseconds < 1000)
+    if (time.microseconds < 1000 || app->menu->state != game)
         return 0;
     sfClock_restart(app->player->move_clock);
     return 1;

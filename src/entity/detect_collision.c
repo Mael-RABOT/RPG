@@ -9,10 +9,6 @@
 
 static int detect_block(app_t *app, entity_t *entity, tile_t *tile)
 {
-    int i = 0;
-    int x = (int)entity->position.x;
-    int y = (int)entity->position.y;
-    map_t *map = app->maps->selected_map;
     switch (tile->state) {
         case SOLID:
             return 1;
@@ -31,15 +27,12 @@ static int detect_block(app_t *app, entity_t *entity, tile_t *tile)
 
 int detect_collision(app_t *app, entity_t *entity)
 {
-    int i = 0;
     int x = entity->position.x;
     int y = entity->position.y;
     map_t *map = app->maps->selected_map;
     layer_t *layer = map->layer[entity->layer];
     if (x < 0 || y < 0 || x > layer->size.x - 1 || y > layer->size.y - 1)
         return 1;
-    sfTexture *texture =
-        sfTexture_createFromFile("./assets/blocks/debug/placeholder.png", NULL);
     tile_t *tile = map->layer[entity->layer]->layer[y][x];
     int status = detect_block(app, entity, tile);
     if (status != 0)

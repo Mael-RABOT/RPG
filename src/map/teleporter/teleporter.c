@@ -7,20 +7,17 @@
 
 #include "../../../include/prototype.h"
 
-static int connect_teleporter_tile_condition(tile_t *tile, char *line)
+static int is_teleporter(tile_t *tile, char *line)
 {
     if (my_strncmp(line, "teleport", 8) == 0) {
         char **array = split(line, ':');
-        if (my_atoi(array[1]) == tile->id) {
-            tile->sb.teleport = create_teleport();
-            tile->sb.teleport->name = my_strdup(array[2]);
-        }
+        tile->sb.teleport = create_teleport(array[2]);
         free_array(array);
     }
     return 0;
 }
 
-int connect_teleporter_tile(const char *pathfile, tile_t *tile)
+int teleporter_parser(const char *pathfile, tile_t *tile)
 {
     FILE *fp = fopen(pathfile, "r");
     char *line = NULL;
@@ -29,7 +26,7 @@ int connect_teleporter_tile(const char *pathfile, tile_t *tile)
     while ((read_size = getline(&line, &len, fp)) != -1) {
         if (line[read_size - 1] == '\n')
             line[read_size - 1] = '\0';
-        connect_teleporter_tile_condition(tile, line);
+        is_teleporter(tile, line);
         free(line);
         line = NULL;
     }
