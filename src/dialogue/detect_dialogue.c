@@ -7,6 +7,13 @@
 
 #include "../../include/prototype.h"
 
+static int detect_dialogue_tile(app_t *app, tile_t *tile, float hypo)
+{
+    if (tile->state == NPC && hypo < 5)
+        dialogue_manager(app, tile->sb.npc->file);
+    return 0;
+}
+
 static int detect_dialogue_layer(app_t *app, layer_t *layer)
 {
     sfVector2i position = {0, 0};
@@ -18,8 +25,7 @@ static int detect_dialogue_layer(app_t *app, layer_t *layer)
             float dx = pow(player->position.x - tile->position.x, 2);
             float dy = pow(player->position.y - tile->position.y, 2);
             float hypo = sqrt(dx + dy);
-            if (tile->state == NPC && hypo < 5)
-                dialogue_manager(app, tile->sb.npc->file);
+            detect_dialogue_tile(app, tile, hypo);
             position.x += 1;
         }
         position.y += 1;
