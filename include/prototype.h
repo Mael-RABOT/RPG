@@ -208,6 +208,7 @@
 
 
     /* Dialogues */
+    int detect_dialogue(app_t *app);
     int dialogue_manager(app_t *app, char *filepath);
     void display_game_dialogue(app_t *app);
     void display_dialogue(app_t *app, sprite_t *background,

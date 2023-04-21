@@ -122,6 +122,7 @@ SRC	=	src/main.c	\
 		src/dialogue/events.c \
 		src/dialogue/init_speaker.c \
 		src/dialogue/position.c \
+		src/dialogue/detect_dialogue.c \
 		\
 		src/string/remove_trailing.c \
 		\

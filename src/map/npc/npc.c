@@ -19,6 +19,7 @@ static int is_npc(tile_t *tile, char *line, sfVector2i position)
 
 int npc_parser(const char *pathfile, tile_t *tile, sfVector2i position)
 {
+    tile->state = NPC;
     FILE *fp = fopen(pathfile, "r");
     char *line = NULL;
     size_t len = 0;

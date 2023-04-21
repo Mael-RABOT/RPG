@@ -40,7 +40,7 @@ static int detect_event(app_t *app, sfEvent event)
         manage_keys(app, event.key.code);
     if (app->menu->state == game && event.type == sfEvtKeyPressed &&
         event.key.code == sfKeyE) {
-        dialogue_manager(app, "./dialogues/test");
+        detect_dialogue(app);
     }
     menu_event(app, event);
     detect_escape(app, event);

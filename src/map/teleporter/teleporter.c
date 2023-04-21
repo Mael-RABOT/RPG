@@ -19,6 +19,7 @@ static int is_teleporter(tile_t *tile, char *line)
 
 int teleporter_parser(const char *pathfile, tile_t *tile)
 {
+    tile->state = TELEPORTER;
     FILE *fp = fopen(pathfile, "r");
     char *line = NULL;
     size_t len = 0;
