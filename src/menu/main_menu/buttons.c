@@ -10,7 +10,7 @@
 void play(app_t *app)
 {
     app->menu->old_state = app->menu->state;
-    app->menu->state = game;
+    app->menu->state = character_stat_selection;
     return;
 }
 

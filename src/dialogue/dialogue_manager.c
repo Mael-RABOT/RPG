@@ -62,6 +62,7 @@ int dialogue_loop(app_t *app, FILE *stream, sprite_t *background,
 
 int dialogue_manager(app_t *app, char *filepath)
 {
+    sfRenderWindow_setView(app->window, app->default_view);
     FILE *stream = fopen(filepath, "r");
     if (!stream)
         return EXIT_FAILURE;

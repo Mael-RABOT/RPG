@@ -32,7 +32,7 @@
     #define ESCAPE_MENU         OVERLAY "./in_game_menu.png"
 
     /* Game State*/
-    #define DEFAULT_GAME_STATE  0
+    #define DEFAULT_GAME_STATE  4
 
     /* Icon */
     #define ICON                "./assets/images/icon.png"

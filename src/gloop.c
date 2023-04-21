@@ -18,11 +18,10 @@ int choose_state(app_t *app)
             display_main_menu(app); break;
         case game:
             gloop(app); break;
-        case paused:
-            gloop(app); break;
         case settings:
-            display_settings_menu(app->window, app->menu->settings);
-            break;
+            display_settings_menu(app->window, app->menu->settings); break;
+        case paused:
+            display_escape_menu(app, app->menu->escape); break;
         case character_stat_selection:
             character_selection(app);
             display_settings_menu(app->window, app->menu->settings); break;
@@ -37,7 +36,5 @@ int gloop(app_t *app)
     if (app->fps->key_f == 1 && app->menu->state == game)
         show_fps(app);
     center_view(app->view, app->player);
-    if (app->menu->state == paused)
-        display_escape_menu(app, app->menu->escape);
     return 0;
 }
