@@ -35,6 +35,7 @@ int gloop(app_t *app)
     display_map(app->window, app->maps->selected_map, app->player);
     if (app->fps->key_f == 1 && app->menu->state == game)
         show_fps(app);
+    fight(app);
     center_view(app->view, app->player);
     return 0;
 }

@@ -41,7 +41,7 @@ app_t *create_app(sfVideoMode videomode)
     create_weapons_list(app);
     app->videomode = videomode;
     app->window = create_window(app->videomode, "my_rpg");
-    sfRenderWindow_setFramerateLimit(app->window, 120);
+    sfRenderWindow_setFramerateLimit(app->window, 60);
     app->fps = create_fps_counter();
     app->background = create_sprite(NIGHT_SKY);
     create_cursor(app);
@@ -51,5 +51,6 @@ app_t *create_app(sfVideoMode videomode)
     create_music_handler(app);
     app->menu = create_menu(app);
     app->menu->state = DEFAULT_GAME_STATE;
+    app->fight = create_fight();
     return app;
 }

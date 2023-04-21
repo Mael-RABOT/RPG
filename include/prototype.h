@@ -14,6 +14,7 @@
     int my_rpg(const int ac, const char **av);
     int choose_state(app_t *app);
     int gloop(app_t *app);
+    int random_randint(int min, int max);
 
     int generator(int x, int y, int perfect);
 
@@ -125,6 +126,12 @@
     int launch_sound(app_t *app, int id);
     void stop_sound(app_t *app);
     void close_sound(app_t *app);
+
+    /* fight */
+    fight_t *create_fight(void);
+    int destroy_fight(fight_t *fight);
+    int trapped_tile(app_t *app);
+    int fight(app_t *app);
 
     /* Pathfinding */
     int pathfinder(app_t *app);

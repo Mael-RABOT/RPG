@@ -8,6 +8,7 @@
 SRC	=	src/main.c	\
 		src/gloop.c \
 		src/my_rpg.c \
+		src/random.c \
 		src/create_enemy.c \
 		src/conversion.c \
 		src/destroy_game.c \
@@ -33,7 +34,9 @@ SRC	=	src/main.c	\
 		src/event/main_event.c \
 		src/event/menu_event.c \
 		\
+		src/fight/create_fight.c \
 		src/fight/fight.c \
+		src/fight/trapped_tile.c \
 		\
 		src/button/create_button.c \
 		src/button/display_button.c \
