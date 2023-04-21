@@ -64,6 +64,8 @@
     int move_right(app_t *app, maps_t *maps, entity_t *player, sfView *view);
     int detect_collision(app_t *app, entity_t *entity);
 
+    int menu_event(app_t *app, sfEvent event);
+
     /* map*/
     tile_t *create_tile(int id, map_object_t **map_object, sfVector2i position,
         sfVector2i size);

@@ -31,6 +31,7 @@ SRC	=	src/main.c	\
 		src/map/teleporter/teleporter.c \
 		\
 		src/event/main_event.c \
+		src/event/menu_event.c \
 		\
 		src/fight/fight.c \
 		\

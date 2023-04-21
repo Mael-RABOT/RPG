@@ -7,13 +7,6 @@
 
 #include "../../include/prototype.h"
 
-int manage_keys(app_t *app, sfKeyCode code)
-{
-    if (code == sfKeyF)
-        app->fps->key_f = 1 - app->fps->key_f;
-    return 0;
-}
-
 static int detect_escape(app_t *app, sfEvent event)
 {
     if (event.type == sfEvtKeyPressed && event.key.code == 36) {
@@ -29,6 +22,13 @@ static int detect_escape(app_t *app, sfEvent event)
     return 0;
 }
 
+static int manage_keys(app_t *app, sfKeyCode code)
+{
+    if (code == sfKeyF)
+        app->fps->key_f = 1 - app->fps->key_f;
+    return 0;
+}
+
 static int detect_event(app_t *app, sfEvent event)
 {
     if (event.type == sfEvtClosed)
@@ -38,12 +38,7 @@ static int detect_event(app_t *app, sfEvent event)
         skip_splash_screen(app);
     if (app->menu->state == game && event.type == sfEvtKeyPressed)
         manage_keys(app, event.key.code);
-    if (app->menu->state == main_menu)
-        button_event(app, app->menu->main->button, event);
-    if (app->menu->state == settings)
-        button_event(app, app->menu->settings->button, event);
-    if (app->menu->state == paused)
-        button_event(app, app->menu->escape->button, event);
+    menu_event(app, event);
     detect_escape(app, event);
     return 0;
 }
