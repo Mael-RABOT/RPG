@@ -130,6 +130,8 @@
     /* fight */
     fight_t *create_fight(void);
     int destroy_fight(fight_t *fight);
+
+    int corrupt_map(app_t *app);
     int trapped_tile(app_t *app);
     int fight(app_t *app);
 

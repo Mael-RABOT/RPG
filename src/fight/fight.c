@@ -9,7 +9,6 @@
 
 int fight(app_t *app)
 {
-    if (app->fight->is_fighting == 1)
-        trapped_tile(app);
+    corrupt_map(app);
     return 0;
 }

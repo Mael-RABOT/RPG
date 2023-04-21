@@ -36,7 +36,7 @@ SRC	=	src/main.c	\
 		\
 		src/fight/create_fight.c \
 		src/fight/fight.c \
-		src/fight/trapped_tile.c \
+		src/fight/corrupt_map.c \
 		\
 		src/button/create_button.c \
 		src/button/display_button.c \
@@ -157,7 +157,7 @@ SRC	=	src/main.c	\
 OBJ    =    $(SRC:.c=.o)
 
 CC	=	gcc
-CFLAGS	= -Wall -Wextra
+CFLAGS	= -Wall -Wextra -g3
 LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib -lm
 LDFLAGS	=	-lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio $(LIB)
 
@@ -170,7 +170,7 @@ all:	$(EXE)
 
 $(EXE): $(OBJ)
 		@make -C ./lib
-		$(CC) -o $(EXE) $(SRC) $(LDFLAGS)
+		$(CC) -o $(EXE) $(SRC) $(LDFLAGS) -g3
 
 clean:
 		@rm -rf $(OBJ)
