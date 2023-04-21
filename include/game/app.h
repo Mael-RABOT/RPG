@@ -24,6 +24,11 @@
         int old_state;
     } app_menu_t;
 
+    typedef struct fight {
+        int is_fighting;
+        sfClock *clock;
+    } fight_t;
+
     typedef struct app {
         sfVideoMode videomode;
         sfRenderWindow *window;
@@ -42,6 +47,7 @@
         entity_t *player;
         weapon_t **weapons_list;
         int weapons_count;
+        fight_t *fight;
     } app_t;
 
 #endif //APP_H_

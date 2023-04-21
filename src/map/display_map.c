@@ -22,7 +22,7 @@ static int display_layer(sfRenderWindow *window, map_t *map, entity_t *player,
     sfVector3i position)
 {
     sfVector2f pos = player->position;
-    int rd = RENDER_DISTANCE;
+    int rd = RENDER_DISTANCE - position.z;
     position.y = (pos.y - rd > 0) ? pos.y - rd : 0;
     while (map->layer[position.z]->layer[position.y] != NULL &&
         position.y < pos.y + rd) {
