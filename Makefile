@@ -23,10 +23,17 @@ SRC	=	src/main.c	\
 		src/map/destroy_map.c \
 		src/map/detect_spawn.c \
 		src/map/change_map.c \
-		src/map/create_teleport.c \
-		src/map/connect_teleporter.c \
+		\
+		src/map/npc/npc.c \
+		src/map/npc/create_npc.c \
+		src/map/special_block/special_block.c \
+		src/map/teleporter/create_teleport.c \
+		src/map/teleporter/teleporter.c \
 		\
 		src/event/main_event.c \
+		src/event/menu_event.c \
+		\
+		src/fight/fight.c \
 		\
 		src/button/create_button.c \
 		src/button/display_button.c \
@@ -42,10 +49,24 @@ SRC	=	src/main.c	\
 		src/array_manipulation/split.c \
 		src/array_manipulation/array_manipulation.c \
 		\
-		src/splash_screen/create_splash_screen.c \
-        src/splash_screen/splash_screen.c \
-        src/splash_screen/update_splash_screen.c  \
-        src/splash_screen/clean_splash_screen.c \
+		src/menu/escape_menu/create_escape_menu.c \
+		src/menu/escape_menu/callback.c \
+		src/menu/escape_menu/display_menu.c \
+		\
+		src/menu/splash_screen/create_splash_screen.c \
+        src/menu/splash_screen/splash_screen.c \
+        src/menu/splash_screen/update_splash_screen.c  \
+        src/menu/splash_screen/clean_splash_screen.c \
+		\
+		src/menu/settings/resolution.c \
+		src/menu/settings/music_callback.c \
+		src/menu/settings/button_creation.c	\
+		src/menu/settings/display_menu.c \
+		src/menu/settings/create_settings_menu.c \
+		\
+		src/menu/main_menu/display_menu.c	\
+		src/menu/main_menu/create_main_menu.c	\
+		src/menu/main_menu/buttons.c	\
 		\
 		src/sounds/create_music_handler.c \
         src/sounds/launch_sound.c \
@@ -71,12 +92,14 @@ SRC	=	src/main.c	\
 		src/entity/create_entity.c \
 		src/entity/player_event.c \
 		src/entity/detect_collision.c \
+		src/entity/player_direction.c \
 		\
 		src/view/create_view.c \
 		src/view/center_view.c \
 		\
 		src/generator/random.c \
 		src/generator/display.c \
+		src/generator/display_first_layer.c \
 		src/generator/generator.c	\
 		src/generator/free_resources.c \
 		src/generator/init_resources.c \
@@ -93,29 +116,21 @@ SRC	=	src/main.c	\
 		src/particle_engine/update_particle.c \
 		src/particle_engine/clean_particle_list.c \
 		\
-		src/settings/resolution.c \
-		src/settings/music_callback.c \
-		src/settings/button_creation.c	\
-		src/settings/display_settings_menu.c \
-		src/settings/create_settings_menu.c \
-		\
 		src/dialogue/dialogue_manager.c \
 		src/dialogue/display.c \
 		src/dialogue/ressources.c \
 		src/dialogue/events.c \
 		src/dialogue/init_speaker.c \
 		src/dialogue/position.c \
+		src/dialogue/detect_dialogue.c \
 		\
 		src/string/remove_trailing.c \
 		\
 		src/sfText/create_text.c \
 		\
-		src/main_menu/display_main_menu.c	\
-		src/main_menu/create_main_menu.c	\
-		src/main_menu/buttons.c	\
-		\
 		src/player/creation/create_player.c \
 		src/player/creation/create_weapon.c \
+		src/player/weapons/create_weapons_list.c \
 		src/player/level_cost.c \
 		src/player/level_up.c \
 		src/player/attack.c \
@@ -131,12 +146,15 @@ SRC	=	src/main.c	\
 		src/load/load_save.c	\
 		src/load/map.c	\
 		src/load/player.c	\
-		src/load/weapon.c
+		src/load/weapon.c \
+		\
+		src/character_selection/stats/character_selection.c \
+		src/character_selection/stats/callbacks.c \
 
 OBJ    =    $(SRC:.c=.o)
 
 CC	=	gcc
-CFLAGS	= -Wall
+CFLAGS	= -Wall -fsanitize=address
 LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib -lm
 LDFLAGS	=	-lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio $(LIB)
 
@@ -145,11 +163,11 @@ EXE	=	my_rpg
 all:	$(EXE)
 
 %.o	:	%.c
-		$(CC) -o $@ -c $^ $(CFLAGS) -g3
+		$(CC) -o $@ -c $^ $(CFLAGS)
 
 $(EXE): $(OBJ)
 		@make -C ./lib
-		$(CC) -o $(EXE) $(SRC) $(LDFLAGS) -g3
+		$(CC) -o $(EXE) $(SRC) $(LDFLAGS) -fsanitize=address
 
 clean:
 		@rm -rf $(OBJ)

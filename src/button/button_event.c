@@ -7,27 +7,22 @@
 
 #include "../../include/prototype.h"
 
-int button_event(button_t *button, sfEvent event)
+int button_event(app_t *app, button_t **button, sfEvent event)
 {
-    button_t *tmp_button = button;
-    while (tmp_button != NULL) {
-        button->is_clicked(button, event.mouseButton);
-        button->is_hover(button, event.mouseMove);
-        button->is_released(button, event.mouseButton);
-        button_event(button->next_button, event);
-        tmp_button = tmp_button->next_button;
-    }
-    return 0;
-}
-
-int update_texture(button_t *button, app_t *app)
-{
-    if (button == NULL) {
-        return 0;
-    } else {
-        if (button->state == RELEASED) {
-            button->action(app);
+    int i = 0;
+    while (button[i] != NULL) {
+        if (event.type == sfEvtMouseMoved)
+            button[i]->is_hover(button[i], event.mouseMove);
+        if (event.type == sfEvtMouseButtonPressed)
+            button[i]->is_clicked(button[i] , event.mouseButton);
+        if (event.type == sfEvtMouseButtonReleased)
+            button[i]->is_released(button[i], event.mouseButton);
+        if (button[i]->state == RELEASED) {
+            button[i]->action(app);
+            button[i]->state = NONE;
         }
-        return update_texture(button->next_button, app);
+        i += 1;
     }
+    update_buttons_texture(app, button);
+    return 0;
 }

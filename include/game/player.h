@@ -14,6 +14,7 @@
         int damage_point;
         weapon_tier tier;
         scaling_t scaling;
+        sprite_t *sprite;
     } weapon_t;
 
     typedef struct stat_entity {
@@ -32,8 +33,11 @@
     typedef struct entity {
         sprite_t *sprite;
         sfVector2f position;
+        sfVector2f real_position;
+        sfVector2f destination;
         sfIntRect texture_rect;
         stat_t *stat;
+        sfClock *move_clock;
         int layer;
     } entity_t;
 

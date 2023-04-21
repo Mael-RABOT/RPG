@@ -7,7 +7,6 @@ env:
   EXECUTABLES: my_rpg
 
 jobs:
-
   check_program_compilation:
     name: Checking that the program compiles correctly
     runs-on: ubuntu-latest

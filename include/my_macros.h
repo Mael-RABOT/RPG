@@ -11,13 +11,25 @@
     #define MIN(x, y)           ((x) < (y) ? (x) : (y))
     #define MAX(x, y)           ((x) > (y) ? (x) : (y))
 
-    #define BACKGROUND          "assets/backgrounds/"
-    #define BUTTONS             "assets/buttons/main_menu/"
-    #define MENU_SETTINGS       "assets/buttons/main_menu/settings/"
-    #define FONTS               "assets/fonts/"
-    #define IMAGES              "assets/images/"
-    #define TITLES              "assets/titles/"
+    #define RENDER_DISTANCE     15
+
+    #define BACKGROUND          "./assets/backgrounds/"
+    #define BUTTONS             "./assets/buttons/main_menu/"
+    #define MENU_SETTINGS       "./assets/buttons/main_menu/settings/"
+    #define FONTS               "./assets/fonts/"
+    #define IMAGES              "./assets/images/"
+    #define TITLES              "./assets/titles/"
     #define SETTINGS            "./assets/buttons/main_menu/settings/"
+    #define STATS               BUTTONS "../character_stats/"
+
+    #define STAT_DEFAULT        STATS "try-hard.png"
+    #define STAT_STRENGTH       STATS "strenght.png"
+    #define STAT_DEXTERITY      STATS "dext.png"
+
+    #define OVERLAY             "./assets/overlay/"
+
+    /* escape menu */
+    #define ESCAPE_MENU         OVERLAY "./in_game_menu.png"
 
     /* Game State*/
     #define DEFAULT_GAME_STATE  4
@@ -32,9 +44,8 @@
     #define TIME_DIVIDER        1000000.0
     #define ANIMATION_TICK      0.15
 
-    /* Time */
-    #define TIME_DIVIDER        1000000.0
-    #define ANIMATION_TICK      0.15
+    /* Key Code*/
+    #define ESCAPE              36
 
     /* Splash Screen */
     #define RUINED_BACK         IMAGES "ruined_back.png"
@@ -57,6 +68,7 @@
     #define PLUS                SETTINGS "plus.png"
     #define SOUND               SETTINGS "sound.png"
     #define WINDOWED            SETTINGS "windowed.png"
+    #define BORDERLESS          SETTINGS "borderless.png"
     #define SETTINGS_BACKGROUND BACKGROUND "settings_background.png"
     #define RESOLUTION_TITLE    TITLES "resolution_title.png"
     #define SOUNDS_TITLE        TITLES "sounds_title.png"
@@ -68,7 +80,7 @@
     #define RUINED_FORE_WIDTH   2880
     #define RUINED_BACK_WIDTH   2880
     #define SKIP_WIDTH          200
-
+    #define MAIN_MENU           BUTTONS "main_menu.png"
     #define FADE_ITERATION      50
 
     /* FPS Counter*/

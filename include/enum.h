@@ -21,6 +21,7 @@
         settings,
         pause_menu,
         game,
+        paused,
         dialogue,
         cinematics,
         closed,
@@ -31,9 +32,11 @@
     typedef enum block {
         TRANSPARENT = 0,
         SOLID,
-        STAIRS,
+        STAIRS_UP,
         PLAYER_SPAWNER,
-        TELEPORTER
+        TELEPORTER,
+        STAIRS_DOWN,
+        NPC
     } block_t;
 
     typedef enum map_index {
@@ -95,5 +98,13 @@
         normal,
         scale_strength
     } weapon_save_t;
+
+    typedef enum weapons_args {
+        weapons_id = 0,
+        weapons_filepath = 1,
+        weapons_damage = 2,
+        weapons_tier = 3,
+        weapons_scaling = 4
+    } weapons_args_t;
 
 #endif // ENUM_H_

@@ -10,6 +10,8 @@
 #ifndef BUTTON_H_
     #define BUTTON_H_
 
+    typedef struct app app_t;
+
     typedef enum bool {
         false = 0,
         true
@@ -26,6 +28,7 @@
 
     typedef struct object_info {
         sfVector2f position;
+        sfVector2f scale;
         sfVector2f size;
     } object_info_t;
 
@@ -39,7 +42,6 @@
         void (*action) (struct app *);
         button_state_t state;
         bool_t pressed;
-        struct button *next_button;
     } button_t;
 
 #endif //BUTTON_H_

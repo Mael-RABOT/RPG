@@ -26,16 +26,14 @@
     int destroy_game(app_t *app);
 
     /* button */
-    button_t *create_button(object_info_t info, void (*action)(app_t *app));
-    button_t *append_button(button_t *button, object_info_t info,
-        void (*action)(app_t *app), char *texture_path);
+    button_t *create_button(object_info_t info, void (*action)(app_t *app),
+        char *texture_path);
     int load_button_texture(button_t *button, char *pathfile);
-    int display_button(sfRenderWindow *window, button_t *button);
+    int display_button(sfRenderWindow *window, button_t **button);
 
-    int button_event(button_t *button, sfEvent event);
-    int update_texture(button_t *button, app_t *app);
+    int button_event(app_t *app, button_t **button, sfEvent event);
 
-    int update_button_texture(app_t *app, button_t *button);
+    int update_buttons_texture(app_t *app, button_t **button);
 
     int is_button_hover(button_t *button, sfMouseMoveEvent mouse);
     int is_button_released(button_t *button, sfMouseButtonEvent mouse);
@@ -60,7 +58,13 @@
 
     /* event */
     int main_event(app_t *app);
+    int move_top(app_t *app, maps_t *maps, entity_t *player, sfView *view);
+    int move_bot(app_t *app, maps_t *maps, entity_t *player, sfView *view);
+    int move_left(app_t *app, maps_t *maps, entity_t *player, sfView *view);
+    int move_right(app_t *app, maps_t *maps, entity_t *player, sfView *view);
     int detect_collision(app_t *app, entity_t *entity);
+
+    int menu_event(app_t *app, sfEvent event);
 
     /* map*/
     tile_t *create_tile(int id, map_object_t **map_object, sfVector2i position,
@@ -92,12 +96,18 @@
     int change_map_by_name(app_t *app, maps_t *maps, entity_t *player,
         char *name);
     int detect_spawn(map_t *map);
+    int special_block(const char *pathfile, layer_t *layer);
 
     int destroy_map(map_t *map);
 
-    teleport_t *create_teleport(int id);
+    teleport_t *create_teleport(char *map_name);
     int destroy_teleport(teleport_t *teleport);
-    int connect_teleporter(const char *pathfile, layer_t *layer);
+
+    npc_t *create_npc(char *name, sfVector2i position);
+    int destroy_npc(npc_t *npc);
+
+    int teleporter_parser(const char *pathfile, tile_t *tile);
+    int npc_parser(const char *pathfile, tile_t *tile, sfVector2i position);
 
     /* array manipulation */
     int print_array(char **array);
@@ -127,7 +137,7 @@
     char *texts);
 
     /* entity */
-    entity_t *create_entity(const char *pathfile,
+    entity_t *create_entity(app_t *app, const char *pathfile,
         player_preset_t preset, weapon_type_t type);
     int destroy_entity(entity_t *entity);
     int move_player(app_t *app, sfEvent event);
@@ -166,6 +176,12 @@
     void update_particle(app_t *app);
     void clean_particle_list(app_t *app);
 
+    /* escape menu */
+    void launch_main_menu(app_t *app);
+    escape_menu_t *create_escape_menu(sfRenderWindow *window);
+    int display_escape_menu(app_t *app, escape_menu_t *escape_menu);
+    void launch_setting(app_t *app);
+
     /* Settings */
     settings_menu_t *create_settings_menu(sfRenderWindow *window);
     void display_settings_menu(sfRenderWindow *window, settings_menu_t *menu);
@@ -192,6 +208,7 @@
 
 
     /* Dialogues */
+    int detect_dialogue(app_t *app);
     int dialogue_manager(app_t *app, char *filepath);
     void display_game_dialogue(app_t *app);
     void display_dialogue(app_t *app, sprite_t *background,
@@ -222,11 +239,14 @@
     int main_menu_buttons_actions(app_t *app);
 
     /* Player */
-    stat_t *create_player(player_preset_t preset, weapon_type_t type);
+    stat_t *create_player(app_t *app, player_preset_t preset);
     void attack(stat_t *attacker, stat_t *defender);
     weapon_t *create_weapon(weapon_type_t type);
     void set_level_cost(stat_t *player);
     int level_up(stat_t *player);
+    void apply_strength(stat_t *player);
+    void apply_dexterity(stat_t *player);
+    void apply_default(stat_t *player);
 
     /* Credits */
     void credits(app_t *app);
@@ -246,5 +266,14 @@
     void get_map_name(app_t *app, char *line, size_t len, FILE *file);
     void get_player_infos(app_t *app, char *line, size_t len, FILE *file);
     void get_weapon_infos(app_t *app, char *line, size_t len, FILE *file);
+
+    /* Character selection */
+    void character_selection(app_t *app);
+    void stat_default_button(app_t *app);
+    void stat_strength_button(app_t *app);
+    void stat_dexterity_button(app_t *app);
+
+    /* Weapons */
+    void create_weapons_list(app_t *app);
 
 #endif //BASE_REPO_PROTOTYPE_H

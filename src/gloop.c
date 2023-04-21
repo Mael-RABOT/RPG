@@ -11,19 +11,20 @@ int choose_state(app_t *app)
 {
     get_fps(app);
     main_event(app);
-    switch (app->state) {
+    switch (app->menu->state) {
         case splash:
-            splash_screen(app, app->window, app->splash_screen); break;
+            splash_screen(app, app->window, app->menu->splash_screen); break;
         case main_menu:
-            display_main_menu(app);
-            update_texture(app->main_menu->button, app);
-            break;
+            display_main_menu(app); break;
         case game:
             gloop(app); break;
         case settings:
-            display_settings_menu(app->window, app->settings_menu);
-            update_texture(app->settings_menu->button, app);
-            break;
+            display_settings_menu(app->window, app->menu->settings); break;
+        case paused:
+            display_escape_menu(app, app->menu->escape); break;
+        case character_stat_selection:
+            character_selection(app);
+            display_settings_menu(app->window, app->menu->settings); break;
     }
         return 0;
 }
@@ -31,9 +32,9 @@ int choose_state(app_t *app)
 int gloop(app_t *app)
 {
     display_background(app);
-    if (app->fps->key_f == 1 && app->state == game)
+    display_map(app->window, app->maps->selected_map, app->player);
+    if (app->fps->key_f == 1 && app->menu->state == game)
         show_fps(app);
     center_view(app->view, app->player);
-    display_map(app->window, app->maps->selected_map, app->player);
     return 0;
 }

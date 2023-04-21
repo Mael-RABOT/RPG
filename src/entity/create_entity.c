@@ -14,12 +14,13 @@ int destroy_entity(entity_t *entity)
     return 0;
 }
 
-entity_t *create_entity(const char *pathfile,
+entity_t *create_entity(app_t *app, const char *pathfile,
     player_preset_t preset, weapon_type_t type)
 {
     entity_t *entity = malloc(sizeof(entity_t));
+    entity->move_clock = sfClock_create();
     entity->sprite = create_sprite(pathfile);
-    entity->stat = create_player(Default, Fist);
+    entity->stat = create_player(app, Default);
     sfFloatRect rect = sfSprite_getLocalBounds(entity->sprite->sprite);
     rect.width /= 4;
     sfIntRect new_rect = {rect.left, rect.top, rect.width, rect.height};

@@ -7,7 +7,7 @@
 
 #include "../../include/prototype.h"
 
-int update_buttons_textures(button_t *button)
+int update_button_textures(button_t *button)
 {
     sfIntRect new_rect = button->texture_rect;
     size_t offset_x = new_rect.width;
@@ -23,13 +23,12 @@ int update_buttons_textures(button_t *button)
     return 0;
 }
 
-int update_button_texture(app_t *app, button_t *button)
+int update_buttons_texture(app_t *app, button_t **button)
 {
-    if (button == NULL) {
-        return 0;
-    } else {
-        update_buttons_textures(button);
-        return update_button_texture(app, button->next_button);
+    int i = 0;
+    while (button[i] != NULL) {
+        update_button_textures(button[i]);
+        i += 1;
     }
     return 0;
 }
