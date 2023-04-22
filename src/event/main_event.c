@@ -26,8 +26,6 @@ static int manage_keys(app_t *app, sfKeyCode code)
 {
     if (app->menu->state == game && code == sfKeyF)
         app->fps->key_f = 1 - app->fps->key_f;
-    if (app->menu->state == game && code == sfKeyG)
-        app->fight->is_fighting = 1 - app->fight->is_fighting;
     if (app->menu->state == game && code == sfKeyE) {
         detect_dialogue(app);
         detect_fight(app);
