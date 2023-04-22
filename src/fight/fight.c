@@ -11,8 +11,7 @@ int fight(app_t *app)
 {
     corrupt_map(app);
     sfTime time = sfClock_getElapsedTime(app->fight->clock);
-    if (app->fight->is_fighting == 0)
-        return 0;
+    stop_fight(app);
     if (app->fight->fight_tick == 0 && time.microseconds >= 1000000) {
         app->fight->fight_tick = 1;
         trapped_tile(app);
@@ -23,9 +22,9 @@ int fight(app_t *app)
         app->fight->fight_tick = 0;
         kill_player(app);
         restore_tile(app);
+        app->fight->no_round -= 1;
         sfClock_restart(app->fight->clock);
         return 0;
     }
-    stop_fight(app);
     return 0;
 }

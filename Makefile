@@ -33,6 +33,7 @@ SRC	=	src/main.c	\
 		src/event/menu_event.c \
 		\
 		src/fight/launch_fight.c \
+		src/fight/detect_fight.c \
 		src/fight/create_fight.c \
 		src/fight/fight.c \
 		src/fight/corrupt_map.c \

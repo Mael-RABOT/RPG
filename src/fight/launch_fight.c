@@ -9,9 +9,10 @@
 
 int stop_fight(app_t *app)
 {
+    printf("%d\n", app->fight->no_round);
     if (app->fight->no_round == 0) {
         change_map_by_map(app, app->maps->old_map);
-        app->fight->is_fighting = 1;
+        app->fight->is_fighting = 0;
     }
     return 0;
 }

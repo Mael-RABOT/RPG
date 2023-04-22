@@ -28,6 +28,10 @@ static int manage_keys(app_t *app, sfKeyCode code)
         app->fps->key_f = 1 - app->fps->key_f;
     if (app->menu->state == game && code == sfKeyG)
         app->fight->is_fighting = 1 - app->fight->is_fighting;
+    if (app->menu->state == game && code == sfKeyE) {
+        detect_dialogue(app);
+        detect_fight(app);
+    }
     if (app->menu->state == game && code == sfKeyH &&
         app->maps->selected_map != app->maps->map[0])
         change_map(app, 1);
@@ -41,10 +45,6 @@ static int detect_event(app_t *app, sfEvent event)
     if (app->menu->state == splash && (event.type == sfEvtKeyPressed
         || event.type == sfEvtMouseButtonReleased))
         skip_splash_screen(app);
-    if (app->menu->state == game && event.type == sfEvtKeyPressed &&
-        event.key.code == sfKeyE) {
-        detect_dialogue(app);
-    }
     menu_event(app, event);
     detect_escape(app, event);
     if (event.type == sfEvtKeyPressed)
