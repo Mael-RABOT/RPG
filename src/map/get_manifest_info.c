@@ -14,7 +14,7 @@ int count_manifest_map(const char *filepath)
     char *line = NULL;
     size_t count = 0;
     size_t len = 0;
-    size_t read_size = 0;
+    int read_size = 0;
     while ((read_size = getline(&line, &len, fp)) != -1) {
         if (my_strncmp(line, "maps", 4) == 0)
             count += 1;
@@ -30,7 +30,7 @@ int count_manifest_object(const char *filepath)
     char *line = NULL;
     size_t count = 0;
     size_t len = 0;
-    size_t read_size = 0;
+    int read_size = 0;
     while ((read_size = getline(&line, &len, fp)) != -1) {
         if (my_strncmp(line, "maps", 4) == 0)
             continue;
@@ -47,7 +47,7 @@ int count_map_layer(const char *filepath)
     char *line = NULL;
     size_t count = 0;
     size_t len = 0;
-    size_t read_size = 0;
+    int read_size = 0;
     while ((read_size = getline(&line, &len, fp)) != -1) {
         if (my_strncmp(line, "layer", 5) == 0)
             count += 1;

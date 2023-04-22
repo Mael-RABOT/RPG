@@ -18,6 +18,7 @@ fight_t *create_fight(void)
 {
     fight_t *fight = malloc(sizeof(fight_t));
     fight->is_fighting = 0;
+    fight->fight_tick = 0;
     fight->clock = sfClock_create();
     return fight;
 }

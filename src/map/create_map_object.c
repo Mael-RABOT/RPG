@@ -6,6 +6,7 @@
 */
 
 #include "../../include/prototype.h"
+#include <SFML/Graphics/Texture.h>
 
 map_object_t *create_map_object(int id, char *path, int collision)
 {

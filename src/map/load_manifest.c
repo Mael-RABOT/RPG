@@ -18,7 +18,7 @@ map_object_t **load_object(const char *pathfile)
     FILE *fp = fopen(pathfile, "r");
     char *line = NULL;
     size_t len = 0;
-    size_t read_size = 0;
+    int read_size = 0;
     while ((read_size = getline(&line, &len, fp)) != -1) {
         line[read_size - 1] = '\0';
         if (my_strncmp(line, "maps", 4) == 0)
@@ -40,7 +40,7 @@ map_t **load_map(const char *pathfile, map_object_t **map_object)
     char *line = NULL;
     size_t len = 0;
     int index = 0;
-    size_t read_size = 0;
+    int read_size = 0;
     while ((read_size = getline(&line, &len, fp)) != -1) {
         line[read_size - 1] = '\0';
         if (my_strncmp(line, "maps", 4) == 0) {

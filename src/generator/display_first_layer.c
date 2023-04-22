@@ -11,15 +11,16 @@
 int display_first_layer(int x, int y)
 {
     int fd = open("./maps/Maze/map_1.csv", O_WRONLY | O_CREAT | O_TRUNC);
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 1; i++) {
         for (int j = 0; j <= x; j += 1) {
             write(fd, "-1,", 3);
         }
         write(fd, "-1\n", 3);
     }
 
-    for (int i = 0; i < y; i++) {
-        for (int j = 0; j <= x; j += 1) {
+    for (int i = 0; i <= y; i++) {
+        write(fd, "-1,", 3);
+        for (int j = 0; j < x; j += 1) {
             write(fd, "1,", 2);
         }
         write(fd, "1\n", 2);

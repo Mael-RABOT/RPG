@@ -7,7 +7,7 @@
 
 #include "../include/prototype.h"
 
-int set_isometric_pos(entity_t *entity, sfVector2f position, sfVector2f size)
+int set_isometric_pos(entity_t *entity, sfVector2f position)
 {
     entity->position = position;
     sfVector2f real_position = {((position.x - position.y) * 32 / 2),
@@ -16,7 +16,7 @@ int set_isometric_pos(entity_t *entity, sfVector2f position, sfVector2f size)
     return 0;
 }
 
-sfVector2f get_isometric_pos(sfVector2f position, sfVector2f size)
+sfVector2f get_isometric_pos(sfVector2f position)
 {
     sfVector2f real_position = {((position.x - position.y) * 32 / 2),
         ((position.x + position.y) * 32 / 4)};

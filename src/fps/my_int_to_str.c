@@ -38,8 +38,10 @@ char *my_int_to_str(int nb)
     int size = nbsize(nb);
 
     result[0] = '\0';
-    if (nb == 0)
-        return ("0");
+    if (nb == 0) {
+        my_strappend(result, '0');
+        return result;
+    }
     for (int i = 0; i < size; i++) {
         my_strappend(result, (reverse_nb % 10) + 48);
         reverse_nb = reverse_nb / 10;

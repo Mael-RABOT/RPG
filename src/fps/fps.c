@@ -25,12 +25,14 @@ void show_fps(app_t *app)
     sfText_setScale(app->fps->text, (sfVector2f){0.3f, 0.3f});
     sfText_setCharacterSize(app->fps->text, 10);
     sfText_setFillColor(app->fps->text, sfGreen);
-    sfText_setString(app->fps->text, my_int_to_str(app->fps->fps));
+    char *text = my_int_to_str(app->fps->fps);
+    sfText_setString(app->fps->text, text);
     sfRenderWindow_drawText(app->window, app->fps->text, NULL);
     position.x += 5;
     sfText_setPosition(app->fps->text, position);
     sfText_setString(app->fps->text, "FPS");
     sfRenderWindow_drawText(app->window, app->fps->text, NULL);
+    free(text);
 }
 
 void get_fps(app_t *app)

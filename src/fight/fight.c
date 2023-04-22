@@ -7,14 +7,24 @@
 
 #include "../../include/prototype.h"
 
-static int trapped_tile(app_t *app)
-{
-    int i = app->player->layer;
-    sfVector2i position = {0, 0};
-    return 0;
-}
-
 int fight(app_t *app)
 {
+    corrupt_map(app);
+    sfTime time = sfClock_getElapsedTime(app->fight->clock);
+    stop_fight(app);
+    if (app->fight->fight_tick == 0 && time.microseconds >= 1000000) {
+        app->fight->fight_tick = 1;
+        trapped_tile(app);
+        sfClock_restart(app->fight->clock);
+        return 0;
+    }
+    if (time.microseconds >= 1000000 && app->fight->fight_tick == 1) {
+        app->fight->fight_tick = 0;
+        kill_player(app);
+        restore_tile(app);
+        app->fight->no_round -= 1;
+        sfClock_restart(app->fight->clock);
+        return 0;
+    }
     return 0;
 }

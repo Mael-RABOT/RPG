@@ -8,7 +8,7 @@
 SRC	=	src/main.c	\
 		src/gloop.c \
 		src/my_rpg.c \
-		src/create_enemy.c \
+		src/random.c \
 		src/conversion.c \
 		src/destroy_game.c \
 		\
@@ -23,7 +23,6 @@ SRC	=	src/main.c	\
 		src/map/destroy_map.c \
 		src/map/detect_spawn.c \
 		src/map/change_map.c \
-		\
 		src/map/npc/npc.c \
 		src/map/npc/create_npc.c \
 		src/map/special_block/special_block.c \
@@ -33,13 +32,21 @@ SRC	=	src/main.c	\
 		src/event/main_event.c \
 		src/event/menu_event.c \
 		\
+		src/fight/launch_fight.c \
+		src/fight/detect_fight.c \
+		src/fight/create_fight.c \
 		src/fight/fight.c \
+		src/fight/corrupt_map.c \
+		src/fight/trapped_tile.c \
+		src/fight/restore_tile.c \
+		src/fight/kill_player.c \
 		\
 		src/button/create_button.c \
 		src/button/display_button.c \
 		src/button/button_event.c \
 		src/button/state_button_callback.c \
 		src/button/update_button.c \
+		src/button/destroy_button.c \
 		\
 		src/app/create_app.c \
 		src/app/destroy_app.c \
@@ -49,24 +56,29 @@ SRC	=	src/main.c	\
 		src/array_manipulation/split.c \
 		src/array_manipulation/array_manipulation.c \
 		\
+		src/menu/create_menu.c \
+		\
 		src/menu/escape_menu/create_escape_menu.c \
 		src/menu/escape_menu/callback.c \
 		src/menu/escape_menu/display_menu.c \
+		src/menu/escape_menu/destroy_menu.c \
 		\
 		src/menu/splash_screen/create_splash_screen.c \
         src/menu/splash_screen/splash_screen.c \
         src/menu/splash_screen/update_splash_screen.c  \
-        src/menu/splash_screen/clean_splash_screen.c \
+        src/menu/splash_screen/destroy_menu.c \
 		\
 		src/menu/settings/resolution.c \
 		src/menu/settings/music_callback.c \
 		src/menu/settings/button_creation.c	\
 		src/menu/settings/display_menu.c \
 		src/menu/settings/create_settings_menu.c \
+		src/menu/settings/destroy_menu.c \
 		\
-		src/menu/main_menu/display_menu.c	\
-		src/menu/main_menu/create_main_menu.c	\
-		src/menu/main_menu/buttons.c	\
+		src/menu/main_menu/display_menu.c \
+		src/menu/main_menu/create_main_menu.c \
+		src/menu/main_menu/buttons.c \
+		src/menu/main_menu/destroy_menu.c \
 		\
 		src/sounds/create_music_handler.c \
         src/sounds/launch_sound.c \
@@ -134,6 +146,7 @@ SRC	=	src/main.c	\
 		src/player/level_cost.c \
 		src/player/level_up.c \
 		src/player/attack.c \
+		src/player/destroy_weapons.c \
 		\
 		src/credits/credits.c \
 		\
@@ -154,9 +167,11 @@ SRC	=	src/main.c	\
 OBJ    =    $(SRC:.c=.o)
 
 CC	=	gcc
-CFLAGS	= -Wall -fsanitize=address
+SANITIZE	=
+CFLAGS	= -Wall -Wextra $(SANITIZE)
 LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib -lm
-LDFLAGS	=	-lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio $(LIB)
+CSFML	=	-lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio
+LDFLAGS	=	$(CSFML) $(LIB) $(SANITIZE)
 
 EXE	=	my_rpg
 
@@ -167,7 +182,7 @@ all:	$(EXE)
 
 $(EXE): $(OBJ)
 		@make -C ./lib
-		$(CC) -o $(EXE) $(SRC) $(LDFLAGS) -fsanitize=address
+		$(CC) -o $(EXE) $(SRC) $(LDFLAGS)
 
 clean:
 		@rm -rf $(OBJ)

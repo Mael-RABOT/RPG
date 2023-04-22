@@ -24,8 +24,15 @@ static int detect_escape(app_t *app, sfEvent event)
 
 static int manage_keys(app_t *app, sfKeyCode code)
 {
-    if (code == sfKeyF)
+    if (app->menu->state == game && code == sfKeyF)
         app->fps->key_f = 1 - app->fps->key_f;
+    if (app->menu->state == game && code == sfKeyE) {
+        detect_dialogue(app);
+        detect_fight(app);
+    }
+    if (app->menu->state == game && code == sfKeyH &&
+        app->maps->selected_map != app->maps->map[0])
+        change_map(app, 1);
     return 0;
 }
 
@@ -36,14 +43,10 @@ static int detect_event(app_t *app, sfEvent event)
     if (app->menu->state == splash && (event.type == sfEvtKeyPressed
         || event.type == sfEvtMouseButtonReleased))
         skip_splash_screen(app);
-    if (app->menu->state == game && event.type == sfEvtKeyPressed)
-        manage_keys(app, event.key.code);
-    if (app->menu->state == game && event.type == sfEvtKeyPressed &&
-        event.key.code == sfKeyE) {
-        detect_dialogue(app);
-    }
     menu_event(app, event);
     detect_escape(app, event);
+    if (event.type == sfEvtKeyPressed)
+        manage_keys(app, event.key.code);
     return 0;
 }
 

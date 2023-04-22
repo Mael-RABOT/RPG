@@ -7,7 +7,7 @@
 
 #include "../../include/prototype.h"
 
-int move_top(app_t *app, maps_t *maps, entity_t *player, sfView *view)
+int move_top(app_t *app, entity_t *player)
 {
     player->texture_rect.left = 64;
     sfSprite_setTextureRect(player->sprite->sprite, player->texture_rect);
@@ -25,11 +25,11 @@ int move_top(app_t *app, maps_t *maps, entity_t *player, sfView *view)
             player->position.x += 1;
             break;
     }
-    set_isometric_pos(player, player->position, maps->selected_map->size);
+    set_isometric_pos(player, player->position);
     return 0;
 }
 
-int move_bot(app_t *app, maps_t *maps, entity_t *player, sfView *view)
+int move_bot(app_t *app, entity_t *player)
 {
     player->texture_rect.left = 32;
     sfSprite_setTextureRect(player->sprite->sprite, player->texture_rect);
@@ -47,11 +47,11 @@ int move_bot(app_t *app, maps_t *maps, entity_t *player, sfView *view)
             player->position.y += 2;
             break;
     }
-    set_isometric_pos(player, player->position, maps->selected_map->size);
+    set_isometric_pos(player, player->position);
     return 0;
 }
 
-int move_left(app_t *app, maps_t *maps, entity_t *player, sfView *view)
+int move_left(app_t *app, entity_t *player)
 {
     player->texture_rect.left = 96;
     sfSprite_setTextureRect(player->sprite->sprite, player->texture_rect);
@@ -69,11 +69,11 @@ int move_left(app_t *app, maps_t *maps, entity_t *player, sfView *view)
             player->position.y += 1;
             break;
     }
-    set_isometric_pos(player, player->position, maps->selected_map->size);
+    set_isometric_pos(player, player->position);
     return 0;
 }
 
-int move_right(app_t *app, maps_t *maps, entity_t *player, sfView *view)
+int move_right(app_t *app, entity_t *player)
 {
     player->texture_rect.left = 0;
     sfSprite_setTextureRect(player->sprite->sprite, player->texture_rect);
@@ -90,6 +90,6 @@ int move_right(app_t *app, maps_t *maps, entity_t *player, sfView *view)
             player->position.y += 1;
             player->position.x += 2;
     }
-    set_isometric_pos(player, player->position, maps->selected_map->size);
+    set_isometric_pos(player, player->position);
     return 0;
 }

@@ -13,7 +13,7 @@ static int detect_block(app_t *app, entity_t *entity, tile_t *tile)
         case SOLID:
             return 1;
         case TELEPORTER:
-            change_map_by_name(app, app->maps, entity, tile->sb.teleport->name);
+            change_map_by_name(app, tile->sb.teleport->name);
             break;
         case STAIRS_UP:
             entity->layer += 1; return 2;

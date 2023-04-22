@@ -14,8 +14,12 @@
     int my_rpg(const int ac, const char **av);
     int choose_state(app_t *app);
     int gloop(app_t *app);
+    int random_randint(int min, int max);
 
     int generator(int x, int y, int perfect);
+
+    app_menu_t *create_menu(app_t *app);
+    int destroy_menu(app_menu_t *am);
 
     /* window */
     sfRenderWindow *create_window(sfVideoMode videomode, const char *title);
@@ -25,89 +29,15 @@
     int destroy_app(app_t *app);
     int destroy_game(app_t *app);
 
-    /* button */
-    button_t *create_button(object_info_t info, void (*action)(app_t *app),
-        char *texture_path);
-    int load_button_texture(button_t *button, char *pathfile);
-    int display_button(sfRenderWindow *window, button_t **button);
-
-    int button_event(app_t *app, button_t **button, sfEvent event);
-
-    int update_buttons_texture(app_t *app, button_t **button);
-
-    int is_button_hover(button_t *button, sfMouseMoveEvent mouse);
-    int is_button_released(button_t *button, sfMouseButtonEvent mouse);
-    int is_button_clicked(button_t *button, sfMouseButtonEvent mouse);
-
-    /* splash_screen */
-    splash_screen_t *create_splash_screen(sfRenderWindow *window);
-    int splash_screen(app_t *app, sfRenderWindow *window,
-    splash_screen_t *splash_screen);
-    int skip_splash_screen(app_t *app);
-
-    /* update_splash_screen */
-    int update_ruined_back(sfRenderWindow *window,
-    splash_screen_t *splash_screen);
-    int update_ruined_fore(sfRenderWindow *window,
-    splash_screen_t *splash_screen);
-    int update_title(sfRenderWindow *window, splash_screen_t *splash_screen);
-    int update_skip(sfRenderWindow *window, splash_screen_t *splash_screen);
-
-    /* clean_splash_screen */
-    int clean_splash_screen(app_t *app);
-
     /* event */
     int main_event(app_t *app);
-    int move_top(app_t *app, maps_t *maps, entity_t *player, sfView *view);
-    int move_bot(app_t *app, maps_t *maps, entity_t *player, sfView *view);
-    int move_left(app_t *app, maps_t *maps, entity_t *player, sfView *view);
-    int move_right(app_t *app, maps_t *maps, entity_t *player, sfView *view);
+    int move_top(app_t *app, entity_t *player);
+    int move_bot(app_t *app, entity_t *player);
+    int move_left(app_t *app, entity_t *player);
+    int move_right(app_t *app, entity_t *player);
     int detect_collision(app_t *app, entity_t *entity);
 
     int menu_event(app_t *app, sfEvent event);
-
-    /* map*/
-    tile_t *create_tile(int id, map_object_t **map_object, sfVector2i position,
-        sfVector2i size);
-    int destroy_tile(tile_t *tile);
-    layer_t *load_map_from_file(const char *pathfile, int id,
-        map_object_t **map_object, entity_t *player);
-    int display_map(sfRenderWindow *window, map_t *map, entity_t *player);
-
-    int destroy_maps(maps_t *maps);
-
-    int count_manifest_map(const char *filepath);
-    int count_manifest_object(const char *filepath);
-    int count_map_layer(const char *filepath);
-
-    int get_collision(map_object_t **map_object, int id);
-    sfTexture *get_texture(map_object_t **map_object, int id);
-
-    maps_t *load_manifest(const char *filepath);
-
-    map_object_t *create_map_object(int id, char *path, int collision);
-    int append_manifest(map_object_t **map_object, int id, char *path,
-        int collision);
-    map_t *create_map(const char *name, const char *path, map_object_t **mo);
-    layer_t **load_layer(const char *pathfile, map_object_t **map_object);
-    int load_tile(layer_t *layer, const char *pathfile,
-        map_object_t **map_object);
-    int change_map(app_t *app, maps_t *maps, entity_t *player, int id);
-    int change_map_by_name(app_t *app, maps_t *maps, entity_t *player,
-        char *name);
-    int detect_spawn(map_t *map);
-    int special_block(const char *pathfile, layer_t *layer);
-
-    int destroy_map(map_t *map);
-
-    teleport_t *create_teleport(char *map_name);
-    int destroy_teleport(teleport_t *teleport);
-
-    npc_t *create_npc(char *name, sfVector2i position);
-    int destroy_npc(npc_t *npc);
-
-    int teleporter_parser(const char *pathfile, tile_t *tile);
-    int npc_parser(const char *pathfile, tile_t *tile, sfVector2i position);
 
     /* array manipulation */
     int print_array(char **array);
@@ -127,6 +57,19 @@
     void stop_sound(app_t *app);
     void close_sound(app_t *app);
 
+    /* fight */
+    fight_t *create_fight(void);
+    int destroy_fight(fight_t *fight);
+
+    int detect_fight(app_t *app);
+    int corrupt_map(app_t *app);
+    int trapped_tile(app_t *app);
+    int fight(app_t *app);
+    int restore_tile(app_t *app);
+    int kill_player(app_t *app);
+    int launch_fight(app_t *app);
+    int stop_fight(app_t *app);
+
     /* Pathfinding */
     int pathfinder(app_t *app);
 
@@ -141,16 +84,15 @@
         player_preset_t preset, weapon_type_t type);
     int destroy_entity(entity_t *entity);
     int move_player(app_t *app, sfEvent event);
-    entity_t **create_enemy(void);
+    int destroy_weapons(weapon_t **weapons);
 
     /* view */
     sfView *create_view(sfVector2f size);
     int center_view(sfView *view, entity_t *player);
 
     /* Conversion */
-    int set_isometric_pos(entity_t *entity, sfVector2f position,
-        sfVector2f size);
-    sfVector2f get_isometric_pos(sfVector2f position, sfVector2f size);
+    int set_isometric_pos(entity_t *entity, sfVector2f position);
+    sfVector2f get_isometric_pos(sfVector2f position);
 
     /* Background */
     void change_background(sprite_t *background, char *filepath);
@@ -176,37 +118,6 @@
     void update_particle(app_t *app);
     void clean_particle_list(app_t *app);
 
-    /* escape menu */
-    void launch_main_menu(app_t *app);
-    escape_menu_t *create_escape_menu(sfRenderWindow *window);
-    int display_escape_menu(app_t *app, escape_menu_t *escape_menu);
-    void launch_setting(app_t *app);
-
-    /* Settings */
-    settings_menu_t *create_settings_menu(sfRenderWindow *window);
-    void display_settings_menu(sfRenderWindow *window, settings_menu_t *menu);
-    void update_settings_menu(settings_menu_t *, sfRenderWindow *);
-
-    void toggle_windowed(app_t *app);
-    void toggle_borderless(app_t *app);
-    void toggle_fullscreen(app_t *app);
-
-    void increase_music_volume(app_t *app);
-    void decrease_music_volume(app_t *app);
-    void increase_global_volume(app_t *app);
-    void decrease_global_volume(app_t *app);
-
-    void nothing(app_t *app);
-
-    void sound_settings(settings_menu_t *settings_menu, object_info_t
-        button_info, sfVector2u window_size);
-    void music_settings(settings_menu_t *settings_menu, object_info_t
-        button_info, sfVector2u window_size);
-    void resolution_settings(settings_menu_t *settings_menu,
-        object_info_t button_info, sfVector2u window_size);
-
-
-
     /* Dialogues */
     int detect_dialogue(app_t *app);
     int dialogue_manager(app_t *app, char *filepath);
@@ -226,17 +137,6 @@
 
     /* sfText */
     sfText *init_text(sfVector2f position, int size);
-
-    /* main_menu */
-    main_menu_t *create_main_menu(sfRenderWindow *window);
-    int display_main_menu(app_t *app);
-    void play(app_t *app);
-    void resume(app_t *app);
-    void settings_b(app_t *app);
-    void quit(app_t *app);
-
-    int update_all_buttons_textures(app_t *app);
-    int main_menu_buttons_actions(app_t *app);
 
     /* Player */
     stat_t *create_player(app_t *app, player_preset_t preset);

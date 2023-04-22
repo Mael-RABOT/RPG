@@ -9,9 +9,11 @@
 
 int destroy_game(app_t *app)
 {
+    destroy_fight(app->fight);
     destroy_entity(app->player);
     destroy_fps(app->fps);
     destroy_maps(app->maps);
+    destroy_weapons(app->weapons_list);
     destroy_app(app);
     return 0;
 }
