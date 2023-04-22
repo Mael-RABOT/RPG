@@ -44,4 +44,20 @@
         bool_t pressed;
     } button_t;
 
+
+    button_t *create_button(object_info_t info, void (*action)(app_t *app),
+        char *texture_path);
+    int load_button_texture(button_t *button, char *pathfile);
+    int display_button(sfRenderWindow *window, button_t **button);
+
+    int button_event(app_t *app, button_t **button, sfEvent event);
+
+    int update_buttons_texture(button_t **button);
+
+    int is_button_hover(button_t *button, sfMouseMoveEvent mouse);
+    int is_button_released(button_t *button, sfMouseButtonEvent mouse);
+    int is_button_clicked(button_t *button, sfMouseButtonEvent mouse);
+
+    int destroy_button(button_t **button);
+
 #endif //BUTTON_H_

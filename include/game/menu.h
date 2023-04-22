@@ -43,4 +43,27 @@
         button_t **button;
     } escape_menu_t;
 
+    /* Settings */
+    settings_menu_t *create_settings_menu(sfRenderWindow *window);
+    void display_settings_menu(sfRenderWindow *window, settings_menu_t *menu);
+    void update_settings_menu(settings_menu_t *, sfRenderWindow *);
+
+    void toggle_windowed(app_t *app);
+    void toggle_borderless(app_t *app);
+    void toggle_fullscreen(app_t *app);
+
+    void increase_music_volume(app_t *app);
+    void decrease_music_volume(app_t *app);
+    void increase_global_volume(app_t *app);
+    void decrease_global_volume(app_t *app);
+
+    void nothing(app_t *app);
+
+    void sound_settings(settings_menu_t *settings_menu, object_info_t
+        button_info, sfVector2u window_size);
+    void music_settings(settings_menu_t *settings_menu, object_info_t
+        button_info, sfVector2u window_size);
+    void resolution_settings(settings_menu_t *settings_menu,
+        object_info_t button_info, sfVector2u window_size);
+
 #endif //MENU_H_

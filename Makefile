@@ -43,8 +43,9 @@ SRC	=	src/main.c	\
 		src/button/button_event.c \
 		src/button/state_button_callback.c \
 		src/button/update_button.c \
+		src/button/destroy_button.c \
 		\
-		src/app/create_app.c \
+		src/app/create_ap.c \
 		src/app/destroy_app.c \
 		\
 		src/window/create_window.c \
@@ -59,13 +60,14 @@ SRC	=	src/main.c	\
 		src/menu/splash_screen/create_splash_screen.c \
         src/menu/splash_screen/splash_screen.c \
         src/menu/splash_screen/update_splash_screen.c  \
-        src/menu/splash_screen/clean_splash_screen.c \
+        src/menu/splash_screen/destroy_menu.c \
 		\
 		src/menu/settings/resolution.c \
 		src/menu/settings/music_callback.c \
 		src/menu/settings/button_creation.c	\
 		src/menu/settings/display_menu.c \
 		src/menu/settings/create_settings_menu.c \
+		src/menu/settings/destroy_menu.c \
 		\
 		src/menu/main_menu/display_menu.c	\
 		src/menu/main_menu/create_main_menu.c	\
@@ -157,7 +159,7 @@ SRC	=	src/main.c	\
 OBJ    =    $(SRC:.c=.o)
 
 CC	=	gcc
-CFLAGS	= -Wall -Wextra -g3
+CFLAGS	= -Wall -Wextra -fsanitize=address
 LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib -lm
 LDFLAGS	=	-lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio $(LIB)
 
@@ -170,7 +172,7 @@ all:	$(EXE)
 
 $(EXE): $(OBJ)
 		@make -C ./lib
-		$(CC) -o $(EXE) $(SRC) $(LDFLAGS) -g3
+		$(CC) -o $(EXE) $(SRC) $(LDFLAGS) -fsanitize=address
 
 clean:
 		@rm -rf $(OBJ)
