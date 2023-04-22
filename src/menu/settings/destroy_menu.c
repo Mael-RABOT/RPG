@@ -7,7 +7,7 @@
 
 #include "../../../include/prototype.h"
 
-int destroy_settings(settings_menu_t *sm)
+int destroy_settings_menu(settings_menu_t *sm)
 {
     destroy_sprite(sm->background);
     destroy_sprite(sm->text_sounds);

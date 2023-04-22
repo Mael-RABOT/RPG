@@ -26,22 +26,6 @@
     int destroy_app(app_t *app);
     int destroy_game(app_t *app);
 
-    /* splash_screen */
-    splash_screen_t *create_splash_screen(sfRenderWindow *window);
-    int splash_screen(app_t *app, sfRenderWindow *window,
-    splash_screen_t *splash_screen);
-    int skip_splash_screen(app_t *app);
-
-    /* update_splash_screen */
-    int update_ruined_back(sfRenderWindow *window,
-    splash_screen_t *splash_screen);
-    int update_ruined_fore(sfRenderWindow *window,
-    splash_screen_t *splash_screen);
-    int update_title(sfRenderWindow *window, splash_screen_t *splash_screen);
-    int update_skip(sfRenderWindow *window, splash_screen_t *splash_screen);
-
-    int destroy_splash_screen(splash_screen_t *splash_screen);
-
     /* event */
     int main_event(app_t *app);
     int move_top(app_t *app, entity_t *player);
@@ -126,12 +110,6 @@
     void update_particle(app_t *app);
     void clean_particle_list(app_t *app);
 
-    /* escape menu */
-    void launch_main_menu(app_t *app);
-    escape_menu_t *create_escape_menu(sfRenderWindow *window);
-    int display_escape_menu(app_t *app, escape_menu_t *escape_menu);
-    void launch_setting(app_t *app);
-
     /* Dialogues */
     int detect_dialogue(app_t *app);
     int dialogue_manager(app_t *app, char *filepath);
@@ -151,17 +129,6 @@
 
     /* sfText */
     sfText *init_text(sfVector2f position, int size);
-
-    /* main_menu */
-    main_menu_t *create_main_menu(sfRenderWindow *window);
-    int display_main_menu(app_t *app);
-    void play(app_t *app);
-    void resume(app_t *app);
-    void settings_b(app_t *app);
-    void quit(app_t *app);
-
-    int update_all_buttons_textures(app_t *app);
-    int main_menu_buttons_actions(app_t *app);
 
     /* Player */
     stat_t *create_player(app_t *app, player_preset_t preset);

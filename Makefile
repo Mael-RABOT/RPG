@@ -45,7 +45,7 @@ SRC	=	src/main.c	\
 		src/button/update_button.c \
 		src/button/destroy_button.c \
 		\
-		src/app/create_ap.c \
+		src/app/create_app.c \
 		src/app/destroy_app.c \
 		\
 		src/window/create_window.c \
@@ -56,6 +56,7 @@ SRC	=	src/main.c	\
 		src/menu/escape_menu/create_escape_menu.c \
 		src/menu/escape_menu/callback.c \
 		src/menu/escape_menu/display_menu.c \
+		src/menu/escape_menu/destroy_menu.c \
 		\
 		src/menu/splash_screen/create_splash_screen.c \
         src/menu/splash_screen/splash_screen.c \
