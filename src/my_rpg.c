@@ -43,6 +43,7 @@ int my_rpg(const int ac, const char **av)
         Default, Fist);
     app->maps = load_maps();
     change_map(app, 0);
+    launch_fight(app);
     while (sfRenderWindow_isOpen(app->window)) {
         main_display(app);
     }
