@@ -25,16 +25,6 @@ particle_t **init_particle_list(void)
     return (list);
 }
 
-app_menu_t *create_menu(app_t *app)
-{
-    app_menu_t *menu = malloc(sizeof(app_menu_t));
-    menu->splash_screen = create_splash_screen(app->window);
-    menu->main = create_main_menu(app->window);
-    menu->settings = create_settings_menu(app->window);
-    menu->escape = create_escape_menu(app->window);
-    return menu;
-}
-
 app_t *create_app(sfVideoMode videomode)
 {
     app_t *app = malloc(sizeof(app_t));

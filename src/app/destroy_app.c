@@ -14,6 +14,7 @@ void destroy_particle(app_t *app)
 
 int destroy_app(app_t *app)
 {
+    destroy_menu(app->menu);
     destroy_background(app);
     sfRenderWindow_destroy(app->window);
     destroy_sprite(app->cursor);

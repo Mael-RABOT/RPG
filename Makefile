@@ -53,6 +53,8 @@ SRC	=	src/main.c	\
 		src/array_manipulation/split.c \
 		src/array_manipulation/array_manipulation.c \
 		\
+		src/menu/create_menu.c \
+		\
 		src/menu/escape_menu/create_escape_menu.c \
 		src/menu/escape_menu/callback.c \
 		src/menu/escape_menu/display_menu.c \
@@ -70,9 +72,10 @@ SRC	=	src/main.c	\
 		src/menu/settings/create_settings_menu.c \
 		src/menu/settings/destroy_menu.c \
 		\
-		src/menu/main_menu/display_menu.c	\
-		src/menu/main_menu/create_main_menu.c	\
-		src/menu/main_menu/buttons.c	\
+		src/menu/main_menu/display_menu.c \
+		src/menu/main_menu/create_main_menu.c \
+		src/menu/main_menu/buttons.c \
+		src/menu/main_menu/destroy_menu.c \
 		\
 		src/sounds/create_music_handler.c \
         src/sounds/launch_sound.c \

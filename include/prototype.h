@@ -18,6 +18,9 @@
 
     int generator(int x, int y, int perfect);
 
+    app_menu_t *create_menu(app_t *app);
+    int destroy_menu(app_menu_t *am);
+
     /* window */
     sfRenderWindow *create_window(sfVideoMode videomode, const char *title);
 
