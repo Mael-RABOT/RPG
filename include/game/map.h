@@ -29,6 +29,7 @@
         sfVector2f position;
         sfTexture *texture;
         sfSprite *tile;
+        int is_trapped;
     } tile_t;
 
     typedef struct layer {
@@ -83,9 +84,8 @@
     layer_t **load_layer(const char *pathfile, map_object_t **map_object);
     int load_tile(layer_t *layer, const char *pathfile,
         map_object_t **map_object);
-    int change_map(app_t *app, maps_t *maps, entity_t *player, int id);
-    int change_map_by_name(app_t *app, maps_t *maps, entity_t *player,
-        char *name);
+    int change_map(app_t *app, int id);
+    int change_map_by_name(app_t *app, char *name);
     int detect_spawn(map_t *map);
     int special_block(const char *pathfile, layer_t *layer);
 

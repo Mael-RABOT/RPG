@@ -19,13 +19,14 @@
         main_menu_t *main;
         settings_menu_t *settings;
         escape_menu_t *escape;
-        splash_screen_t *splash_screen;
+       splash_screen_t *splash_screen;
         int state;
         int old_state;
     } app_menu_t;
 
     typedef struct fight {
         int is_fighting;
+        int fight_tick;
         sfClock *clock;
     } fight_t;
 

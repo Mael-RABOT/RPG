@@ -37,6 +37,9 @@ SRC	=	src/main.c	\
 		src/fight/create_fight.c \
 		src/fight/fight.c \
 		src/fight/corrupt_map.c \
+		src/fight/trapped_tile.c \
+		src/fight/restore_tile.c \
+		src/fight/kill_player.c \
 		\
 		src/button/create_button.c \
 		src/button/display_button.c \
@@ -164,7 +167,7 @@ SRC	=	src/main.c	\
 OBJ    =    $(SRC:.c=.o)
 
 CC	=	gcc
-SANITIZE	=	-g3
+SANITIZE	=	-fsanitize=address
 CFLAGS	= -Wall -Wextra $(SANITIZE)
 LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib -lm
 CSFML	=	-lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio

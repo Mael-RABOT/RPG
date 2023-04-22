@@ -7,12 +7,12 @@
 
 #include "../../include/prototype.h"
 
-int change_map(app_t *app, maps_t *maps, entity_t *player, int id)
+int change_map(app_t *app, int id)
 {
-    maps->selected_map = maps->map[id];
-    player->layer = 1;
-    player->position = maps->selected_map->spawn;
-    set_isometric_pos(player, maps->selected_map->spawn);
+    app->maps->selected_map = app->maps->map[id];
+    app->player->layer = 1;
+    app->player->position = app->maps->selected_map->spawn;
+    set_isometric_pos(app->player, app->maps->selected_map->spawn);
     if (app->menu->state == game) {
         sfRenderWindow_setView(app->window, app->default_view);
         launch_cinematic(app, Portal);
@@ -21,12 +21,12 @@ int change_map(app_t *app, maps_t *maps, entity_t *player, int id)
     return 0;
 }
 
-int change_map_by_name(app_t *app, maps_t *maps, entity_t *player, char *name)
+int change_map_by_name(app_t *app, char *name)
 {
     int i = 0;
-    while (maps->map[i] != NULL) {
-        if (my_strcmp(maps->map[i]->name, name) == 0) {
-            change_map(app, maps, player, i);
+    while (app->maps->map[i] != NULL) {
+        if (my_strcmp(app->maps->map[i]->name, name) == 0) {
+            change_map(app, i);
         }
         i += 1;
     }

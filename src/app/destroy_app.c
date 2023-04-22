@@ -19,6 +19,8 @@ int destroy_app(app_t *app)
     sfRenderWindow_destroy(app->window);
     destroy_sprite(app->cursor);
     destroy_particle(app);
+    sfView_destroy(app->view);
+    sfView_destroy(app->default_view);
     free(app);
     return 0;
 }

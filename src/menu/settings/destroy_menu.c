@@ -15,5 +15,6 @@ int destroy_settings_menu(settings_menu_t *sm)
     destroy_sprite(sm->sounds);
     destroy_sprite(sm->music);
     destroy_button(sm->button);
+    free(sm);
     return 0;
 }

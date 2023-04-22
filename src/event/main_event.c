@@ -30,7 +30,7 @@ static int manage_keys(app_t *app, sfKeyCode code)
         app->fight->is_fighting = 1 - app->fight->is_fighting;
     if (app->menu->state == game && code == sfKeyH &&
         app->maps->selected_map != app->maps->map[0])
-        change_map(app, app->maps, app->player, 1);
+        change_map(app, 1);
     return 0;
 }
 

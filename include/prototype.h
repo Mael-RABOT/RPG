@@ -64,6 +64,8 @@
     int corrupt_map(app_t *app);
     int trapped_tile(app_t *app);
     int fight(app_t *app);
+    int restore_tile(app_t *app);
+    int kill_player(app_t *app);
 
     /* Pathfinding */
     int pathfinder(app_t *app);

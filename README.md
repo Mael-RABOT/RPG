@@ -11,7 +11,7 @@
 | 586.0   | x = y   | -5      |
 
 #### Some (real) numbers:
-
+(ça se la touche fort)
 ##### 60:
 &emsp;The hour passed making sprites
 ##### +100:
@@ -26,7 +26,7 @@
 
 ---
 # THE TEAM
-## Lead dev / Game Designer : <br/>
+## Pseudo lead dev / Game Designer : <br/>
 [<img src="https://github.com/Mael-RABOT.png?size=85" width=85><br><sub>Maël RABOT</sub>](https://github.com/Mael-RABOT)
 
 ## Developer : <br/>

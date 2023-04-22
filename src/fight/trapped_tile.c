@@ -7,19 +7,22 @@
 
 #include "../../include/prototype.h"
 
-static int corrupt_layer(app_t *app, tile_t *tile)
+static int trapped_layer(app_t *app, tile_t *tile)
 {
-    int change = 0;
     if (tile->state != SOLID)
         return 0;
-    if (random_randint(0, 100000) != 50000)
+    if (random_randint(0, 5) != 0)
         return 0;
-    sfTexture *texture = get_texture(app->maps->map_object, 58);
-    sfSprite_setTexture(tile->tile, texture, sfFalse);
+    sfColor color = sfSprite_getColor(tile->tile);
+    color.r = 255;
+    color.b = 0;
+    color.g = 0;
+    tile->is_trapped = 1;
+    sfSprite_setColor(tile->tile, color);
     return 0;
 }
 
-int corrupt_map(app_t *app)
+int trapped_tile(app_t *app)
 {
     int i = app->player->layer - 1;
     sfVector2i position = {0, 0};
@@ -27,7 +30,7 @@ int corrupt_map(app_t *app)
     while (layer->layer[position.y] != NULL) {
         position.x = 0;
         while (layer->layer[position.y][position.x] != NULL) {
-            trapped_tile_color(app, layer->layer[position.y][position.x]);
+            trapped_layer(app, layer->layer[position.y][position.x]);
             position.x += 1;
         }
         position.y += 1;
