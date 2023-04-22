@@ -66,6 +66,8 @@
     int fight(app_t *app);
     int restore_tile(app_t *app);
     int kill_player(app_t *app);
+    int launch_fight(app_t *app);
+    int stop_fight(app_t *app);
 
     /* Pathfinding */
     int pathfinder(app_t *app);
@@ -81,7 +83,6 @@
         player_preset_t preset, weapon_type_t type);
     int destroy_entity(entity_t *entity);
     int move_player(app_t *app, sfEvent event);
-    entity_t **create_enemy(void);
     int destroy_weapons(weapon_t **weapons);
 
     /* view */

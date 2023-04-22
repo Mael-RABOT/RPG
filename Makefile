@@ -9,7 +9,6 @@ SRC	=	src/main.c	\
 		src/gloop.c \
 		src/my_rpg.c \
 		src/random.c \
-		src/create_enemy.c \
 		src/conversion.c \
 		src/destroy_game.c \
 		\
@@ -24,7 +23,6 @@ SRC	=	src/main.c	\
 		src/map/destroy_map.c \
 		src/map/detect_spawn.c \
 		src/map/change_map.c \
-		\
 		src/map/npc/npc.c \
 		src/map/npc/create_npc.c \
 		src/map/special_block/special_block.c \
@@ -34,6 +32,7 @@ SRC	=	src/main.c	\
 		src/event/main_event.c \
 		src/event/menu_event.c \
 		\
+		src/fight/launch_fight.c \
 		src/fight/create_fight.c \
 		src/fight/fight.c \
 		src/fight/corrupt_map.c \

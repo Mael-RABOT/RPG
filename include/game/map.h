@@ -58,6 +58,7 @@
         map_t **map;
         map_object_t **map_object;
         map_t *selected_map;
+        map_t *old_map;
     } maps_t;
 
     tile_t *create_tile(int id, map_object_t **map_object, sfVector2i position);
@@ -84,6 +85,7 @@
     layer_t **load_layer(const char *pathfile, map_object_t **map_object);
     int load_tile(layer_t *layer, const char *pathfile,
         map_object_t **map_object);
+    int change_map_by_map(app_t *app, map_t *map);
     int change_map(app_t *app, int id);
     int change_map_by_name(app_t *app, char *name);
     int detect_spawn(map_t *map);

@@ -26,5 +26,6 @@ int fight(app_t *app)
         sfClock_restart(app->fight->clock);
         return 0;
     }
+    stop_fight(app);
     return 0;
 }

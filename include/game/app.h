@@ -10,11 +10,6 @@
 #ifndef APP_H_
     #define APP_H_
 
-    typedef struct enemy {
-        entity_t **entity_list;
-        int enemy_no;
-    } enemy_t;
-
     typedef struct app_menu {
         main_menu_t *main;
         settings_menu_t *settings;
@@ -28,6 +23,7 @@
         int is_fighting;
         int fight_tick;
         sfClock *clock;
+        int no_round;
     } fight_t;
 
     typedef struct app {
@@ -44,7 +40,6 @@
         particle_t **particle_list;
         int particle_count;
         sfClock *particle_clock;
-        enemy_t *enemy;
         entity_t *player;
         weapon_t **weapons_list;
         int weapons_count;
