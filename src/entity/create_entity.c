@@ -9,7 +9,10 @@
 
 int destroy_entity(entity_t *entity)
 {
+    if (entity->stat != NULL)
+        free(entity->stat);
     destroy_sprite(entity->sprite);
+    sfClock_destroy(entity->move_clock);
     free(entity);
     return 0;
 }

@@ -18,6 +18,14 @@ int destroy_object(map_object_t *object)
 int destroy_tile(tile_t *tile)
 {
     sfSprite_destroy(tile->tile);
+    switch (tile->state) {
+        case TELEPORTER:
+            destroy_teleport(tile->sb.teleport); break;
+        case NPC:
+            destroy_npc(tile->sb.npc); break;
+        default:
+            break;
+    }
     free(tile);
     return 0;
 }

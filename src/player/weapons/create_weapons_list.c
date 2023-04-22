@@ -17,6 +17,7 @@ static int count_elements(void)
     int i = 0;
     while (getline(&line, &len, stream) != -1)
         i++;
+    free(line);
     fclose(stream);
     return i;
 }
@@ -32,6 +33,7 @@ static void add_weapons(app_t *app, char **args)
         = my_atoi(args[weapons_scaling]);
     app->weapons_list[app->weapons_count]->tier
         = my_atoi(args[weapons_tier]);
+    app->weapons_list[app->weapons_count + 1] = NULL;
     app->weapons_count += 1;
 }
 
@@ -51,6 +53,7 @@ void create_weapons_list(app_t *app)
         remove_trailing_newline_or_space(line);
         args = split(line, ':');
         add_weapons(app, args);
+        free_array(args);
     }
     free(line);
     fclose(stream);

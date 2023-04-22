@@ -9,6 +9,7 @@
 
 static int destroy_single_button(button_t *button)
 {
+    sfRectangleShape_destroy(button->rect);
     sfTexture_destroy(button->texture);
     free(button);
     return 0;
@@ -21,5 +22,6 @@ int destroy_button(button_t **button)
         destroy_single_button(button[i]);
         i += 1;
     }
+    free(button);
     return 0;
 }

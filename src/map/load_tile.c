@@ -63,6 +63,7 @@ int load_tile(layer_t *layer, const char *pathfile, map_object_t **map_object)
     layer->layer[index] = NULL;
     layer->size.x = get_len_x(layer->layer[0]);
     layer->size.y = index;
+    free(line);
     fclose(fp);
     return 0;
 }

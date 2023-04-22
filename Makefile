@@ -143,6 +143,7 @@ SRC	=	src/main.c	\
 		src/player/level_cost.c \
 		src/player/level_up.c \
 		src/player/attack.c \
+		src/player/destroy_weapons.c \
 		\
 		src/credits/credits.c \
 		\
@@ -163,9 +164,11 @@ SRC	=	src/main.c	\
 OBJ    =    $(SRC:.c=.o)
 
 CC	=	gcc
-CFLAGS	= -Wall -Wextra -fsanitize=address
+SANITIZE	=	-g3
+CFLAGS	= -Wall -Wextra $(SANITIZE)
 LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib -lm
-LDFLAGS	=	-lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio $(LIB)
+CSFML	=	-lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio
+LDFLAGS	=	$(CSFML) $(LIB) $(SANITIZE)
 
 EXE	=	my_rpg
 
@@ -176,7 +179,7 @@ all:	$(EXE)
 
 $(EXE): $(OBJ)
 		@make -C ./lib
-		$(CC) -o $(EXE) $(SRC) $(LDFLAGS) -fsanitize=address
+		$(CC) -o $(EXE) $(SRC) $(LDFLAGS)
 
 clean:
 		@rm -rf $(OBJ)
