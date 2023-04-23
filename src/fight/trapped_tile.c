@@ -11,7 +11,7 @@ static int trapped_layer(app_t *app, tile_t *tile)
 {
     if (tile->state != SOLID)
         return 0;
-    if (random_randint(0, 5) != 0)
+    if (random_randint(0, 3) != 0)
         return 0;
     sfColor color = sfSprite_getColor(tile->tile);
     color.r = 255;

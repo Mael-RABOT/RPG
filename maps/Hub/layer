@@ -3,4 +3,6 @@ layer:./maps/Hub/hub_Tile_Layer_1.csv
 layer:./maps/Hub/hub_Tile_Layer_2.csv
 layer:./maps/Hub/hub_Tile_Layer_3.csv
 teleport:66:maze
-npc:59:./dialogues/test
+npc:201:./dialogues/dial1
+npc:202:./dialogues/dial2
+npc:203:./dialogues/dial3

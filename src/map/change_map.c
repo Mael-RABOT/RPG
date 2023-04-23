@@ -7,9 +7,10 @@
 
 #include "../../include/prototype.h"
 
-int change_map_by_map(app_t *app, map_t *map)
+int change_map_by_map(app_t *app, map_t *map, int old_map)
 {
-    app->maps->old_map = app->maps->selected_map;
+    if (old_map == 1)
+        app->maps->old_map = app->maps->selected_map;
     app->maps->selected_map = map;
     app->player->layer = 1;
     app->player->position = app->maps->selected_map->spawn;

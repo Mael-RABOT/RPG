@@ -15,7 +15,7 @@ int kill_player(app_t *app)
     tile_t *ptile = map->layer[app->player->layer - 1]->layer[y + 1][x + 1];
     if (ptile->is_trapped == 1) {
         app->fight->no_round = 10;
-        change_map(app, 3);
+        change_map_by_map(app, app->maps->selected_map, 0);
     }
     return 0;
 }

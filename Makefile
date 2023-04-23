@@ -29,6 +29,8 @@ SRC	=	src/main.c	\
 		src/map/teleporter/create_teleport.c \
 		src/map/teleporter/teleporter.c \
 		\
+		src/event/detect_interaction.c \
+		src/event/enemy_hit.c \
 		src/event/main_event.c \
 		src/event/menu_event.c \
 		\
@@ -49,6 +51,7 @@ SRC	=	src/main.c	\
 		src/button/destroy_button.c \
 		\
 		src/app/create_app.c \
+		src/app/create_ui.c \
 		src/app/destroy_app.c \
 		\
 		src/window/create_window.c \
@@ -167,7 +170,7 @@ SRC	=	src/main.c	\
 OBJ    =    $(SRC:.c=.o)
 
 CC	=	gcc
-SANITIZE	=
+SANITIZE	= -g3
 CFLAGS	= -Wall -Wextra $(SANITIZE)
 LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib -lm
 CSFML	=	-lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio

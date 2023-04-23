@@ -10,6 +10,6 @@
 void get_map_name(app_t *app, char *line, size_t len, FILE *file)
 {
     getline(&line, &len, file);
-    app->maps->selected_map->name = line;
+    change_map_by_name(app, line);
     return;
 }

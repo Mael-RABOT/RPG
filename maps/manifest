@@ -50,7 +50,7 @@ maps:tower:./maps/Tower/layer
 56:./assets/blocks/neon/old_side_corner.png:1
 57:./assets/blocks/neon/old_off.png:1
 58:./assets/blocks/debug/placeholder.png:1
-59:./assets/blocks/debug/PNG.png:6
+59:./assets/characters/bald.png:6
 60:./assets/blocks/neon/broken_right0.png:1
 61:./assets/blocks/neon/broken_left0.png:1
 62:./assets/blocks/neon/broken_right1.png:1
@@ -59,7 +59,6 @@ maps:tower:./maps/Tower/layer
 65:./assets/blocks/misc/workbench_left.png:1
 66:./assets/blocks/debug/wireframe.png:4
 67:./assets/blocks/debug/null.png:3
-68:./assets/blocks/misc/portal_block.png:7
 69:./assets/blocks/debug/null.png:5
 72:./assets/blocks/nature/log.png:1
 73:./assets/blocks/nature/fallen_log_right.png:1
@@ -84,3 +83,9 @@ maps:tower:./maps/Tower/layer
 93:./assets/blocks/misc/slope_plank_back_left.png:2
 94:./assets/blocks/misc/slope_plank_front_left.png:2
 95:./assets/blocks/misc/slope_plank_front_right.png:2
+68:./assets/characters/bad_guy.png:7
+200:./assets/characters/bald.png:6
+201:./assets/characters/bald.png:6
+202:./assets/characters/bald.png:6
+203:./assets/characters/bald.png:6
+999:./assets/characters/bad_guy.png:8

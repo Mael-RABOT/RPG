@@ -56,7 +56,7 @@ int load_tile(layer_t *layer, const char *pathfile, map_object_t **map_object)
     int index = 0;
     int read_size = 0;
     while ((read_size = getline(&line, &len, fp)) != -1) {
-        line[read_size - 1] = '\0';
+        remove_trailing_newline_or_space(line);
         layer->layer[index] = load_tile_line(map_object, line, index);
         index += 1;
     }

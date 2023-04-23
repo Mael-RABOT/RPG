@@ -53,10 +53,10 @@ static int detect_event(app_t *app, sfEvent event)
 int main_event(app_t *app)
 {
     sfEvent event;
-
     while (sfRenderWindow_pollEvent(app->window, &event)) {
         detect_event(app, event);
         move_player(app, event);
+        enemy_hit(app, event);
     }
     return 0;
 }

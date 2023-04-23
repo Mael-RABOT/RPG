@@ -35,8 +35,9 @@ int gloop(app_t *app)
     display_map(app->window, app->maps->selected_map, app->player);
     if (app->fps->key_f == 1 && app->menu->state == game)
         show_fps(app);
-    if (app->fight->is_fighting == 1)
+    if (app->fight->is_fighting != 0)
         fight(app);
     center_view(app->view, app->player);
+    detect_interaction(app);
     return 0;
 }

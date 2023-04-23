@@ -17,7 +17,7 @@ escape_menu_t *create_escape_menu(sfRenderWindow *window)
     bi.scale = (sfVector2f){1, 1};
     bi.size = (sfVector2f){64 * 3, 32 * 3};
     bi.position = (sfVector2f){window_size.x / 2 - bi.size.x / 2, 300};
-    escape_menu->button[0] = create_button(bi, &play, RESUME);
+    escape_menu->button[0] = create_button(bi, &resume, RESUME);
     bi.position = (sfVector2f){window_size.x / 2 - bi.size.x / 2, 400};
     escape_menu->button[1] = create_button(bi, &launch_setting, SETTING);
     bi.position = (sfVector2f){window_size.x / 2 - bi.size.x / 2, 500};

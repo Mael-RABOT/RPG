@@ -22,7 +22,6 @@ int fight(app_t *app)
         app->fight->fight_tick = 0;
         kill_player(app);
         restore_tile(app);
-        app->fight->no_round -= 1;
         sfClock_restart(app->fight->clock);
         return 0;
     }

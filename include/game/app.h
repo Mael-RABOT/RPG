@@ -44,6 +44,7 @@
         weapon_t **weapons_list;
         int weapons_count;
         fight_t *fight;
+        sprite_t *interact;
     } app_t;
 
 #endif //APP_H_

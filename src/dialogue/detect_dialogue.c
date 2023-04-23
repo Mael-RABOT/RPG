@@ -6,11 +6,13 @@
 */
 
 #include "../../include/prototype.h"
+#include <SFML/Graphics/Texture.h>
 
 static int detect_dialogue_tile(app_t *app, tile_t *tile, float hypo)
 {
-    if (tile->state == NPC && hypo < 5)
+    if (tile->state == NPC && hypo < 5) {
         dialogue_manager(app, tile->sb.npc->file);
+    }
     return 0;
 }
 
@@ -35,6 +37,8 @@ static int detect_dialogue_layer(app_t *app, layer_t *layer)
 
 int detect_dialogue(app_t *app)
 {
+    if (app->menu->state != game || app->fight->is_fighting != 0)
+        return 0;
     map_t *map = app->maps->selected_map;
     int i = 0;
     while (map->layer[i] != NULL) {
