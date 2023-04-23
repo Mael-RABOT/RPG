@@ -22,11 +22,11 @@ char *find_head_sprite(face_t face_id)
 {
     switch (face_id) {
         case Player:
-            return my_strdup(PLAYER_FACE);
+            return PLAYER_FACE;
         case Leonardo:
-            return my_strdup(LEONARDO_FACE);
+            return LEONARDO_FACE;
         case Marilyn:
-            return my_strdup(MARILYN_FACE);
+            return MARILYN_FACE;
     }
     return NULL;
 }
