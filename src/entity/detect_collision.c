@@ -12,6 +12,7 @@ static int detect_block(app_t *app, entity_t *entity, tile_t *tile)
     switch (tile->state) {
         case SOLID:
         case NPC:
+        case BOSS:
         case ENEMY:
             return 1;
         case TELEPORTER:
