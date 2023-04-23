@@ -29,6 +29,7 @@ SRC	=	src/main.c	\
 		src/map/teleporter/create_teleport.c \
 		src/map/teleporter/teleporter.c \
 		\
+		src/event/enemy_hit.c \
 		src/event/main_event.c \
 		src/event/menu_event.c \
 		\

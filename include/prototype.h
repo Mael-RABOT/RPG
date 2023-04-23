@@ -58,6 +58,7 @@
     void close_sound(app_t *app);
 
     /* fight */
+    int enemy_hit(app_t *app, sfEvent event);
     fight_t *create_fight(void);
     int destroy_fight(fight_t *fight);
 
@@ -67,7 +68,7 @@
     int fight(app_t *app);
     int restore_tile(app_t *app);
     int kill_player(app_t *app);
-    int launch_fight(app_t *app);
+    int launch_fight(app_t *app, int type);
     int stop_fight(app_t *app);
 
     /* Pathfinding */

@@ -59,7 +59,6 @@ maps:tower:./maps/Tower/layer
 65:./assets/blocks/misc/workbench_left.png:1
 66:./assets/blocks/debug/wireframe.png:4
 67:./assets/blocks/debug/null.png:3
-68:./assets/characters/bad_guy.png:7
 69:./assets/blocks/debug/null.png:5
 72:./assets/blocks/nature/log.png:1
 73:./assets/blocks/nature/fallen_log_right.png:1
@@ -84,3 +83,5 @@ maps:tower:./maps/Tower/layer
 93:./assets/blocks/misc/slope_plank_back_left.png:2
 94:./assets/blocks/misc/slope_plank_front_left.png:2
 95:./assets/blocks/misc/slope_plank_front_right.png:2
+68:./assets/characters/bad_guy.png:7
+999:./assets/characters/bad_guy.png:8

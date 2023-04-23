@@ -37,7 +37,8 @@
         TELEPORTER,
         STAIRS_DOWN,
         NPC,
-        ENEMY
+        ENEMY,
+        BOSS
     } block_t;
 
     typedef enum map_index {
