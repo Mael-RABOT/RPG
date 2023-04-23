@@ -42,7 +42,7 @@ int my_rpg(const int ac, const char **av)
     app->player = create_entity(app, "./assets/characters/player_debug.png",
         Default, Fist);
     app->maps = load_maps();
-    change_map(app, 0);
+    change_map(app, 1);
     while (sfRenderWindow_isOpen(app->window)) {
         main_display(app);
     }

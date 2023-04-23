@@ -42,5 +42,6 @@ app_t *create_app(sfVideoMode videomode)
     app->menu = create_menu(app);
     app->menu->state = DEFAULT_GAME_STATE;
     app->fight = create_fight();
+    create_ui(app);
     return app;
 }

@@ -38,5 +38,6 @@ int gloop(app_t *app)
     if (app->fight->is_fighting != 0)
         fight(app);
     center_view(app->view, app->player);
+    detect_interaction(app);
     return 0;
 }

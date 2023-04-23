@@ -37,6 +37,8 @@ static int detect_fight_layer(app_t *app, layer_t *layer)
 
 int detect_fight(app_t *app)
 {
+    if (app->menu->state != game || app->fight->is_fighting != 0)
+        return 0;
     map_t *map = app->maps->selected_map;
     int i = 0;
     while (map->layer[i] != NULL) {

@@ -26,10 +26,13 @@
 
     /* app */
     app_t *create_app(sfVideoMode videomode);
+    int create_ui(app_t *app);
     int destroy_app(app_t *app);
     int destroy_game(app_t *app);
 
     /* event */
+    int detect_interaction(app_t *app);
+
     int main_event(app_t *app);
     int move_top(app_t *app, entity_t *player);
     int move_bot(app_t *app, entity_t *player);
