@@ -7,19 +7,10 @@
 
 #include "../../../include/prototype.h"
 
-void fonction_tres_tres_utile(app_t *app)
-{
-    int i = 0;
-    nothing(app);
-    while (sfFalse) {
-        nothing(app);
-        i += 1;
-    }
-}
-
 void launch_main_menu(app_t *app)
 {
     app->menu->old_state = app->menu->state;
+    create_save(app);
     app->menu->state = main_menu;
 }
 

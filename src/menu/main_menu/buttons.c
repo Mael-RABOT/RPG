@@ -10,12 +10,14 @@
 void play(app_t *app)
 {
     app->menu->old_state = app->menu->state;
+    change_map(app, 0);
     app->menu->state = character_stat_selection;
     return;
 }
 
 void resume(app_t *app)
 {
+    load_save(app, "./save/savegame_1");
     app->menu->old_state = app->menu->state;
     app->menu->state = game;
     return;
