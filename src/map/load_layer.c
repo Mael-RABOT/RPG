@@ -27,7 +27,7 @@ layer_t **load_layer(const char *pathfile, map_object_t **map_object)
     int index = 0;
     int read_size = 0;
     while ((read_size = getline(&line, &len, fp)) != -1) {
-        line[read_size - 1] = '\0';
+        remove_trailing_newline_or_space(line);
         if (my_strncmp(line, "layer", 5) == 0) {
             char **array = split(line, ':');
             layer[index] = create_layer(array[1], pathfile, map_object);

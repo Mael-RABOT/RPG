@@ -84,4 +84,8 @@ maps:tower:./maps/Tower/layer
 94:./assets/blocks/misc/slope_plank_front_left.png:2
 95:./assets/blocks/misc/slope_plank_front_right.png:2
 68:./assets/characters/bad_guy.png:7
+200:./assets/characters/bald.png:6
+201:./assets/characters/bald.png:6
+202:./assets/characters/bald.png:6
+203:./assets/characters/bald.png:6
 999:./assets/characters/bad_guy.png:8

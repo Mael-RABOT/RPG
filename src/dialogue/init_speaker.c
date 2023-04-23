@@ -22,11 +22,11 @@ char *find_head_sprite(face_t face_id)
 {
     switch (face_id) {
         case Player:
-            return PLAYER_FACE;
+            return my_strdup(PLAYER_FACE);
         case Leonardo:
-            return LEONARDO_FACE;
+            return my_strdup(LEONARDO_FACE);
         case Marilyn:
-            return MARILYN_FACE;
+            return my_strdup(MARILYN_FACE);
     }
     return NULL;
 }
@@ -51,6 +51,8 @@ static void fill_speaker(app_t *app, speakers_t *speakers, char **names,
         face_id = find_face_id(names[i]);
         if (i == 0)
             speakers->speaker_id = face_id;
+        if (face_id == -1)
+            return;
         speakers->face_list[i] = create_sprite(find_head_sprite(face_id));
         scale_head_sprite(app, speakers->face_list[i], face_id, size);
     }
@@ -65,11 +67,9 @@ speakers_t *init_speakers(app_t *app, FILE *stream, sfVector2u size)
     remove_trailing_newline_or_space(line);
     speakers->name_list = split(line, ':');
     free(line);
-    int arr_size = len_array(
-        speakers->name_list);
-    speakers->face_list = malloc(sizeof(sprite_t) * arr_size + 1);
-    fill_speaker(app, speakers,
-        speakers->name_list, size);
+    int arr_size = len_array(speakers->name_list);
+    speakers->face_list = malloc(sizeof(sprite_t) * (arr_size + 1));
+    fill_speaker(app, speakers, speakers->name_list, size);
     speakers->text = init_text(find_text_position(app), 40);
     return speakers;
 }

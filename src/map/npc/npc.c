@@ -9,11 +9,11 @@
 
 static int is_npc(tile_t *tile, char *line, sfVector2i position)
 {
-    if (my_strncmp(line, "npc", 3) == 0) {
-        char **array = split(line, ':');
+    char **array = split(line, ':');
+    if (my_strncmp(line, "npc", 3) == 0 && tile->id == my_atoi(array[1])) {
         tile->sb.npc = create_npc(array[2], position);
-        free_array(array);
     }
+    free_array(array);
     return 0;
 }
 

@@ -170,7 +170,7 @@ SRC	=	src/main.c	\
 OBJ    =    $(SRC:.c=.o)
 
 CC	=	gcc
-SANITIZE	=
+SANITIZE	= -g3
 CFLAGS	= -Wall -Wextra $(SANITIZE)
 LIB	=	-L./lib -lmy_string -lmy_printf -lmy_stdlib -lm
 CSFML	=	-lcsfml-graphics -lcsfml-system -lcsfml-window -lcsfml-audio

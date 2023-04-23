@@ -2,3 +2,4 @@ id:texture_path:collision
 layer:./maps/Tutorial/Tutorial_Ground.csv
 layer:./maps/Tutorial/Tutorial_Wall.csv
 teleport:66:hub
+npc:200:./dialogues/tuto

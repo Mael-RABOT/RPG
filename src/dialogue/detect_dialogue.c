@@ -6,11 +6,13 @@
 */
 
 #include "../../include/prototype.h"
+#include <SFML/Graphics/Texture.h>
 
 static int detect_dialogue_tile(app_t *app, tile_t *tile, float hypo)
 {
-    if (tile->state == NPC && hypo < 5)
+    if (tile->state == NPC && hypo < 5) {
         dialogue_manager(app, tile->sb.npc->file);
+    }
     return 0;
 }
 
