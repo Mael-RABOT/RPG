@@ -7,6 +7,22 @@
 
 #include "../../../include/prototype.h"
 
+void set_1920_1080(app_t *app)
+{
+    sfVector2u size = {1920, 1080};
+    sfVector2i position = {0, 0};
+    sfRenderWindow_setSize(app->window, size);
+    sfRenderWindow_setPosition(app->window, position);
+}
+
+void set_800_400(app_t *app)
+{
+    sfVector2u size = {854, 480};
+    sfVector2i position = {0, 0};
+    sfRenderWindow_setSize(app->window, size);
+    sfRenderWindow_setPosition(app->window, position);
+}
+
 void toggle_windowed(app_t *app)
 {
     sfVideoMode mode = {1920, 1080, 32};

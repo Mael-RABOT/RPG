@@ -61,12 +61,12 @@ void resolution_bis(settings_menu_t *settings_menu, object_info_t button_info,
     button_info.size = (sfVector2f){261 / 3 * 2.9, 32 * 2.9};
     button_info.position =
         (sfVector2f){half + quarter - 372 / 4 * 2.9 / 2 - 160, 610};
-    settings_menu->button[7] = create_button(button_info, &nothing,
+    settings_menu->button[7] = create_button(button_info, &set_800_400,
         LOW_RESOLUTION);
 
     button_info.position =
         (sfVector2f){half + quarter - 372 / 4 * 2.9 / 2 + 190, 610};
-    settings_menu->button[8] = create_button(button_info, &nothing,
+    settings_menu->button[8] = create_button(button_info, &set_1920_1080,
         HIGH_RESOLUTION);
 
     settings_menu->button[9] = NULL;

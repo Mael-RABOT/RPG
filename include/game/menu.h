@@ -52,6 +52,9 @@
     void toggle_borderless(app_t *app);
     void toggle_fullscreen(app_t *app);
 
+    void set_1920_1080(app_t *app);
+    void set_800_400(app_t *app);
+
     void increase_music_volume(app_t *app);
     void decrease_music_volume(app_t *app);
     void increase_global_volume(app_t *app);
