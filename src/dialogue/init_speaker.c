@@ -31,8 +31,7 @@ char *find_head_sprite(face_t face_id)
     return NULL;
 }
 
-static void scale_head_sprite(app_t *app, sprite_t *sprite, face_t face_id,
-    sfVector2u size)
+static void scale_head_sprite(app_t *app, sprite_t *sprite, face_t face_id)
 {
     float scale_factor = 3.0f;
     sfSprite_scale(sprite->sprite, (sfVector2f){scale_factor, scale_factor});
@@ -43,22 +42,21 @@ static void scale_head_sprite(app_t *app, sprite_t *sprite, face_t face_id,
     }
 }
 
-static void fill_speaker(app_t *app, speakers_t *speakers, char **names,
-    sfVector2u size)
+static void fill_speaker(app_t *app, speakers_t *speakers, char **names)
 {
     face_t face_id;
     for (int i = 0; names[i] != NULL; i++) {
         face_id = find_face_id(names[i]);
         if (i == 0)
             speakers->speaker_id = face_id;
-        if (face_id == -1)
+        if ((int)face_id == -1)
             return;
         speakers->face_list[i] = create_sprite(find_head_sprite(face_id));
-        scale_head_sprite(app, speakers->face_list[i], face_id, size);
+        scale_head_sprite(app, speakers->face_list[i], face_id);
     }
 }
 
-speakers_t *init_speakers(app_t *app, FILE *stream, sfVector2u size)
+speakers_t *init_speakers(app_t *app, FILE *stream)
 {
     speakers_t *speakers = malloc(sizeof(speakers_t));
     size_t len;
@@ -69,7 +67,7 @@ speakers_t *init_speakers(app_t *app, FILE *stream, sfVector2u size)
     free(line);
     int arr_size = len_array(speakers->name_list);
     speakers->face_list = malloc(sizeof(sprite_t) * (arr_size + 1));
-    fill_speaker(app, speakers, speakers->name_list, size);
+    fill_speaker(app, speakers, speakers->name_list);
     speakers->text = init_text(find_text_position(app), 40);
     return speakers;
 }

@@ -130,7 +130,7 @@
         speakers_t *speakers);
     void scale_sprite(app_t *app, sprite_t *background);
     void dialogue_events(app_t *app);
-    speakers_t *init_speakers(app_t *app, FILE *stream, sfVector2u size);
+    speakers_t *init_speakers(app_t *app, FILE *stream);
     face_t find_face_id(char *line);
     char *find_head_sprite(face_t face_id);
     sfVector2f find_head_position(app_t *app, sfBool player);

@@ -9,8 +9,7 @@
 //particle->position = (sfVector2f){((position.x - position.y) * 32 / 2) +
 //    size.x * 32, ((position.x + position.y) * 32 / 4)};
 // UPDATE THE particle->position WITH IT'S ISOMETRIC POSITION
-static particle_t *init_particle(sfVector2f position, sfVector2f size,
-    sfBool isometric)
+static particle_t *init_particle(sfVector2f position, sfBool isometric)
 {
     particle_t *particle = malloc(sizeof(particle_t));
     particle->frame = 1;
@@ -36,7 +35,7 @@ void add_particle(app_t *app, sfVector2f position, char* filepath,
     sfBool isometric)
 {
     app->particle_list[app->particle_count] =
-        init_particle(position, app->maps->map[0]->size, isometric);
+        init_particle(position, isometric);
     add_particle_data(&(app->particle_list[app->particle_count++]), filepath);
     app->particle_list[app->particle_count] = NULL;
 }

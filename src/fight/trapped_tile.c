@@ -7,7 +7,7 @@
 
 #include "../../include/prototype.h"
 
-static int trapped_layer(app_t *app, tile_t *tile)
+static int trapped_layer(tile_t *tile)
 {
     if (tile->state != SOLID)
         return 0;
@@ -30,7 +30,7 @@ int trapped_tile(app_t *app)
     while (layer->layer[position.y] != NULL) {
         position.x = 0;
         while (layer->layer[position.y][position.x] != NULL) {
-            trapped_layer(app, layer->layer[position.y][position.x]);
+            trapped_layer(layer->layer[position.y][position.x]);
             position.x += 1;
         }
         position.y += 1;

@@ -7,7 +7,7 @@
 
 #include "../../include/prototype.h"
 
-static int restore_tile_layer(app_t *app, layer_t *layer)
+static int restore_tile_layer(layer_t *layer)
 {
     sfVector2i position = {0, 0};
     while (layer->layer[position.y] != NULL) {
@@ -29,7 +29,7 @@ int restore_tile(app_t *app)
     map_t *map = app->maps->selected_map;
     int i = 0;
     while (map->layer[i] != NULL) {
-        restore_tile_layer(app, map->layer[i]);
+        restore_tile_layer(map->layer[i]);
         i += 1;
     }
     return 0;

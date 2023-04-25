@@ -9,6 +9,7 @@
 
 int update_speaker(app_t *app, sprite_t **speaker, face_t face_id)
 {
+    (void)app;
     *speaker = create_sprite(find_head_sprite(face_id));
     if (!*speaker)
         return 1;
@@ -34,7 +35,7 @@ int update_dialogue(app_t *app, speakers_t *speakers, FILE *stream,
     }
     remove_trailing_newline_or_space(line);
     face_t id = find_face_id(line);
-    if (id == -1) {
+    if ((int)id == -1) {
         update_text(app, speakers, line);
     } else {
         speakers->speaker_id = id;
@@ -43,12 +44,10 @@ int update_dialogue(app_t *app, speakers_t *speakers, FILE *stream,
     return 0;
 }
 
-int dialogue_loop(app_t *app, FILE *stream, sprite_t *background,
-    state_t old_state)
+int dialogue_loop(app_t *app, FILE *stream, sprite_t *background)
 {
     sfClock *timer = sfClock_create();
-    speakers_t *speakers = init_speakers(app, stream,
-        sfRenderWindow_getSize(app->window));
+    speakers_t *speakers = init_speakers(app, stream);
     while (sfRenderWindow_isOpen(app->window) && app->menu->state == dialogue) {
         dialogue_events(app);
         sfRenderWindow_clear(app->window, sfBlack);
@@ -71,9 +70,8 @@ int dialogue_manager(app_t *app, char *filepath)
         return EXIT_FAILURE;
     sprite_t *background = create_sprite(COLOR_LAYER);
     scale_sprite(app, background);
-    state_t state = app->menu->state;
     app->menu->state = dialogue;
-    dialogue_loop(app, stream, background, state);
+    dialogue_loop(app, stream, background);
     destroy_sprite(background);
     app->menu->state = game;
     fclose(stream);

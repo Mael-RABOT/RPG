@@ -35,6 +35,7 @@ void decrease_music_volume(app_t *app)
 
 void increase_global_volume(app_t *app)
 {
+    (void)app;
     float volume = sfListener_getGlobalVolume();
 
     volume += 5;
@@ -48,6 +49,7 @@ void increase_global_volume(app_t *app)
 
 void decrease_global_volume(app_t *app)
 {
+    (void)app;
     float volume = sfListener_getGlobalVolume();
 
     volume -= 5;

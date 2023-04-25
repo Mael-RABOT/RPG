@@ -9,6 +9,7 @@
 
 void nothing(app_t *app)
 {
+    (void)app;
     return;
 }
 
