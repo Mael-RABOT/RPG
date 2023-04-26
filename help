@@ -6,6 +6,7 @@ SYNOPSIS
 
 OPTIONS
     -h                  display the help
+    <int>               choose a custom game state, see GAME STATES
 
 KEY INPUT
     In Game:
@@ -15,11 +16,23 @@ KEY INPUT
         `q`             Move to the left
         `s`             Move Backward
         `d`             Move to the right
-        `f`             enable / disable fps counter
+        `f`             Enable / disable fps counter
+        `e`             Interact  (when prompted)
+        `h`             Return to the Hub (after discovering it)
 
     In Settings:
 
         `ESC`           Go back to the menu
+
+GAME STATES
+
+    Be careful when using those debug flags, they may cause excepted behaviors
+
+    0                   Splash Screen
+    1                   Main Menu
+    4                   Game
+    5                   Paused
+    10                  Character Selection
 
 EXIT STATUS
     0                   Successful program execution,
