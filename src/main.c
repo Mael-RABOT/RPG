@@ -35,7 +35,10 @@ int main(const int ac, const char **av)
     int parsing_value = parsing(ac, av);
     if (parsing_value != -1)
         return (parsing_value);
+    state_t state = DEFAULT_GAME_STATE;
+    if (ac > 1)
+        state = my_atoi(av[ac - 1]);
     srand(time(NULL));
     generator(30, 30, 1);
-    return my_rpg(ac, av);
+    return my_rpg(state);
 }

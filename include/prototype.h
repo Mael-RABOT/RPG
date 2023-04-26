@@ -11,7 +11,7 @@
     #include "include.h"
 
     /* main */
-    int my_rpg(const int ac, const char **av);
+    int my_rpg(state_t state);
     int choose_state(app_t *app);
     int gloop(app_t *app);
     int random_randint(int min, int max);
@@ -25,7 +25,7 @@
     sfRenderWindow *create_window(sfVideoMode videomode, const char *title);
 
     /* app */
-    app_t *create_app(sfVideoMode videomode);
+    app_t *create_app(sfVideoMode videomode, state_t state);
     int create_ui(app_t *app);
     int destroy_app(app_t *app);
     int destroy_game(app_t *app);

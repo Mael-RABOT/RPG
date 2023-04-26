@@ -33,10 +33,10 @@ static int main_display(app_t *app)
     return 0;
 }
 
-int my_rpg(const int ac, const char **av)
+int my_rpg(state_t state)
 {
     sfVideoMode videomode = {1920, 1080, 32};
-    app_t *app = create_app(videomode);
+    app_t *app = create_app(videomode, state);
     app->default_view = create_view((sfVector2f){1920, 1080});
     app->view = create_view((sfVector2f){426, 240});
     app->player = create_entity(app, "./assets/characters/player_debug.png",

@@ -25,7 +25,7 @@ particle_t **init_particle_list(void)
     return (list);
 }
 
-app_t *create_app(sfVideoMode videomode)
+app_t *create_app(sfVideoMode videomode, state_t state)
 {
     app_t *app = malloc(sizeof(app_t));
     create_weapons_list(app);
@@ -40,7 +40,7 @@ app_t *create_app(sfVideoMode videomode)
     app->particle_clock = sfClock_create();
     create_music_handler(app);
     app->menu = create_menu(app);
-    app->menu->state = DEFAULT_GAME_STATE;
+    app->menu->state = state;
     app->fight = create_fight();
     create_ui(app);
     return app;

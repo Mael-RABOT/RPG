@@ -25,6 +25,6 @@ int launch_fight(app_t *app, int type)
 {
     app->fight->is_fighting = type;
     change_map(app, 3);
-    app->fight->no_round = 10;
+    app->fight->no_round = BOSS_LIFE;
     return 0;
 }
