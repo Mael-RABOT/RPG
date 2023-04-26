@@ -31,6 +31,8 @@
     /* escape menu */
     #define ESCAPE_MENU         OVERLAY "./in_game_menu.png"
 
+    #define BOSS_LIFE           50
+
     /* Game State*/
     #define DEFAULT_GAME_STATE  0
 
